@@ -82,6 +82,8 @@ body {
     font-weight: 600;
     font-style: normal;
     background-color: #FAFAF9;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
 }
  
 :root {
@@ -157,6 +159,8 @@ body {
 }
  
 @theme {
+  --shadow-hover: -4px 5px 15px 0px rgba(120, 120, 120, 0.2), -17px 21px 27px 0px rgba(120, 120, 120, 0.17), -37px 48px 37px 0px rgba(120, 120, 120, 0.1), -67px 85px 43px 0px rgba(120, 120, 120, 0.03),-104px 133px 47px 0px rgba(120, 120, 120, 0);
+
 	--color-background: var(--background);
 	--color-background-alt: var(--background-alt);
 	--color-foreground: var(--foreground);

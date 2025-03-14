@@ -9,6 +9,6 @@ export const load = (async () => {
         }
     });
     const posts = await response.json();
-    console.log(posts)
+
     return { posts };
 }) satisfies PageServerLoad;
