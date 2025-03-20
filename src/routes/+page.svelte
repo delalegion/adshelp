@@ -18,9 +18,106 @@
     import aboutBackground from '$lib/assets/about-bg.png';
     import tick from '$lib/assets/tick.svg';
     import tickFalse from '$lib/assets/tick-false.svg';
+    import journeyFirst from '$lib/assets/journey-1.png';
+    import journeySecond from '$lib/assets/journey-2.png';
+    import journeyThird from '$lib/assets/journey-3.png';
+    import journeyFirstIconFirst from '$lib/assets/journey-1-icon-1.svg';
+    import journeyFirstIconSecond from '$lib/assets/journey-1-icon-2.svg';
+    import journeySecondIconFirst from '$lib/assets/journey-2-icon-1.svg';
+    import journeySecondIconSecond from '$lib/assets/journey-2-icon-2.svg';
+    import journeyThirdIconFirst from '$lib/assets/journey-3-icon-1.svg';
+    import journeyThirdIconSecond from '$lib/assets/journey-3-icon-2.svg';
+    import heart from '$lib/assets/heart.svg';
+    import heartDark from '$lib/assets/heart-dark.svg';
+
+    // Video
+    import consult from '$lib/assets/consulting.webm';
 
     // Components
     import Button from '$lib/components/Button.svelte';
+    import { onMount } from 'svelte';
+    import gsap from 'gsap';
+    import { ScrollTrigger } from "gsap/dist/ScrollTrigger"; 
+
+    let stepStates = $state([false, false, false, false]); 
+
+    function toggleStateBox(index) {
+        stepStates[index] = !stepStates[index];
+        
+        let stepBox = document.querySelector(`#step-${index+1}-box`);
+        let stepBg = stepBox?.querySelector("#step-box-bg");
+        let stepBtn = stepBox?.querySelector("#step-info");
+        let stepBtnSvg = stepBox?.querySelector("#step-info-svg");
+        let stepText = stepBox?.querySelector("#step-text");
+
+        let stepTimeline = gsap.timeline({});
+        stepTimeline.add('start');
+        stepTimeline.to(stepBg, {
+            opacity: stepStates[index] ? "1" : "0",
+            duration: 0.3,
+            ease: "power2.inOut"
+        }, 'start')
+        stepTimeline.to(stepBtn, {
+            backgroundColor: stepStates[index] ? "#BD3111" : "#E44412",
+            duration: 0.3,
+            ease: "power2.inOut"
+        }, 'start')
+        stepTimeline.to(stepBtnSvg, {
+            rotate: stepStates[index] ? "45deg" : "0deg",
+            duration: 0.3,
+            ease: "power2.inOut"
+        }, 'start')
+        stepTimeline.to(stepText, {
+            y: stepStates[index] ? 0 : 2,
+            opacity: stepStates[index] ? 1 : 0,
+            duration: 0.3,
+            ease: "power2.inOut"
+        }, 'start')
+
+    }
+
+    onMount(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        
+    let timeline = gsap.timeline({
+    scrollTrigger: {
+        trigger: "#steps",
+        start: "top top",
+        end: "+=1500",
+        pin: true,
+        pinSpacing: true,
+        invalidateOnRefresh: true,
+        scrub: true,
+        snap: {
+            snapTo: "labels",
+            duration: { min: 0.2, max: 0.6 },
+            delay: 0.1,
+            ease: "power1.inOut"
+        }
+    }
+    });
+
+    timeline
+        .addLabel("step1")
+        .to("#step-1-label", { opacity: 1, y: 0, duration: 0.5 }, "step1")
+        .to("#step-1-box", { opacity: 1, y: 0, duration: 0.5 }, "step1")
+
+        .addLabel("step2")
+        .to("#step-1-complete", { width: '50%' })
+        .to("#step-2-label", { opacity: 1, y: 0, duration: 0.5 }, "step2")
+        .to("#step-2-box", { opacity: 1, y: 0, duration: 0.5 }, "step2")
+
+        .addLabel("step3")
+        .to("#step-2-complete", { width: '50%' })
+        .to("#step-3-label", { opacity: 1, y: 0, duration: 0.5 }, "step3")
+        .to("#step-3-box", { opacity: 1, y: 0, duration: 0.5 }, "step3")
+
+        .addLabel("step4")
+        .to("#step-3-complete", { width: '50%' })
+        .to("#step-4-label", { opacity: 1, y: 0, duration: 0.5 }, "step4")
+        .to("#step-4-box", { opacity: 1, y: 0, duration: 0.5 }, "step4")
+
+    })
 </script>
 
 <nav id="navbar" class="navbar">
@@ -49,13 +146,13 @@
 <header id="header" class="header flex justify-center">
     <div class="container pt-24 pb-24 flex justify-between gap-3.5 items-center">
         <div class="flex-1 mb-24">
-            <h1 class=" text-6xl-bold font-display text-primary-950 pr-10">Skuteczne kampanie <span class="text-primary-600">Allegro ads</span> dla Twojego e-commerce</h1>
-            <p class=" text-base text-primary-950 mt-8">Zostaw swoje dane po darmowy audyt.</p>
-            <div class=" flex flex-row gap-3 mt-4">
+            <h1 class="text-6xl-bold font-display text-primary-950 pr-10">Skuteczne kampanie <span class="text-primary-600">Allegro ads</span> dla Twojego e-commerce</h1>
+            <p class="text-base text-primary-950 mt-4">Zostaw swoje dane i uzyskaj darmowy audyt</p>
+            <div class="flex flex-row gap-3 mt-8">
                 <input
                 id="apiKey"
                 class="h-input rounded-lg transition-shadow shadow-card min-w-[350px] flex bg-background placeholder:text-foreground-alt/50 focus:ring-foreground focus:shadow-2xl focus:ring-offset-background focus:outline-hidden items-center px-6 py-4 text-base focus:ring-2 focus:ring-offset-2 sm:text-sm"
-                placeholder="Wpisz swoją nazwę allegro"
+                placeholder="Wpisz swoją nazwę Allegro"
                 name="allegro-name"
                 autocomplete="off"
                 />
@@ -85,17 +182,17 @@
                     <div class="flex-1 flex flex-col p-3 bg-white p-7 rounded-[12px] gap-3 max-w-64 hover:shadow-hover ease-in-out duration-400">
                         <img src={indvidual} alt="Graphic icon of two people" class="w-full flex" />
                         <h3 class="text-xl-bold font-display text-primary-950">Indywidualne<br />podejście</h3>
-                        <p class="text-xs text-primary-950">Każdy projekt traktuję unikalnie, dopasowując strategię do potrzeb Twojego biznesu.</p>
+                        <p class="text-xs text-primary-950">Każdemu projektowi poświęcam szczególną uwagę. Opracuję skuteczną strategię dla Twojego biznesu..</p>
                     </div>
                     <div class="flex-1 flex flex-col p-3 bg-white p-7 rounded-[12px] gap-3 max-w-64 hover:shadow-hover ease-in-out duration-400">
                         <img src={data} alt="Graphic icon of stats" class="w-full flex" />
                         <h3 class="text-xl-bold font-display text-primary-950">Wyniki oparte<br/>na danych</h3>
-                        <p class="text-xs text-primary-950">Podejmuję decyzje marketingowe na podstawie dokładnej analizy, aby osiągać realne rezultaty.</p>
+                        <p class="text-xs text-primary-950">Podejmuję decyzje marketingowe na podstawie dokładnej analizy. Dzięki temu osiągam realne rezultaty.</p>
                     </div>
                     <div class="flex-1 flex flex-col p-3 bg-white p-7 rounded-[12px] gap-3 max-w-64 hover:shadow-hover ease-in-out duration-400">
                         <img src={time} alt="Graphic icon of stats" class="w-full flex" />
                         <h3 class="text-xl-bold font-display text-primary-950">Szybka<br />realizacja</h3>
-                        <p class="text-xs text-primary-950">Podejmuję decyzje marketingowe na podstawie dokładnej analizy, aby osiągać realne rezultaty.</p>
+                        <p class="text-xs text-primary-950">Działam sprawnie i efektywnie – od pomysłu do realizacji w ekspresowym tempie, zawsze na czas!.</p>
                     </div>
                 </div>
             </div>
@@ -124,10 +221,10 @@
 
     <div class="max-w-[1920px] w-full">
         <div class="grid grid-cols-5">
-            <div class="col-span-2 py-40 ml-40">
+            <div class="col-span-2 py-40 ml-46">
                 <div class="flex flex-col">
                     <p class="text-xl text-primary-500 mb-4">Usługi</p>
-                    <h3 class="font-display text-4xl-bold text-primary-100 mb-12">Efekty mojej pracy<br />doceniają klienci</h3>
+                    <h3 class="font-display text-4xl-bold text-primary-100 mb-12">Efekty mojej pracy są<br/> doceniane przez klientów</h3>
                     <div class="flex flex-col gap-7">
                         <div class="py-6 px-7 hover:bg-[#4F1811] transition-all rounded-[8px] max-w-[440px] hover:cursor-pointer flex flex-row items-center">
                             <img src={servicesFirst} alt="Graphic icon of stats" class="mr-4" /><p class="text-base text-primary-500 ">Kampania Allegro Ads od zera</p>
@@ -148,8 +245,8 @@
                         <Button label="Porozmawiajmy" />
                     </div>
                     <div class="col-span-2 bg-primary-850 bg-[#4E1B15] px-11 py-8 flex justify-end flex-col">
-                        <h4 class="text-6xl-bold text-primary-500 font-display mb-4">510%</h4>
-                        <p class="text-base text-primary-100">Średni wzrost sprzedaży z moją współpracą</p>
+                        <h4 class="text-6xl-bold text-primary-500 font-display mb-4">525%</h4>
+                        <p class="text-base text-primary-100">Średni wzrost sprzedaży dzięki<br />współpracy ze mną</p>
                     </div>
                     <div class="col-span-1 row-span-2 bg-primary-600 overflow-hidden relative">
                         <svg width="2359" height="2360" viewBox="0 0 2359 2360" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute right-[-300%] top-[-80%] max-w-8xl">
@@ -172,7 +269,7 @@
                     <p class="text-sm-bold text-primary-500">CEO & FOUNDER</p>
                     <h5 class="text-3xl-bold font-display text-primary-100">MARCIN LUBERA</h5>
 
-                    <p class="font-display text-xl-bold text-primary-100 mt-14">Ekspert z bogatym portfolio kampanii Allegro Ads, który dzięki doświadczeniu i indywidualnemu podejściu do każdego klienta, zapewnia skuteczność, której nie oferują masowe agencje.</p>
+                    <p class="font-display text-xl-bold text-primary-100 mt-14">Ekspert z bogatym portfolio kampanii Allegro Ads. Jego ogromne doświadczenie i indywidualne podejście do każdego klienta zapewniają skuteczność, której nie oferują masowe agencje.</p>
                     <div class="flex flex-row gap-4 mt-8">
                         <Button label="Kontakt do mnie" type="orange" />
                         <Button label="Zamów audyt" />
@@ -180,7 +277,7 @@
                 </div>
             </div>
             <div class="col-span-2 flex flex-col gap-14 items-center">
-                <h4 class="text-3xl-bold font-display text-primary-100 text-center">Czym się wyróżniam od<br />dużych agencji?</h4>
+                <h4 class="text-3xl-bold font-display text-primary-100 text-center">Czym się wyróżniam na tle<br /> dużych agencji?</h4>
                 <div class="flex flex-row max-w-2/3">
 
                     <div class="flex flex-col gap-8">
@@ -188,7 +285,7 @@
                         <div class="flex flex-col bg-[#2E0C08] py-3 pl-4 gap-2 border-2 border-primary-500 rounded-l-2xl rounded-br-2xl">
                             <div class="flex flex-row px-2 py-3 items-center">
                                 <img src={tick} alt="Graphic icon of stats" class="mr-3" />
-                                <span class="text-xs text-primary-100">W pełni poświęcony czas dla klienta, nie tylko kilka kilka godzin tygodniowo</span>
+                                <span class="text-xs text-primary-100 mr-4">Czas w pełni poświęcony klientowi.<br />Otrzymujesz tyle czasu, ile potrzebujesz</span>
                             </div>
                             <div class="flex flex-row px-2 py-3 bg-[#3E140F] rounded-l-md items-center">
                                 <img src={tick} alt="Graphic icon of stats" class="mr-3" />
@@ -196,7 +293,7 @@
                             </div>
                             <div class="flex flex-row px-2 py-3 items-center">
                                 <img src={tick} alt="Graphic icon of stats" class="mr-3" />
-                                <span class="text-xs text-primary-100">Wysoki stopień zaangażowania<br />i relacja z klientem</span>
+                                <span class="text-xs text-primary-100">Wysoki poziom zaangażowania<br />i relacja z klientem</span>
                             </div>
                             <div class="flex flex-row px-2 py-3 bg-[#3E140F] rounded-l-md items-center">
                                 <img src={tick} alt="Graphic icon of stats" class="mr-3" />
@@ -216,29 +313,29 @@
                     </div>
                     <div class="flex flex-col gap-10 items-center">
                         <h5 class="text-2xl-bold font-display text-primary-100">Agencje</h5>
-                        <div class="flex flex-col bg-[#4E1B15] py-3 pr-6 gap-2 border-2 border-primary-50/5 rounded-r-xl">
+                        <div class="flex flex-col bg-[#4E1B15] py-3 pr-3 gap-2 border-2 border-primary-50/5 rounded-r-xl">
                             <div class="flex flex-row px-2 py-3 items-center pl-6">
                                 <img src={tickFalse} alt="Graphic icon of stats" class="mr-3" />
-                                <span class="text-xs text-primary-100">Sztywno ustawiony przedział czasu tygodniowo</span>
+                                <span class="text-xs text-primary-100">Sztywno ustawiony przedział<br/> czasu tygodniowo</span>
                             </div>
                             <div class="flex flex-row px-2 py-3 bg-[#3E140F] rounded-r-md items-center pl-6">
                                 <img src={tickFalse} alt="Graphic icon of stats" class="mr-3" />
-                                <span class="text-xs text-primary-100">Brak indywidualne podejście tylko sztywno zorganizowane i procesowe</span>
+                                <span class="text-xs text-primary-100">Brak indywidualnego podejścia –<br />sztywność, masowość, schematyczność</span>
                             </div>
                             <div class="flex flex-row px-2 py-3 items-center pl-6">
                                 <img src={tickFalse} alt="Graphic icon of stats" class="mr-3" />
-                                <span class="text-xs text-primary-100">Zformalizowany proces komunikacji oraz brak bezpośredniej relacji z specjalistami</span>
+                                <span class="text-xs text-primary-100">Zformalizowany proces komunikacji oraz<br/> brak bezpośredniej relacji ze specjalistami</span>
                             </div>
                             <div class="flex flex-row px-2 py-3 bg-[#3E140F] rounded-r-md items-center pl-6">
                                 <img src={tickFalse} alt="Graphic icon of stats" class="mr-3" />
-                                <span class="text-xs text-primary-100">Sztywno ustandaryzowane pakiety usług i proces</span>
+                                <span class="text-xs text-primary-100">Sztywno ustandaryzowane pakiety<br /> usług i procesów</span>
                             </div>
                             <div class="flex flex-row px-2 py-3 items-center pl-6">
                                 <img src={tickFalse} alt="Graphic icon of stats" class="mr-3" />
                                 <span class="text-xs text-primary-100">Wysoki koszt usług</span>
                             </div>
                             <div class="flex flex-row px-2 py-3 bg-[#3E140F] rounded-r-md items-center pl-6">
-                                <img src={tickFalse} alt="Graphic icon of stats" class="mr-3" />
+                                <img src={tick} alt="Graphic icon of stats" class="mr-3" />
                                 <span class="text-xs text-primary-100">Masowa obsługa klientów</span>
                             </div>
                         </div>
@@ -253,43 +350,482 @@
         <img src={aboutBackground} alt="Graphic icon of stats" class="" />
     </div>
 </section>
+  
 
-<section id="steps" class="flex justify-center relative py-32">
-    <div class="container px-32">
-        <h2 class="text-4xl-bold font-display text-primary-950 text-center">Od 12 lat osobiście realizuje i wdrażam<br/> skuteczne strategie marketingowe na Allegro</h2>
-        <p class="text-base text-primary-950 mt-8 text-center">Poznaj 4 etapy - dzięki którym udowodnię Ci, że Twoje<br /> konto na Allegro może generować dużo lepsze wyniki!</p>
-        <div class="mt-8 grid grid-cols-4 mt-24">
-            <div class="col-span-1 flex justify-center">
-                <div class="px-4 py-3 rounded-xl shadow-hover font-display text-xl-bold text-primary-950 gap-4 inline-flex"><span class="text-primary-600">1</span> Etap</div>
+<section id="steps" class="py-16">
+
+    <div class="flex justify-center relative">
+
+        <div class="container px-32 mb-16">
+
+            <div id="steps-container">
+            <h2 class="text-4xl-bold font-display text-primary-950 text-center">Od 12 lat osobiście realizuje i wdrażam<br/> skuteczne strategie marketingowe na Allegro</h2>
+            <p class="text-base text-primary-950 mt-8 text-center">Poznaj 4 etapy! Udowodnię Ci, że dzięki nim Twoje konto<br/> na Allegro może generować dużo lepsze wyniki!</p>
+    
+            <div class="mt-8 grid grid-cols-4 mt-24">
+                <div class="col-span-1 flex justify-center relative">
+                    <div class="px-4 py-3 rounded-xl shadow-hover font-display text-xl-bold text-primary-950 gap-4 inline-flex opacity-40" id="step-1-label"><span class="text-primary-600">1</span> Etap</div>
+                    <div class="w-0 h-0.5 bg-primary-500 absolute left-[75%] top-1/2 z-10" id="step-1-complete"></div>
+                    <div class="w-1/2 h-0.5 bg-stone-300 absolute -right-1/4 top-1/2 z-0"></div>
+                </div>
+                <div class="col-span-1 flex justify-center relative">
+                    <div class="px-4 py-3 rounded-xl shadow-hover font-display text-xl-bold text-primary-950 gap-4 inline-flex opacity-30" id="step-2-label"><span class="text-primary-600">2</span> Etap</div>
+                    <div class="w-0 h-0.5 bg-primary-500 absolute left-[75%] top-1/2 z-10" id="step-2-complete"></div>
+                    <div class="w-1/2 h-0.5 bg-stone-300 absolute -right-1/4 top-1/2 z-0"></div>
+                </div>
+                <div class="col-span-1 flex justify-center relative">
+                    <div class="px-4 py-3 rounded-xl shadow-hover font-display text-xl-bold text-primary-950 gap-4 inline-flex opacity-20" id="step-3-label"><span class="text-primary-600">3</span> Etap</div>
+                    <div class="w-0 h-0.5 bg-primary-500 absolute left-[75%] top-1/2 z-10" id="step-3-complete"></div>
+                    <div class="w-1/2 h-0.5 bg-stone-300 absolute -right-1/4 top-1/2 z-0"></div>
+                </div>
+                <div class="col-span-1 flex justify-center">
+                    <div class="px-4 py-3 rounded-xl shadow-hover font-display text-xl-bold text-primary-950 gap-4 inline-flex opacity-10" id="step-4-label"><span class="text-primary-600">4</span> Etap</div>
+                </div>
             </div>
-            <div class="col-span-1 flex justify-center">
-                <div class="px-4 py-3 rounded-xl shadow-hover font-display text-xl-bold text-primary-950 gap-4 inline-flex"><span class="text-primary-600">2</span> Etap</div>
+    
+            <div class="mt-8 grid grid-cols-4 mt-12">
+                <div class="col-span-1 flex justify-center mx-4">
+                    <div id="step-1-box" class="rounded-2xl w-full h-96 bg-[url(/src/lib/assets/step-1.png)] bg-center bg-cover relative overflow-hidden z-10 opacity-0 translate-y-3">
+                        <div class="absolute top-0 h-2/3 w-full bg-linear-to-b from-zinc-900/80 to-zinc-900/0 -z-1"></div>
+                        <p class="z-20 text-xl-bold mx-6 my-6 font-display text-white">Zapoznanie się z Twoim biznesem i zrozumienie go w całości</p>
+                        <p id="step-text" class="z-20 text-xs mx-6 my-6 text-white opacity-0 translate-y-2">Przeprowadzamy szczegółową analizę produktów, aby lepiej zrozumieć ich unikalne cechy i potrzeby rynku. Na tej podstawie tworzymy dopasowaną strategię marketingową, która skutecznie przyciąga klientów
+                            i maksymalizuje wyniki sprzedaży.</p>
+                        <div class="absolute right-3 bottom-3">
+                            <div id="step-info" onclick={() => toggleStateBox(0)} class="w-12 h-12 bg-primary-600 rounded-full flex justify-center items-center hover:cursor-pointer active:scale-[0.98] active:transition-all hover:scale-[1.05]">
+                                <svg id="step-info-svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 1V15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M1 8H15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>                                
+                            </div>
+                        </div>
+                        <div id="step-box-bg" class="bg-primary-600 absolute top-0 right-0 left-0 bottom-0 -z-1 opacity-0"></div>
+                    </div>
+                </div>
+                <div class="col-span-1 flex justify-center mx-4 mt-11">
+                    <div id="step-2-box" class="rounded-2xl w-full h-96 bg-[url(/src/lib/assets/step-2.png)] bg-center bg-cover relative overflow-hidden z-10 opacity-0 translate-y-3">
+                        <div class="absolute top-0 h-2/3 w-full bg-linear-to-b from-zinc-900/80 to-zinc-900/0 -z-1"></div>
+                        <p class="z-20 text-xl-bold mx-6 my-6 font-display text-white">Analiza produktów oraz zbudowanie odpowiedniej strategii marketingowej</p>
+                        <p id="step-text" class="z-20 text-xs mx-6 my-6 text-white opacity-0 translate-y-2">Przeprowadzamy szczegółową analizę produktów, aby lepiej zrozumieć ich unikalne cechy i potrzeby rynku. Na tej podstawie tworzymy dopasowaną strategię marketingową, która skutecznie przyciąga klientów
+                            i maksymalizuje wyniki sprzedaży.</p>
+                        <div class="absolute right-3 bottom-3">
+                            <div id="step-info" onclick={() => toggleStateBox(1)}  class="w-12 h-12 bg-primary-600 rounded-full flex justify-center items-center hover:cursor-pointer active:scale-[0.98] active:transition-all hover:scale-[1.05]">
+                                <svg id="step-info-svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 1V15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M1 8H15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>                                
+                            </div>
+                        </div>
+                        <div id="step-box-bg" class="bg-primary-600 absolute top-0 right-0 left-0 bottom-0 -z-1 opacity-0"></div>
+                    </div>
+                </div>
+                <div class="col-span-1 flex justify-center mx-4">
+                    <div id="step-3-box" class="rounded-2xl w-full h-96 bg-[url(/src/lib/assets/step-3.png)] bg-center bg-cover relative overflow-hidden z-10 opacity-0 translate-y-3">
+                        <div class="absolute top-0 h-2/3 w-full bg-linear-to-b from-zinc-900/80 to-zinc-900/0 -z-1"></div>
+                        <p class="z-20 text-xl-bold mx-6 my-6 font-display text-white">Wdrożenie opracowanej strategii i optymalizacja całego procesu marketingu</p>
+                        <p id="step-text" class="z-20 text-xs mx-6 my-6 text-white opacity-0 translate-y-2">Przeprowadzamy szczegółową analizę produktów, aby lepiej zrozumieć ich unikalne cechy i potrzeby rynku. Na tej podstawie tworzymy dopasowaną strategię marketingową, która skutecznie przyciąga klientów
+                            i maksymalizuje wyniki sprzedaży.</p>
+                        <div class="absolute right-3 bottom-3">
+                            <div id="step-info" onclick={() => toggleStateBox(2)}  class="w-12 h-12 bg-primary-600 rounded-full flex justify-center items-center hover:cursor-pointer active:scale-[0.98] active:transition-all hover:scale-[1.05]">
+                                <svg id="step-info-svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 1V15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M1 8H15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>                                
+                            </div>
+                        </div>
+                        <div id="step-box-bg" class="bg-primary-600 absolute top-0 right-0 left-0 bottom-0 -z-1 opacity-0"></div>
+                    </div>
+                </div>
+                <div class="col-span-1 flex justify-center mx-4 mt-11">
+                    <div id="step-4-box" class="rounded-2xl w-full h-96 bg-[url(/src/lib/assets/step-4.png)] bg-center bg-cover relative overflow-hidden z-10 opacity-0 translate-y-3">
+                        <div class="absolute top-0 h-2/3 w-full bg-linear-to-b from-zinc-900/80 to-zinc-900/0 -z-1"></div>
+                        <p class="z-20 text-xl-bold mx-6 my-6 font-display text-white">Analiza uzyskanych wyników i planowanie przyszłych działań</p>
+                        <p id="step-text" class="z-20 text-xs mx-6 my-6 text-white opacity-0 translate-y-2">Przeprowadzamy szczegółową analizę produktów, aby lepiej zrozumieć ich unikalne cechy i potrzeby rynku. Na tej podstawie tworzymy dopasowaną strategię marketingową, która skutecznie przyciąga klientów
+                            i maksymalizuje wyniki sprzedaży.</p>
+                        <div class="absolute right-3 bottom-3">
+                            <div id="step-info" onclick={() => toggleStateBox(3)}  class="w-12 h-12 bg-primary-600 rounded-full flex justify-center items-center hover:cursor-pointer active:scale-[0.98] active:transition-all hover:scale-[1.05]">
+                                <svg id="step-info-svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 1V15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M1 8H15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>                                
+                            </div>
+                        </div>
+                        <div id="step-box-bg" class="bg-primary-600 absolute top-0 right-0 left-0 bottom-0 -z-1 opacity-0"></div>
+                    </div>
+                </div>
             </div>
-            <div class="col-span-1 flex justify-center">
-                <div class="px-4 py-3 rounded-xl shadow-hover font-display text-xl-bold text-primary-950 gap-4 inline-flex opacity-50"><span class="text-primary-600">3</span> Etap</div>
             </div>
-            <div class="col-span-1 flex justify-center">
-                <div class="px-4 py-3 rounded-xl shadow-hover font-display text-xl-bold text-primary-950 gap-4 inline-flex opacity-50"><span class="text-primary-600">4</span> Etap</div>
+    
+        </div>
+
+    </div>
+    
+</section>
+
+<section id="consulting" class="bg-primary-950 flex justify-center overflow-hidden relative">
+
+    <svg width="100%" viewBox="0 0 1920 69" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute -top-0.5 w-full left-0 right-0 z-10">
+        <path d="M0 0H1920V7.5L0 69V0Z" fill="#FAFAF9"/>
+    </svg>       
+
+    <div class="max-w-[1920px] w-full z-0">
+        <div class="grid grid-cols-2">
+            <div class="col-span-1 ml-46 py-48 mr-12">
+                <h2 class="text-5xl-bold font-display text-primary-500">Najważniejsza jest<br/> jakość, nie ilość</h2>
+                <p class="text-xl text-primary-500 mt-7">Z tego powodu, w celu dbania o jakość naszej współpracy,<br/> liczba miejsc jest ograniczona. Zostało mi 7 wolnych miejsc!</p>
+                <div class="flex flex-row gap-3 mt-12">
+                    <Button label="Zacznijmy działać" type="orange" />
+                    <Button label="Powiadomienia o nowych dostępach" />
+                </div>
+            </div>
+            <div class="col-span-1">
+                <div class="relative -z-10">
+                    <video autoplay muted loop class="absolute min-w-full min-h-full w-auto h-auto object-cover">
+                        <source src={consult} type="video/webm">
+                    </video>
+                </div>
+                <div class="h-full flex items-center ml-16">
+                    <div class="py-8 px-9 rounded-2xl flex flex-col  z-10 relative">
+                        <div class="rounded-full bg-primary-600 flex items-center justify-center w-12 h-12 mb-4">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 2H9C8.44772 2 8 2.44772 8 3V5C8 5.55228 8.44772 6 9 6H15C15.5523 6 16 5.55228 16 5V3C16 2.44772 15.5523 2 15 2Z" stroke="#FEE9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 4H18C18.5304 4 19.0391 4.21071 19.4142 4.58579C19.7893 4.96086 20 5.46957 20 6V20C20 20.5304 19.7893 21.0391 19.4142 21.4142C19.0391 21.7893 18.5304 22 18 22H6C5.46957 22 4.96086 21.7893 4.58579 21.4142C4.21071 21.0391 4 20.5304 4 20V6C4 5.46957 4.21071 4.96086 4.58579 4.58579C4.96086 4.21071 5.46957 4 6 4H8" stroke="#FEE9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9 14L11 16L15 12" stroke="#FEE9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h5 class="text-2xl-bold font-display text-primary-950 mb-4">Zamów konsultację ze<br/> specjalistą</h5>
+                        <p class="text-base text-primary-950 mb-7">Bez zobowiązań, całkowicie za darmo.</p>
+                        <input
+                            id="apiKey"
+                            class="mb-4 h-input rounded-lg transition-shadow shadow-card min-w-[350px] flex bg-background placeholder:text-foreground-alt/50 focus:ring-foreground focus:shadow-2xl focus:ring-offset-background focus:outline-hidden items-center px-6 py-4 text-base focus:ring-2 focus:ring-offset-2 sm:text-sm"
+                            placeholder="Wpisz swoją nazwę Allegro"
+                            name="allegro-name"
+                            autocomplete="off"
+                        />
+                        <div><Button label="Zamów audyt" type="orange" /></div>
+                        <div class="flex flex-row gap-2 mt-6">
+                            <div class="w-8 h-0.5 bg-primary-600"></div>
+                            <div class="w-8 h-0.5 bg-neutral-300"></div>
+                        </div>
+
+                        <div class="absolute top-0 bottom-0 left-0 right-0 bg-stone-50 backdrop-blur-sm -z-1 rounded-[14px]"></div>
+                        <div class="absolute -top-1 -bottom-1 -left-1 -right-1 bg-stone-50/10 backdrop-blur-sm -z-10 rounded-[16px]"></div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
 </section>
 
+<section id="journey" class="flex justify-center relative py-24 bg-white">
+    <div class="container">
+        <h2 class="text-5xl-bold text-primary-950 font-display pb-4 text-center">Jak przebiega darmowa<br/> współpraca?</h2>
+        <div class="flex flex-col">
 
+            <div class="grid grid-cols-3 mt-24 px-24">
+                <div class="col-span-1"><img src={journeyFirst} alt="Graphic icon of stats" /></div>
+                <div class="col-span-2 flex flex-col justify-center max-w-2/3 ml-16">
+                    <h3 class="text-3xl-bold font-display text-primary-950">Pierwsza rozmowa</h3>
+                    <div class="flex flex-row gap-3 mt-5"><img src={tick} alt="Graphic icon of stats" /><p class=" text-base text-primary-950">Rozpoczynamy od wspólnej rozmowy, w trakcie której omawiamy Twoje produkty, biznes i obecne prowadzone działania marketingowe.</p></div>
+                    <h4 class="text-xl-bold font-display text-primary-950 mt-10">Co otrzymujesz na tym etapie:</h4>
+                    <div class="flex flex-row gap-8 items-center mt-6">
+                        <div class="flex flex-row gap-4 items-center">
+                            <img src={journeyFirstIconFirst} alt="Graphic icon of stats" />
+                            <p class="text-base text-primary-950">Omówienie Twoich wyników marketingowych</p>
+                        </div>
+                        <div class="flex flex-row gap-4 items-center">
+                            <img src={journeyFirstIconSecond} alt="Graphic icon of stats" />
+                            <p class="text-base text-primary-950">Plan naprawczy dla konta i marketingu</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-row gap-3 mt-8">
+                        <Button label="Druga rozmowa" type="dark" />
+                        <Button label="Napisz do mnie" type="orange" />
+                    </div>
+                </div>
+            </div>
 
+            <div class="grid grid-cols-3 mt-28 px-24">
+                <div class="col-span-2 flex flex-col justify-center max-w-2/3 ml-16">
+                    <h3 class="text-3xl-bold font-display text-primary-950">Druga rozmowa</h3>
+                    <div class="flex flex-row gap-3 mt-5"><img src={tick} alt="Graphic icon of stats" /><p class=" text-base text-primary-950">Podczas rozmowy przedstawię Ci plan rozwoju i marketingu dla Twojego biznesu, wspólnie wyznaczymy cele i założenia. Na tym etapie stworzę już pierwsze kampanie i strategie.</p></div>
+                    <h4 class="text-xl-bold font-display text-primary-950 mt-10">Co otrzymujesz na tym etapie:</h4>
+                    <div class="flex flex-row gap-8 items-center mt-6">
+                        <div class="flex flex-row gap-4 items-center">
+                            <img src={journeySecondIconFirst} alt="Graphic icon of stats" />
+                            <p class="text-base text-primary-950">Pierwszą strategię marketingową</p>
+                        </div>
+                        <div class="flex flex-row gap-4 items-center">
+                            <img src={journeySecondIconSecond} alt="Graphic icon of stats" />
+                            <p class="text-base text-primary-950">Raport z wykonanych działań</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-row gap-3 mt-8">
+                        <Button label="Trzecia rozmowa" type="dark" />
+                        <Button label="Napisz do mnie" type="orange" />
+                    </div>
+                </div>
+                <div class="col-span-1"><img src={journeySecond} alt="Graphic icon of stats" /></div>
+            </div>
 
-<!-- <div class="flex flex-col">
-    <h1 class="text-xs bg-primary-600">Testowy tekst</h1>
-    <h1 class="text-sm">Testowy tekst</h1>
-    <h1 class="text-base">Testowy tekst</h1>
-    <h1 class="text-lg">Testowy tekst</h1>
-    <h1 class="text-xl-normal font-display">Testowy tekst</h1>
-    <h1 class="text-2xl">Testowy tekst</h1>
-    <h1 class="text-3xl-bold font-display">Testowy tekst</h1>
-    <h1 class="text-4xl">Testowy tekst</h1>
-    <h1 class="text-5xl">Testowy tekst</h1>
-    <h1 class="text-6xl">Testowy tekst</h1>
-    <h1 class="text-7xl">Testowy tekst</h1>
-    <h1 class="text-8xl font-display bg-primary-600">Testowy tekst</h1>
-</div> -->
+            <div class="grid grid-cols-3 mt-28 px-24">
+                <div class="col-span-1"><img src={journeyThird} alt="Graphic icon of stats" /></div>
+                <div class="col-span-2 flex flex-col justify-center max-w-2/3 ml-16">
+                    <h3 class="text-3xl-bold font-display text-primary-950">Trzecia rozmowa</h3>
+                    <div class="flex flex-row gap-3 mt-5"><img src={tick} alt="Graphic icon of stats" /><p class=" text-base text-primary-950">Na tym etapie przedstawię Ci konkretne działania i strategię, którą dla Ciebie wdrożyłem. Wspólnie przeanalizujemy wyniki i określimy dalsze skalowanie Twojego biznesu.</p></div>
+                    <h4 class="text-xl-bold font-display text-primary-950 mt-10">Co otrzymujesz na tym etapie:</h4>
+                    <div class="flex flex-row gap-8 items-center mt-6">
+                        <div class="flex flex-row gap-4 items-center">
+                            <img src={journeyThirdIconFirst} alt="Graphic icon of stats" />
+                            <p class="text-base text-primary-950">Pełny raport marketingu</p>
+                        </div>
+                        <div class="flex flex-row gap-4 items-center">
+                            <img src={journeyThirdIconSecond} alt="Graphic icon of stats" />
+                            <p class="text-base text-primary-950">Plan na skalowanie sprzedaży</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-row gap-3 mt-8">
+                        <Button label="Zacznijmy działać" type="dark" />
+                        <Button label="Napisz do mnie" type="orange" />
+                    </div>
+                </div>
+            </div>
 
+        </div>
+    </div>
+</section>
+
+<div class=" w-full overflow-hidden pb-18 bg-white">
+    <svg width="1920" height="53" viewBox="0 0 1920 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 52L1920 0.5" stroke="#E7E7E7"/>
+    </svg>
+</div>
+
+<section id="pricing" class="flex justify-center relative py-24 bg-white">
+    <div class="container px-24">
+        <h2 class="text-5xl-bold text-primary-950 font-display pb-4 text-center">Pakiety współpracy</h2>
+
+        <div class="grid grid-cols-4 gap-6 mt-14">
+            <div class="col-span-1"></div>
+            <div class="col-span-1 flex items-end">
+                <div class="p-7 rounded-2xl bg-stone-50 h-80 flex flex-col justify-between">
+                    <div class="gap-3 flex flex-col">
+                        <h5 class="text-2xl-bold font-display text-primary-600">Specjalista</h5>
+                        <p class="text-xs text-primary-950">Pakiet idealny do przetestowania moich usług.</p>
+                    </div>
+                    <div class="relative mt-auto mb-3">
+                        <div class="px-3 py-2 rounded-md bg-primary-100 text-primary-600 flex flex-row gap-3 justify-center text-xs items-center">
+                            <img src={heart} alt="Graphic icon of stats" class="drop-shadow-xl" />
+                            Pierwszy darmowy miesiąc</div>
+                    </div>
+                    <Button label="Napisz do mnie" type="orange" />
+                </div>
+            </div>
+            <div class="col-span-1 flex flex-col items-center">
+                <div class="px-5 py-2 bg-primary-600 gap-2 w-4/5 rounded-t-xl flex flex-row text-primary-50 text-sm-bold justify-center">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 14C15.3137 14 18 11.3137 18 8C18 4.68629 15.3137 2 12 2C8.68629 2 6 4.68629 6 8C6 11.3137 8.68629 14 12 14Z" stroke="#FFF5ED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M15.477 12.8901L17 22.0001L12 19.0001L7 22.0001L8.523 12.8901" stroke="#FFF5ED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Najchętniej wybierany</div>
+                <div class="p-7 rounded-2xl bg-white h-80 flex flex-col justify-between border-4 border-primary-600 shadow-hover">
+                    <div class="gap-3 flex flex-col">
+                        <h5 class="text-2xl-bold font-display text-primary-600">Manager</h5>
+                        <p class="text-xs text-primary-950">Zaufałeś moim umiejętnościom i chcesz rozwinąć swoją firmę jeszcze bardziej!</p>
+                    </div>
+                    <div class="relative mt-auto mb-3">
+                        <div class="px-3 py-2 rounded-md bg-primary-100 text-primary-600 flex flex-row gap-3 justify-center text-xs items-center">
+                            <img src={heart} alt="Graphic icon of stats" class="drop-shadow-xl" />
+                            Pierwszy darmowy miesiąc</div>
+                    </div>
+                    <Button label="Napisz do mnie" type="orange" />
+                </div>
+            </div>
+            <div class="col-span-1 flex flex-col items-center">
+                <div class="px-5 py-2 bg-primary-950 gap-2 w-4/5 rounded-t-xl flex flex-row text-primary-50 text-sm-bold justify-center">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.5 16.4998C3 17.7598 2.5 21.4998 2.5 21.4998C2.5 21.4998 6.24 20.9998 7.5 19.4998C8.21 18.6598 8.2 17.3698 7.41 16.5898C7.02131 16.2188 6.50929 16.0045 5.97223 15.9879C5.43516 15.9712 4.91088 16.1536 4.5 16.4998Z" stroke="#F36020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 14.9998L9 11.9998C9.53214 10.6192 10.2022 9.29582 11 8.04976C12.1652 6.18675 13.7876 4.65281 15.713 3.59385C17.6384 2.53489 19.8027 1.98613 22 1.99976C22 4.71976 21.22 9.49976 16 12.9998C14.7369 13.7985 13.3968 14.4685 12 14.9998Z" stroke="#F36020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 12H4C4 12 4.55 8.97002 6 8.00002C7.62 6.92002 11 8.00002 11 8.00002" stroke="#F36020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 15V20C12 20 15.03 19.45 16 18C17.08 16.38 16 13 16 13" stroke="#F36020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>                        
+                    Najkorzystniejszy wybór</div>
+                <div class="p-7 rounded-2xl bg-primary-950 h-80 flex flex-col justify-between">
+                    <div class="gap-3 flex flex-col">
+                        <h5 class="text-2xl-bold font-display text-primary-500">Dyrektor</h5>
+                        <p class="text-xs text-primary-50">Wiesz, że moje umiejętności rozwiną Twoją firmę do granic możliwości!</p>
+                    </div>
+                    <div class="relative mt-auto mb-3">
+                        <div class="px-3 py-2 rounded-md bg-primary-900 text-primary-50 flex flex-row gap-3 justify-center text-xs items-center">
+                            <img src={heartDark} alt="Graphic icon of stats" class="drop-shadow-xl" />
+                            Pierwszy darmowy miesiąc</div>
+                    </div>
+                    <Button label="Napisz do mnie" type="orange" />
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-4 mt-4">
+            <div class="col-span-1">
+                <div class="border-t-2 border-b-2 border-l-2 rounded-l-xl border-neutral-200 h-16 items-center flex">
+                    <p class="text-sm text-primary-950 ml-4">Pomoc przy obsłudze reklam</p>
+                </div>
+            </div>
+            <div class="col-span-1">
+                <div class="border-t-2 border-b-2 border-neutral-200 justify-center items-center h-16 flex">
+                    <img src={tick} alt="Graphic icon of stats" />
+                </div>
+            </div>
+            <div class="col-span-1">
+                <div class="border-t-2 border-b-2 border-neutral-200 justify-center items-center h-16 flex">
+                    <img src={tick} alt="Graphic icon of stats" />
+                </div>
+            </div>
+            <div class="col-span-1">
+                <div class="border-t-2 border-b-2 border-r-2 rounded-r-xl border-neutral-200 justify-center items-center h-16 flex">
+                    <img src={tick} alt="Graphic icon of stats" />
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-4 mt-2">
+            <div class="col-span-1">
+                <div class="border-t-2 border-b-2 border-l-2 rounded-l-xl border-neutral-200 h-16 items-center flex">
+                    <p class="text-sm text-primary-950 ml-4">Obsługa i kontrola produktów</p>
+                </div>
+            </div>
+            <div class="col-span-1">
+                <div class="border-t-2 border-b-2 border-neutral-200 justify-center items-center h-16 flex">
+                    <img src={tick} alt="Graphic icon of stats" />
+                </div>
+            </div>
+            <div class="col-span-1">
+                <div class="border-t-2 border-b-2 border-neutral-200 justify-center items-center h-16 flex">
+                    <img src={tick} alt="Graphic icon of stats" />
+                </div>
+            </div>
+            <div class="col-span-1">
+                <div class="border-t-2 border-b-2 border-r-2 rounded-r-xl border-neutral-200 justify-center items-center h-16 flex">
+                    <img src={tick} alt="Graphic icon of stats" />
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-4 mt-2">
+            <div class="col-span-1">
+                <div class="border-t-2 border-b-2 border-l-2 rounded-l-xl border-neutral-200 h-16 items-center flex">
+                    <p class="text-sm text-primary-950 ml-4">Analiza strategii marki</p>
+                </div>
+            </div>
+            <div class="col-span-1">
+                <div class="border-t-2 border-b-2 border-neutral-200 justify-center items-center h-16 flex">
+                    <img src={tickFalse} alt="Graphic icon of stats" />
+                </div>
+            </div>
+            <div class="col-span-1">
+                <div class="border-t-2 border-b-2 border-neutral-200 justify-center items-center h-16 flex">
+                    <img src={tick} alt="Graphic icon of stats" />
+                </div>
+            </div>
+            <div class="col-span-1">
+                <div class="border-t-2 border-b-2 border-r-2 rounded-r-xl border-neutral-200 justify-center items-center h-16 flex">
+                    <img src={tick} alt="Graphic icon of stats" />
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-4 mt-2">
+            <div class="col-span-1">
+                <div class="border-t-2 border-b-2 border-l-2 rounded-l-xl border-neutral-200 h-16 items-center flex">
+                    <p class="text-sm text-primary-950 ml-4">Analiza stanów magazynowych</p>
+                </div>
+            </div>
+            <div class="col-span-1">
+                <div class="border-t-2 border-b-2 border-neutral-200 justify-center items-center h-16 flex">
+                    <img src={tickFalse} alt="Graphic icon of stats" />
+                </div>
+            </div>
+            <div class="col-span-1">
+                <div class="border-t-2 border-b-2 border-neutral-200 justify-center items-center h-16 flex">
+                    <img src={tick} alt="Graphic icon of stats" />
+                </div>
+            </div>
+            <div class="col-span-1">
+                <div class="border-t-2 border-b-2 border-r-2 rounded-r-xl border-neutral-200 justify-center items-center h-16 flex">
+                    <img src={tick} alt="Graphic icon of stats" />
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-4 mt-2">
+            <div class="col-span-1">
+                <div class="border-t-2 border-b-2 border-l-2 rounded-l-xl border-neutral-200 h-16 items-center flex">
+                    <p class="text-sm text-primary-950 ml-4">Rozwijanie marki i konta Allegro</p>
+                </div>
+            </div>
+            <div class="col-span-1">
+                <div class="border-t-2 border-b-2 border-neutral-200 justify-center items-center h-16 flex">
+                    <img src={tickFalse} alt="Graphic icon of stats" />
+                </div>
+            </div>
+            <div class="col-span-1">
+                <div class="border-t-2 border-b-2 border-neutral-200 justify-center items-center h-16 flex">
+                    <img src={tickFalse} alt="Graphic icon of stats" />
+                </div>
+            </div>
+            <div class="col-span-1">
+                <div class="border-t-2 border-b-2 border-r-2 rounded-r-xl border-neutral-200 justify-center items-center h-16 flex">
+                    <img src={tick} alt="Graphic icon of stats" />
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-4 mt-2">
+            <div class="col-span-1">
+                <div class="border-t-2 border-b-2 border-l-2 rounded-l-xl border-neutral-200 h-16 items-center flex">
+                    <p class="text-sm text-primary-950 ml-4">Zarządzanie zespołem firmy</p>
+                </div>
+            </div>
+            <div class="col-span-1">
+                <div class="border-t-2 border-b-2 border-neutral-200 justify-center items-center h-16 flex">
+                    <img src={tickFalse} alt="Graphic icon of stats" />
+                </div>
+            </div>
+            <div class="col-span-1">
+                <div class="border-t-2 border-b-2 border-neutral-200 justify-center items-center h-16 flex">
+                    <img src={tickFalse} alt="Graphic icon of stats" />
+                </div>
+            </div>
+            <div class="col-span-1">
+                <div class="border-t-2 border-b-2 border-r-2 rounded-r-xl border-neutral-200 justify-center items-center h-16 flex">
+                    <img src={tick} alt="Graphic icon of stats" />
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-4 mt-2">
+            <div class="col-span-1">
+                <div class="border-t-2 border-b-2 border-l-2 rounded-l-xl border-neutral-200 h-16 items-center flex">
+                    <p class="text-sm text-primary-950 ml-4">Obsługa detaliczna i hurtowa produktów</p>
+                </div>
+            </div>
+            <div class="col-span-1">
+                <div class="border-t-2 border-b-2 border-neutral-200 justify-center items-center h-16 flex">
+                    <img src={tickFalse} alt="Graphic icon of stats" />
+                </div>
+            </div>
+            <div class="col-span-1">
+                <div class="border-t-2 border-b-2 border-neutral-200 justify-center items-center h-16 flex">
+                    <img src={tickFalse} alt="Graphic icon of stats" />
+                </div>
+            </div>
+            <div class="col-span-1">
+                <div class="border-t-2 border-b-2 border-r-2 rounded-r-xl border-neutral-200 justify-center items-center h-16 flex">
+                    <img src={tick} alt="Graphic icon of stats" />
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+    

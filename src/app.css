@@ -82,9 +82,12 @@ body {
     font-weight: 600;
     font-style: normal;
     background-color: #FAFAF9;
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
+
+
 
 @keyframes rotate360 {
   from {
