@@ -29,12 +29,24 @@
     import journeyThirdIconSecond from '$lib/assets/journey-3-icon-2.svg';
     import heart from '$lib/assets/heart.svg';
     import heartDark from '$lib/assets/heart-dark.svg';
+    import pricingFirst from '$lib/assets/pricing-1.png';
+    import pricingSecond from '$lib/assets/pricing-2.png';
+    import pricingThird from '$lib/assets/pricing-3.png';
+    import contactBgFirst from '$lib/assets/footer-bg-1.png';
+    import contactBgSecond from '$lib/assets/footer-bg-2.png';
+    import phone from '$lib/assets/phone.png';
+
+    // Icons
+    import Check from "phosphor-svelte/lib/Check";
+    import Envelope from "phosphor-svelte/lib/Envelope";
+    import Phone from "phosphor-svelte/lib/Phone";
 
     // Video
     import consult from '$lib/assets/consulting.webm';
 
     // Components
     import Button from '$lib/components/Button.svelte';
+    import { Checkbox, Label } from "bits-ui";
     import { onMount } from 'svelte';
     import gsap from 'gsap';
     import { ScrollTrigger } from "gsap/dist/ScrollTrigger"; 
@@ -135,9 +147,9 @@
         </div>
         <div class="navbar__socials flex flex-row gap-4">
             <div class="flex flex-row gap-3 mr-4">
-                <div class=" border-2 border-stone-300 border-solid rounded-full w-[48px] h-[48px] flex items-center justify-center hover:scale-105 hover:border-primary-950 active:scale-95 hover:transition-all hover:cursor-pointer"><img class="w-[19px]" src={ig} alt="Instagram icon" /></div>
-                <div class=" border-2 border-stone-300 border-solid rounded-full w-[48px] h-[48px] flex items-center justify-center hover:scale-105 hover:border-primary-950 active:scale-95 hover:transition-all hover:cursor-pointer"><img class="h-[19px]" src={fb} alt="Facebook icon" /></div>
-                <div class=" border-2 border-stone-300 border-solid rounded-full w-[48px] h-[48px] flex items-center justify-center hover:scale-105 hover:border-primary-950 active:scale-95 hover:transition-all hover:cursor-pointer"><img class="w-[21px]" src={yt} alt="Youtube icon" /></div>
+                <div class="border-[1px] hover:border-[2px] border-stone-300 border-solid rounded-full w-[48px] h-[48px] flex items-center justify-center hover:scale-105 hover:border-primary-950 active:scale-95 hover:transition-all hover:cursor-pointer"><img class="w-[19px]" src={ig} alt="Instagram icon" /></div>
+                <div class="border-[1px] hover:border-[2px] border-stone-300 border-solid rounded-full w-[48px] h-[48px] flex items-center justify-center hover:scale-105 hover:border-primary-950 active:scale-95 hover:transition-all hover:cursor-pointer"><img class="h-[19px]" src={fb} alt="Facebook icon" /></div>
+                <div class="border-[1px] hover:border-[2px]  border-stone-300 border-solid rounded-full w-[48px] h-[48px] flex items-center justify-center hover:scale-105 hover:border-primary-950 active:scale-95 hover:transition-all hover:cursor-pointer"><img class="w-[21px]" src={yt} alt="Youtube icon" /></div>
             </div>
             <Button label="Zrealizujmy kampanię" type="dark" />
         </div>
@@ -484,7 +496,7 @@
                     </video>
                 </div>
                 <div class="h-full flex items-center ml-16">
-                    <div class="py-8 px-9 rounded-2xl flex flex-col  z-10 relative">
+                    <div class="py-8 px-9 rounded-2xl flex flex-col z-10 relative">
                         <div class="rounded-full bg-primary-600 flex items-center justify-center w-12 h-12 mb-4">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M15 2H9C8.44772 2 8 2.44772 8 3V5C8 5.55228 8.44772 6 9 6H15C15.5523 6 16 5.55228 16 5V3C16 2.44772 15.5523 2 15 2Z" stroke="#FEE9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -601,16 +613,21 @@
     </svg>
 </div>
 
-<section id="pricing" class="flex justify-center relative py-24 bg-white">
+<section id="pricing" class="flex justify-center relative pb-32 pt-12 bg-white">
     <div class="container px-24">
-        <h2 class="text-5xl-bold text-primary-950 font-display pb-4 text-center">Pakiety współpracy</h2>
+        <h2 class="text-5xl-bold text-primary-950 font-display pb-8 text-center">Pakiety współpracy</h2>
 
-        <div class="grid grid-cols-4 gap-6 mt-14">
+        <div class="grid grid-cols-4 gap-6 mt-18">
             <div class="col-span-1"></div>
             <div class="col-span-1 flex items-end">
                 <div class="p-7 rounded-2xl bg-stone-50 h-80 flex flex-col justify-between">
                     <div class="gap-3 flex flex-col">
-                        <h5 class="text-2xl-bold font-display text-primary-600">Specjalista</h5>
+                        <div class="flex flex-row gap-2 items-center">
+                            <div class="flex justify-center items-center w-[82px] h-[70px] z-20">
+                                <img src={pricingFirst} alt="Graphic icon of stats" />
+                            </div>
+                            <h5 class="text-2xl-bold font-display text-primary-600 relative -left-[20px] -top-[2px] z-10">Specjalista</h5>
+                        </div>
                         <p class="text-xs text-primary-950">Pakiet idealny do przetestowania moich usług.</p>
                     </div>
                     <div class="relative mt-auto mb-3">
@@ -630,7 +647,12 @@
                     Najchętniej wybierany</div>
                 <div class="p-7 rounded-2xl bg-white h-80 flex flex-col justify-between border-4 border-primary-600 shadow-hover">
                     <div class="gap-3 flex flex-col">
-                        <h5 class="text-2xl-bold font-display text-primary-600">Manager</h5>
+                        <div class="flex flex-row gap-2 items-center">
+                            <div class="flex justify-center items-center w-[82px] h-[70px]">
+                                <img src={pricingSecond} alt="Graphic icon of stats" />
+                            </div>
+                            <h5 class="text-2xl-bold font-display text-primary-600">Manager</h5>
+                        </div>
                         <p class="text-xs text-primary-950">Zaufałeś moim umiejętnościom i chcesz rozwinąć swoją firmę jeszcze bardziej!</p>
                     </div>
                     <div class="relative mt-auto mb-3">
@@ -652,7 +674,12 @@
                     Najkorzystniejszy wybór</div>
                 <div class="p-7 rounded-2xl bg-primary-950 h-80 flex flex-col justify-between">
                     <div class="gap-3 flex flex-col">
-                        <h5 class="text-2xl-bold font-display text-primary-500">Dyrektor</h5>
+                        <div class="flex flex-row gap-3 items-center">
+                            <div class="flex justify-center items-center w-[82px] h-[70px]">
+                                <img src={pricingThird} alt="Graphic icon of stats" />
+                            </div>
+                            <h5 class="text-2xl-bold font-display text-primary-500">Dyrektor</h5>
+                        </div>
                         <p class="text-xs text-primary-50">Wiesz, że moje umiejętności rozwiną Twoją firmę do granic możliwości!</p>
                     </div>
                     <div class="relative mt-auto mb-3">
@@ -672,13 +699,17 @@
                 </div>
             </div>
             <div class="col-span-1">
-                <div class="border-t-2 border-b-2 border-neutral-200 justify-center items-center h-16 flex">
+                <div class="border-t-2 border-b-2 border-neutral-200 justify-between items-center h-16 flex">
+                    <div class="h-1/2 bg-white w-0.5"></div>
                     <img src={tick} alt="Graphic icon of stats" />
+                    <div class="h-1/2 bg-neutral-200 w-0.5"></div>
                 </div>
             </div>
             <div class="col-span-1">
-                <div class="border-t-2 border-b-2 border-neutral-200 justify-center items-center h-16 flex">
+                <div class="border-t-2 border-b-2 border-neutral-200 justify-between items-center h-16 flex">
+                    <div class="h-1/2 bg-white w-0.5"></div>
                     <img src={tick} alt="Graphic icon of stats" />
+                    <div class="h-1/2 bg-neutral-200 w-0.5"></div>
                 </div>
             </div>
             <div class="col-span-1">
@@ -695,13 +726,17 @@
                 </div>
             </div>
             <div class="col-span-1">
-                <div class="border-t-2 border-b-2 border-neutral-200 justify-center items-center h-16 flex">
+                <div class="border-t-2 border-b-2 border-neutral-200 justify-between items-center h-16 flex">
+                    <div class="h-1/2 bg-white w-0.5"></div>
                     <img src={tick} alt="Graphic icon of stats" />
+                    <div class="h-1/2 bg-neutral-200 w-0.5"></div>
                 </div>
             </div>
             <div class="col-span-1">
-                <div class="border-t-2 border-b-2 border-neutral-200 justify-center items-center h-16 flex">
+                <div class="border-t-2 border-b-2 border-neutral-200 justify-between items-center h-16 flex">
+                    <div class="h-1/2 bg-white w-0.5"></div>
                     <img src={tick} alt="Graphic icon of stats" />
+                    <div class="h-1/2 bg-neutral-200 w-0.5"></div>
                 </div>
             </div>
             <div class="col-span-1">
@@ -718,13 +753,17 @@
                 </div>
             </div>
             <div class="col-span-1">
-                <div class="border-t-2 border-b-2 border-neutral-200 justify-center items-center h-16 flex">
+                <div class="border-t-2 border-b-2 border-neutral-200 justify-between items-center h-16 flex">
+                    <div class="h-1/2 bg-white w-0.5"></div>
                     <img src={tickFalse} alt="Graphic icon of stats" />
+                    <div class="h-1/2 bg-neutral-200 w-0.5"></div>
                 </div>
             </div>
             <div class="col-span-1">
-                <div class="border-t-2 border-b-2 border-neutral-200 justify-center items-center h-16 flex">
+                <div class="border-t-2 border-b-2 border-neutral-200 justify-between items-center h-16 flex">
+                    <div class="h-1/2 bg-white w-0.5"></div>
                     <img src={tick} alt="Graphic icon of stats" />
+                    <div class="h-1/2 bg-neutral-200 w-0.5"></div>
                 </div>
             </div>
             <div class="col-span-1">
@@ -741,13 +780,17 @@
                 </div>
             </div>
             <div class="col-span-1">
-                <div class="border-t-2 border-b-2 border-neutral-200 justify-center items-center h-16 flex">
+                <div class="border-t-2 border-b-2 border-neutral-200 justify-between items-center h-16 flex">
+                    <div class="h-1/2 bg-white w-0.5"></div>
                     <img src={tickFalse} alt="Graphic icon of stats" />
+                    <div class="h-1/2 bg-neutral-200 w-0.5"></div>
                 </div>
             </div>
             <div class="col-span-1">
-                <div class="border-t-2 border-b-2 border-neutral-200 justify-center items-center h-16 flex">
+                <div class="border-t-2 border-b-2 border-neutral-200 justify-between items-center h-16 flex">
+                    <div class="h-1/2 bg-white w-0.5"></div>
                     <img src={tick} alt="Graphic icon of stats" />
+                    <div class="h-1/2 bg-neutral-200 w-0.5"></div>
                 </div>
             </div>
             <div class="col-span-1">
@@ -764,13 +807,17 @@
                 </div>
             </div>
             <div class="col-span-1">
-                <div class="border-t-2 border-b-2 border-neutral-200 justify-center items-center h-16 flex">
+                <div class="border-t-2 border-b-2 border-neutral-200 justify-between items-center h-16 flex">
+                    <div class="h-1/2 bg-white w-0.5"></div>
                     <img src={tickFalse} alt="Graphic icon of stats" />
+                    <div class="h-1/2 bg-neutral-200 w-0.5"></div>
                 </div>
             </div>
             <div class="col-span-1">
-                <div class="border-t-2 border-b-2 border-neutral-200 justify-center items-center h-16 flex">
+                <div class="border-t-2 border-b-2 border-neutral-200 justify-between items-center h-16 flex">
+                    <div class="h-1/2 bg-white w-0.5"></div>
                     <img src={tickFalse} alt="Graphic icon of stats" />
+                    <div class="h-1/2 bg-neutral-200 w-0.5"></div>
                 </div>
             </div>
             <div class="col-span-1">
@@ -787,13 +834,17 @@
                 </div>
             </div>
             <div class="col-span-1">
-                <div class="border-t-2 border-b-2 border-neutral-200 justify-center items-center h-16 flex">
+                <div class="border-t-2 border-b-2 border-neutral-200 justify-between items-center h-16 flex">
+                    <div class="h-1/2 bg-white w-0.5"></div>
                     <img src={tickFalse} alt="Graphic icon of stats" />
+                    <div class="h-1/2 bg-neutral-200 w-0.5"></div>
                 </div>
             </div>
             <div class="col-span-1">
-                <div class="border-t-2 border-b-2 border-neutral-200 justify-center items-center h-16 flex">
+                <div class="border-t-2 border-b-2 border-neutral-200 justify-between items-center h-16 flex">
+                    <div class="h-1/2 bg-white w-0.5"></div>
                     <img src={tickFalse} alt="Graphic icon of stats" />
+                    <div class="h-1/2 bg-neutral-200 w-0.5"></div>
                 </div>
             </div>
             <div class="col-span-1">
@@ -810,13 +861,17 @@
                 </div>
             </div>
             <div class="col-span-1">
-                <div class="border-t-2 border-b-2 border-neutral-200 justify-center items-center h-16 flex">
+                <div class="border-t-2 border-b-2 border-neutral-200 justify-between items-center h-16 flex">
+                    <div class="h-1/2 bg-white w-0.5"></div>
                     <img src={tickFalse} alt="Graphic icon of stats" />
+                    <div class="h-1/2 bg-neutral-200 w-0.5"></div>
                 </div>
             </div>
             <div class="col-span-1">
-                <div class="border-t-2 border-b-2 border-neutral-200 justify-center items-center h-16 flex">
+                <div class="border-t-2 border-b-2 border-neutral-200 justify-between items-center h-16 flex">
+                    <div class="h-1/2 bg-white w-0.5"></div>
                     <img src={tickFalse} alt="Graphic icon of stats" />
+                    <div class="h-1/2 bg-neutral-200 w-0.5"></div>
                 </div>
             </div>
             <div class="col-span-1">
@@ -829,3 +884,182 @@
     </div>
 </section>
     
+<section id="contact" class="flex justify-center relative">
+    <div class="max-w-[1920px] w-full z-0">
+        <div class="grid grid-cols-4">
+            <div class="col-span-1">
+                <div class="flex flex-col h-full">
+                    <div class="flex-1"><img src={contactBgFirst} alt="Graphic icon of stats" class="w-full h-full" /></div>
+                    <div class="flex-2"><img src={contactBgSecond} alt="Graphic icon of stats" class="w-full h-full" /></div>
+                    <div class="h-full relative">
+                        <div class="absolute h-full w-full bg-primary-950"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-3 py-20 px-24 mr-24">
+                <h2 class="text-4xl-bold font-display text-primary-950">Czy chcesz, aby Twoje konto na Allegro</h2>
+                <div class="flex items-center gap-3 relative -top-3">
+                    <h2 class="text-4xl-bold font-display text-primary-950">przynosiło większe zyski?</h2> <img src={phone} alt="Graphic icon of stats" /><h2 class="text-4xl-bold font-display text-primary-950">Napisz do mnie!</h2>
+                </div>
+                <div class="flex flex-row gap-4 items-center">
+                    <h3 class="text-2xl-bold font-display text-primary-950">Lub zadzwoń</h3>
+                    <div class="border-[1px] border-stone-300 rounded-full p-1 inline-flex items-center gap-2">
+                        <div class="h-12 w-12 bg-stone-200 rounded-full flex justify-center items-center"><Phone color="#410F09" weight="regular" size="24" /></div>
+                        <p class="text-sm text-primary-950 mr-2.5">+48 123 123 123</p>
+                    </div>
+                </div>
+
+                <!-- Contact forms -->
+                <div class="flex flex-row">
+                    <div class="flex bg-stone-50 rounded-l-2xl p-8 flex-col shadow-hover relative z-10 mt-14 w-full">
+
+                        <div class="flex flex-row gap-5">
+                            <input
+                                id="name"
+                                class="h-input rounded-lg transition-shadow shadow-card w-full flex bg-background placeholder:text-foreground-alt/50 focus:ring-foreground focus:shadow-2xl focus:ring-offset-background focus:outline-hidden items-center px-6 py-4 text-base focus:ring-2 focus:ring-offset-2 sm:text-sm"
+                                placeholder="Imię"
+                                name="name"
+                                autocomplete="off"
+                            />
+                            <input
+                                id="company"
+                                class="h-input rounded-lg transition-shadow shadow-card w-full flex bg-background placeholder:text-foreground-alt/50 focus:ring-foreground focus:shadow-2xl focus:ring-offset-background focus:outline-hidden items-center px-6 py-4 text-base focus:ring-2 focus:ring-offset-2 sm:text-sm"
+                                placeholder="Nazwa firmy albo nazwisko"
+                                name="company"
+                                autocomplete="off"
+                            />
+                        </div>
+                        <div class="flex flex-row gap-5 py-4">
+                            <input
+                                id="email"
+                                class="h-input rounded-lg transition-shadow shadow-card w-full flex bg-background placeholder:text-foreground-alt/50 focus:ring-foreground focus:shadow-2xl focus:ring-offset-background focus:outline-hidden items-center px-6 py-4 text-base focus:ring-2 focus:ring-offset-2 sm:text-sm"
+                                placeholder="Adres email"
+                                name="email"
+                                autocomplete="off"
+                            />
+                            <input
+                                id="phone"
+                                class="h-input rounded-lg transition-shadow shadow-card w-full flex bg-background placeholder:text-foreground-alt/50 focus:ring-foreground focus:shadow-2xl focus:ring-offset-background focus:outline-hidden items-center px-6 py-4 text-base focus:ring-2 focus:ring-offset-2 sm:text-sm"
+                                placeholder="Numer telefonu"
+                                name="phone"
+                                autocomplete="off"
+                            />
+                        </div>
+                        <textarea
+                            id="message"
+                            class="rounded-lg h-24 transition-shadow shadow-card flex bg-background placeholder:text-foreground-alt/50 focus:ring-foreground focus:shadow-2xl focus:ring-offset-background focus:outline-hidden items-center px-6 py-4 text-base focus:ring-2 focus:ring-offset-2 sm:text-sm"
+                            placeholder="Treść wiadomości"
+                            name="message"
+                            autocomplete="off"></textarea>
+    
+                        <div class="flex items-center space-x-3 mt-4">
+                            <Checkbox.Root
+                                id="terms"
+                                aria-labelledby="terms-label"
+                                class="shadow-card hover:cursor-pointer bg-primary-600 data-[state=unchecked]:bg-background data-[state=unchecked]:hover:border-foreground data-[state=unchecked]:hover:border-2 peer inline-flex size-[25px] items-center justify-center rounded-md border transition-all duration-100 ease-in-out active:scale-[0.98]"
+                                name="hello"
+                            >
+                            <Check color="#ffffff" weight="bold" />                    
+                            </Checkbox.Root>
+                            <Label.Root
+                                id="terms-label"
+                                for="terms"
+                                class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                            >
+                                Akceptuję politykę prywatności
+                            </Label.Root>
+                        </div>
+    
+                        <div class="mt-6"><Button label="Wyślij wiadomość" type="orange" /></div>
+    
+                        <div class="absolute top-0 right-0 bottom-0 left-0 rounded-l-[20px] bg-stone-50 -z-1"></div>
+                        <div class="absolute -top-1 -right-1 -bottom-1 -left-1 rounded-l-[24px] bg-stone-700/10 backdrop-blur-sm -z-2"></div>
+    
+                    </div>
+                    <div class="py-8 px-9 rounded-r-2xl flex flex-col z-10 relative shadow-hover bg-stone-50 mt-14">
+                        <div class="rounded-full bg-primary-600 flex items-center justify-center w-12 h-12 mb-4">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 2H9C8.44772 2 8 2.44772 8 3V5C8 5.55228 8.44772 6 9 6H15C15.5523 6 16 5.55228 16 5V3C16 2.44772 15.5523 2 15 2Z" stroke="#FEE9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 4H18C18.5304 4 19.0391 4.21071 19.4142 4.58579C19.7893 4.96086 20 5.46957 20 6V20C20 20.5304 19.7893 21.0391 19.4142 21.4142C19.0391 21.7893 18.5304 22 18 22H6C5.46957 22 4.96086 21.7893 4.58579 21.4142C4.21071 21.0391 4 20.5304 4 20V6C4 5.46957 4.21071 4.96086 4.58579 4.58579C4.96086 4.21071 5.46957 4 6 4H8" stroke="#FEE9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9 14L11 16L15 12" stroke="#FEE9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h5 class="text-2xl-bold font-display text-primary-950 mb-4">Zamów konsultację ze<br/> specjalistą</h5>
+                        <p class="text-base text-primary-950 mb-7">Bez zobowiązań, całkowicie za darmo.</p>
+                        <input
+                            id="apiKey"
+                            class="mb-4 h-input rounded-lg transition-shadow shadow-card min-w-[350px] flex bg-background placeholder:text-foreground-alt/50 focus:ring-foreground focus:shadow-2xl focus:ring-offset-background focus:outline-hidden items-center px-6 py-4 text-base focus:ring-2 focus:ring-offset-2 sm:text-sm"
+                            placeholder="Wpisz swoją nazwę Allegro"
+                            name="allegro-name"
+                            autocomplete="off"
+                        />
+                        <div><Button label="Zamów audyt" type="orange" /></div>
+                        <div class="flex flex-row gap-2 mt-6">
+                            <div class="w-8 h-0.5 bg-primary-600"></div>
+                            <div class="w-8 h-0.5 bg-neutral-300"></div>
+                        </div>
+    
+                        <div class="absolute top-0 bottom-0 left-0 right-0 bg-stone-50 backdrop-blur-sm -z-1 rounded-r-[14px]"></div>
+                        <div class="absolute -top-1 -bottom-1 -left-1 -right-1 bg-stone-700/10 backdrop-blur-sm -z-10 rounded-r-[16px]"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer id="footer" class="pt-12 bg-white">
+    <div class="pb-8 border-b-[1px] border-stone-200 flex justify-center w-full">
+        <div class="container">
+            <div class="flex flex-row justify-between w-full ">
+                <img src={logo} alt="Logo" class="h-[60px]" />
+                <div class="flex flex-row gap-3">
+                    <div class="border-[1px] border-stone-300 rounded-full p-1 inline-flex items-center gap-2">
+                        <div class="h-12 w-12 bg-stone-200 rounded-full flex justify-center items-center"><Envelope color="#410F09" weight="regular" size="24" />   </div>
+                        <p class="text-sm text-primary-950 mr-2.5">kontakt@adshelp.pl</p>
+                    </div>
+                    <div class="border-[1px] border-stone-300 rounded-full p-1 inline-flex items-center gap-2">
+                        <div class="h-12 w-12 bg-stone-200 rounded-full flex justify-center items-center"><Phone color="#410F09" weight="regular" size="24" /></div>
+                        <p class="text-sm text-primary-950 mr-2.5">+48 123 123 123</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pb-8 mt-16 border-b-[1px] border-stone-200 flex justify-center w-full">
+        <div class="container">
+            <div class="flex flex-row justify-between w-full">
+                <ul class="flex flex-row gap-12">
+                    <li class="text-2xl text-primary-950 active:scale-[0.98] active:transition-all"><a href="/" class="transition-all py-3 rounded-full hover:opacity-75">O mnie</a></li>
+                    <li class="text-2xl text-primary-950 active:scale-[0.98] active:transition-all"><a href="/" class="transition-all py-3 rounded-full hover:opacity-75">Dlaczego warto</a></li>
+                    <li class="text-2xl text-primary-950 active:scale-[0.98] active:transition-all"><a href="/" class="transition-all py-3 rounded-full hover:opacity-75">Usługi</a></li>
+                    <li class="text-2xl text-primary-950 active:scale-[0.98] active:transition-all"><a href="/" class="transition-all py-3 rounded-full hover:opacity-75">Blog</a></li>
+                    <li class="text-2xl text-primary-950 active:scale-[0.98] active:transition-all"><a href="/" class="transition-all py-3 rounded-full hover:opacity-75">Kontakt</a></li>
+                </ul>
+                <div class="flex flex-row gap-3">
+                    <div class="border-[1px] hover:border-[2px] border-stone-300 border-solid rounded-full w-[48px] h-[48px] flex items-center justify-center hover:scale-105 hover:border-primary-950 active:scale-95 hover:transition-all hover:cursor-pointer"><img class="w-[19px]" src={ig} alt="Instagram icon" /></div>
+                    <div class="border-[1px] hover:border-[2px] border-stone-300 border-solid rounded-full w-[48px] h-[48px] flex items-center justify-center hover:scale-105 hover:border-primary-950 active:scale-95 hover:transition-all hover:cursor-pointer"><img class="h-[19px]" src={fb} alt="Facebook icon" /></div>
+                    <div class="border-[1px] hover:border-[2px] border-stone-300 border-solid rounded-full w-[48px] h-[48px] flex items-center justify-center hover:scale-105 hover:border-primary-950 active:scale-95 hover:transition-all hover:cursor-pointer"><img class="w-[21px]" src={yt} alt="Youtube icon" /></div>
+                </div>
+            </div>
+            <div class="flex w-full flex-col justify-end items-end mt-12">
+                <div class="inline-flex"><a href="#" class="text-sm text-stone-500 mb-3 hover:underline hover:text-stone-800 transition-all">Polityka prywatności</a></div>
+                <div class="inline-flex"><a href="#" class="text-sm text-stone-500 hover:underline hover:text-stone-800 transition-all">Ciasteczka</a></div>
+            </div>
+            <div class="flex w-full justify-between mt-12">
+                <p class="text-sm text-stone-500">Adshelp @ 2025</p>
+                <p class="text-sm text-stone-500">Wszelkie prawa zastrzeżone</p>
+                <div class="inline-flex"><a href="#" class="text-sm text-stone-500 mb-3 hover:underline hover:text-stone-800 transition-all">Projekt i wdrożenie: Hubert Kruk</a></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="py-6 flex justify-center">
+        <div class="container flex justify-center">
+            <p class="text-xs text-stone-500 w-1/2 text-center">AdsHelp to jednoosobowa agencja marketingowa, specjalizująca się w tworzeniu i optymalizacji kampanii reklamowych na Allegro. Pomagam klientom zwiększyć widoczność ich produktów, poprawić wyniki sprzedaży i osiągnąć lepszy zwrot z inwestycji (ROI). Dzięki indywidualnemu podejściu, analizie danych i doświadczeniu, skutecznie wspieram marki w dotarciu do odpowiednich klientów na Allegro, optymalizując kampanie pod kątem efektywności i rentowności.</p>
+        </div>
+    </div>
+
+</footer>
