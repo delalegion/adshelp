@@ -537,7 +537,7 @@
             <div class="grid grid-cols-3 mt-24 px-24">
                 <div class="col-span-1"><img src={journeyFirst} alt="Graphic icon of stats" /></div>
                 <div class="col-span-2 flex flex-col justify-center max-w-2/3 ml-16">
-                    <h3 class="text-3xl-bold font-display text-primary-950">Pierwsza rozmowa</h3>
+                    <div class="flex"><div class="w-10 h-10 bg-primary-600 text-white flex justify-center items-center mr-4 rounded-full text-2xl-bold font-display">1</div><h3 class="text-3xl-bold font-display text-primary-950"> Pierwsza rozmowa</h3></div>
                     <div class="flex flex-row gap-3 mt-5"><img src={tick} alt="Graphic icon of stats" /><p class=" text-base text-primary-950">Rozpoczynamy od wspólnej rozmowy, w trakcie której omawiamy Twoje produkty, biznes i obecne prowadzone działania marketingowe.</p></div>
                     <h4 class="text-xl-bold font-display text-primary-950 mt-10">Co otrzymujesz na tym etapie:</h4>
                     <div class="flex flex-row gap-8 items-center mt-6">
@@ -559,7 +559,7 @@
 
             <div class="grid grid-cols-3 mt-28 px-24">
                 <div class="col-span-2 flex flex-col justify-center max-w-2/3 ml-16">
-                    <h3 class="text-3xl-bold font-display text-primary-950">Druga rozmowa</h3>
+                    <div class="flex"><div class="w-10 h-10 bg-primary-600 text-white flex justify-center items-center mr-4 rounded-full text-2xl-bold font-display">2</div><h3 class="text-3xl-bold font-display text-primary-950">Druga rozmowa</h3></div>
                     <div class="flex flex-row gap-3 mt-5"><img src={tick} alt="Graphic icon of stats" /><p class=" text-base text-primary-950">Podczas rozmowy przedstawię Ci plan rozwoju i marketingu dla Twojego biznesu, wspólnie wyznaczymy cele i założenia. Na tym etapie stworzę już pierwsze kampanie i strategie.</p></div>
                     <h4 class="text-xl-bold font-display text-primary-950 mt-10">Co otrzymujesz na tym etapie:</h4>
                     <div class="flex flex-row gap-8 items-center mt-6">
@@ -583,7 +583,7 @@
             <div class="grid grid-cols-3 mt-28 px-24">
                 <div class="col-span-1"><img src={journeyThird} alt="Graphic icon of stats" /></div>
                 <div class="col-span-2 flex flex-col justify-center max-w-2/3 ml-16">
-                    <h3 class="text-3xl-bold font-display text-primary-950">Trzecia rozmowa</h3>
+                    <div class="flex"><div class="w-10 h-10 bg-primary-600 text-white flex justify-center items-center mr-4 rounded-full text-2xl-bold font-display">3</div><h3 class="text-3xl-bold font-display text-primary-950">Trzecia rozmowa</h3></div>
                     <div class="flex flex-row gap-3 mt-5"><img src={tick} alt="Graphic icon of stats" /><p class=" text-base text-primary-950">Na tym etapie przedstawię Ci konkretne działania i strategię, którą dla Ciebie wdrożyłem. Wspólnie przeanalizujemy wyniki i określimy dalsze skalowanie Twojego biznesu.</p></div>
                     <h4 class="text-xl-bold font-display text-primary-950 mt-10">Co otrzymujesz na tym etapie:</h4>
                     <div class="flex flex-row gap-8 items-center mt-6">
