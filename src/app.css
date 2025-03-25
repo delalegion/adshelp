@@ -8,9 +8,9 @@
     font-family: 'Excon';
     src: url('Excon-Thin.eot');
     src:  url('Excon-Thin.eot?#iefix') format('embedded-opentype'), 
-          url('../static/fonts/Excon-Thin.woff2') format('woff2'),
-          url('../static/fonts/Excon-Thin.woff') format('woff'),
-          url('../static/fonts/Excon-Thin.ttf') format('truetype');
+          url('../src/fonts/Excon-Thin.woff2') format('woff2'),
+          url('../src/fonts/Excon-Thin.woff') format('woff'),
+          url('../src/fonts/Excon-Thin.ttf') format('truetype');
     font-weight: 100;
     font-display: swap;
     font-style: normal;
@@ -19,9 +19,9 @@
     font-family: 'Excon';
     src: url('Excon-Light.eot');
     src: url('Excon-Light.eot?#iefix') format('embedded-opentype'),
-          url('../static/fonts/Excon-Light.woff2') format('woff2'),
-         url('../static/fonts/Excon-Light.woff') format('woff'),
-         url('../static/fonts/Excon-Light.ttf') format('truetype');
+          url('../src/fonts/Excon-Light.woff2') format('woff2'),
+         url('../src/fonts/Excon-Light.woff') format('woff'),
+         url('../src/fonts/Excon-Light.ttf') format('truetype');
     font-weight: 300;
     font-display: swap;
     font-style: normal;
@@ -30,9 +30,9 @@
     font-family: 'Excon';
     src: url('Excon-Regular.eot');
     src: url('Excon-Regular.eot?#iefix') format('embedded-opentype'),
-        url('../static/fonts/Excon-Regular.woff2') format('woff2'),
-         url('../static/fonts/Excon-Regular.woff') format('woff'),
-         url('../static/fonts/Excon-Regular.ttf') format('truetype');
+        url('../src/fonts/Excon-Regular.woff2') format('woff2'),
+         url('../src/fonts/Excon-Regular.woff') format('woff'),
+         url('../src/fonts/Excon-Regular.ttf') format('truetype');
     font-weight: 400;
     font-display: swap;
     font-style: normal;
@@ -41,9 +41,9 @@
     font-family: 'Excon';
     src: url('Excon-Medium.eot');
     src: url('Excon-Medium.eot?#iefix') format('embedded-opentype'),
-          url('../static/fonts/Excon-Medium.woff2') format('woff2'),
-         url('../static/fonts/Excon-Medium.woff') format('woff'),
-         url('../static/fonts/Excon-Medium.ttf') format('truetype');
+          url('../src/fonts/Excon-Medium.woff2') format('woff2'),
+         url('../src/fonts/Excon-Medium.woff') format('woff'),
+         url('../src/fonts/Excon-Medium.ttf') format('truetype');
     font-weight: 500;
     font-display: swap;
     font-style: normal;
@@ -52,9 +52,9 @@
     font-family: 'Excon';
     src: url('Excon-Bold.eot');
     src: url('Excon-Bold.eot?#iefix') format('embedded-opentype'),
-          url('../static/fonts/Excon-Bold.woff2') format('woff2'),
-         url('../static/fonts/Excon-Bold.woff') format('woff'),
-         url('../static/fonts/Excon-Bold.ttf') format('truetype');
+          url('../src/fonts/Excon-Bold.woff2') format('woff2'),
+         url('../src/fonts/Excon-Bold.woff') format('woff'),
+         url('../src/fonts/Excon-Bold.ttf') format('truetype');
     font-weight: 700;
     font-display: swap;
     font-style: normal;
@@ -63,9 +63,9 @@
     font-family: 'Excon';
     src: url('Excon-Black.eot');
     src: url('Excon-Black.eot?#iefix') format('embedded-opentype'),
-          url('../static/fonts/Excon-Black.woff2') format('woff2'),
-         url('../static/fonts/Excon-Black.woff') format('woff'),
-         url('../static/fonts/Excon-Black.ttf') format('truetype');
+          url('../src/fonts/Excon-Black.woff2') format('woff2'),
+         url('../src/fonts/Excon-Black.woff') format('woff'),
+         url('../src/fonts/Excon-Black.ttf') format('truetype');
     font-weight: 900;
     font-display: swap;
     font-style: normal;
@@ -82,9 +82,9 @@
     font-family: 'Excon Variable';
     src: url('Excon-Variable.eot');
     src: url('Excon-Variable.eot?#iefix') format('embedded-opentype'),
-          url('../static/fonts/Excon-Variable.woff2') format('woff2'),
-         url('../static/fonts/Excon-Variable.woff') format('woff'),
-         url('../static/fonts/Excon-Variable.ttf') format('truetype');
+          url('../src/fonts/Excon-Variable.woff2') format('woff2'),
+         url('../src/fonts/Excon-Variable.woff') format('woff'),
+         url('../src/fonts/Excon-Variable.ttf') format('truetype');
     font-weight: 100 900;
     font-display: swap;
     font-style: normal;
