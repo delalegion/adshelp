@@ -19,7 +19,7 @@
             </div>
             <div class="col-span-3 lg:col-span-2 mt-20 z-10 ml-0 sm:ml-18 lg:ml-0">
                 <h2 class="text-2xl-bold md:text-3xl-bold lg:text-4xl-bold xl:text-5xl-bold text-primary-950 font-display pb-4 max-md:text-right max-lg:text-center px-4 max-md:ml-24">Fakty o moich działaniach</h2>
-                <div class="mt-6 flex flex-row gap-4 lg:gap-5 xl:gap-6 max-sm:overflow-scroll">
+                <div class="mt-6 max-sm:pr-6 flex flex-row gap-4 lg:gap-5 xl:gap-6 max-sm:overflow-scroll">
                     <div class="flex-none sm:flex-1 sm:flex flex-col p-4 lg:p-5 bg-white xl:p-7 rounded-[12px] gap-3 max-w-64 hover:shadow-hover ease-in-out duration-400 max-sm:w-[200px] ml-8">
                         <img src={indvidual} alt="Graphic icon of two people" class="w-full flex" />
                         <h3 class="text-xl-bold font-display text-primary-950 max-sm:my-2">Indywidualne<br />podejście</h3>

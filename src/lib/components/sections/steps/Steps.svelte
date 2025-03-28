@@ -41,9 +41,11 @@
     }
 
     onMount(() => {
+        let mm = gsap.matchMedia();
         gsap.registerPlugin(ScrollTrigger);
         
-    let timeline = gsap.timeline({
+        mm.add("(min-width: 1024px)", () => {
+            let timeline = gsap.timeline({
     scrollTrigger: {
         trigger: "#steps",
         start: "top top",
@@ -82,45 +84,55 @@
         .to("#step-4-box", { opacity: 1, y: 0, duration: 0.5 }, "step4")
 
     })
+        })
 </script>
 
 <section id="steps" class="py-16">
 
-    <div class="flex justify-center relative">
+    <div class="flex justify-start lg:justify-center relative">
 
-        <div class="container px-32 mb-16">
+        <div class="max-lg:w-full lg:container px-0 xl:px-16 2xl:px-32 lg:mb-16">
 
             <div id="steps-container">
-            <h2 class="text-4xl-bold font-display text-primary-950 text-center">Od 12 lat osobiście realizuje i wdrażam<br/> skuteczne strategie marketingowe na Allegro</h2>
-            <p class="text-base text-primary-950 mt-8 text-center">Poznaj 4 etapy! Udowodnię Ci, że dzięki nim Twoje konto<br/> na Allegro może generować dużo lepsze wyniki!</p>
+            <h2 class="text-2xl-bold md:text-3xl-bold xl:text-4xl-bold font-display text-primary-950 text-center max-lg:px-6">Od 12 lat osobiście realizuje i wdrażam<br class="max-md:hidden" /> skuteczne strategie marketingowe na Allegro</h2>
+            <p class="text-sm md:text-base text-primary-950 mt-8 text-center max-lg:px-6">Poznaj 4 etapy! Udowodnię Ci, że dzięki nim Twoje konto<br/> na Allegro może generować dużo lepsze wyniki!</p>
     
-            <div class="mt-8 grid grid-cols-4 mt-24">
-                <div class="col-span-1 flex justify-center relative">
-                    <div class="px-4 py-3 rounded-xl shadow-hover font-display text-xl-bold text-primary-950 gap-4 inline-flex opacity-40" id="step-1-label"><span class="text-primary-600">1</span> Etap</div>
-                    <div class="w-0 h-0.5 bg-primary-500 absolute left-[75%] top-1/2 z-10" id="step-1-complete"></div>
-                    <div class="w-1/2 h-0.5 bg-stone-300 absolute -right-1/4 top-1/2 z-0"></div>
+        <div class="max-lg:overflow-scroll max-lg:px-8">
+            <div class="max-lg:flex max-lg:flex-row max-lg:gap-4 lg:grid lg:grid-cols-4 mt-10 md:mt-16 md:mt-24">
+                <div class="col-span-1 max-lg:w-[250px] justify-center flex-none lg:flex mx-2  relative">
+                    <div class="flex flex-1 justify-center">
+                        <div class="px-4 py-3 rounded-xl shadow-hover font-display text-xl-bold text-primary-950 gap-4 inline-flex lg:opacity-40" id="step-1-label"><span class="text-primary-600">1</span> Etap</div>
+                        <div class="w-0 h-0.5 bg-primary-500 absolute left-[75%] top-1/2 z-10" id="step-1-complete"></div>
+                        <div class="w-1/2 h-0.5 bg-stone-300 absolute -right-1/4 top-1/2 z-0"></div>
+                    </div>
                 </div>
-                <div class="col-span-1 flex justify-center relative">
-                    <div class="px-4 py-3 rounded-xl shadow-hover font-display text-xl-bold text-primary-950 gap-4 inline-flex opacity-30" id="step-2-label"><span class="text-primary-600">2</span> Etap</div>
-                    <div class="w-0 h-0.5 bg-primary-500 absolute left-[75%] top-1/2 z-10" id="step-2-complete"></div>
-                    <div class="w-1/2 h-0.5 bg-stone-300 absolute -right-1/4 top-1/2 z-0"></div>
+                <div class="col-span-1 max-lg:w-[250px] justify-center flex-none lg:flex mx-2  relative">
+                    <div class="flex flex-1 justify-center">
+                        <div class="px-4 py-3 rounded-xl shadow-hover font-display text-xl-bold text-primary-950 gap-4 inline-flex lg:opacity-30" id="step-2-label"><span class="text-primary-600">2</span> Etap</div>
+                        <div class="w-0 h-0.5 bg-primary-500 absolute left-[75%] top-1/2 z-10" id="step-2-complete"></div>
+                        <div class="w-1/2 h-0.5 bg-stone-300 absolute -right-1/4 top-1/2 z-0"></div>
+                    </div>
                 </div>
-                <div class="col-span-1 flex justify-center relative">
-                    <div class="px-4 py-3 rounded-xl shadow-hover font-display text-xl-bold text-primary-950 gap-4 inline-flex opacity-20" id="step-3-label"><span class="text-primary-600">3</span> Etap</div>
-                    <div class="w-0 h-0.5 bg-primary-500 absolute left-[75%] top-1/2 z-10" id="step-3-complete"></div>
-                    <div class="w-1/2 h-0.5 bg-stone-300 absolute -right-1/4 top-1/2 z-0"></div>
+                <div class="col-span-1 max-lg:w-[250px] justify-center flex-none lg:flex mx-2  relative">
+                    <div class="flex flex-1 justify-center">
+                        <div class="px-4 py-3 rounded-xl shadow-hover font-display text-xl-bold text-primary-950 gap-4 inline-flex lg:opacity-20" id="step-3-label"><span class="text-primary-600">3</span> Etap</div>
+                        <div class="w-0 h-0.5 bg-primary-500 absolute left-[75%] top-1/2 z-10" id="step-3-complete"></div>
+                        <div class="w-1/2 h-0.5 bg-stone-300 absolute -right-1/4 top-1/2 z-0"></div>
+                    </div>
                 </div>
-                <div class="col-span-1 flex justify-center">
-                    <div class="px-4 py-3 rounded-xl shadow-hover font-display text-xl-bold text-primary-950 gap-4 inline-flex opacity-10" id="step-4-label"><span class="text-primary-600">4</span> Etap</div>
+                <div class="col-span-1 max-lg:w-[250px] justify-center flex-none lg:flex mx-2 relative">
+                    <div class="flex flex-1 justify-center">
+                        <div class="px-4 py-3 rounded-xl shadow-hover font-display text-xl-bold text-primary-950 gap-4 inline-flex lg:opacity-10" id="step-4-label"><span class="text-primary-600">4</span> Etap</div>
+                    </div>
                 </div>
             </div>
     
-            <div class="mt-8 grid grid-cols-4 mt-12">
-                <div class="col-span-1 flex justify-center mx-4">
-                    <div id="step-1-box" class="rounded-2xl w-full h-96 bg-[url(/src/lib/assets/step-1.png)] bg-center bg-cover relative overflow-hidden z-10 opacity-0 translate-y-3">
+            <div class="max-lg:inline-flex max-lg:pr-6 max-lg:flex-row max-lg:gap-4 lg:grid lg:grid-cols-4 mt-12">
+                <div class="col-span-1 max-lg:w-[250px] flex-none lg:flex justify-center mx-2 xl:mx-4">
+                    <div id="step-1-box" class="rounded-2xl w-full h-96 bg-[url(/src/lib/assets/step-1.png)] bg-center bg-cover relative overflow-hidden z-10 lg:opacity-0 lg:translate-y-3">
                         <div class="absolute top-0 h-2/3 w-full bg-linear-to-b from-zinc-900/80 to-zinc-900/0 -z-1"></div>
-                        <p class="z-20 text-xl-bold mx-6 my-6 font-display text-white">Zapoznanie się z Twoim biznesem i zrozumienie go w całości</p>
-                        <p id="step-text" class="z-20 text-xs mx-6 my-6 text-white opacity-0 translate-y-2">Przeprowadzamy szczegółową analizę produktów, aby lepiej zrozumieć ich unikalne cechy i potrzeby rynku. Na tej podstawie tworzymy dopasowaną strategię marketingową, która skutecznie przyciąga klientów
+                        <p class="z-20 text-md-bold lg:text-xl-bold mx-4 lg:mx-6 my-4 lg:my-6 font-display text-white">Zapoznanie się z Twoim biznesem i zrozumienie go w całości</p>
+                        <p id="step-text" class="z-20 text-xs mx-4 lg:mx-6 my-4 lg:my-6 text-white opacity-0 translate-y-2">Przeprowadzamy szczegółową analizę produktów, aby lepiej zrozumieć ich unikalne cechy i potrzeby rynku. Na tej podstawie tworzymy dopasowaną strategię marketingową, która skutecznie przyciąga klientów
                             i maksymalizuje wyniki sprzedaży.</p>
                         <div class="absolute right-3 bottom-3">
                             <div id="step-info" onclick={() => toggleStateBox(0)} class="w-12 h-12 bg-primary-600 rounded-full flex justify-center items-center hover:cursor-pointer active:scale-[0.98] active:transition-all hover:scale-[1.05]">
@@ -133,11 +145,11 @@
                         <div id="step-box-bg" class="bg-primary-600 absolute top-0 right-0 left-0 bottom-0 -z-1 opacity-0"></div>
                     </div>
                 </div>
-                <div class="col-span-1 flex justify-center mx-4 mt-11">
-                    <div id="step-2-box" class="rounded-2xl w-full h-96 bg-[url(/src/lib/assets/step-2.png)] bg-center bg-cover relative overflow-hidden z-10 opacity-0 translate-y-3">
+                <div class="col-span-1 max-lg:w-[250px] flex-none lg:flex justify-center mx-2 xl:mx-4 mt-11">
+                    <div id="step-2-box" class="rounded-2xl w-full h-96 bg-[url(/src/lib/assets/step-2.png)] bg-center bg-cover relative overflow-hidden z-10 lg:opacity-0 lg:translate-y-3">
                         <div class="absolute top-0 h-2/3 w-full bg-linear-to-b from-zinc-900/80 to-zinc-900/0 -z-1"></div>
-                        <p class="z-20 text-xl-bold mx-6 my-6 font-display text-white">Analiza produktów oraz zbudowanie odpowiedniej strategii marketingowej</p>
-                        <p id="step-text" class="z-20 text-xs mx-6 my-6 text-white opacity-0 translate-y-2">Przeprowadzamy szczegółową analizę produktów, aby lepiej zrozumieć ich unikalne cechy i potrzeby rynku. Na tej podstawie tworzymy dopasowaną strategię marketingową, która skutecznie przyciąga klientów
+                        <p class="z-20 text-md-bold lg:text-xl-bold mx-4 lg:mx-6 my-4 lg:my-6 font-display text-white">Analiza produktów oraz zbudowanie odpowiedniej strategii marketingowej</p>
+                        <p id="step-text" class="z-20 text-xs mx-4 lg:mx-6 my-4 lg:my-6 text-white opacity-0 translate-y-2">Przeprowadzamy szczegółową analizę produktów, aby lepiej zrozumieć ich unikalne cechy i potrzeby rynku. Na tej podstawie tworzymy dopasowaną strategię marketingową, która skutecznie przyciąga klientów
                             i maksymalizuje wyniki sprzedaży.</p>
                         <div class="absolute right-3 bottom-3">
                             <div id="step-info" onclick={() => toggleStateBox(1)}  class="w-12 h-12 bg-primary-600 rounded-full flex justify-center items-center hover:cursor-pointer active:scale-[0.98] active:transition-all hover:scale-[1.05]">
@@ -150,11 +162,11 @@
                         <div id="step-box-bg" class="bg-primary-600 absolute top-0 right-0 left-0 bottom-0 -z-1 opacity-0"></div>
                     </div>
                 </div>
-                <div class="col-span-1 flex justify-center mx-4">
-                    <div id="step-3-box" class="rounded-2xl w-full h-96 bg-[url(/src/lib/assets/step-3.png)] bg-center bg-cover relative overflow-hidden z-10 opacity-0 translate-y-3">
+                <div class="col-span-1 max-lg:w-[250px] flex-none lg:flex justify-center mx-2 xl:mx-4">
+                    <div id="step-3-box" class="rounded-2xl w-full h-96 bg-[url(/src/lib/assets/step-3.png)] bg-center bg-cover relative overflow-hidden z-10 lg:opacity-0 lg:translate-y-3">
                         <div class="absolute top-0 h-2/3 w-full bg-linear-to-b from-zinc-900/80 to-zinc-900/0 -z-1"></div>
-                        <p class="z-20 text-xl-bold mx-6 my-6 font-display text-white">Wdrożenie opracowanej strategii i optymalizacja całego procesu marketingu</p>
-                        <p id="step-text" class="z-20 text-xs mx-6 my-6 text-white opacity-0 translate-y-2">Przeprowadzamy szczegółową analizę produktów, aby lepiej zrozumieć ich unikalne cechy i potrzeby rynku. Na tej podstawie tworzymy dopasowaną strategię marketingową, która skutecznie przyciąga klientów
+                        <p class="z-20 text-md-bold lg:text-xl-bold mx-4 lg:mx-6 my-4 lg:my-6 font-display text-white">Wdrożenie opracowanej strategii i optymalizacja całego procesu marketingu</p>
+                        <p id="step-text" class="z-20 text-xs mx-4 lg:mx-6 my-2 lg:my-6 text-white opacity-0 translate-y-2">Przeprowadzamy szczegółową analizę produktów, aby lepiej zrozumieć ich unikalne cechy i potrzeby rynku. Na tej podstawie tworzymy dopasowaną strategię marketingową, która skutecznie przyciąga klientów
                             i maksymalizuje wyniki sprzedaży.</p>
                         <div class="absolute right-3 bottom-3">
                             <div id="step-info" onclick={() => toggleStateBox(2)}  class="w-12 h-12 bg-primary-600 rounded-full flex justify-center items-center hover:cursor-pointer active:scale-[0.98] active:transition-all hover:scale-[1.05]">
@@ -167,11 +179,11 @@
                         <div id="step-box-bg" class="bg-primary-600 absolute top-0 right-0 left-0 bottom-0 -z-1 opacity-0"></div>
                     </div>
                 </div>
-                <div class="col-span-1 flex justify-center mx-4 mt-11">
-                    <div id="step-4-box" class="rounded-2xl w-full h-96 bg-[url(/src/lib/assets/step-4.png)] bg-center bg-cover relative overflow-hidden z-10 opacity-0 translate-y-3">
+                <div class="col-span-1 max-lg:w-[250px] flex-none lg:flex justify-center mx-2 xl:mx-4 mt-11">
+                    <div id="step-4-box" class="rounded-2xl w-full h-96 bg-[url(/src/lib/assets/step-4.png)] bg-center bg-cover relative overflow-hidden z-10 lg:opacity-0 lg:translate-y-3">
                         <div class="absolute top-0 h-2/3 w-full bg-linear-to-b from-zinc-900/80 to-zinc-900/0 -z-1"></div>
-                        <p class="z-20 text-xl-bold mx-6 my-6 font-display text-white">Analiza uzyskanych wyników i planowanie przyszłych działań</p>
-                        <p id="step-text" class="z-20 text-xs mx-6 my-6 text-white opacity-0 translate-y-2">Przeprowadzamy szczegółową analizę produktów, aby lepiej zrozumieć ich unikalne cechy i potrzeby rynku. Na tej podstawie tworzymy dopasowaną strategię marketingową, która skutecznie przyciąga klientów
+                        <p class="z-20 text-md-bold lg:text-xl-bold mx-4 lg:mx-6 my-4 lg:my-6  font-display text-white">Analiza uzyskanych wyników i planowanie przyszłych działań</p>
+                        <p id="step-text" class="z-20 text-xs mx-4 lg:mx-6 my-4 lg:my-6 text-white opacity-0 translate-y-2">Przeprowadzamy szczegółową analizę produktów, aby lepiej zrozumieć ich unikalne cechy i potrzeby rynku. Na tej podstawie tworzymy dopasowaną strategię marketingową, która skutecznie przyciąga klientów
                             i maksymalizuje wyniki sprzedaży.</p>
                         <div class="absolute right-3 bottom-3">
                             <div id="step-info" onclick={() => toggleStateBox(3)}  class="w-12 h-12 bg-primary-600 rounded-full flex justify-center items-center hover:cursor-pointer active:scale-[0.98] active:transition-all hover:scale-[1.05]">
@@ -185,6 +197,9 @@
                     </div>
                 </div>
             </div>
+
+        </div>
+
             </div>
     
         </div>

@@ -209,6 +209,7 @@ body {
 	--color-line: var(--line);
 	--color-contrast: var(--contrast);
 
+    --color-primary-dark: rgba(46, 12, 8, 1);
     --color-primary-50: hsla(27, 100%, 96%, 1);
     --color-primary-100: hsla(29, 95%, 92%, 1);
     --color-primary-200: hsla(26, 93%, 83%, 1);

@@ -12,10 +12,12 @@ export const actions = {
         const phone = form.get('audit_phone') as string;
         const name = form.get('audit_name') as string;
 
+        console.log(allegroName);
+        console.log(email);
         const resend = new Resend(RESEND);
         const { data, error } = await resend.emails.send({
 			from: 'Acme <onboarding@resend.dev>',
-			to: ['marcinadshelp@gmail.com'],
+			to: ['delalegion99@gmail.com'],
 			subject: 'Adshelp - Nowy audyt',
 			html: '<strong>Imię i nazwisko: '+name+' </strong><br/> <strong>Email: '+email+'</strong><br /> <strong>Nr tel.: '+phone+'</strong><br /><strong>Nazwa allegro: '+allegroName+' </strong><br />',
 		});

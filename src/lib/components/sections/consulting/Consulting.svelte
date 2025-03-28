@@ -14,22 +14,20 @@
 
     <div class="max-w-[1920px] w-full z-0">
         <div class="grid grid-cols-2">
-            <div class="col-span-1 ml-46 py-48 mr-12">
-                <h2 class="text-5xl-bold font-display text-primary-500">Najważniejsza jest<br/> jakość, nie ilość</h2>
-                <p class="text-xl text-primary-500 mt-7">Z tego powodu, w celu dbania o jakość naszej współpracy,<br/> liczba miejsc jest ograniczona. Zostało mi 7 wolnych miejsc!</p>
-                <div class="flex flex-row gap-3 mt-12">
+            <div class="col-span-2 min-[992px]:col-span-1 ml-8 sm:ml-16 md:ml-28 lg:ml-32 xl:ml-46 py-12 sm:py-16 md:py-28 lg:py-36 xl:py-48 mr-12">
+                <h2 class="text-3xl-bold md:text-4xl-bold xl:text-5xl-bold font-display text-primary-500">Najważniejsza jest<br/> jakość, nie ilość</h2>
+                <p class="text-md xl:text-xl text-primary-500 mt-7">Z tego powodu, w celu dbania o jakość naszej współpracy,<br class="max-2xl:hidden"/> liczba miejsc jest ograniczona. Zostało mi 7 wolnych miejsc!</p>
+                <div class="flex flex-row gap-3 mt-6 md:mt-8 lg:mt-12 flex-wrap">
                     <Button label="Zacznijmy działać" theme="orange" />
                     <Button label="Powiadomienia o nowych dostępach" />
                 </div>
             </div>
-            <div class="col-span-1">
-                <div class="relative -z-10">
-                    <video autoplay muted loop class="absolute min-w-full min-h-full w-auto h-auto object-cover">
+            <div class="col-span-2 min-[992px]:col-span-1">
+                <div class="h-full max-sm:justify-center flex items-center z-20 relative">
+                    <video autoplay muted loop class="absolute min-w-full min-h-full w-auto h-full object-cover">
                         <source src={consult} type="video/webm">
                     </video>
-                </div>
-                <div class="h-full flex items-center ml-16">
-                    <div class="py-8 px-9 rounded-2xl flex flex-col z-10 relative">
+                    <div class="max-sm:w-full py-5 sm:py-8 px-6 sm:px-9 rounded-2xl flex flex-col z-10 relative max-[992px]:my-8 mr-4 sm:mr-8 ml-4 sm:ml-8 lg:ml-16">
                         <div class="rounded-full bg-primary-600 flex items-center justify-center w-12 h-12 mb-4">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M15 2H9C8.44772 2 8 2.44772 8 3V5C8 5.55228 8.44772 6 9 6H15C15.5523 6 16 5.55228 16 5V3C16 2.44772 15.5523 2 15 2Z" stroke="#FEE9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -37,11 +35,11 @@
                             <path d="M9 14L11 16L15 12" stroke="#FEE9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
-                        <h5 class="text-2xl-bold font-display text-primary-950 mb-4">Zamów konsultację ze<br/> specjalistą</h5>
-                        <p class="text-base text-primary-950 mb-7">Bez zobowiązań, całkowicie za darmo.</p>
+                        <h5 class="text-xl-bold sm:text-2xl-bold font-display text-primary-950 mb-4">Zamów konsultację ze<br/> specjalistą</h5>
+                        <p class="text-sm sm:text-base text-primary-950 mb-7">Bez zobowiązań, całkowicie za darmo.</p>
                         <input
                             id="apiKey"
-                            class="mb-4 h-input rounded-lg transition-shadow shadow-card min-w-[350px] flex bg-background placeholder:text-foreground-alt/50 focus:ring-foreground focus:shadow-2xl focus:ring-offset-background focus:outline-hidden items-center px-6 py-4 text-base focus:ring-2 focus:ring-offset-2 sm:text-sm"
+                            class="mb-4 h-input rounded-lg transition-shadow shadow-card min-[992px]:min-w-[350px] flex bg-background placeholder:text-foreground-alt/50 focus:ring-foreground focus:shadow-2xl focus:ring-offset-background focus:outline-hidden items-center px-6 py-4 text-base focus:ring-2 focus:ring-offset-2 sm:text-sm"
                             placeholder="Wpisz swoją nazwę Allegro"
                             name="allegro-name"
                             autocomplete="off"

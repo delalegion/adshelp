@@ -242,17 +242,17 @@
                     </div>
                     <div class="col-span-2 min-[560px]:col-span-6 xl:col-span-5 2xl:col-span-3 bg-[#2E0C08] py-12 flex items-center justify-center relative min-h-[300px] min-[560px]:min-h-[450px] max-[560px]:rounded-b-xl">
            
-                        <img id="slide-1" class="left-0 top-12 px-20 py-6 absolute opacity-0" src={screen} alt="Image of header with bunch of graphics showing products and excited woman holding phone" />
-                        <img id="slide-2" class="left-0 top-14 px-20 py-6 absolute opacity-0" src={screen} alt="Image of header with bunch of graphics showing products and excited woman holding phone" />
-                        <img id="slide-3" class="left-0 top-16 px-20 py-6 absolute opacity-0" src={screen} alt="Image of header with bunch of graphics showing products and excited woman holding phone" />
+                        <img id="slide-1" class=" left-0 top-12 px-8 min-[560px]:px-20 py-6 absolute opacity-0" src={screen} alt="Image of header with bunch of graphics showing products and excited woman holding phone" />
+                        <img id="slide-2" class="left-0 top-14 px-8 min-[560px]:px-20 py-6 absolute opacity-0" src={screen} alt="Image of header with bunch of graphics showing products and excited woman holding phone" />
+                        <img id="slide-3" class="left-0 top-16 px-8 min-[560px]:px-20 py-6 absolute opacity-0" src={screen} alt="Image of header with bunch of graphics showing products and excited woman holding phone" />
 
-                        <img id="slide-1-1" class="absolute left-4 bottom-24 opacity-0 " src={screenUpOne} alt="Image of header with bunch of graphics showing products and excited woman holding phone" />
-                        <img id="slide-2-1" class="absolute left-4 bottom-36 opacity-0 " src={screenUpOne} alt="Image of header with bunch of graphics showing products and excited woman holding phone" />
-                        <img id="slide-3-1" class="absolute left-10 top-24 opacity-0 " src={screenUpOne} alt="Image of header with bunch of graphics showing products and excited woman holding phone" />
+                        <img id="slide-1-1" class="max-[560px]:w-[100px] absolute left-4 bottom-24 opacity-0 " src={screenUpOne} alt="Image of header with bunch of graphics showing products and excited woman holding phone" />
+                        <img id="slide-2-1" class="max-[560px]:w-[100px] absolute left-4 bottom-32 min-[560px]:bottom-36 opacity-0 " src={screenUpOne} alt="Image of header with bunch of graphics showing products and excited woman holding phone" />
+                        <img id="slide-3-1" class="max-[560px]:w-[100px] absolute left-10 top-24 opacity-0 " src={screenUpOne} alt="Image of header with bunch of graphics showing products and excited woman holding phone" />
 
-                        <img id="slide-1-2" class="absolute top-6 right-8 opacity-0 " src={screenUpTwo} alt="Image of header with bunch of graphics showing products and excited woman holding phone" />
-                        <img id="slide-2-2" class="absolute bottom-14 right-20 opacity-0" src={screenUpTwo} alt="Image of header with bunch of graphics showing products and excited woman holding phone" />
-                        <img id="slide-3-2" class="absolute top-8 right-10 opacity-0" src={screenUpTwo} alt="Image of header with bunch of graphics showing products and excited woman holding phone" />
+                        <img id="slide-1-2" class="max-[560px]:h-[250px] absolute top-6 right-8 opacity-0 " src={screenUpTwo} alt="Image of header with bunch of graphics showing products and excited woman holding phone" />
+                        <img id="slide-2-2" class="max-[560px]:h-[250px] absolute bottom-8 min-[560px]:bottom-14 right-20 opacity-0" src={screenUpTwo} alt="Image of header with bunch of graphics showing products and excited woman holding phone" />
+                        <img id="slide-3-2" class="max-[560px]:h-[250px] absolute top-8 right-10 opacity-0" src={screenUpTwo} alt="Image of header with bunch of graphics showing products and excited woman holding phone" />
                  
                     </div>
                 </div>
