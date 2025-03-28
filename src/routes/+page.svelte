@@ -7,7 +7,7 @@
     import About from '$lib/components/sections/about/About.svelte';
     import Steps from '$lib/components/sections/steps/Steps.svelte';
     import Consulting from '$lib/components/sections/consulting/Consulting.svelte';
-    import Pricing from '$lib/components/sections/pricing/Pricing.svelte';
+    import Pricing from '$lib/components/sections/pricing/pricing.svelte';
     import Contact from '$lib/components/sections/contact/Contact.svelte';
     import Footer from '$lib/components/sections/footer/Footer.svelte';
     import Journey from '$lib/components/sections/journey/Journey.svelte';
