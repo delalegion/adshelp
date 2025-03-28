@@ -14,11 +14,7 @@
     // Components
     import Button from '$lib/components/Button.svelte';
 
-    // Icons
-    import ArrowBendUpLeft from 'phosphor-svelte/lib/arrowbendupleft';
-
     import { onMount } from 'svelte';
-    import { writable } from 'svelte/store';
     import { fade, fly } from 'svelte/transition';
 
     let currentSlide = $state(1);
@@ -95,7 +91,11 @@
                         </div>
                     </div>
                     <div class="flex flex-row gap-3 mt-8">
-                        <div class="min-w-[41px] min-h-[41px] bg-primary-950 text-primary-50 flex justify-center items-center rounded-full min-sm:hidden" onclick={() => currentSlide = 1}><ArrowBendUpLeft weight="bold" size="18" /></div>
+                        <div class="min-w-[41px] min-h-[41px] bg-primary-950 text-primary-50 flex justify-center items-center rounded-full min-sm:hidden" onclick={() => currentSlide = 1}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 14L4 9L9 4" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M20 20V13C20 11.9391 19.5786 10.9217 18.8284 10.1716C18.0783 9.42143 17.0609 9 16 9H4" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            </div>
                         {#if currentSlide === 2}<Button label="Trzecia rozmowa" theme="dark" onclick={() => currentSlide = 3} />{:else}<Button label="Trzecia rozmowa" theme="dark" />{/if}
                         <Button label="Napisz do mnie" theme="orange" />
                     </div>
@@ -122,7 +122,11 @@
                         </div>
                     </div>
                     <div class="flex flex-row gap-3 mt-8">
-                        <div class="min-w-[41px] min-h-[41px] bg-primary-950 text-primary-50 flex justify-center items-center rounded-full min-sm:hidden" onclick={() => currentSlide = 2}><ArrowBendUpLeft weight="bold" size="18" /></div>
+                        <div class="min-w-[41px] min-h-[41px] bg-primary-950 text-primary-50 flex justify-center items-center rounded-full min-sm:hidden" onclick={() => currentSlide = 2}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 14L4 9L9 4" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M20 20V13C20 11.9391 19.5786 10.9217 18.8284 10.1716C18.0783 9.42143 17.0609 9 16 9H4" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            </div>
                         <Button label="Zacznijmy działać" theme="dark" />
                         <Button label="Napisz do mnie" theme="orange" />
                     </div>
