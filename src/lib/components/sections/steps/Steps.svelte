@@ -87,18 +87,18 @@
         })
 </script>
 
-<section id="steps" class="py-16">
+<section id="steps" class="py-8 sm:py-12 md:py-16">
 
     <div class="flex justify-start lg:justify-center relative">
 
         <div class="max-lg:w-full lg:container px-0 xl:px-16 2xl:px-32 lg:mb-16">
 
             <div id="steps-container">
-            <h2 class="text-2xl-bold md:text-3xl-bold xl:text-4xl-bold font-display text-primary-950 text-center max-lg:px-6">Od 12 lat osobiście realizuje i wdrażam<br class="max-md:hidden" /> skuteczne strategie marketingowe na Allegro</h2>
-            <p class="text-sm md:text-base text-primary-950 mt-8 text-center max-lg:px-6">Poznaj 4 etapy! Udowodnię Ci, że dzięki nim Twoje konto<br/> na Allegro może generować dużo lepsze wyniki!</p>
+            <h2 class="text-2xl-bold md:text-3xl-bold xl:text-4xl-bold font-display text-primary-950 text-left sm:text-center max-lg:px-6">Od 12 lat osobiście realizuje i wdrażam<br class="max-md:hidden" /> skuteczne strategie marketingowe na Allegro</h2>
+            <p class="text-sm md:text-base text-primary-950 mt-4 sm:mt-8 text-left sm:text-center max-lg:px-6">Poznaj 4 etapy! Udowodnię Ci, że dzięki nim Twoje konto<br class="max-sm:hidden"/> na Allegro może generować dużo lepsze wyniki!</p>
     
         <div class="max-lg:overflow-scroll max-lg:px-8">
-            <div class="max-lg:flex max-lg:flex-row max-lg:gap-4 lg:grid lg:grid-cols-4 mt-10 md:mt-16 md:mt-24">
+            <div class="max-lg:flex max-lg:flex-row max-lg:gap-4 lg:grid lg:grid-cols-4 mt-10 md:mt-24">
                 <div class="col-span-1 max-lg:w-[250px] justify-center flex-none lg:flex mx-2  relative">
                     <div class="flex flex-1 justify-center">
                         <div class="px-4 py-3 rounded-xl shadow-hover font-display text-xl-bold text-primary-950 gap-4 inline-flex lg:opacity-40" id="step-1-label"><span class="text-primary-600">1</span> Etap</div>
@@ -135,7 +135,7 @@
                         <p id="step-text" class="z-20 text-xs mx-4 lg:mx-6 my-4 lg:my-6 text-white opacity-0 translate-y-2">Przeprowadzamy szczegółową analizę produktów, aby lepiej zrozumieć ich unikalne cechy i potrzeby rynku. Na tej podstawie tworzymy dopasowaną strategię marketingową, która skutecznie przyciąga klientów
                             i maksymalizuje wyniki sprzedaży.</p>
                         <div class="absolute right-3 bottom-3">
-                            <div id="step-info" onclick={() => toggleStateBox(0)} class="w-12 h-12 bg-primary-600 rounded-full flex justify-center items-center hover:cursor-pointer active:scale-[0.98] active:transition-all hover:scale-[1.05]">
+                            <div role="button" tabindex="0" onkeydown={() => toggleStateBox(0)} id="step-info" onclick={() => toggleStateBox(0)} class="w-12 h-12 bg-primary-600 rounded-full flex justify-center items-center hover:cursor-pointer active:scale-[0.98] active:transition-all hover:scale-[1.05]">
                                 <svg id="step-info-svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M8 1V15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M1 8H15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -152,7 +152,7 @@
                         <p id="step-text" class="z-20 text-xs mx-4 lg:mx-6 my-4 lg:my-6 text-white opacity-0 translate-y-2">Przeprowadzamy szczegółową analizę produktów, aby lepiej zrozumieć ich unikalne cechy i potrzeby rynku. Na tej podstawie tworzymy dopasowaną strategię marketingową, która skutecznie przyciąga klientów
                             i maksymalizuje wyniki sprzedaży.</p>
                         <div class="absolute right-3 bottom-3">
-                            <div id="step-info" onclick={() => toggleStateBox(1)}  class="w-12 h-12 bg-primary-600 rounded-full flex justify-center items-center hover:cursor-pointer active:scale-[0.98] active:transition-all hover:scale-[1.05]">
+                            <div role="button" tabindex="0" onkeydown={() => toggleStateBox(1)} id="step-info" onclick={() => toggleStateBox(1)}  class="w-12 h-12 bg-primary-600 rounded-full flex justify-center items-center hover:cursor-pointer active:scale-[0.98] active:transition-all hover:scale-[1.05]">
                                 <svg id="step-info-svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M8 1V15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M1 8H15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -169,7 +169,7 @@
                         <p id="step-text" class="z-20 text-xs mx-4 lg:mx-6 my-2 lg:my-6 text-white opacity-0 translate-y-2">Przeprowadzamy szczegółową analizę produktów, aby lepiej zrozumieć ich unikalne cechy i potrzeby rynku. Na tej podstawie tworzymy dopasowaną strategię marketingową, która skutecznie przyciąga klientów
                             i maksymalizuje wyniki sprzedaży.</p>
                         <div class="absolute right-3 bottom-3">
-                            <div id="step-info" onclick={() => toggleStateBox(2)}  class="w-12 h-12 bg-primary-600 rounded-full flex justify-center items-center hover:cursor-pointer active:scale-[0.98] active:transition-all hover:scale-[1.05]">
+                            <div role="button" tabindex="0" onkeydown={() => toggleStateBox(2)} id="step-info" onclick={() => toggleStateBox(2)}  class="w-12 h-12 bg-primary-600 rounded-full flex justify-center items-center hover:cursor-pointer active:scale-[0.98] active:transition-all hover:scale-[1.05]">
                                 <svg id="step-info-svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M8 1V15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M1 8H15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -186,7 +186,7 @@
                         <p id="step-text" class="z-20 text-xs mx-4 lg:mx-6 my-4 lg:my-6 text-white opacity-0 translate-y-2">Przeprowadzamy szczegółową analizę produktów, aby lepiej zrozumieć ich unikalne cechy i potrzeby rynku. Na tej podstawie tworzymy dopasowaną strategię marketingową, która skutecznie przyciąga klientów
                             i maksymalizuje wyniki sprzedaży.</p>
                         <div class="absolute right-3 bottom-3">
-                            <div id="step-info" onclick={() => toggleStateBox(3)}  class="w-12 h-12 bg-primary-600 rounded-full flex justify-center items-center hover:cursor-pointer active:scale-[0.98] active:transition-all hover:scale-[1.05]">
+                            <div role="button" tabindex="0" onkeydown={() => toggleStateBox(3)} id="step-info" onclick={() => toggleStateBox(3)}  class="w-12 h-12 bg-primary-600 rounded-full flex justify-center items-center hover:cursor-pointer active:scale-[0.98] active:transition-all hover:scale-[1.05]">
                                 <svg id="step-info-svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M8 1V15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M1 8H15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

@@ -3,7 +3,7 @@
     import { fade } from "svelte/transition"
 
     // Images
-    import header from '$lib/assets/header.png';
+    import header from '$lib/assets/header.png?enhanced';
 
     // Components
     import Button from '$lib/components/Button.svelte';
@@ -120,19 +120,24 @@
             <h1 class="text-3xl-bold lg:text-4xl-bold xl:text-5xl-bold 2xl:text-6xl-bold font-display text-primary-950 pr-4 lg:pr-10">Skuteczne kampanie <span class="text-primary-600">Allegro ads</span> dla Twojego e-commerce</h1>
             <p class="text-sm lg:text-base text-primary-950 mt-4">Zostaw swoje dane i uzyskaj darmowy audyt</p>
          
-            <form method="POST" action="?/audit" id="audit-header-form" onsubmit={handleSubmit} use:enhance>
+            <form method="POST" action="?/audit" id="audit-header-form" onsubmit={handleSubmit} use:enhance={({ cancel }) => {
+                cancel();
+            }}>
             {#if activeTab === 1}
-                <div class="flex flex-row relative gap-2 mt-5 md:mt-8 flex-wrap transition-height duration-500 ease-in-out min-h-10" in:fly={{ y: 10 }} out:fade onoutroend={() => activeTab = 2}>
-                    <input
-                    id="audit_account_name"
-                    class="{inp_account_name_shaking ? 'animate-shake' : ''} {inp_account_name_error ? 'border-[2px] border-primary-600' : ''} flex-1/2 lg:flex-1 h-input rounded-lg transition-shadow shadow-card lg:min-w-[350px] lg:max-w-[400px] flex bg-background placeholder:text-foreground-alt/50 focus:ring-foreground focus:shadow-2xl focus:ring-offset-background focus:outline-hidden items-center max-md:h-[45px] px-4 md:px-6 py-2 md:py-4 focus:ring-2 focus:ring-offset-2 text-sm md:text-base"
-                    placeholder="Wpisz swoją nazwę Allegro *"
-                    name="audit_account_name"
-                    autocomplete="off" />
-                    <div>
-                        <Button label="Dalej" theme="orange" onclick={setNextTab} />
+                <div class="flex flex-col gap-2">
+                    <div class="flex flex-row relative gap-2 mt-5 md:mt-8 flex-wrap transition-height duration-500 ease-in-out min-h-10" in:fly={{ y: 10 }} out:fade onoutroend={() => activeTab = 2}>
+                        <input
+                        id="audit_account_name"
+                        class="{inp_account_name_shaking ? 'animate-shake' : ''} {inp_account_name_error ? 'border-[2px] border-primary-600' : ''} flex-1/2 lg:flex-1 rounded-lg transition-shadow shadow-card lg:w-full lg:max-w-[400px] flex bg-background focus:ring-foreground focus:shadow-2xl focus:ring-offset-background focus:outline-hidden items-center max-md:h-full max-md:max-h-[41px] h-[49px] px-4 md:px-6 py-4 focus:ring-2 focus:ring-offset-2 md:text-base placeholder:text-neutral-600 placeholder:text-sm text-neutral-900 text-sm"
+                        placeholder="Wpisz swoją nazwę Allegro *"
+                        name="audit_account_name"
+                        bind:value={inp_account_name}
+                        autocomplete="off" />
+                        <div>
+                            <Button label="Dalej" theme="orange" onclick={setNextTab} />
+                        </div>
                     </div>
-                    {#if inp_account_name_error}<p class="text-[14px] top-2 md:top-0 text-primary-600" transition:fade>Powyższe pole nie może być puste. Wpisz co najmniej 3 znaki.</p>{/if}
+                    {#if inp_account_name_error}<p class="text-[12px] top-2 md:top-0 text-primary-600" transition:fade>Powyższe pole nie może być puste. Wpisz co najmniej 3 znaki.</p>{/if}
                 </div>
             {/if}
             {#if activeTab === 2}
@@ -141,14 +146,14 @@
                     <div class="flex flex-col min-[456px]:flex-row gap-2">
                         <input
                         id="audit_name"
-                        class="{inp_name_shaking ? 'animate-shake' : ''} {inp_name_error ? 'border-[2px] border-primary-600' : ''} flex-1/2 lg:flex-1 h-input rounded-lg transition-shadow shadow-card max-w-full xl:min-w-[280px] xl:max-w-[320px] flex bg-background placeholder:text-foreground-alt/50 focus:ring-foreground focus:shadow-2xl focus:ring-offset-background focus:outline-hidden items-center max-md:h-[45px] px-4 md:px-6 py-3 md:py-4 max-[456px]:min-h-[45px] focus:ring-2 focus:ring-offset-2 text-sm md:text-base"
+                        class="{inp_name_shaking ? 'animate-shake' : ''} {inp_name_error ? 'border-[2px] border-primary-600' : ''} flex-1/2 lg:flex-1 rounded-lg transition-shadow shadow-card lg:w-full lg:max-w-[400px] flex bg-background focus:ring-foreground focus:shadow-2xl focus:ring-offset-background focus:outline-hidden items-center max-md:h-full max-md:max-h-[41px] h-[49px] px-4 md:px-6 py-4 focus:ring-2 focus:ring-offset-2 md:text-base placeholder:text-neutral-600 placeholder:text-sm text-neutral-900 text-sm"
                         placeholder="Imię i nazwisko *"
                         name="audit_name"
                         bind:value={inp_name_data}
                         autocomplete="off" />
                         <input
                         id="audit_phone"
-                        class="{inp_phone_shaking ? 'animate-shake' : ''} {inp_phone_error ? 'border-[2px] border-primary-600' : ''} flex-1/2 lg:flex-1 h-input rounded-lg transition-shadow shadow-card max-w-full xl:min-w-[280px] xl:max-w-[320px] flex bg-background placeholder:text-foreground-alt/50 focus:ring-foreground focus:shadow-2xl focus:ring-offset-background focus:outline-hidden items-center max-md:h-[45px] px-4 md:px-6 py-3 md:py-4 max-[456px]:min-h-[45px] focus:ring-2 focus:ring-offset-2 text-sm md:text-base"
+                        class="{inp_phone_shaking ? 'animate-shake' : ''} {inp_phone_error ? 'border-[2px] border-primary-600' : ''} flex-1/2 lg:flex-1 rounded-lg transition-shadow shadow-card lg:w-full lg:max-w-[400px] flex bg-background focus:ring-foreground focus:shadow-2xl focus:ring-offset-background focus:outline-hidden items-center max-md:h-full max-md:max-h-[41px] h-[49px] px-4 md:px-6 py-4 focus:ring-2 focus:ring-offset-2 md:text-base placeholder:text-neutral-600 placeholder:text-sm text-neutral-900 text-sm"
                         placeholder="Numer telefonu *"
                         name="audit_phone"
                         bind:value={inp_phone_data}
@@ -157,35 +162,44 @@
                     <div class="flex flex-row gap-2 items-center">
                         <input
                         id="audit_email"
-                        class="{inp_email_shaking ? 'animate-shake' : ''} {inp_email_error ? 'border-[2px] border-primary-600' : ''} flex-1/2 lg:flex-1 h-input rounded-lg transition-shadow shadow-card lg:min-w-[400px] lg:max-w-[450px] flex bg-background placeholder:text-foreground-alt/50 focus:ring-foreground focus:shadow-2xl focus:ring-offset-background focus:outline-hidden items-center px-4 md:px-6 max-md:h-[45px] py-2 md:py-4 focus:ring-2 focus:ring-offset-2 text-sm md:text-base"
+                        class="{inp_email_shaking ? 'animate-shake' : ''} {inp_email_error ? 'border-[2px] border-primary-600' : ''} flex-1/2 lg:flex-1 rounded-lg transition-shadow shadow-card lg:w-full lg:max-w-[400px] flex bg-background focus:ring-foreground focus:shadow-2xl focus:ring-offset-background focus:outline-hidden items-center max-md:h-full max-md:max-h-[41px] h-[49px] px-4 md:px-6 py-4 focus:ring-2 focus:ring-offset-2 md:text-base placeholder:text-neutral-600 placeholder:text-sm text-neutral-900 text-sm"
                         placeholder="Adres email *"
                         name="audit_email"
                         bind:value={inp_email_data}
                         autocomplete="off" />
-                        <div><Button label="Dalej" theme="orange" onclick={sendForm} /></div>
+                        <div><Button label="Zamów audyt" theme="orange" onclick={sendForm} /></div>
                     </div>
                     <p class="text-[11px] text-primary-950 max-w-[500px]">Wypełniając formularz, zgadzasz się na przetwarzanie Twoich danych osobowych przez AdsHelp, w celu wysłania informacji o usługach, audycie zgodnie z polityką prywatności.</p>
                     <div class="flex flex-row flex-wrap gap-1 -mb-2 md:-mb-4">
-                        {#if inp_name_error}<p class="text-[14px] text-primary-600" transition:fade>Pole imię i nazwisko musi zawierać conajmniej 3 znaki.</p>{/if}
-                        {#if inp_phone_error}<p class="text-[14px] text-primary-600" transition:fade>Wpisz prawidłowy numer telefonu.</p>{/if}
-                        {#if inp_email_error}<p class="text-[14px] text-primary-600" transition:fade>Wpisz prawidłowy adres email.</p>{/if}
-                        {#if success}<p class="text-[14px] text-green-800" transition:fade>Gratulacje!</p>{/if}
+                        {#if inp_name_error}<p class="text-[12px] text-primary-600" transition:fade>Pole imię i nazwisko musi zawierać conajmniej 3 znaki.</p>{/if}
+                        {#if inp_phone_error}<p class="text-[12px] text-primary-600" transition:fade>Wpisz prawidłowy numer telefonu.</p>{/if}
+                        {#if inp_email_error}<p class="text-[12px] text-primary-600" transition:fade>Wpisz prawidłowy adres email.</p>{/if}
+                        {#if success}<p class="text-[12px] text-green-800" transition:fade>Gratulacje!</p>{/if}
                     </div>
                 </div>
             {/if}
             {#if activeTab === 3}
-                <h2 class="text-2xl-bold font-display mt-12" in:fly={{ y: 10, delay: 1000 }} out:fade>Gratulacje, oczekuj na audyt!</h2>
+                <div class="flex flex-row gap-4 items-center mt-6" in:fly={{ y: 10, delay: 1000 }} out:fade>
+                    <div class="min-w-[40px] max-w-[40px] min-h-[40px] max-h-[40px] flex justify-center items-center bg-green-700 rounded-full">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 6L9 17L4 12" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h2 class="text-lg-bold font-display text-primary-950">
+                        Dane do audytu wysłane. W razie pytań zapraszam do kontaktu.
+                    </h2>
+                </div>
             {/if}
             </form>
             {#if success === false}
             <div class="flex flex-row gap-3 md:gap-3.5 mt-5 md:mt-7">
-                <p class="text-sm md:text-base-bold {activeTab === 1 ? 'text-primary-950 border-orange-600 border-b-3' : 'border-b-2 border-stone-500 text-stone-500'} pb-1 md:pb-1.5 border-solid  hover:cursor-pointer" onclick={setNextTab}>Krok 1</p>
-                <p class="text-sm md:text-base-bold {activeTab === 2 ? 'text-primary-950 border-orange-600 border-b-3' : 'border-b-2 border-stone-500 text-stone-500'} pb-1 md:pb-1.5 hover:cursor-pointer hover:border-b-3 transition-all" onclick={setNextTab}>Krok 2</p>
+                <div role="button" tabindex="0" onclick={setNextTab} onkeydown={setNextTab} class="text-sm md:text-base-bold {activeTab === 1 ? 'text-primary-950 border-orange-600 border-b-3' : 'border-b-2 border-stone-500 text-stone-500'} pb-1 md:pb-1.5 border-solid  hover:cursor-pointer">Krok 1</div>
+                <div role="button" tabindex="0" onclick={setNextTab} onkeydown={setNextTab} class="text-sm md:text-base-bold {activeTab === 2 ? 'text-primary-950 border-orange-600 border-b-3' : 'border-b-2 border-stone-500 text-stone-500'} pb-1 md:pb-1.5 hover:cursor-pointer hover:border-b-3 transition-all">Krok 2</div>
             </div>
             {/if}
         </div>
         <div class="col-span-1 order-1 lg:order-2">
-            <img src={header} alt="Image of header with bunch of graphics showing products and excited woman holding phone" class="w-full flex" />
+            <enhanced:img src={header} alt="Image of header with bunch of graphics showing products and excited woman holding phone" class="w-full flex" />
         </div>
     </div>
 </header>

@@ -3,12 +3,12 @@
     import servicesFirst from '$lib/assets/services-1.svg';
     import servicesSecond from '$lib/assets/services-2.svg';
     import servicesThird from '$lib/assets/services-3.svg';
-    import statsFirst from '$lib/assets/statistics-1.png';
-    import screen from '$lib/assets/screen-1.png';
-    import screenTwo from '$lib/assets/screen-2.png';
-    import screenThree from '$lib/assets/screen-3.png';
-    import screenUpOne from '$lib/assets/screen-1-1.png';
-    import screenUpTwo from '$lib/assets/screen-1-2.png';
+    import statsFirst from '$lib/assets/statistics-1.png?enhanced';
+    import screen from '$lib/assets/screen-1.png?enhanced';
+    import screenTwo from '$lib/assets/screen-2.png?enhanced';
+    import screenThree from '$lib/assets/screen-3.png?enhanced';
+    import screenUpOne from '$lib/assets/screen-1-1.png?enhanced';
+    import screenUpTwo from '$lib/assets/screen-1-2.png?enhanced';
 
     // Components
     import Button from '$lib/components/Button.svelte';
@@ -192,7 +192,7 @@
                     <p class="text-xl text-primary-500 mb-4">Usługi</p>
                     <h3 class="font-display text-2xl-bold lg:text-3xl-bold xl:text-4xl-bold text-primary-100 mb-4 md:mb-8 lg:mb-12">Efekty mojej pracy są<br/> doceniane przez klientów</h3>
                     <div class="flex flex-row min-[910px]:flex-col gap-4 min-[910px]:gap-7 max-[910px]:overflow-scroll max-[910px]:-ml-12 max-[910px]:py-6 max-[910px]:px-12">
-                        <div onclick={() => setSlide(1)} class="flex-none relative pt-6 pb-2 px-2 hover:bg-[#48140D] {activeSlide === 1 ? 'bg-[#4F1811]' : ''} transition-all rounded-[8px] max-w-[440px] hover:cursor-pointer">
+                        <div tabindex="0" role="button" onkeydown={() => setSlide(1)} onclick={() => setSlide(1)} class="flex-none relative pt-6 pb-2 px-2 hover:bg-[#48140D] {activeSlide === 1 ? 'bg-[#4F1811]' : ''} transition-all rounded-[8px] max-w-[440px] hover:cursor-pointer">
                             <div class="flex flex-col min-[910px]:flex-row items-start min-[910px]:items-center justify-between pb-1 px-5 max-[910px]:gap-2">
                                 <div class="flex flex-col min-[910px]:flex-row items-start min-[910px]:items-center max-[910px]:gap-2"><img src={servicesFirst} alt="Graphic icon of stats" class="mr-4 max-h-[40px]" /><p class="text-base text-primary-500 max-[910px]:max-w-[180px]">Kampania Allegro Ads od zera</p></div>
                                 <div class="max-[910px]:rotate-90">
@@ -202,7 +202,7 @@
 
                             <div class="h-[1px] bg-primary-500 bottom-[10px] w-[0%] {activeSlide === 1 ? 'w-[100%] opacity-100 transition-[width]' : 'w-[0%] opacity-0 transition-none'} duration-8000 flex mt-4 progress" id="progress-1"></div>
                         </div>
-                        <div onclick={() => setSlide(2)} class="flex-none relative pt-6 pb-2 px-2 hover:bg-[#48140D] {activeSlide === 2 ? 'bg-[#4F1811]' : ''} transition-all rounded-[8px] max-w-[440px] hover:cursor-pointer">
+                        <div tabindex="0" role="button" onkeydown={() => setSlide(2)} onclick={() => setSlide(2)} class="flex-none relative pt-6 pb-2 px-2 hover:bg-[#48140D] {activeSlide === 2 ? 'bg-[#4F1811]' : ''} transition-all rounded-[8px] max-w-[440px] hover:cursor-pointer">
                             <div class="flex flex-col min-[910px]:flex-row items-start min-[910px]:items-center justify-between pb-1 px-5 max-[910px]:gap-2">
                                 <div class="flex flex-col min-[910px]:flex-row items-start min-[910px]:items-center max-[910px]:gap-2"><img src={servicesSecond} alt="Graphic icon of stats" class="mr-4 max-h-[40px]" /><p class="text-base text-primary-500 max-[910px]:max-w-[180px]">Analiza wyników i raportowanie</p></div>
                                 <div class="max-[910px]:rotate-90">
@@ -212,7 +212,7 @@
                             
                             <div class="h-[1px] bg-primary-500 bottom-[10px] w-[0%] {activeSlide === 2 ? 'w-[100%] opacity-100 transition-[width]' : 'w-[0%] opacity-0 transition-none'} duration-8000 flex mt-4 progress" id="progress-1"></div>
                         </div>
-                        <div onclick={() => setSlide(3)} class="flex-none relative pt-6 pb-2 px-2 hover:bg-[#48140D] {activeSlide === 3 ? 'bg-[#4F1811]' : ''} transition-all rounded-[8px] max-w-[440px] hover:cursor-pointer">
+                        <div tabindex="0" role="button" onkeydown={() => setSlide(3)} onclick={() => setSlide(3)} class="flex-none relative pt-6 pb-2 px-2 hover:bg-[#48140D] {activeSlide === 3 ? 'bg-[#4F1811]' : ''} transition-all rounded-[8px] max-w-[440px] hover:cursor-pointer">
                             <div class="flex flex-col min-[910px]:flex-row items-start min-[910px]:items-center justify-between pb-1 px-5 max-[910px]:gap-2">
                                 <div class="flex flex-col min-[910px]:flex-row items-start min-[910px]:items-center max-[910px]:gap-2"><img src={servicesThird} alt="Graphic icon of stats" class="mr-4 max-h-[40px]" /><p class="text-base text-primary-500 max-[910px]:max-w-[180px]">Optymalizacja kampanii Allegro Ads</p></div>
                                 <div class="max-[910px]:rotate-90">
@@ -225,14 +225,14 @@
                     </div>
                 </div>
             </div>
-            <div class="col-span-2 min-[910px]:col-span-3 max-[560px]:px-12 max-[420px]:px-6 max-[560px]:pb-12">
+            <div class="col-span-2 min-[910px]:col-span-3 max-[450px]:px-6 max-[560px]:px-12 max-[420px]:px-6 max-[560px]:pb-12">
                 <div class="grid grid-cols-2 min-[560px]:grid-cols-6 2xl:grid-cols-4 min-[910px]:ml-14 auto-rows-min">
-                    <div class="col-span-2 min-[560px]:col-span-3 xl:col-span-2 2xl:col-span-1 bg-[#250906] p-6 pt-10 min-[560px]:pt-40 auto-rows-min max-[560px]:rounded-t-xl">
+                    <div class="col-span-2 min-[560px]:col-span-3 xl:col-span-2 2xl:col-span-1 bg-[#250906] p-6 sm:pt-10 md:pt-40 auto-rows-min max-[560px]:rounded-t-xl">
                         <p class=" text-base text-primary-100 mb-4">Tworzę kampanie reklamowe na Allegro od podstaw, dopasowując strategię do Twoich celów biznesowych.</p>
-                        <Button label="Porozmawiajmy" />
+                        <Button label="Porozmawiajmy" href="#contact" />
                     </div>
                     <div class="col-span-2 min-[560px]:col-span-3 xl:col-span-3 2xl:col-span-2 bg-primary-850 bg-[#4E1B15] px-6 min-[560px]:px-11 py-6 min-[560px]:py-8 flex justify-end flex-col">
-                        <h4 class="text-6xl-bold text-primary-500 font-display mb-4" id="counter">525%</h4>
+                        <h4 class="text-5xl-bold sm:text-6xl-bold text-primary-500 font-display mb-4" id="counter">525%</h4>
                         <p class="text-base text-primary-100" id="counter-text">Średni wzrost sprzedaży dzięki<br />współpracy ze mną</p>
                     </div>
                     <div class="max-xl:hidden xl:col-span-1 row-span-2 bg-primary-600 overflow-hidden relative">
@@ -242,17 +242,17 @@
                     </div>
                     <div class="col-span-2 min-[560px]:col-span-6 xl:col-span-5 2xl:col-span-3 bg-[#2E0C08] py-12 flex items-center justify-center relative min-h-[300px] min-[560px]:min-h-[450px] max-[560px]:rounded-b-xl">
            
-                        <img id="slide-1" class=" left-0 top-12 px-8 min-[560px]:px-20 py-6 absolute opacity-0" src={screen} alt="Image of header with bunch of graphics showing products and excited woman holding phone" />
-                        <img id="slide-2" class="left-0 top-14 px-8 min-[560px]:px-20 py-6 absolute opacity-0" src={screen} alt="Image of header with bunch of graphics showing products and excited woman holding phone" />
-                        <img id="slide-3" class="left-0 top-16 px-8 min-[560px]:px-20 py-6 absolute opacity-0" src={screen} alt="Image of header with bunch of graphics showing products and excited woman holding phone" />
+                        <enhanced:img id="slide-1" class="w-full left-0 top-9 min-[560px]:top-12 px-8 min-[560px]:px-20 py-6 absolute opacity-0" src={screen} alt="Graphic image of sales statistics" />
+                        <enhanced:img id="slide-2" class="w-full left-0 top-11 min-[560px]top-14 px-8 min-[560px]:px-20 py-6 absolute opacity-0" src={screen} alt="Graphic image of sales statistics" />
+                        <enhanced:img id="slide-3" class="w-full left-0 top-12 min-[560px]top-16 px-8 min-[560px]:px-20 py-6 absolute opacity-0" src={screen} alt="Graphic image of sales statistics" />
 
-                        <img id="slide-1-1" class="max-[560px]:w-[100px] absolute left-4 bottom-24 opacity-0 " src={screenUpOne} alt="Image of header with bunch of graphics showing products and excited woman holding phone" />
-                        <img id="slide-2-1" class="max-[560px]:w-[100px] absolute left-4 bottom-32 min-[560px]:bottom-36 opacity-0 " src={screenUpOne} alt="Image of header with bunch of graphics showing products and excited woman holding phone" />
-                        <img id="slide-3-1" class="max-[560px]:w-[100px] absolute left-10 top-24 opacity-0 " src={screenUpOne} alt="Image of header with bunch of graphics showing products and excited woman holding phone" />
+                        <enhanced:img id="slide-1-1" class="max-[560px]:w-[100px] absolute left-4 bottom-24 opacity-0 " src={screenUpOne} alt="Graphics image of sales improve" />
+                        <enhanced:img id="slide-2-1" class="max-[560px]:w-[100px] absolute left-4 bottom-32 min-[560px]:bottom-36 opacity-0 " src={screenUpOne} alt="Graphics image of sales improve" />
+                        <enhanced:img id="slide-3-1" class="max-[560px]:w-[100px] absolute left-10 top-24 opacity-0 " src={screenUpOne} alt="Graphics image of sales improve" />
 
-                        <img id="slide-1-2" class="max-[560px]:h-[250px] absolute top-6 right-8 opacity-0 " src={screenUpTwo} alt="Image of header with bunch of graphics showing products and excited woman holding phone" />
-                        <img id="slide-2-2" class="max-[560px]:h-[250px] absolute bottom-8 min-[560px]:bottom-14 right-20 opacity-0" src={screenUpTwo} alt="Image of header with bunch of graphics showing products and excited woman holding phone" />
-                        <img id="slide-3-2" class="max-[560px]:h-[250px] absolute top-8 right-10 opacity-0" src={screenUpTwo} alt="Image of header with bunch of graphics showing products and excited woman holding phone" />
+                        <enhanced:img id="slide-1-2" class="max-[560px]:w-[350px] absolute top-6 right-8 opacity-0" src={screenUpTwo} alt="Graphics image of sales money" />
+                        <enhanced:img id="slide-2-2" class="max-[560px]:w-[350px] absolute bottom-8 min-[560px]:bottom-14 right-20 opacity-0" src={screenUpTwo} alt="Graphics image of sales money" />
+                        <enhanced:img id="slide-3-2" class="max-[560px]:w-[350px] absolute top-8 right-10 opacity-0" src={screenUpTwo} alt="Graphics image of sales money" />
                  
                     </div>
                 </div>
