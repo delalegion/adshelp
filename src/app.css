@@ -106,6 +106,9 @@ html { scroll-behavior: smooth; }
 html:focus-within {
   scroll-behavior: smooth;
 }
+.swiper, .swiper-horizontal {
+  overflow: visible;
+}
 
 
 @keyframes rotate360 {
@@ -119,6 +122,7 @@ html:focus-within {
 }
  
 :root {
+  scroll-behavior: auto !important;
 	/* Colors */
 	--background: hsl(0 0% 100%);
 	--background-alt: hsl(0 0% 100%);
