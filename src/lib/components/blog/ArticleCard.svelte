@@ -1,0 +1,221 @@
+<script lang="ts">
+    import { fly } from 'svelte/transition';
+    import Audit from '../sections/blog-audit/Audit.svelte';
+    import Avatar from '$lib/assets/Avatar-mini.png';
+
+    let { data = {}  } = $props();
+</script>
+
+<div class="grid grid-cols-4 min-[540px]:grid-cols-12 gap-7 min-[540px]:gap-9" in:fly={{ y: 10, opacity: 0 }}>
+    {#if data[0]}
+    <!-- Article -->
+    <a href="/blog/article/{data[0].slug}" class="col-span-4 min-[540px]:col-span-6 min-[840px]:col-span-6 lg:col-span-5 col-start-1 min-[540px]:col-start-1 min-[850px]:col-start-1 lg:col-start-1 flex flex-col active:scale-[0.98] transition-all transition-300 hover:cursor-pointer">
+        <div class="bg-primary-950 aspect-3/2 w-full rounded-2xl overflow-hidden">
+            {#if data[0].cover}
+                <img src={data[0].cover.formats.medium.url} alt={data[0].cover.alternativeText} class="object-cover w-full h-full" />
+            {/if}
+        </div>
+        <div class="mt-4 flex flex-col">
+            <div class="flex flex-row justify-between">
+                <div class="flex gap-2 items-center">
+                    <div class="w-2 h-2 rounded-full bg-primary-950"></div>
+                    <p class="text-sm-bold font-display text-primary-950">{data[0].category.slug.toUpperCase()}</p>
+                </div>
+                <p class="text-stone-600 text-sm">2 minuty czytania</p>
+            </div>
+            <h5 class="text-xl-bold lg:text-2xl-bold text-primary-950 font-display mb-3 mt-5">{data[0].title}</h5>
+            <p class="text-sm text-stone-600">{data[0].description}</p>
+            <div class="flex flex-row gap-3 items-center mt-5">
+                <img src={Avatar} alt="Picture of CEO Adshelp" />
+                <p class="text-sm text-primary-950 font-display">Marcin Lubera</p>
+            </div>
+        </div>
+    </a>
+    {/if}
+
+    {#if data[1]}
+    <!-- Article -->
+    <a href="/blog/article/{data[1].slug}" class="col-span-4 min-[540px]:col-span-6 min-[850px]:col-span-5 lg:col-span-4 col-start-1 min-[540px]:col-start-7 min-[850px]:col-start-8 lg:col-start-8 flex flex-col min-[800px]:mt-36 active:scale-[0.98] transition-all transition-300 hover:cursor-pointer">
+        <div class="bg-[#D9D9D9] aspect-3/2 w-full rounded-2xl">
+            {#if data[1].cover}
+                <img src={data[1].cover.formats.medium.url} alt={data[1].cover.alternativeText} class="object-cover w-full h-full" />
+            {/if}
+        </div>
+        <div class="mt-4 flex flex-col">
+            <div class="flex flex-row justify-between">
+                <div class="flex gap-2 items-center">
+                    <div class="w-2 h-2 rounded-full bg-primary-950"></div>
+                    <p class="text-sm-bold font-display text-primary-950">{data[1].category.slug.toUpperCase()}</p>
+                </div>
+                <p class="text-stone-600 text-sm">5 minut czytania</p>
+            </div>
+            <h5 class="text-xl-bold lg:text-2xl-bold text-primary-950 font-display mb-3 mt-5">{data[1].title}</h5>
+            <p class="text-sm text-stone-600">{data[1].description}</p>
+            <div class="flex flex-row gap-3 items-center mt-5">
+                <img src={Avatar} alt="Picture of CEO Adshelp" />
+                <p class="text-sm text-primary-950 font-display">Marcin Lubera</p>
+            </div>
+        </div>
+    </a>
+    {/if}
+
+    {#if data[2]}
+    <!-- Article -->
+    <a href="/blog/article/{data[2].slug}" class="col-span-4 min-[540px]:col-span-6 min-[850px]:col-span-5 lg:col-span-4 col-start-1 min-[540px]:col-start-1 min-[850px]:col-start-2 lg:col-start-2 flex flex-col min-[540px]:mt-8 active:scale-[0.98] transition-all transition-300 hover:cursor-pointer">
+        <div class="bg-[#D9D9D9] aspect-3/2 w-full rounded-2xl">
+            {#if data[2].cover}
+                <img src={data[2].cover.formats.medium.url} alt={data[2].cover.alternativeText} class="object-cover w-full h-full" />
+            {/if}
+        </div>
+        <div class="mt-4 flex flex-col">
+            <div class="flex flex-row justify-between">
+                <div class="flex gap-2 items-center">
+                    <div class="w-2 h-2 rounded-full bg-primary-950"></div>
+                    <p class="text-sm-bold font-display text-primary-950">{data[2].category.slug.toUpperCase()}</p>
+                </div>
+                <p class="text-stone-600 text-sm">5 minut czytania</p>
+            </div>
+            <h5 class="text-xl-bold lg:text-2xl-bold text-primary-950 font-display mb-3 mt-5">{data[2].title}</h5>
+            <p class="text-sm text-stone-600">{data[2].description}</p>
+            <div class="flex flex-row gap-3 items-center mt-5">
+                <img src={Avatar} alt="Picture of CEO Adshelp" />
+                <p class="text-sm text-primary-950 font-display">Marcin Lubera</p>
+            </div>
+        </div>
+    </a>
+    {/if}
+
+    {#if data[3]}
+    <!-- Article -->
+    <a href="/blog/article/{data[3].slug}" class="col-span-4 min-[540px]:col-span-6 min-[850px]:col-span-5 lg:col-span-4 col-end-5 min-[540px]:col-end-13 min-[850px]:col-end-12 lg:col-end-13 flex flex-col min-[540px]:mt-8 min-[800px]:mt-32 active:scale-[0.98] transition-all transition-300 hover:cursor-pointer">
+        <div class="bg-primary-950 aspect-3/2 w-full rounded-2xl">
+            {#if data[3].cover}
+                <img src={data[3].cover.formats.medium.url} alt={data[3].cover.alternativeText} class="object-cover w-full h-full" />
+            {/if}
+        </div>
+        <div class="mt-4 flex flex-col">
+            <div class="flex flex-row justify-between">
+                <div class="flex gap-2 items-center">
+                    <div class="w-2 h-2 rounded-full bg-primary-950"></div>
+                    <p class="text-sm-bold font-display text-primary-950">{data[3].category.slug.toUpperCase()}</p>
+                </div>
+                <p class="text-stone-600 text-sm">2 minuty czytania</p>
+            </div>
+            <h5 class="text-xl-bold lg:text-2xl-bold text-primary-950 font-display mb-3 mt-5">{data[3].title}</h5>
+            <p class="text-sm text-stone-600">{data[3].description}</p>
+            <div class="flex flex-row gap-3 items-center mt-5">
+                <img src={Avatar} alt="Picture of CEO Adshelp" />
+                <p class="text-sm text-primary-950 font-display">Marcin Lubera</p>
+            </div>
+        </div>
+    </a>
+    {/if}
+</div>
+
+<Audit />
+
+<div class="grid grid-cols-4 min-[540px]:grid-cols-12 gap-7 min-[540px]:gap-9 {data[4] ? 'mt-12 min-[540px]:mt-16 md:mt-24' : ''}">
+    {#if data[4]}
+    <!-- Article -->
+    <a href="/blog/article/{data[4].slug}" class="col-span-4 min-[540px]:col-span-6 min-[850px]:col-span-5 lg:col-span-4 col-start-1 min-[540px]:col-start-1 min-[850px]:col-start-2 lg:col-start-2 flex flex-col active:scale-[0.98] transition-all transition-300 hover:cursor-pointer">
+        <div class="bg-[#D9D9D9] aspect-3/2 w-full rounded-2xl">
+            {#if data[4].cover}
+                <img src={data[4].cover.formats.medium.url} alt={data[4].cover.alternativeText} class="object-cover w-full h-full" />
+            {/if}
+        </div>
+        <div class="mt-4 flex flex-col">
+            <div class="flex flex-row justify-between">
+                <div class="flex gap-2 items-center">
+                    <div class="w-2 h-2 rounded-full bg-primary-950"></div>
+                    <p class="text-sm-bold font-display text-primary-950">{data[4].category.slug.toUpperCase()}</p>
+                </div>
+                <p class="text-stone-600 text-sm">2 minuty czytania</p>
+            </div>
+            <h5 class="text-xl-bold lg:text-2xl-bold text-primary-950 font-display mb-3 mt-5">{data[4].title}</h5>
+            <p class="text-sm text-stone-600">{data[4].description}</p>
+            <div class="flex flex-row gap-3 items-center mt-5">
+                <img src={Avatar} alt="Picture of CEO Adshelp" />
+                <p class="text-sm text-primary-950 font-display">Marcin Lubera</p>
+            </div>
+        </div>
+    </a>    
+    {/if}
+
+    {#if data[5]}
+    <!-- Article -->
+    <a href="/blog/article/{data[5].slug}" class="col-span-4 min-[540px]:col-span-6 min-[850px]:col-span-5 lg:col-span-4 col-start-1 min-[540px]:col-start-7 min-[850px]:col-start-7 lg:col-start-7 flex flex-col min-[800px]:mt-32 active:scale-[0.98] transition-all transition-300 hover:cursor-pointer">
+        <div class="bg-primary-950 aspect-3/2 w-full rounded-2xl">
+            {#if data[5].cover}
+                <img src={data[5].cover.formats.medium.url} alt={data[5].cover.alternativeText} class="object-cover w-full h-full" />
+            {/if}
+        </div>
+        <div class="mt-4 flex flex-col">
+            <div class="flex flex-row justify-between">
+                <div class="flex gap-2 items-center">
+                    <div class="w-2 h-2 rounded-full bg-primary-950"></div>
+                    <p class="text-sm-bold font-display text-primary-950">{data[5].category.slug.toUpperCase()}</p>
+                </div>
+                <p class="text-stone-600 text-sm">2 minuty czytania</p>
+            </div>
+            <h5 class="text-xl-bold lg:text-2xl-bold text-primary-950 font-display mb-3 mt-5">{data[5].title}</h5>
+            <p class="text-sm text-stone-600">{data[5].description}</p>
+            <div class="flex flex-row gap-3 items-center mt-5">
+                <img src={Avatar} alt="Picture of CEO Adshelp" />
+                <p class="text-sm text-primary-950 font-display">Marcin Lubera</p>
+            </div>
+        </div>
+    </a>   
+    {/if}
+
+    {#if data[6]}
+    <!-- Article -->
+    <a href="/blog/article/{data[6].slug}" class="col-span-4 min-[540px]:col-span-6 min-[850px]:col-span-5 lg:col-span-4 col-start-1 min-[540px]:col-start-1 min-[850px]:col-start-1 lg:col-start-1 flex flex-col min-[540px]:mt-8 min-[800px]:mt-12 active:scale-[0.98] transition-all transition-300 hover:cursor-pointer">
+        <div class="bg-primary-950 aspect-3/2 w-full rounded-2xl">
+            {#if data[6].cover}
+                <img src={data[6].cover.formats.medium.url} alt={data[6].cover.alternativeText} class="object-cover w-full h-full" />
+            {/if}
+        </div>
+        <div class="mt-4 flex flex-col">
+            <div class="flex flex-row justify-between">
+                <div class="flex gap-2 items-center">
+                    <div class="w-2 h-2 rounded-full bg-primary-950"></div>
+                    <p class="text-sm-bold font-display text-primary-950">{data[6].category.slug.toUpperCase()}</p>
+                </div>
+                <p class="text-stone-600 text-sm">2 minuty czytania</p>
+            </div>
+            <h5 class="text-xl-bold lg:text-2xl-bold text-primary-950 font-display mb-3 mt-5">{data[6].title}</h5>
+            <p class="text-sm text-stone-600">{data[6].description}</p>
+            <div class="flex flex-row gap-3 items-center mt-5">
+                <img src={Avatar} alt="Picture of CEO Adshelp" />
+                <p class="text-sm text-primary-950 font-display">Marcin Lubera</p>
+            </div>
+        </div>
+    </a>    
+    {/if}
+    
+    {#if data[7]}
+    <!-- Article -->
+    <a href="/blog/article/{data[7].slug}" class="col-span-4 min-[540px]:col-span-6 min-[850px]:col-span-5 lg:col-span-4 col-start-1 min-[540px]:col-start-7 min-[850px]:col-start-8 lg:col-start-8 flex flex-col min-[540px]:mt-8 min-[800px]:mt-32 active:scale-[0.98] transition-all transition-300 hover:cursor-pointer">
+        <div class="bg-[#D9D9D9] aspect-3/2 w-full rounded-2xl">
+            {#if data[7].cover}
+                <img src={data[7].cover.formats.medium.url} alt={data[7].cover.alternativeText} class="object-cover w-full h-full" />
+            {/if}
+        </div>
+        <div class="mt-4 flex flex-col">
+            <div class="flex flex-row justify-between">
+                <div class="flex gap-2 items-center">
+                    <div class="w-2 h-2 rounded-full bg-primary-950"></div>
+                    <p class="text-sm-bold font-display text-primary-950">{data[7].category.slug.toUpperCase()}</p>
+                </div>
+                <p class="text-stone-600 text-sm">2 minuty czytania</p>
+            </div>
+            <h5 class="text-xl-bold lg:text-2xl-bold text-primary-950 font-display mb-3 mt-5">{data[7].title}</h5>
+            <p class="text-sm text-stone-600">{data[7].description}</p>
+            <div class="flex flex-row gap-3 items-center mt-5">
+                <img src={Avatar} alt="Picture of CEO Adshelp" />
+                <p class="text-sm text-primary-950 font-display">Marcin Lubera</p>
+            </div>
+        </div>
+    </a> 
+    {/if}    
+</div>

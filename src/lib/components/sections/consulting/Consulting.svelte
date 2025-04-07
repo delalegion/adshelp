@@ -1,6 +1,7 @@
 <script>
     // Video
     import consult from '$lib/assets/consulting.webm';
+    import consultImage from '$lib/assets/webp/consult-image.webp?enhanced';
 
     import { enhance } from '$app/forms';
 
@@ -117,7 +118,8 @@
             </div>
             <div class="col-span-2 min-[992px]:col-span-1">
                 <div class="h-full max-sm:justify-center flex items-center z-20 relative">
-                    <video autoplay muted loop class="absolute min-w-full min-h-full w-auto h-full object-cover">
+                    <enhanced:img src={consultImage} alt="Image of two people on business meeting" class="absolute object-cover md:hidden w-full h-full top-0 bottom-0 left-0 right-0" />
+                    <video autoplay muted loop class="absolute min-w-full min-h-full w-auto h-full object-cover max-md:hidden">
                         <source src={consult} type="video/webm">
                     </video>
                     <div class="max-sm:w-full md:my-12 py-5 sm:py-8 md:max-w-[450px] px-6 sm:px-9 rounded-2xl flex flex-col z-10 relative max-[992px]:my-8 mr-4 sm:mr-8 ml-4 sm:ml-8 lg:ml-16">
@@ -131,9 +133,7 @@
                         <h5 class="text-xl-bold sm:text-2xl-bold font-display text-primary-950 mb-4">Zamów konsultację ze<br/> specjalistą</h5>
                         <p class="text-sm sm:text-base text-primary-950 mb-6 sm:mb-7">Bez zobowiązań, całkowicie za darmo.</p>
           
-                        <form method="POST" action="?/auditOnConsult" id="cns_audit-header-form" onsubmit={handleSubmit} use:enhance={({ cancel }) => {
-                            cancel();
-                        }}>
+                        <form method="POST" action="?/auditOnConsult" id="cns_audit-header-form" onsubmit={handleSubmit} use:enhance>
                             {#if activeTab === 1}
                                 <div in:fly={{ y: 10 }} out:fade onoutroend={() => activeTab = 2}>
                                     <input
@@ -143,6 +143,7 @@
                                         name="cns_audit_account_name"
                                         bind:value={inp_account_name}
                                         autocomplete="off"
+                                        onkeydown={async (e) => { if (e.key === 'Enter') e.preventDefault(); }}
                                     />
                                     {#if inp_account_name_error}<p class="text-[12px] mb-2 relative -top-2 text-primary-600" transition:fade>Powyższe pole nie może być puste. Wpisz co najmniej 3 znaki.</p>{/if}
                                     <div><Button label="Dalej" theme="orange" onclick={setNextTab} /></div>
@@ -158,14 +159,16 @@
                                     placeholder="Imię i nazwisko *"
                                     name="cns_audit_name"
                                     bind:value={inp_name_data}
-                                    autocomplete="off" />
+                                    autocomplete="off"
+                                    onkeydown={async (e) => { if (e.key === 'Enter') e.preventDefault(); }} />
                                     <input
                                     id="cns_audit_phone"
                                     class="{inp_phone_shaking ? 'animate-shake' : ''} {inp_phone_error ? 'border-[2px] border-primary-600' : ''} flex-1/2 lg:flex-1 rounded-lg transition-shadow shadow-card lg:w-full lg:max-w-[400px] 2xl:min-w-[250px] flex bg-background focus:ring-foreground focus:shadow-2xl focus:ring-offset-background focus:outline-hidden items-center max-md:h-full max-md:max-h-[41px] h-full max-h-[49px] px-4 md:px-6 py-4 focus:ring-2 focus:ring-offset-2 md:text-base placeholder:text-neutral-600 placeholder:text-sm text-neutral-900 text-sm"
                                     placeholder="Numer telefonu *"
                                     name="cns_audit_phone"
                                     bind:value={inp_phone_data}
-                                    autocomplete="off" />
+                                    autocomplete="off"
+                                    onkeydown={async (e) => { if (e.key === 'Enter') e.preventDefault(); }} />
                                 </div>
                                 <div class="flex flex-col gap-3">
                                     <input
@@ -174,7 +177,8 @@
                                     placeholder="Adres email *"
                                     name="cns_audit_email"
                                     bind:value={inp_email_data}
-                                    autocomplete="off" />
+                                    autocomplete="off"
+                                    onkeydown={async (e) => { if (e.key === 'Enter') e.preventDefault(); }} />
                                     <div class="flex flex-row flex-wrap gap-1 -mb-1">
                                         {#if inp_name_error}<p class="text-[12px] text-primary-600" transition:fade>Pole imię i nazwisko musi zawierać conajmniej 3 znaki.</p>{/if}
                                         {#if inp_phone_error}<p class="text-[12px] text-primary-600" transition:fade>Wpisz prawidłowy numer telefonu.</p>{/if}

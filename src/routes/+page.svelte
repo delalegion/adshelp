@@ -14,10 +14,8 @@
     import Contact from '$lib/components/sections/contact/Contact.svelte';
     import Footer from '$lib/components/sections/footer/Footer.svelte';
     import Journey from '$lib/components/sections/journey/Journey.svelte';
-    import { onMount } from 'svelte';
 
     let { form } = $props();
-
  
 </script>
 

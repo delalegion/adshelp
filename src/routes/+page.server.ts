@@ -14,8 +14,8 @@ export const actions = {
 
         const resend = new Resend(RESEND);
         const { data, error } = await resend.emails.send({
-			from: 'Acme <onboarding@resend.dev>',
-			to: ['delalegion99@gmail.com'],
+			from: 'kontakt@adshelp.pl',
+			to: ['marcinadshelp@gmail.com'],
 			subject: 'Adshelp - Nowy audyt z headeru',
 			html: '<strong>Imię i nazwisko: '+name+' </strong><br/> <strong>Email: '+email+'</strong><br /> <strong>Nr tel.: '+phone+'</strong><br /><strong>Nazwa allegro: '+allegroName+' </strong><br />',
 		});
@@ -37,8 +37,8 @@ export const actions = {
 
         const resend = new Resend(RESEND);
         const { data, error } = await resend.emails.send({
-			from: 'Acme <onboarding@resend.dev>',
-			to: ['delalegion99@gmail.com'],
+			from: 'kontakt@adshelp.pl',
+			to: ['marcinadshelp@gmail.com'],
 			subject: 'Adshelp - Nowy audyt z kontaktu',
 			html: '<strong>Imię i nazwisko: '+name+' </strong><br/> <strong>Email: '+email+'</strong><br /> <strong>Nr tel.: '+phone+'</strong><br /><strong>Nazwa allegro: '+allegroName+' </strong><br />',
 		});
@@ -60,8 +60,8 @@ export const actions = {
 
         const resend = new Resend(RESEND);
         const { data, error } = await resend.emails.send({
-			from: 'Acme <onboarding@resend.dev>',
-			to: ['delalegion99@gmail.com'],
+			from: 'kontakt@adshelp.pl',
+			to: ['marcinadshelp@gmail.com'],
 			subject: 'Adshelp - Nowy audyt środkowy',
 			html: '<strong>Imię i nazwisko: '+name+' </strong><br/> <strong>Email: '+email+'</strong><br /> <strong>Nr tel.: '+phone+'</strong><br /><strong>Nazwa allegro: '+allegroName+' </strong><br />',
 		});
@@ -106,8 +106,8 @@ export const actions = {
 
         const resend = new Resend(RESEND);
         const { data, error } = await resend.emails.send({
-			from: 'Acme <onboarding@resend.dev>',
-			to: ['delalegion99@gmail.com'],
+			from: 'kontakt@adshelp.pl',
+			to: ['marcinadshelp@gmail.com'],
 			subject: 'Adshelp - Formularz kontaktowy',
 			html: '<strong>Imię i nazwisko lub firma: '+name+' '+company+' </strong><br/> <strong>Email: '+email+'</strong><br /> <strong>Nr tel.: '+phone+'</strong><br /><strong>Wiadomość: '+message+' </strong><br />',
 		});
@@ -116,6 +116,6 @@ export const actions = {
 			return console.log({ error });
 		}
 
-        return { success: true };
+        return { successContact: true };
     }
 }

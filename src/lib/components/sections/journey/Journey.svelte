@@ -24,17 +24,14 @@
         let wasSmall = false;
 
         const updateScreenSize = () => {
-            console.log('up:,', currentSlide);
             isNowSmall = window.innerWidth < 768;
 
             if (isNowSmall && !wasSmall) {
                 currentSlide = 1;
                 wasSmall = true;
-                console.log('if1:,', currentSlide);
             } else if (!isNowSmall) {
                 currentSlide = 0;
                 wasSmall = false;
-                console.log('if2:,', currentSlide);
             }
         };
 

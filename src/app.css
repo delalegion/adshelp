@@ -101,6 +101,10 @@ body {
     text-rendering: optimizeLegibility;
     scroll-behavior: smooth;
 }
+::selection {
+  background-color: var(--color-primary-600);
+  color: white;
+}
 body, html { scroll-behavior: smooth; }
 html { scroll-behavior: smooth; }
 html:focus-within {
@@ -110,6 +114,194 @@ html:focus-within {
   overflow: visible;
 }
 
+.article {
+  margin-top: 100px;
+}
+.article span {
+  font-weight: 600 !important;
+}
+.article h1  {
+  font-size: 36px;
+  font-weight: 600;
+  font-family: "Excon";
+  color: var(--color-primary-950);
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+.article h2 {
+  font-size: 28px;
+  font-weight: 500;
+  font-family: "Excon";
+  color: var(--color-primary-950);
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.article h3 {
+  font-size: 24px;
+  font-weight: 400;
+  font-family: "Excon";
+  color: var(--color-primary-950);
+  margin-top: 36px;
+  margin-bottom: 20px;
+}
+.article h4 {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: "Excon";
+  color: var(--color-primary-950);
+  margin-top: 28px;
+  margin-bottom: 16px;
+}
+.article p {
+  font-size: 18px;
+  line-height: 145%;
+  color: var(--color-neutral-600);
+  letter-spacing: 1%;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+.article ol {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  list-style-type: decimal;
+}
+.article ol li {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  font-size: 18px;
+  line-height: 145%;
+  color: var(--color-neutral-600);
+  letter-spacing: 1%;
+  vertical-align: middle;
+  padding: 0px 0px 0px 12px;
+  position: relative;
+}
+.article ul {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+.article ul li {
+  list-style-type: none;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  font-size: 18px;
+  line-height: 145%;
+  color: var(--color-neutral-600);
+  letter-spacing: 1%;
+  vertical-align: middle;
+  padding: 0px 0px 0px 12px;
+  position: relative;
+}
+.article ul li::before {
+  content: '';
+  background: url('$lib/assets/marker.svg');
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  position: absolute;
+  left: -24px;
+  top: 3px;
+}
+.article figure {
+  display: flex;
+  justify-content: center;
+}
+.article img {
+  border-radius: 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.article a {
+  position: relative;
+}
+.article a::after:not(#to-share) {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary-600);
+  bottom: -4px;
+  left: 0;
+}
+
+@media (max-width: 1024px) {
+  .article {
+    margin-top: 60px;
+  }
+  .article img {
+    border-radius: 16px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+  }
+  .article h1  {
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .article h2 {
+    font-size: 24px;
+  }
+  .article h3 {
+    font-size: 20px;
+  }
+  .article h4 {
+    font-size: 18px;
+  }
+  .article p {
+    font-size: 16px;
+  }
+  .article ul li {
+    font-size: 16px;
+  }
+  .article ol li {
+    font-size: 16px;
+  }
+  .article ol {
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+  .article ul {
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+}
+@media (max-width: 640px) {
+  .article {
+    margin-top: 40px;
+  }
+  .article img {
+    border-radius: 12px;
+    margin-top: 28px;
+    margin-bottom: 0px;
+  }
+  .article h1  {
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .article h2 {
+    margin-top: 30px;
+    margin-bottom: 24px;
+  }
+  .article h3 {
+    margin-top: 26px;
+    margin-bottom: 18px;
+  }
+  .article h4 {
+    margin-top: 22px;
+    margin-bottom: 12px;
+  }
+  .article ol {
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+  .article ul {
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+}
 
 @keyframes rotate360 {
   from {
@@ -119,6 +311,17 @@ html:focus-within {
   to {
     transform: rotate(360deg);
   }
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+:global(.animate-shake) {
+  animation: shake 0.5s ease-in-out;
 }
  
 :root {

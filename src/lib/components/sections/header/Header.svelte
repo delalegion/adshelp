@@ -102,27 +102,13 @@
 
 </script>
 
-<style>
-    @keyframes shake {
-		0%, 100% { transform: translateX(0); }
-		10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-		20%, 40%, 60%, 80% { transform: translateX(5px); }
-	}
-
-	:global(.animate-shake) {
-		animation: shake 0.5s ease-in-out;
-	}
-</style>
-
 <header id="header" class="header flex justify-center">
     <div class="container pt-12 lg:pt-24 pb-12 lg:pb-24 pl-6 lg:pl-12 pr-6 lg:pr-12 grid grid-cols-1 lg:grid-cols-2 gap-2 md:gap-3.5 items-center">
         <div class="col-span-1 mb-24 order-2 lg:order-1">
             <h1 class="text-3xl-bold lg:text-4xl-bold xl:text-5xl-bold 2xl:text-6xl-bold font-display text-primary-950 pr-4 lg:pr-10">Skuteczne kampanie <span class="text-primary-600">Allegro ads</span> dla Twojego e-commerce</h1>
             <p class="text-sm lg:text-base text-primary-950 mt-4">Zostaw swoje dane i uzyskaj darmowy audyt</p>
          
-            <form method="POST" action="?/audit" id="audit-header-form" onsubmit={handleSubmit} use:enhance={({ cancel }) => {
-                cancel();
-            }}>
+            <form method="POST" action="?/audit" id="audit-header-form" onsubmit={handleSubmit} use:enhance>
             {#if activeTab === 1}
                 <div class="flex flex-col gap-2">
                     <div class="flex flex-row relative gap-2 mt-5 md:mt-8 flex-wrap transition-height duration-500 ease-in-out min-h-10" in:fly={{ y: 10 }} out:fade onoutroend={() => activeTab = 2}>
@@ -132,7 +118,8 @@
                         placeholder="Wpisz swoją nazwę Allegro *"
                         name="audit_account_name"
                         bind:value={inp_account_name}
-                        autocomplete="off" />
+                        autocomplete="off"
+                        onkeydown={async (e) => { if (e.key === 'Enter') e.preventDefault(); }} />
                         <div>
                             <Button label="Dalej" theme="orange" onclick={setNextTab} />
                         </div>
@@ -150,14 +137,16 @@
                         placeholder="Imię i nazwisko *"
                         name="audit_name"
                         bind:value={inp_name_data}
-                        autocomplete="off" />
+                        autocomplete="off"
+                        onkeydown={async (e) => { if (e.key === 'Enter') e.preventDefault(); }} />
                         <input
                         id="audit_phone"
                         class="{inp_phone_shaking ? 'animate-shake' : ''} {inp_phone_error ? 'border-[2px] border-primary-600' : ''} flex-1/2 lg:flex-1 rounded-lg transition-shadow shadow-card lg:w-full lg:max-w-[400px] flex bg-background focus:ring-foreground focus:shadow-2xl focus:ring-offset-background focus:outline-hidden items-center max-md:h-full max-md:max-h-[41px] h-[49px] px-4 md:px-6 py-4 focus:ring-2 focus:ring-offset-2 md:text-base placeholder:text-neutral-600 placeholder:text-sm text-neutral-900 text-sm"
                         placeholder="Numer telefonu *"
                         name="audit_phone"
                         bind:value={inp_phone_data}
-                        autocomplete="off" />
+                        autocomplete="off"
+                        onkeydown={async (e) => { if (e.key === 'Enter') e.preventDefault(); }} />
                     </div>
                     <div class="flex flex-row gap-2 items-center">
                         <input
@@ -166,7 +155,8 @@
                         placeholder="Adres email *"
                         name="audit_email"
                         bind:value={inp_email_data}
-                        autocomplete="off" />
+                        autocomplete="off"
+                        onkeydown={async (e) => { if (e.key === 'Enter') e.preventDefault(); }} />
                         <div><Button label="Zamów audyt" theme="orange" onclick={sendForm} /></div>
                     </div>
                     <p class="text-[11px] text-primary-950 max-w-[500px]">Wypełniając formularz, zgadzasz się na przetwarzanie Twoich danych osobowych przez AdsHelp, w celu wysłania informacji o usługach, audycie zgodnie z polityką prywatności.</p>

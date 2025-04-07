@@ -196,7 +196,7 @@
                         {#if form?.phoneError}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Pole <b>Numer telefonu</b> musi zawierać prawidłowy numer telefonu.</p>{/if}
                         {#if form?.messageError}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Pole <b>Wiadomość</b> musi zawierać conajmniej 10 znaków.</p>{/if}
                         {#if form?.checkboxError}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Wymagana <b>akceptacja</b> polityki prywatności.</p>{/if}
-                        {#if form?.success}<p class="text-[12px] top-2 md:top-0 text-green-700 pt-4" transition:fade>Wiadomość wysłana. Skontaktuje się z tobą najszybciej jak to będzie możliwe. W razie pytań zapraszam do kontaktu telefonicznego: +48 123 123 123.</p>{/if}
+                        {#if form?.successContact}<p class="text-[12px] top-2 md:top-0 text-green-700 pt-4" transition:fade>Wiadomość wysłana. Skontaktuje się z tobą najszybciej jak to będzie możliwe. W razie pytań zapraszam do kontaktu telefonicznego: +48 123 123 123.</p>{/if}
                         <div class="mt-4 sm:mt-6"><Button label="Wyślij wiadomość" theme="orange" type="submit" /></div>
     
                         <div class="absolute top-0 right-0 bottom-0 left-0 max-md:rounded-t-[20px] md:rounded-l-[20px] bg-stone-50 -z-1"></div>
@@ -217,9 +217,7 @@
                                 <p class="text-sm lg:text-base text-primary-950 mb-6 sm:mb-7">Bez zobowiązań, całkowicie za darmo.</p>
                             </div>
                         </div>
-                        <form method="POST" action="?/auditOnContact" id="ctc_audit-header-form" onsubmit={handleSubmit} use:enhance={({ cancel }) => {
-                            cancel();
-                        }}>
+                        <form method="POST" action="?/auditOnContact" id="ctc_audit-header-form" onsubmit={handleSubmit} use:enhance>
                         {#if activeTab === 1}
                             <div in:fly={{ y: 10 }} out:fade onoutroend={() => activeTab = 2}>
                                 <input
@@ -229,6 +227,7 @@
                                     name="ctc_audit_account_name"
                                     bind:value={inp_account_name}
                                     autocomplete="off"
+                                    onkeydown={async (e) => { if (e.key === 'Enter') e.preventDefault(); }}
                                 />
                                 {#if inp_account_name_error}<p class="text-[12px] mb-2 relative -top-2 text-primary-600" transition:fade>Powyższe pole nie może być puste. Wpisz co najmniej 3 znaki.</p>{/if}
                                 <div><Button label="Dalej" theme="orange" onclick={setNextTab} /></div>
@@ -244,14 +243,16 @@
                                 placeholder="Imię i nazwisko *"
                                 name="ctc_audit_name"
                                 bind:value={inp_name_data}
-                                autocomplete="off" />
+                                autocomplete="off"
+                                onkeydown={async (e) => { if (e.key === 'Enter') e.preventDefault(); }} />
                                 <input
                                 id="ctc_audit_phone"
                                 class="{inp_phone_shaking ? 'animate-shake' : ''} {inp_phone_error ? 'border-[2px] border-primary-600' : ''} rounded-lg transition-shadow shadow-card flex-1/2 lg:flex-1 lg:w-full lg:max-w-[400px] 2xl:min-w-[250px] flex bg-background focus:ring-foreground focus:shadow-2xl focus:ring-offset-background focus:outline-hidden items-center max-md:h-full max-md:max-h-[41px] h-full max-h-[49px] px-4 md:px-6 py-4 focus:ring-2 focus:ring-offset-2 md:text-base placeholder:text-neutral-600 placeholder:text-sm text-neutral-900 text-sm"
                                 placeholder="Numer telefonu *"
                                 name="ctc_audit_phone"
                                 bind:value={inp_phone_data}
-                                autocomplete="off" />
+                                autocomplete="off"
+                                onkeydown={async (e) => { if (e.key === 'Enter') e.preventDefault(); }} />
                             </div>
                             <div class="flex flex-col gap-3">
                                 <input
@@ -260,7 +261,8 @@
                                 placeholder="Adres email *"
                                 name="ctc_audit_email"
                                 bind:value={inp_email_data}
-                                autocomplete="off" />
+                                autocomplete="off"
+                                onkeydown={async (e) => { if (e.key === 'Enter') e.preventDefault(); }} />
                                 <div class="flex flex-row flex-wrap gap-1 -mb-1">
                                     {#if inp_name_error}<p class="text-[12px] text-primary-600" transition:fade>Pole imię i nazwisko musi zawierać conajmniej 3 znaki.</p>{/if}
                                     {#if inp_phone_error}<p class="text-[12px] text-primary-600" transition:fade>Wpisz prawidłowy numer telefonu.</p>{/if}
