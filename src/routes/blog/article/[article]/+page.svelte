@@ -8,7 +8,7 @@
     import Linkedin from "phosphor-svelte/lib/LinkedinLogo";
     import Email from "phosphor-svelte/lib/Envelope";
     import Check from "phosphor-svelte/lib/Check";
-    import Avatar from '$lib/assets/Avatar-mini.png';
+    import Avatar from '$lib/assets/avatar-mini.png';
 
     import type { PageData } from './$types';
     import { entriesData } from '$lib/stores/blogStore.js';
