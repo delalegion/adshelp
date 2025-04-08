@@ -1,7 +1,7 @@
 <script lang="ts">
     import { fly } from 'svelte/transition';
     import Audit from '../sections/blog-audit/Audit.svelte';
-    import Avatar from '$lib/assets/Avatar-mini.png';
+    import Avatar from '$lib/assets/avatar-mini.png';
 
     let { data = {}  } = $props();
 </script>
