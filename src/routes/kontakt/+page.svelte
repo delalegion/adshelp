@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Avatar from '$lib/assets/Avatar.png';
+    import Avatar from '$lib/assets/avatar.png';
     import Phone from 'phosphor-svelte/lib/Phone';
     import Check from "phosphor-svelte/lib/Check";
     import Button from '$lib/components/Button.svelte';
