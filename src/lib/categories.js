@@ -28,6 +28,10 @@ import iconContent from '$lib/assets/icon-content-marketing.svg';
 import iconContentLight from '$lib/assets/icon-content-marketing-light.svg';
 import iconGoogle from '$lib/assets/icon-google.svg';
 import iconGoogleLight from '$lib/assets/icon-google-light.svg';
+import iconInstagram from '$lib/assets/icon-instagram.svg';
+import iconInstagramLight from '$lib/assets/icon-instagram-light.svg';
+import iconPinterest from '$lib/assets/icon-pinterest.svg';
+import iconPinterestLight from '$lib/assets/icon-pinterest-light.svg';
 
 export let categories = {
     ecommerce: [iconCommerce, 'E-commerce', iconCommerceLight],
@@ -40,11 +44,11 @@ export let categories = {
     facebook: [iconFacebook, 'Facebook', iconFacebookLight],
     google: [iconGoogle, 'Google', iconGoogleLight],
     amazon: [iconAmazon, 'Amazon', iconAmazonLight],
-    instagram: [iconCommerce, 'Instagram', iconCommerceLight],
+    instagram: [iconInstagram, 'Instagram', iconInstagramLight],
     linkedin: [iconLinkedin, 'Linkedin', iconLinkedinLight],
     sem: [iconSem, 'SEM', iconSemLight],
     seo: [iconSeo, 'SEO', iconSeoLight],
     socialMedia: [iconSocialMedia, 'Social media', iconSocialMediaLight],
     tiktok: [iconTiktok, 'Tiktok', iconTiktokLight],
-    pinterest: [iconCommerce, 'Pinterest', iconCommerceLight]
+    pinterest: [iconPinterest, 'Pinterest', iconPinterestLight]
 }

@@ -1,6 +1,6 @@
 <script>
     // Scroll
-    // import { smoothScroll } from '$lib/scroll.js';
+    import { smoothScroll } from '$lib/scroll.js';
 
     // Components
     import Header from '$lib/components/sections/header/Header.svelte';
@@ -10,7 +10,6 @@
     import About from '$lib/components/sections/about/About.svelte';
     import Steps from '$lib/components/sections/steps/Steps.svelte';
     import Consulting from '$lib/components/sections/consulting/Consulting.svelte';
-    import Pricing from '$lib/components/sections/pricing/pricing.svelte';
     import Contact from '$lib/components/sections/contact/Contact.svelte';
     import Footer from '$lib/components/sections/footer/Footer.svelte';
     import Journey from '$lib/components/sections/journey/Journey.svelte';
@@ -21,17 +20,17 @@
 
 <svelte:head>
 
-    <meta property="url" content="https://adshelp.pl/">
+    <meta property="url" content="https://adshelp.pl/allegro">
     <meta name="description" content="Skuteczne kampanie Allegro ads dla Twojego e-commerce">
     <meta name="dcterms.description" lang="pl" content="Skuteczne reklamy dla Twojej firmy na Allegro">
     <meta name="keywords" content="Reklamy na allegro Skuteczne reklamy na Allegro Skuteczne kampanie Allegro Skuteczne reklamy Allegro Ads dla Twojego e-commerce Reklamy e-commerce dla Twojego konta firmowego na Allegro">
     <meta name="dcterms.subject" lang="pl" content="Reklamy na Allegro Ads; Skuteczne reklamy na Allegro Ads; Skuteczne kampanie reklamowe Allegro Ads; Adshelp skuteczna firma pomagająca rozwinąć biznes na Allegro; Jak rozwinąc biznes na Allegro Ads; Reklamy e-commerce dla twojego binzesu na Allegro; Nadzorowoanie reklam Allegro Ads przez profesjonalną firmę; Profesjonalna firma zajmująca się reklamami Allegro Ads">
     <meta name="application-name" content="Kampanie Allegro Ads dla Twojego biznesu">
     <meta name="msapplication-tooltip" content="Adshelp - Skuteczne kampanie Allegro Ads">
-    <meta name="msapplication-starturl" content="http://adshelp.pl">
+    <meta name="msapplication-starturl" content="http://adshelp.pl/">
     <meta name="msapplication-window" content="width=1024;height=768">
     <meta property="og:site_name" content="Adshelp.pl - Skuteczne kampanie Allegro ads dla Twojego e-commerce">
-    <meta property="og:url" content="https://adshelp.pl">
+    <meta property="og:url" content="https://adshelp.pl/allegro">
     <meta property="og:title" content="Reklama Allegro Ads | Adshelp.pl - Pomagamy rozwinąć Twój biznes na Allegro">
     <meta property="og:image" content="https://adshelp.pl/og-image.png">
 
@@ -64,16 +63,6 @@
 
 <!-- Journey section -->
 <Journey />
-
-<!-- Line -->
-<div class=" w-full overflow-hidden pb-6 md:pb-8 lg:pb-12 xl:pb-18 bg-white">
-    <svg width="1920" height="53" viewBox="0 0 1920 53" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 52L1920 0.5" stroke="#E7E7E7"/>
-    </svg>
-</div>
-
-<!-- Pricing section -->
-<Pricing />
 
 <!-- Contact section -->
 <Contact {form} />

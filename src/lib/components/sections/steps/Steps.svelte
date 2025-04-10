@@ -2,8 +2,13 @@
     import { onMount } from 'svelte';
     import gsap from 'gsap';
     import { ScrollTrigger } from "gsap/dist/ScrollTrigger"; 
+    import { afterNavigate, beforeNavigate } from '$app/navigation';
+    import { page } from '$app/state';
        
     let stepStates = $state([false, false, false, false]); 
+
+    let timeline;
+    let mm;
 
     function toggleStateBox(index) {
         stepStates[index] = !stepStates[index];
@@ -40,51 +45,64 @@
 
     }
 
-    onMount(() => {
-        let mm = gsap.matchMedia();
-        gsap.registerPlugin(ScrollTrigger);
-        
+    let initAnimations = () => {
         mm.add("(min-width: 1024px)", () => {
-            let timeline = gsap.timeline({
-    scrollTrigger: {
-        trigger: "#steps",
-        start: "top top",
-        end: "+=1500",
-        pin: true,
-        pinSpacing: true,
-        invalidateOnRefresh: true,
-        scrub: true,
-        snap: {
-            snapTo: "labels",
-            duration: { min: 0.2, max: 0.6 },
-            delay: 0.1,
-            ease: "power1.inOut"
-        }
+            timeline = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#steps",
+                start: "top top",
+                end: "+=1500",
+                pin: true,
+                pinSpacing: true,
+                invalidateOnRefresh: true,
+                scrub: true,
+                snap: {
+                    snapTo: "labels",
+                    duration: { min: 0.2, max: 0.6 },
+                    delay: 0.1,
+                    ease: "power1.inOut"
+                }
+            }
+        });
+
+        timeline
+            .addLabel("step1")
+            .to("#step-1-label", { opacity: 1, y: 0, duration: 0.5 }, "step1")
+            .to("#step-1-box", { opacity: 1, y: 0, duration: 0.5 }, "step1")
+
+            .addLabel("step2")
+            .to("#step-1-complete", { width: '50%' })
+            .to("#step-2-label", { opacity: 1, y: 0, duration: 0.5 }, "step2")
+            .to("#step-2-box", { opacity: 1, y: 0, duration: 0.5 }, "step2")
+
+            .addLabel("step3")
+            .to("#step-2-complete", { width: '50%' })
+            .to("#step-3-label", { opacity: 1, y: 0, duration: 0.5 }, "step3")
+            .to("#step-3-box", { opacity: 1, y: 0, duration: 0.5 }, "step3")
+
+            .addLabel("step4")
+            .to("#step-3-complete", { width: '50%' })
+            .to("#step-4-label", { opacity: 1, y: 0, duration: 0.5 }, "step4")
+            .to("#step-4-box", { opacity: 1, y: 0, duration: 0.5 }, "step4")
+
+                })
     }
-    });
 
-    timeline
-        .addLabel("step1")
-        .to("#step-1-label", { opacity: 1, y: 0, duration: 0.5 }, "step1")
-        .to("#step-1-box", { opacity: 1, y: 0, duration: 0.5 }, "step1")
-
-        .addLabel("step2")
-        .to("#step-1-complete", { width: '50%' })
-        .to("#step-2-label", { opacity: 1, y: 0, duration: 0.5 }, "step2")
-        .to("#step-2-box", { opacity: 1, y: 0, duration: 0.5 }, "step2")
-
-        .addLabel("step3")
-        .to("#step-2-complete", { width: '50%' })
-        .to("#step-3-label", { opacity: 1, y: 0, duration: 0.5 }, "step3")
-        .to("#step-3-box", { opacity: 1, y: 0, duration: 0.5 }, "step3")
-
-        .addLabel("step4")
-        .to("#step-3-complete", { width: '50%' })
-        .to("#step-4-label", { opacity: 1, y: 0, duration: 0.5 }, "step4")
-        .to("#step-4-box", { opacity: 1, y: 0, duration: 0.5 }, "step4")
-
+    onMount(() => {
+        mm = gsap.matchMedia();
+        gsap.registerPlugin(ScrollTrigger);
     })
-        })
+
+    beforeNavigate(() => {
+        timeline.kill();
+        gsap.killTweensOf("*");
+    });
+  
+    afterNavigate(({ to }) => {
+        if (page.url.pathname === '/' || page.url.pathname === '/allegro') {
+        initAnimations();
+        }
+    });
 </script>
 
 <section id="steps" class="py-8 sm:py-12 md:py-16">

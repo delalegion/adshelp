@@ -47,7 +47,7 @@ export const actions = {
 			return console.log({ error });
 		}
 
-        return { success: true, email, phone, company, message, name };
+        return { successForm: true, email, phone, company, message, name };
     },
     contactToConsult: async ({ request }: { request: Request }) => {
         const form = await request.formData();
@@ -88,5 +88,28 @@ export const actions = {
         }
 
         return { successConsult: true, phone, company, message, name };
+    },
+    auditOnBlog: async ({ request }: { request: Request }) => {
+        const form = await request.formData();
+
+        const allegroName = form.get('blog_audit_account_name_copy') as string;
+        const email = form.get('blog_audit_email') as string;
+        const phone = form.get('blog_audit_phone') as string;
+        const name = form.get('blog_audit_name') as string;
+
+        const resend = new Resend(RESEND);
+        const { data, error } = await resend.emails.send({
+			from: 'kontakt@adshelp.pl',
+			to: ['marcinadshelp@gmail.com'],
+			subject: 'Adshelp - Nowy audyt z bloga',
+			html: '<strong>Imię i nazwisko: '+name+' </strong><br/> <strong>Email: '+email+'</strong><br /> <strong>Nr tel.: '+phone+'</strong><br /><strong>Nazwa allegro: '+allegroName+' </strong><br />',
+		});
+
+        if (error) {
+			return console.log({ error });
+		}
+
+        return { success: true };
+
     }
 }

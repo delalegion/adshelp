@@ -12,11 +12,37 @@
     import { enhance } from '$app/forms';
     import Pricing from '$lib/components/sections/pricing/pricing.svelte';
     import Footer from '$lib/components/sections/footer/Footer.svelte';
+    import Audit from '$lib/components/sections/blog-audit/Audit.svelte';
 
     let { data, form }: { data: PageData } = $props();
 
     let activeContactTab = $state(0);
 </script>
+
+<svelte:head>
+
+    <meta property="url" content="https://adshelp.pl/">
+    <meta name="description" content="Kontakt z Adshelp - Skuteczne kampanie Allegro Ads">
+    <meta name="dcterms.description" lang="pl" content="Kontakt z Adshelp - Skuteczne reklamy Google Ads">
+    <meta name="keywords" content="Reklamy na allegro Skuteczne reklamy na Allegro Skuteczne kampanie Allegro Kontakt reklamowy Kontakt do Adshelp Marcin Lubera kontakt Kontakt marketingowy Skuteczne reklamy Allegro Ads dla Twojego e-commerce Reklamy e-commerce dla Twojego konta firmowego na Allegro">
+    <meta name="dcterms.subject" lang="pl" content="Kontakt reklamowy; Kontakt do Adshelp; Marcin Lubera kontakt; Kontakt marketingowy; Reklamy na Allegro Ads; Skuteczne reklamy na Allegro Ads; Skuteczne kampanie reklamowe Allegro Ads; Adshelp skuteczna firma pomagająca rozwinąć biznes na Allegro; Jak rozwinąc biznes na Allegro Ads; Reklamy e-commerce dla twojego binzesu na Allegro; Nadzorowoanie reklam Allegro Ads przez profesjonalną firmę; Profesjonalna firma zajmująca się reklamami Allegro Ads">
+    <meta name="application-name" content="Kampanie Allegro Ads dla Twojego biznesu">
+    <meta name="msapplication-tooltip" content="Adshelp - Skuteczne kampanie Allegro Ads">
+    <meta name="msapplication-starturl" content="http://adshelp.pl">
+    <meta name="msapplication-window" content="width=1024;height=768">
+    <meta property="og:site_name" content="Adshelp.pl - Skuteczne kampanie Allegro ads dla Twojego e-commerce">
+    <meta property="og:url" content="https://adshelp.pl/kontakt">
+    <meta property="og:title" content="Chcesz rozwinąć biznes na Allegro? Napisz do Adshelp! | Adshelp.pl - Pomagamy rozwinąć Twój biznes na Allegro">
+    <meta property="og:image" content="https://adshelp.pl/og-image.png">
+
+    <link rel="index" title="Strona główna" href="https://adshelp.pl">
+    <link rel="canonical" href="https://adshelp.pl/">
+    <link rel="icon" href="https://adshelp.pl/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="https://example.net/images/apple-touch-icon.png">
+
+    <title>Kontakt z Adshelp - Skuteczne reklamy Google Ads | Adshelp.pl - Pomożemy rozwinąć biznes na Allegro</title>
+
+</svelte:head>
 
 <header id="header" class="flex justify-center bg-primary-950 py-16 min-[950px]:py-32 bg-[url('/src/lib/assets/bg-blog.png')] bg-no-repeat bg-bottom-left min-[950px]:bg-center relative">
     <div class="max-w-7xl mx-6 w-full flex flex-col gap-4 sm:gap-6 min-[950px]:gap-12">
@@ -117,7 +143,7 @@
                                 {#if form?.phoneError}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Pole <b>Numer telefonu</b> musi zawierać prawidłowy numer telefonu.</p>{/if}
                                 {#if form?.messageError}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Pole <b>Wiadomość</b> musi zawierać conajmniej 10 znaków.</p>{/if}
                                 {#if form?.checkboxError}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Wymagana <b>akceptacja</b> polityki prywatności.</p>{/if}
-                                {#if form?.success}<p class="text-[12px] top-2 md:top-0 text-green-700 pt-4" transition:fade>Wiadomość wysłana. Skontaktuje się z tobą najszybciej jak to będzie możliwe. W razie pytań zapraszam do kontaktu telefonicznego: +48 123 123 123.</p>{/if}
+                                {#if form?.successForm}<p class="text-[12px] top-2 md:top-0 text-green-700 pt-4" transition:fade>Wiadomość wysłana. Skontaktuje się z tobą najszybciej jak to będzie możliwe. W razie pytań zapraszam do kontaktu telefonicznego: +48 123 123 123.</p>{/if}
                                 <div class="mt-4 sm:mt-6"><Button label="Wyślij wiadomość" theme="orange" type="submit" /></div>
 
                             </form>
@@ -192,8 +218,12 @@
     </div>
 </header>
 
-<div class="h-36 bg-white"></div>
+<div class="h-12 bg-white"></div>
 
-<Pricing />
+<div class="flex justify-center bg-white pb-24">
+    <div class="max-w-7xl mx-6 w-full">
+        <Audit />
+    </div>
+</div>
 
 <Footer />

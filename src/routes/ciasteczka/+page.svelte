@@ -25,7 +25,7 @@
 
 <div class="flex justify-center">
     <div class="flex flex-col px-6 py-16 md:py-24 container">
-        <h1 class="text-3xl-bold md:text-5xl-bold font-display text-primary-950 mb-4">Polityka prywatności</h1>
+        <h1 class="text-3xl-bold md:text-5xl-bold font-display text-primary-950 mb-4">Ciasteczka</h1>
         <div class="inline-flex"><p class="text-sm-bold text-primary-100 mb-12 py-2 px-3 rounded-lg bg-primary-950 shadow-hover">Aktualizacja: 31.03.2025</p></div>
         <p class="text-base-bold text-primary-950 mb-6">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras commodo erat a sapien semper, non pulvinar elit efficitur. Donec quis metus non ex viverra fringilla. Quisque dictum ornare lacus, vitae pretium lorem mattis ut. Maecenas ac dolor tincidunt, varius erat iaculis, euismod ipsum. Suspendisse vitae libero sed lorem malesuada ultrices in in libero. Praesent cursus id arcu a pharetra. Nulla felis lorem, ultrices vel nunc in, finibus dignissim enim. Aenean id placerat turpis, ut sagittis dui. Vestibulum sagittis diam urna. Sed egestas scelerisque libero, quis sollicitudin tortor faucibus ut. Phasellus nec odio lacus. Sed egestas ipsum feugiat tempor pharetra. Nullam ac ornare quam. Nullam libero mi, dictum quis purus at, suscipit condimentum mi.

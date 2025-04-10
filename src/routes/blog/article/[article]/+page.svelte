@@ -16,6 +16,7 @@
     import Audit from "$lib/components/sections/blog-audit/Audit.svelte";
     import Footer from "$lib/components/sections/footer/Footer.svelte";
     import { onMount } from "svelte";
+    import { page } from "$app/state";
 
     // Categories
     const entries = Object.entries(get(entriesData));
@@ -57,6 +58,31 @@
         window.location.href = `mailto:?subject=${subject}&body=${body}`;
     }
 </script>
+
+<svelte:head>
+
+    <meta property="url" content="https://adshelp.pl/{page.url.pathname}">
+    <meta name="description" content="{dataQuery[0].SEO !== null  ? dataQuery[0].SEO.metaTitle : ''}">
+    <meta name="dcterms.description" lang="pl" content="{dataQuery[0].SEO !== null ? dataQuery[0].SEO.metaDescription : ''}">
+    <meta name="keywords" content="{dataQuery[0].SEO !== null  ? dataQuery[0].SEO.metaKeywords : ''}">
+    <meta name="dcterms.subject" lang="pl" content="{dataQuery[0].SEO !== null  ? dataQuery[0].SEO.metaTerms : ''}">
+    <meta name="application-name" content="{dataQuery[0].SEO !== null  ? dataQuery[0].SEO.metaName : ''}">
+    <meta name="msapplication-tooltip" content="{dataQuery[0].SEO !== null  ? dataQuery[0].SEO.metaTitle : ''}">
+    <meta name="msapplication-starturl" content="http://adshelp.pl">
+    <meta name="msapplication-window" content="width=1024;height=768">
+    <meta property="og:site_name" content="{dataQuery[0].SEO !== null ? dataQuery[0].SEO.metaTitle : ''}">
+    <meta property="og:url" content="https://adshelp.pl/{page.url.pathname}">
+    <meta property="og:title" content="Blog o Allegro Ads | Adshelp.pl - Pomagamy rozwinąć Twój biznes na Allegro">
+    <meta property="og:image" content="https://adshelp.pl/og-image.png">
+
+    <link rel="index" title="Strona główna" href="https://adshelp.pl">
+    <link rel="canonical" href="https://adshelp.pl/">
+    <link rel="icon" href="https://adshelp.pl/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="https://example.net/images/apple-touch-icon.png">
+
+    <title>{dataQuery[0].SEO !== null ? dataQuery[0].SEO.metaTitle : ''}</title>
+
+</svelte:head>
 
 <article id="article" class="flex flex-col justify-center items-center bg-white py-8 md:py-20 lg:py-32 px-6">
     <div class="max-w-7xl mx-6 w-full">
