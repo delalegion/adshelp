@@ -220,7 +220,7 @@
 
 <div class="h-12 bg-white"></div>
 
-<div class="flex justify-center bg-white pb-24">
+<div class="flex justify-center bg-white pb-10 sm:pb-24 max-md:pt-24">
     <div class="max-w-7xl mx-6 w-full">
         <Audit />
     </div>

@@ -110,9 +110,9 @@
                 <li class="max-[310px]:text-2xl-bold text-3xl-bold font-display text-primary-950"><a onclick={() => isMenuOpen = false} href="/#about">O mnie</a></li>
                 <li class="max-[310px]:text-2xl-bold text-3xl-bold font-display text-primary-950"><a onclick={() => isMenuOpen = false} href="/#steps">Dlaczego warto</a></li>
                 <li class="max-[310px]:text-2xl-bold text-3xl-bold font-display text-primary-950"><a onclick={() => isMenuOpen = false} href="/#services">Usługi</a></li>
-                <li class="max-[310px]:text-2xl-bold text-3xl-bold font-display text-primary-950"><a onclick={() => isMenuOpen = false} href="/blog">Blog</a></li>
-                <li class="max-[310px]:text-2xl-bold text-3xl-bold font-display text-primary-950"><a onclick={() => isMenuOpen = false} href="/allegro">Allegro</a></li>
-                <li class="max-[310px]:text-2xl-bold text-3xl-bold font-display text-primary-950"><a onclick={() => isMenuOpen = false} href="/kontakt">Kontakt</a></li>
+                <li class="max-[310px]:text-2xl-bold text-3xl-bold font-display text-primary-950"><a onclick={() => isMenuOpen = false} href="/blog" rel="external">Blog</a></li>
+                <li class="max-[310px]:text-2xl-bold text-3xl-bold font-display text-primary-950"><a onclick={() => isMenuOpen = false} href="/allegro" rel="external">Allegro</a></li>
+                <li class="max-[310px]:text-2xl-bold text-3xl-bold font-display text-primary-950"><a onclick={() => isMenuOpen = false} href="/kontakt" rel="external">Kontakt</a></li>
             </ul>
             <div class="flex flex-row gap-3 items-center max-[310px]:mt-8 mt-12" transition:fly={{ y: 50, opacity: 0, easing: sineInOut, duration: 280 }}>
                 <div class="border-[1px] hover:border-[2px] border-stone-300 border-solid rounded-full w-[48px] h-[48px] flex items-center justify-center hover:scale-105 hover:border-primary-950 active:scale-95 hover:transition-all hover:cursor-pointer"><img class="w-[19px]" src={ig} alt="Instagram icon" /></div>
