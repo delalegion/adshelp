@@ -23,7 +23,7 @@
                     <div class="flex-none sm:flex-1 sm:flex flex-col p-4 lg:p-5 bg-white xl:p-7 rounded-[12px] gap-3 max-w-64 hover:shadow-hover ease-in-out duration-400 max-sm:w-[200px] ml-6 sm:ml-8">
                         <img src={indvidual} alt="Graphic icon of two people" class="w-full flex" />
                         <h3 class="text-xl-bold font-display text-primary-950 max-sm:my-2">Indywidualne<br />podejście</h3>
-                        <p class="text-xs text-primary-950">Każdemu projektowi poświęcam szczególną uwagę. Opracuję skuteczną strategię dla Twojego biznesu..</p>
+                        <p class="text-xs text-primary-950">Każdemu projektowi poświęcam szczególną uwagę. Opracuję skuteczną strategię dla Twojego biznesu.</p>
                     </div>
                     <div class="flex-none sm:flex-1 sm:flex flex-col p-4 lg:p-5 bg-white xl:p-7 rounded-[12px] gap-3 max-w-64 hover:shadow-hover ease-in-out duration-400 max-sm:w-[200px]">
                         <img src={data} alt="Graphic icon of stats" class="w-full flex" />
@@ -33,7 +33,7 @@
                     <div class="flex-none sm:flex-1 sm:flex flex-col p-4 lg:p-5 bg-white xl:p-7 rounded-[12px] gap-3 max-w-64 hover:shadow-hover ease-in-out duration-400 max-sm:w-[200px]">
                         <img src={time} alt="Graphic icon of stats" class="w-full flex" />
                         <h3 class="text-xl-bold font-display text-primary-950 max-sm:my-2">Szybka<br />realizacja</h3>
-                        <p class="text-xs text-primary-950">Działam sprawnie i efektywnie – od pomysłu do realizacji w ekspresowym tempie, zawsze na czas!.</p>
+                        <p class="text-xs text-primary-950">Działam sprawnie i efektywnie – od pomysłu do realizacji w ekspresowym tempie, zawsze na czas!</p>
                     </div>
                 </div>
             </div>

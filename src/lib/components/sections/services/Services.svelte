@@ -228,7 +228,7 @@
             <div class="col-span-2 min-[910px]:col-span-3 max-[450px]:px-6 max-[560px]:px-12 max-[420px]:px-6 max-[560px]:pb-12">
                 <div class="grid grid-cols-2 min-[560px]:grid-cols-6 2xl:grid-cols-4 min-[910px]:ml-14 auto-rows-min">
                     <div class="col-span-2 min-[560px]:col-span-3 xl:col-span-2 2xl:col-span-1 bg-[#250906] p-6 sm:pt-10 md:pt-40 auto-rows-min max-[560px]:rounded-t-xl">
-                        <p class=" text-base text-primary-100 mb-4">Tworzę kampanie reklamowe na Allegro od podstaw, dopasowując strategię do Twoich celów biznesowych.</p>
+                        <p class=" text-base text-primary-100 mb-4">Tworzę kampanie reklamowe na Allegro od podstaw. Opracuję skuteczną strategię, dzięki której osiągniesz swoje cele biznesowe.</p>
                         <Button label="Porozmawiajmy" href="#contact" />
                     </div>
                     <div class="col-span-2 min-[560px]:col-span-3 xl:col-span-3 2xl:col-span-2 bg-primary-850 bg-[#4E1B15] px-6 min-[560px]:px-11 py-6 min-[560px]:py-8 flex justify-end flex-col">

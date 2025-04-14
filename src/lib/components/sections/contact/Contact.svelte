@@ -126,9 +126,9 @@
                 </div>
                 <div class="flex flex-row gap-4 items-center max-md:mt-4">
                     <h3 class="text-xl-bold md:text-2xl-bold font-display text-primary-950">Lub zadzwoń</h3>
-                    <a class="border-[1px] border-stone-300 rounded-full p-1 md:pr-2 inline-flex items-center gap-2" href="tel:+48123123123">
+                    <a class="border-[1px] border-stone-300 rounded-full p-1 md:pr-2 inline-flex items-center gap-2" href="tel:+48722197109">
                         <div class="h-10 md:h-12 w-10 md:w-12 bg-stone-200 rounded-full flex justify-center items-center"><Phone color="#410F09" weight="regular" size="24" /></div>
-                        <p class="text-sm-bold text-primary-950 mr-2.5">+48 123 123 123</p>
+                        <p class="text-sm-bold text-primary-950 mr-2.5">+48 722 197 109</p>
                     </a>
                 </div>
 
@@ -154,7 +154,7 @@
                             <input
                                 id="ctc_email"
                                 class="{form?.emailError ? 'animate-shake' : ''} {form?.emailError ? 'border-[2px] border-primary-600' : ''} flex-1/2 lg:flex-1 rounded-lg transition-shadow shadow-card lg:w-full lg:max-w-[400px] 2xl:min-w-[250px] flex bg-background focus:ring-foreground focus:shadow-2xl focus:ring-offset-background focus:outline-hidden items-center max-md:h-full max-md:max-h-[41px] h-full max-h-[49px] px-4 md:px-6 py-4 focus:ring-2 focus:ring-offset-2 md:text-base placeholder:text-neutral-600 placeholder:text-sm text-neutral-900 text-sm"
-                                placeholder="Adres email *"
+                                placeholder="Adres e-mail *"
                                 name="ctc_email"
                                 autocomplete="off"
                             />
@@ -196,7 +196,7 @@
                         {#if form?.phoneError}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Pole <b>Numer telefonu</b> musi zawierać prawidłowy numer telefonu.</p>{/if}
                         {#if form?.messageError}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Pole <b>Wiadomość</b> musi zawierać conajmniej 10 znaków.</p>{/if}
                         {#if form?.checkboxError}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Wymagana <b>akceptacja</b> polityki prywatności.</p>{/if}
-                        {#if form?.successContact}<p class="text-[12px] top-2 md:top-0 text-green-700 pt-4" transition:fade>Wiadomość wysłana. Skontaktuje się z tobą najszybciej jak to będzie możliwe. W razie pytań zapraszam do kontaktu telefonicznego: +48 123 123 123.</p>{/if}
+                        {#if form?.successContact}<p class="text-[12px] top-2 md:top-0 text-green-700 pt-4" transition:fade>Wiadomość wysłana. Skontaktuje się z tobą najszybciej jak to będzie możliwe. W razie pytań zapraszam do kontaktu telefonicznego: +48 722 197 109.</p>{/if}
                         <div class="mt-4 sm:mt-6"><Button label="Wyślij wiadomość" theme="orange" type="submit" /></div>
     
                         <div class="absolute top-0 right-0 bottom-0 left-0 max-md:rounded-t-[20px] md:rounded-l-[20px] bg-stone-50 -z-1"></div>
@@ -258,7 +258,7 @@
                                 <input
                                 id="ctc_audit_email"
                                 class="{inp_email_shaking ? 'animate-shake' : ''} {inp_email_error ? 'border-[2px] border-primary-600' : ''} rounded-lg transition-shadow shadow-card flex-1/2 lg:flex-1 lg:w-full lg:max-w-[400px] 2xl:min-w-[250px] flex bg-background focus:ring-foreground focus:shadow-2xl focus:ring-offset-background focus:outline-hidden items-center max-md:h-full max-md:max-h-[41px] h-full max-h-[49px] px-4 md:px-6 py-4 focus:ring-2 focus:ring-offset-2 md:text-base placeholder:text-neutral-600 placeholder:text-sm text-neutral-900 text-sm"
-                                placeholder="Adres email *"
+                                placeholder="Adres e-mail *"
                                 name="ctc_audit_email"
                                 bind:value={inp_email_data}
                                 autocomplete="off"

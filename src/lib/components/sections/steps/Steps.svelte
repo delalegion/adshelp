@@ -100,7 +100,7 @@
   
     afterNavigate(({ to }) => {
         if (page.url.pathname === '/' || page.url.pathname === '/allegro') {
-        initAnimations();
+            initAnimations();
         }
     });
 </script>
@@ -112,7 +112,7 @@
         <div class="max-lg:w-full lg:container px-0 xl:px-16 2xl:px-32 lg:mb-16">
 
             <div id="steps-container">
-            <h2 class="text-2xl-bold md:text-3xl-bold xl:text-4xl-bold font-display text-primary-950 text-left sm:text-center max-lg:px-6">Od 12 lat osobiście realizuje i wdrażam<br class="max-md:hidden" /> skuteczne strategie marketingowe na Allegro</h2>
+            <h2 class="text-2xl-bold md:text-3xl-bold xl:text-4xl-bold font-display text-primary-950 text-left sm:text-center max-lg:px-6">Od 12 lat osobiście realizuję i wdrażam<br class="max-md:hidden" /> skuteczne strategie marketingowe na Allegro</h2>
             <p class="text-sm md:text-base text-primary-950 mt-4 sm:mt-8 text-left sm:text-center max-lg:px-6">Poznaj 4 etapy! Udowodnię Ci, że dzięki nim Twoje konto<br class="max-sm:hidden"/> na Allegro może generować dużo lepsze wyniki!</p>
     
         <div class="max-lg:overflow-scroll max-lg:px-8">

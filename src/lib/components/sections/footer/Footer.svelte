@@ -34,9 +34,9 @@
                         </a>
                     </div>
                     <div>
-                        <a class="border-[1px] border-stone-300 rounded-full p-1 md:pr-2 inline-flex items-center gap-2" href="tel:+48123123123">
+                        <a class="border-[1px] border-stone-300 rounded-full p-1 md:pr-2 inline-flex items-center gap-2" href="tel:+48722197109">
                             <div class="h-10 md:h-12 w-10 md:w-12 bg-stone-200 rounded-full flex justify-center items-center"><Phone color="#410F09" weight="regular" size="24" /></div>
-                            <p class="text-sm-bold text-primary-950 mr-2.5">+48 123 123 123</p>
+                            <p class="text-sm-bold text-primary-950 mr-2.5">+48 722 197 109</p>
                         </a>
                     </div>
                 </div>
@@ -55,8 +55,8 @@
                     <li class="text-2xl text-primary-950 active:scale-[0.98] active:transition-all"><a href="/" class="transition-all py-3 rounded-full hover:opacity-75">Kontakt</a></li>
                 </ul>
                 <div class="flex flex-row gap-3 max-[500px]:mt-6 max-sm:hidden">
-                    <div class="border-[1px] hover:border-[2px] border-stone-300 border-solid rounded-full w-[48px] h-[48px] flex items-center justify-center hover:scale-105 hover:border-primary-950 active:scale-95 hover:transition-all hover:cursor-pointer"><img class="w-[19px]" src={ig} alt="Instagram icon" /></div>
-                    <div class="border-[1px] hover:border-[2px] border-stone-300 border-solid rounded-full w-[48px] h-[48px] flex items-center justify-center hover:scale-105 hover:border-primary-950 active:scale-95 hover:transition-all hover:cursor-pointer"><img class="h-[19px]" src={fb} alt="Facebook icon" /></div>
+                    <a href="https://www.instagram.com/adshelp.pl" class="border-[1px] hover:border-[2px] border-stone-300 border-solid rounded-full w-[48px] h-[48px] flex items-center justify-center hover:scale-105 hover:border-primary-950 active:scale-95 hover:transition-all hover:cursor-pointer"><img class="w-[19px]" src={ig} alt="Instagram icon" /></a>
+                    <a href="https://www.facebook.com/adshelppl" class="border-[1px] hover:border-[2px] border-stone-300 border-solid rounded-full w-[48px] h-[48px] flex items-center justify-center hover:scale-105 hover:border-primary-950 active:scale-95 hover:transition-all hover:cursor-pointer"><img class="h-[19px]" src={fb} alt="Facebook icon" /></a>
                     <div class="border-[1px] hover:border-[2px] border-stone-300 border-solid rounded-full w-[48px] h-[48px] flex items-center justify-center hover:scale-105 hover:border-primary-950 active:scale-95 hover:transition-all hover:cursor-pointer"><img class="w-[21px]" src={yt} alt="Youtube icon" /></div>
                 </div>
             </div>
@@ -65,7 +65,7 @@
 
             <div class="flex w-full flex-row gap-4 sm:flex-col min-[500px]:justify-end items-left min-[500px]:items-end mt-6 md:mt-12 max-sm:px-6">
                 <div class="inline-flex"><a href="/polityka-prywatnosci" class="text-sm text-stone-500 sm:mb-3 hover:underline hover:text-stone-800 transition-all">Polityka prywatności</a></div>
-                <div class="inline-flex"><a href="#" class="text-sm text-stone-500 hover:underline hover:text-stone-800 transition-all">Ciasteczka</a></div>
+                <div class="inline-flex"><a href="/polityka-prywatnosci" class="text-sm text-stone-500 hover:underline hover:text-stone-800 transition-all">Ciasteczka</a></div>
             </div>
             <div class="flex w-full justify-left min-[500px]:justify-between mt-8 sm:mt-12 flex-wrap max-[500px]:gap-5 max-[500px]:items-center max-sm:px-6">
                 <p class="text-xs md:text-sm text-stone-500">Adshelp @ 2025</p>

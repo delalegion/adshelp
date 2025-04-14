@@ -17,6 +17,18 @@
     let { data, form }: { data: PageData } = $props();
 
     let activeContactTab = $state(0);
+
+    // $effect(() => {
+    //     if (form?.successForm) {
+            // if (typeof fbq !== 'undefined') {
+            //     fbq('track', 'Lead', {
+            //             content_name: 'Formularz kontaktowy',
+            //             status: 'wysłano'
+            //         }
+            //     );
+            // }
+    //     }
+    // })
 </script>
 
 <svelte:head>
@@ -60,9 +72,9 @@
                     <p class="text-sm-bold text-primary-500">CEO & FOUNDER</p>
                     <h3 class="text-2xl-bold sm:text-3xl-bold font-display text-primary-50">MARCIN LUBERA</h3>
                     <div>
-                        <a class="border-[1px] border-primary-900 rounded-full p-1 md:pr-2 inline-flex items-center gap-2" href="tel:+48123123123">
+                        <a class="border-[1px] border-primary-900 rounded-full p-1 md:pr-2 inline-flex items-center gap-2" href="tel:+48722197109">
                             <div class="h-10 md:h-12 w-10 md:w-12 bg-primary-900 rounded-full flex justify-center items-center"><Phone color="#FFF5ED" weight="regular" size="24" /></div>
-                            <p class="text-sm-bold text-primary-50 mr-2.5">+48 123 123 123</p>
+                            <p class="text-sm-bold text-primary-50 mr-2.5">+48 722 197 109</p>
                         </a>
                     </div>
                 </div>
@@ -101,7 +113,7 @@
                                     <input
                                         id="msg_email"
                                         class="{form?.emailError ? 'animate-shake' : ''} {form?.emailError ? 'border-[2px] border-primary-600' : ''} flex-1/2 lg:flex-1 rounded-lg transition-shadow shadow-card lg:w-full lg:max-w-[400px] min-[1536px]:min-w-[250px] flex bg-background focus:ring-foreground focus:shadow-2xl focus:ring-offset-background focus:outline-hidden items-center max-md:h-full max-md:max-h-[41px] h-full max-h-[49px] px-4 md:px-6 py-4 focus:ring-2 focus:ring-offset-2 md:text-base placeholder:text-neutral-600 placeholder:text-sm text-neutral-900 text-sm"
-                                        placeholder="Adres email *"
+                                        placeholder="Adres e-mail *"
                                         name="msg_email"
                                         autocomplete="off"
                                     />
@@ -143,7 +155,7 @@
                                 {#if form?.phoneError}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Pole <b>Numer telefonu</b> musi zawierać prawidłowy numer telefonu.</p>{/if}
                                 {#if form?.messageError}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Pole <b>Wiadomość</b> musi zawierać conajmniej 10 znaków.</p>{/if}
                                 {#if form?.checkboxError}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Wymagana <b>akceptacja</b> polityki prywatności.</p>{/if}
-                                {#if form?.successForm}<p class="text-[12px] top-2 md:top-0 text-green-700 pt-4" transition:fade>Wiadomość wysłana. Skontaktuje się z tobą najszybciej jak to będzie możliwe. W razie pytań zapraszam do kontaktu telefonicznego: +48 123 123 123.</p>{/if}
+                                {#if form?.successForm}<p class="text-[12px] top-2 md:top-0 text-green-700 pt-4" transition:fade>Wiadomość wysłana. Skontaktuje się z tobą najszybciej jak to będzie możliwe. W razie pytań zapraszam do kontaktu telefonicznego: +48 722 197 109.</p>{/if}
                                 <div class="mt-4 sm:mt-6"><Button label="Wyślij wiadomość" theme="orange" type="submit" /></div>
 
                             </form>
