@@ -18,17 +18,11 @@
 
     let activeContactTab = $state(0);
 
-    // $effect(() => {
-    //     if (form?.successForm) {
-            // if (typeof fbq !== 'undefined') {
-            //     fbq('track', 'Lead', {
-            //             content_name: 'Formularz kontaktowy',
-            //             status: 'wysłano'
-            //         }
-            //     );
-            // }
-    //     }
-    // })
+    $effect(() => {
+        if (form?.successForm) {
+            fbq('track', 'LeadContact')
+        }
+    })
 </script>
 
 <svelte:head>
