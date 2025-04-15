@@ -21,6 +21,7 @@
     $effect(() => {
         if (form?.successForm) {
             fbq('track', 'LeadContact')
+            console.log("track test")
         }
     })
 </script>
