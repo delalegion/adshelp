@@ -17,13 +17,6 @@
     let { data, form }: { data: PageData } = $props();
 
     let activeContactTab = $state(0);
-
-    $effect(() => {
-        if (form?.successForm) {
-            fbq('track', 'LeadContact')
-            console.log("track test")
-        }
-    })
 </script>
 
 <svelte:head>
@@ -210,7 +203,7 @@
                                 {#if form?.phoneErrorConsult}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Pole <b>Numer telefonu</b> musi zawierać prawidłowy numer telefonu.</p>{/if}
                                 {#if form?.messageErrorConsult}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Pole <b>Wiadomość</b> musi zawierać conajmniej 10 znaków.</p>{/if}
                                 {#if form?.checkboxErrorConsult}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Wymagana <b>akceptacja</b> polityki prywatności.</p>{/if}
-                                {#if form?.successConsult}<p class="text-[12px] top-2 md:top-0 text-green-700 pt-4" transition:fade>Wiadomość wysłana. Skontaktuje się z tobą najszybciej jak to będzie możliwe. W razie pytań zapraszam do kontaktu telefonicznego: +48 123 123 123.</p>{/if}
+                                {#if form?.successConsult}<p class="text-[12px] top-2 md:top-0 text-green-700 pt-4" transition:fade>Wiadomość wysłana. Skontaktuje się z tobą najszybciej jak to będzie możliwe. W razie pytań zapraszam do kontaktu telefonicznego: +48 722 197 109.</p>{/if}
                                 <div class="mt-4 sm:mt-6"><Button label="Wyślij wiadomość" theme="orange" type="submit" /></div>
 
                             </form>
