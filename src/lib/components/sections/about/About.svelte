@@ -19,7 +19,7 @@
     <div class="container">
         <div class="grid grid-cols-2 lg:grid-cols-3">
             <div class="col-span-2 lg:col-span-1 max-sm:flex-col max-lg:flex-row max-lg:flex max-lg:items-start gap-0 sm:gap-6">
-                <enhanced:img src={avatar} alt="Pictures of CEO Marcin Lubera" class="max-w-[104px] sm:max-w-[140px] md:max-w-[196px]" />
+                <enhanced:img src={avatar} alt="Pictures of CEO Marcin Lubera" class="max-w-[104px] sm:max-w-[140px] md:max-w-[196px]" loading="lazy" />
                 <div class="flex flex-col mt-4 lg:mt-8">
                     <p class="text-sm-bold text-primary-500">CEO & FOUNDER</p>
                     <h5 class="text-2xl-bold md:text-3xl-bold font-display text-primary-100">MARCIN LUBERA</h5>

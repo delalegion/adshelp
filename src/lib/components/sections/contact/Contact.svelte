@@ -111,15 +111,15 @@
         <div class="grid grid-cols-3 min-lg:grid-cols-5 xl:grid-cols-4">
             <div class="col-span-3 min-lg:col-span-1">
                 <div class="flex flex-row min-lg:flex-col h-[200px] min-lg:h-full">
-                    <div class="flex-1"><enhanced:img src={contactBgFirst} alt="Graphic orange-brown texture" class="w-full h-full object-cover object-[25%_45%]" /></div>
-                    <div class="flex-2"><enhanced:img src={contactBgSecond} alt="Image of Adshelp CEO" class="w-full h-full object-cover" /></div>
+                    <div class="flex-1"><enhanced:img src={contactBgFirst} alt="Graphic orange-brown texture" class="w-full h-full object-cover object-[25%_45%]" loading="lazy" /></div>
+                    <div class="flex-2"><enhanced:img src={contactBgSecond} alt="Image of Adshelp CEO" class="w-full h-full object-cover" loading="lazy" /></div>
                     <div class="h-full relative max-lg:flex-2">
                         <div class="absolute h-full w-full bg-primary-950"></div>
                     </div>
                 </div>
             </div>
             <div class="col-span-3 min-lg:col-span-4 xl:col-span-3 py-6 min-[500px]:py-8 lg:py-12 xl:py-16 2xl:py-20 px-6 min-[500px]:px-10 lg:px-14 xl:px-18 2xl:px-24 mr-0 2xl:mr-24">
-                <enhanced:img src={phone} alt="Graphic icon of stats" class="sm:hidden mb-4" />
+                <enhanced:img src={phone} alt="Graphic icon of stats" class="sm:hidden mb-4" loading="lazy" />
                 <h2 class="text-[24px] min-[500px]:text-[32px] min-[720px]:text-[3.4vw] min-lg:text-[2.8vw] xl:text-[2.3vw] 2xl:text-4xl-bold font-display text-primary-950">Czy chcesz, aby Twoje konto na Allegro <span class="md:hidden">przynosiło większe zyski? Napisz do mnie!</span></h2>
                 <div class="flex md:items-center gap-3 relative -top-1 md:-top-3 max-md:hidden">
                     <h2 class="text-[24px] min-[720px:]:text-[3.4vw] min-lg:text-[2.8vw] xl:text-[2.3vw] 2xl:text-4xl-bold font-display text-primary-950">przynosiło większe zyski?</h2> <enhanced:img src={phone} alt="Graphic icon of 3D old phone" class="max-[900px]:w-[10vw] max-xl:w-[7vw]" /><h2 class="text-[24px] min-[720px:]:text-[3.4vw] min-[900px]:text-[2.8vw] xl:text-[2.3vw] 2xl:text-4xl-bold font-display text-primary-950">Napisz do mnie!</h2>
@@ -213,7 +213,7 @@
                                 </svg>
                             </div>
                             <div>
-                                <h5 class="text-xl-bold lg:text-2xl-bold font-display text-primary-950 mb-2 sm:mb-4">Zamów konsultację ze<br/> specjalistą</h5>
+                                <h5 class="text-xl-bold lg:text-2xl-bold font-display text-primary-950 mb-2 sm:mb-4">Zarezerwuj darmową <br/>współpracę na miesiąc!</h5>
                                 <p class="text-sm lg:text-base text-primary-950 mb-6 sm:mb-7">Bez zobowiązań, całkowicie za darmo.</p>
                             </div>
                         </div>

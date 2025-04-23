@@ -111,7 +111,7 @@
                 <path d="M9 14L11 16L15 12" stroke="#FEE9D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </div>
-            <h5 class="text-xl-bold sm:text-2xl-bold font-display text-primary-500 mb-4">Zamów konsultację ze<br/> specjalistą</h5>
+            <h5 class="text-xl-bold sm:text-2xl-bold font-display text-primary-500 mb-4">Zarezerwuj darmową <br/>współpracę na miesiąc!</h5>
             <p class="text-sm sm:text-base text-primary-500 mb-6 sm:mb-7">Bez zobowiązań, całkowicie za darmo.</p>
         
             <form method="POST" action="?/auditOnBlog" id="blog_audit-header-form" onsubmit={handleSubmit} use:enhance>

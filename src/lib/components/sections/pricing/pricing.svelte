@@ -13,8 +13,8 @@
 
     let activeTab = $state(1);
     let tabs = [
-        [true, true, false, false, false, false, false],
-        [true, true, true, true, false, false, false],
+        [true, true, true, false, false, false, false],
+        [true, true, true, true, true, false, false],
         [true, true, true, true, true, true, true]
     ]
     let tabsNames = [
@@ -169,7 +169,7 @@
                 <div class="col-span-1">
                     <div class="border-t-2 border-b-2 border-neutral-200 justify-between items-center h-16 flex">
                         <div class="h-1/2 bg-white w-0.5"></div>
-                        <img src={tickFalse} alt="Graphic icon of stats" />
+                        <img src={tick} alt="Graphic icon of stats" />
                         <div class="h-1/2 bg-neutral-200 w-0.5"></div>
                     </div>
                 </div>
@@ -230,7 +230,7 @@
                 <div class="col-span-1">
                     <div class="border-t-2 border-b-2 border-neutral-200 justify-between items-center h-16 flex">
                         <div class="h-1/2 bg-white w-0.5"></div>
-                        <img src={tickFalse} alt="Graphic icon of stats" />
+                        <img src={tick} alt="Graphic icon of stats" />
                         <div class="h-1/2 bg-neutral-200 w-0.5"></div>
                     </div>
                 </div>

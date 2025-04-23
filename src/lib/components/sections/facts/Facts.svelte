@@ -15,7 +15,7 @@
         <div class="pb-2 grid grid-cols-3 relative">
 
             <div class="lg:col-span-1 z-10 absolute lg:relative max-sm:max-w-[220px] max-lg:max-w-[300px] max-sm:left-auto max-sm:-right-10 max-md:-top-16 max-md:-left-20 max-sm:-top-7 max-lg:-top-12 max-lg:-left-18">
-                <enhanced:img src={globe} alt="Graphic globe with marketing info graphics" />
+                <enhanced:img src={globe} alt="Graphic globe with marketing info graphics" loading="lazy" />
             </div>
             <div class="col-span-3 lg:col-span-2 mt-20 z-10 ml-0 sm:ml-18 lg:ml-0">
                 <h2 class="text-2xl-bold md:text-3xl-bold lg:text-4xl-bold xl:text-5xl-bold text-primary-950 font-display pb-4 max-sm:text-left max-md:text-right max-lg:text-center px-4 max-sm:ml-2 max-sm:w-1/2 max-md:ml-24">Fakty o moich działaniach</h2>

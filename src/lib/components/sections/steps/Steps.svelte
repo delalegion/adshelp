@@ -147,11 +147,11 @@
     
             <div class="max-lg:inline-flex max-lg:pr-6 max-lg:flex-row max-lg:gap-4 lg:grid lg:grid-cols-4 mt-12">
                 <div class="col-span-1 max-lg:w-[250px] flex-none lg:flex justify-center mx-2 xl:mx-4">
-                    <div id="step-1-box" class="rounded-2xl w-full h-96 bg-[url(/src/lib/assets/step-1.png)] bg-center bg-cover relative overflow-hidden z-10 lg:opacity-0 lg:translate-y-3">
+                    <div id="step-1-box" class="rounded-2xl w-full h-96 bg-[url(/src/lib/assets/webp/step-1.webp)] bg-center bg-cover relative overflow-hidden z-10 lg:opacity-0 lg:translate-y-3">
                         <div class="absolute top-0 h-2/3 w-full bg-linear-to-b from-zinc-900/80 to-zinc-900/0 -z-1"></div>
                         <p class="z-20 text-md-bold lg:text-xl-bold mx-4 lg:mx-6 my-4 lg:my-6 font-display text-white">Zapoznanie się z Twoim biznesem i zrozumienie go w całości</p>
-                        <p id="step-text" class="z-20 text-xs mx-4 lg:mx-6 my-4 lg:my-6 text-white opacity-0 translate-y-2">Przeprowadzamy szczegółową analizę produktów, aby lepiej zrozumieć ich unikalne cechy i potrzeby rynku. Na tej podstawie tworzymy dopasowaną strategię marketingową, która skutecznie przyciąga klientów
-                            i maksymalizuje wyniki sprzedaży.</p>
+                        <p id="step-text" class="z-20 text-xs mx-4 lg:mx-6 my-4 lg:my-6 text-white opacity-0 translate-y-2">Na początku współpracy dokładnie poznajemy Twój biznes, jego misję, wartości i otoczenie rynkowe. Dzięki temu możemy lepiej dopasować nasze działania i tworzyć rozwiązania, które wspierają Twoje cele biznesowe.
+                        </p>
                         <div class="absolute right-3 bottom-3">
                             <div role="button" tabindex="0" onkeydown={() => toggleStateBox(0)} id="step-info" onclick={() => toggleStateBox(0)} class="w-12 h-12 bg-primary-600 rounded-full flex justify-center items-center hover:cursor-pointer active:scale-[0.98] active:transition-all hover:scale-[1.05]">
                                 <svg id="step-info-svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -164,7 +164,7 @@
                     </div>
                 </div>
                 <div class="col-span-1 max-lg:w-[250px] flex-none lg:flex justify-center mx-2 xl:mx-4 mt-11">
-                    <div id="step-2-box" class="rounded-2xl w-full h-96 bg-[url(/src/lib/assets/step-2.png)] bg-center bg-cover relative overflow-hidden z-10 lg:opacity-0 lg:translate-y-3">
+                    <div id="step-2-box" class="rounded-2xl w-full h-96 bg-[url(/src/lib/assets/webp/step-2.webp)] bg-center bg-cover relative overflow-hidden z-10 lg:opacity-0 lg:translate-y-3">
                         <div class="absolute top-0 h-2/3 w-full bg-linear-to-b from-zinc-900/80 to-zinc-900/0 -z-1"></div>
                         <p class="z-20 text-md-bold lg:text-xl-bold mx-4 lg:mx-6 my-4 lg:my-6 font-display text-white">Analiza produktów oraz zbudowanie odpowiedniej strategii marketingowej</p>
                         <p id="step-text" class="z-20 text-xs mx-4 lg:mx-6 my-4 lg:my-6 text-white opacity-0 translate-y-2">Przeprowadzamy szczegółową analizę produktów, aby lepiej zrozumieć ich unikalne cechy i potrzeby rynku. Na tej podstawie tworzymy dopasowaną strategię marketingową, która skutecznie przyciąga klientów
@@ -181,11 +181,10 @@
                     </div>
                 </div>
                 <div class="col-span-1 max-lg:w-[250px] flex-none lg:flex justify-center mx-2 xl:mx-4">
-                    <div id="step-3-box" class="rounded-2xl w-full h-96 bg-[url(/src/lib/assets/step-3.png)] bg-center bg-cover relative overflow-hidden z-10 lg:opacity-0 lg:translate-y-3">
+                    <div id="step-3-box" class="rounded-2xl w-full h-96 bg-[url(/src/lib/assets/webp/step-3.webp)] bg-center bg-cover relative overflow-hidden z-10 lg:opacity-0 lg:translate-y-3">
                         <div class="absolute top-0 h-2/3 w-full bg-linear-to-b from-zinc-900/80 to-zinc-900/0 -z-1"></div>
                         <p class="z-20 text-md-bold lg:text-xl-bold mx-4 lg:mx-6 my-4 lg:my-6 font-display text-white">Wdrożenie opracowanej strategii i optymalizacja całego procesu marketingu</p>
-                        <p id="step-text" class="z-20 text-xs mx-4 lg:mx-6 my-2 lg:my-6 text-white opacity-0 translate-y-2">Przeprowadzamy szczegółową analizę produktów, aby lepiej zrozumieć ich unikalne cechy i potrzeby rynku. Na tej podstawie tworzymy dopasowaną strategię marketingową, która skutecznie przyciąga klientów
-                            i maksymalizuje wyniki sprzedaży.</p>
+                        <p id="step-text" class="z-20 text-xs mx-4 lg:mx-6 my-2 lg:my-6 text-white opacity-0 translate-y-2">Przechodzimy do działania, realizując strategię krok po kroku i na bieżąco optymalizując procesy. Dzięki temu zapewniamy spójność komunikacji, efektywność kampanii i ciągłe doskonalenie działań marketingowych.</p>
                         <div class="absolute right-3 bottom-3">
                             <div role="button" tabindex="0" onkeydown={() => toggleStateBox(2)} id="step-info" onclick={() => toggleStateBox(2)}  class="w-12 h-12 bg-primary-600 rounded-full flex justify-center items-center hover:cursor-pointer active:scale-[0.98] active:transition-all hover:scale-[1.05]">
                                 <svg id="step-info-svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -198,11 +197,10 @@
                     </div>
                 </div>
                 <div class="col-span-1 max-lg:w-[250px] flex-none lg:flex justify-center mx-2 xl:mx-4 mt-11">
-                    <div id="step-4-box" class="rounded-2xl w-full h-96 bg-[url(/src/lib/assets/step-4.png)] bg-center bg-cover relative overflow-hidden z-10 lg:opacity-0 lg:translate-y-3">
+                    <div id="step-4-box" class="rounded-2xl w-full h-96 bg-[url(/src/lib/assets/webp/step-4.webp)] bg-center bg-cover relative overflow-hidden z-10 lg:opacity-0 lg:translate-y-3">
                         <div class="absolute top-0 h-2/3 w-full bg-linear-to-b from-zinc-900/80 to-zinc-900/0 -z-1"></div>
                         <p class="z-20 text-md-bold lg:text-xl-bold mx-4 lg:mx-6 my-4 lg:my-6  font-display text-white">Analiza uzyskanych wyników i planowanie przyszłych działań</p>
-                        <p id="step-text" class="z-20 text-xs mx-4 lg:mx-6 my-4 lg:my-6 text-white opacity-0 translate-y-2">Przeprowadzamy szczegółową analizę produktów, aby lepiej zrozumieć ich unikalne cechy i potrzeby rynku. Na tej podstawie tworzymy dopasowaną strategię marketingową, która skutecznie przyciąga klientów
-                            i maksymalizuje wyniki sprzedaży.</p>
+                        <p id="step-text" class="z-20 text-xs mx-4 lg:mx-6 my-4 lg:my-6 text-white opacity-0 translate-y-2">Po wdrożeniu strategii mierzymy efekty i analizujemy kluczowe wskaźniki. Na tej podstawie wyciągamy wnioski i planujemy kolejne kroki, by stale rozwijać Twoją markę i zwiększać skuteczność działań.</p>
                         <div class="absolute right-3 bottom-3">
                             <div role="button" tabindex="0" onkeydown={() => toggleStateBox(3)} id="step-info" onclick={() => toggleStateBox(3)}  class="w-12 h-12 bg-primary-600 rounded-full flex justify-center items-center hover:cursor-pointer active:scale-[0.98] active:transition-all hover:scale-[1.05]">
                                 <svg id="step-info-svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -98,7 +98,7 @@
                     </svg>                        
                 </div>
             </div>
-            <div class="max-[500px]:hidden">{#if id.includes('/blog') && !id.includes('/article') || id.includes('/kontakt')}<Button label="Zrealizujmy kampanię" theme="orange" href="#contact" />{:else}<Button label="Zrealizujmy kampanię" theme="dark" href="#contact" />{/if}</div>
+            <div class="max-[500px]:hidden">{#if id.includes('/blog') && !id.includes('/article') || id.includes('/kontakt')}<Button label="Darmowa współpraca" theme="orange" href="#contact" />{:else}<Button label="Darmowa współpraca" theme="dark" href="#contact" />{/if}</div>
             <div role="button" tabindex="0" onkeydown={toggle} onclick={toggle} class="hidden max-[852px]:flex justify-center items-center rounded-full bg-primary-600 py-3 px-5 active:scale-[0.98] active:transition-all">
                 <div class="hamburgerMenu" id="hamburgerMenu"></div>              
             </div>

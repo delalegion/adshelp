@@ -1,9 +1,12 @@
 <script>
     import { fly } from 'svelte/transition';
-    import { fade } from "svelte/transition"
+    import { fade } from "svelte/transition";
+
 
     // Images
-    import header from '$lib/assets/header.png?enhanced';
+    import video from '$lib/assets/header-animation.mp4';
+    import videoWebm from '$lib/assets/header-animation.webm';
+    import poster from '$lib/assets/header-animation-poster.png';
 
     // Components
     import Button from '$lib/components/Button.svelte';
@@ -103,10 +106,16 @@
 </script>
 
 <header id="header" class="header flex justify-center">
-    <div class="container pt-12 lg:pt-24 pb-12 lg:pb-24 pl-6 lg:pl-12 pr-6 lg:pr-12 grid grid-cols-1 lg:grid-cols-2 gap-2 md:gap-3.5 items-center">
-        <div class="col-span-1 mb-24 order-2 lg:order-1">
-            <h1 class="text-3xl-bold lg:text-4xl-bold xl:text-5xl-bold 2xl:text-6xl-bold font-display text-primary-950 pr-4 lg:pr-10">Skuteczne kampanie <span class="text-primary-600">Allegro ads</span> dla Twojego e-commerce</h1>
-            <p class="text-sm lg:text-base text-primary-950 mt-4">Zostaw swoje dane i uzyskaj darmowy audyt</p>
+    <div class="container pt-4 lg:pt-24 pb-4 lg:pb-24 pl-6 lg:pl-12 max-sm:pr-4 grid grid-cols-1 lg:grid-cols-2 gap-2 md:gap-3.5 items-center relative">
+        <div class="xl:absolute right-0 2xl:-right-[8%] 2xl:-top-[4%] order-1 lg:order-2">
+            <video autoplay muted loop class="w-[700px] 2xl:w-[920px] aspect-4/3 -z-1" playsinline preload="none" poster={poster}>
+                <source src={videoWebm} type="video/webm" />
+                <!-- <source src={video} type="video/mp4" /> -->
+            </video>
+        </div>
+        <div class="col-span-1 mb-24 order-2 lg:order-1 z-10">
+            <h1 class="text-3xl-bold lg:text-4xl-bold xl:text-5xl-bold 2xl:text-6xl-bold font-display text-primary-950 pr-4 lg:pr-10">Skuteczne kampanie <span class="text-primary-600">Allegro Ads</span> dla Twojego e-commerce</h1>
+            <p class="text-sm lg:text-base text-primary-950 mt-4">Pierwszy miesiąc bez zobowiązań, całkowicie za darmo!</p>
          
             <form method="POST" action="?/audit" id="audit-header-form" onsubmit={handleSubmit} use:enhance>
             {#if activeTab === 1}
@@ -188,8 +197,7 @@
             </div>
             {/if}
         </div>
-        <div class="col-span-1 order-1 lg:order-2">
-            <enhanced:img src={header} alt="Image of header with bunch of graphics showing products and excited woman holding phone" class="w-full flex" />
+        <div class="max-lg:hidden col-span-1 order-1 lg:order-2 relative w-full h-full">
         </div>
     </div>
 </header>

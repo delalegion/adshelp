@@ -48,11 +48,12 @@
         <div class="container sm:px-12">
             <div class="flex flex-col min-[500px]:flex-row max-sm:justify-center min-[500px]:justify-between w-full pb-6 max-sm:px-6">
                 <ul class="flex flex-row flex-wrap gap-x-6 gap-y-4 min-[500px]:gap-8 lg:gap-12">
-                    <li class="text-2xl text-primary-950 active:scale-[0.98] active:transition-all"><a href="/" class="transition-all py-3 rounded-full hover:opacity-75">O mnie</a></li>
-                    <li class="text-2xl text-primary-950 active:scale-[0.98] active:transition-all"><a href="/" class="transition-all py-3 rounded-full hover:opacity-75">Dlaczego warto</a></li>
-                    <li class="text-2xl text-primary-950 active:scale-[0.98] active:transition-all"><a href="/" class="transition-all py-3 rounded-full hover:opacity-75">Usługi</a></li>
-                    <li class="text-2xl text-primary-950 active:scale-[0.98] active:transition-all"><a href="/" class="transition-all py-3 rounded-full hover:opacity-75">Blog</a></li>
-                    <li class="text-2xl text-primary-950 active:scale-[0.98] active:transition-all"><a href="/" class="transition-all py-3 rounded-full hover:opacity-75">Kontakt</a></li>
+                    <li class="text-2xl text-primary-950 active:scale-[0.98] active:transition-all"><a href="/#about" class="transition-all py-3 rounded-full hover:opacity-75">O mnie</a></li>
+                    <li class="text-2xl text-primary-950 active:scale-[0.98] active:transition-all"><a href="/#steps" class="transition-all py-3 rounded-full hover:opacity-75">Dlaczego warto</a></li>
+                    <li class="text-2xl text-primary-950 active:scale-[0.98] active:transition-all"><a href="/#services" class="transition-all py-3 rounded-full hover:opacity-75">Usługi</a></li>
+                    <li class="text-2xl text-primary-950 active:scale-[0.98] active:transition-all"><a href="/blog" class="transition-all py-3 rounded-full hover:opacity-75">Blog</a></li>
+                    <li class="text-2xl text-primary-950 active:scale-[0.98] active:transition-all"><a href="/allegro" class="transition-all py-3 rounded-full hover:opacity-75">Allegro</a></li>
+                    <li class="text-2xl text-primary-950 active:scale-[0.98] active:transition-all"><a href="/kontakt" class="transition-all py-3 rounded-full hover:opacity-75">Kontakt</a></li>
                 </ul>
                 <div class="flex flex-row gap-3 max-[500px]:mt-6 max-sm:hidden">
                     <a href="https://www.instagram.com/adshelp.pl" class="border-[1px] hover:border-[2px] border-stone-300 border-solid rounded-full w-[48px] h-[48px] flex items-center justify-center hover:scale-105 hover:border-primary-950 active:scale-95 hover:transition-all hover:cursor-pointer"><img class="w-[19px]" src={ig} alt="Instagram icon" /></a>

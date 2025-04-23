@@ -9,6 +9,10 @@
     import screenThree from '$lib/assets/screen-3.png?enhanced';
     import screenUpOne from '$lib/assets/screen-1-1.png?enhanced';
     import screenUpTwo from '$lib/assets/screen-1-2.png?enhanced';
+    import screenTwoOne from '$lib/assets/screen-2-1.png?enhanced';
+    import screenTwoTwo from '$lib/assets/screen-2-2.png?enhanced';
+    import screenThreeOne from '$lib/assets/screen-3-1.png?enhanced';
+    import screenThreeTwo from '$lib/assets/screen-3-2.png?enhanced';
 
     // Components
     import Button from '$lib/components/Button.svelte';
@@ -242,17 +246,17 @@
                     </div>
                     <div class="col-span-2 min-[560px]:col-span-6 xl:col-span-5 2xl:col-span-3 bg-[#2E0C08] py-12 flex items-center justify-center relative min-h-[300px] min-[560px]:min-h-[450px] max-[560px]:rounded-b-xl">
            
-                        <enhanced:img id="slide-1" class="w-full left-0 top-9 min-[560px]:top-12 px-8 min-[560px]:px-20 py-6 absolute opacity-0" src={screen} alt="Graphic image of sales statistics" />
-                        <enhanced:img id="slide-2" class="w-full left-0 top-11 min-[560px]top-14 px-8 min-[560px]:px-20 py-6 absolute opacity-0" src={screen} alt="Graphic image of sales statistics" />
-                        <enhanced:img id="slide-3" class="w-full left-0 top-12 min-[560px]top-16 px-8 min-[560px]:px-20 py-6 absolute opacity-0" src={screen} alt="Graphic image of sales statistics" />
+                        <enhanced:img id="slide-1" class="w-full left-0 top-9 min-[560px]:top-12 px-8 min-[560px]:px-20 py-6 absolute opacity-0" src={screen} alt="Graphic image of sales statistics" loading="lazy" />
+                        <enhanced:img id="slide-2" class="w-full left-0 top-11 min-[560px]top-14 px-8 min-[560px]:px-20 py-6 absolute opacity-0" src={screenTwo} alt="Graphic image of sales statistics" loading="lazy" />
+                        <enhanced:img id="slide-3" class="w-full left-0 top-12 min-[560px]top-16 px-8 min-[560px]:px-20 py-6 absolute opacity-0" src={screenThree} alt="Graphic image of sales statistics" loading="lazy" />
 
-                        <enhanced:img id="slide-1-1" class="max-[560px]:w-[100px] absolute left-4 bottom-24 opacity-0 " src={screenUpOne} alt="Graphics image of sales improve" />
-                        <enhanced:img id="slide-2-1" class="max-[560px]:w-[100px] absolute left-4 bottom-32 min-[560px]:bottom-36 opacity-0 " src={screenUpOne} alt="Graphics image of sales improve" />
-                        <enhanced:img id="slide-3-1" class="max-[560px]:w-[100px] absolute left-10 top-24 opacity-0 " src={screenUpOne} alt="Graphics image of sales improve" />
+                        <enhanced:img id="slide-1-1" class="max-[560px]:w-[100px] absolute left-4 bottom-24 opacity-0 " src={screenUpOne} alt="Graphics image of sales improve" loading="lazy" />
+                        <enhanced:img id="slide-2-1" class="max-[560px]:w-[200px] w-[300px] absolute left-4 bottom-32 min-[560px]:bottom-36 opacity-0 " src={screenTwoOne} alt="Graphics image of sales improve" loading="lazy" />
+                        <enhanced:img id="slide-3-1" class="max-[560px]:w-[200px] w-[300px] absolute left-5 top-24 opacity-0 " src={screenThreeOne} alt="Graphics image of sales improve" loading="lazy" />
 
-                        <enhanced:img id="slide-1-2" class="max-[560px]:w-[350px] absolute top-6 right-8 opacity-0" src={screenUpTwo} alt="Graphics image of sales money" />
-                        <enhanced:img id="slide-2-2" class="max-[560px]:w-[350px] absolute bottom-8 min-[560px]:bottom-14 right-20 opacity-0" src={screenUpTwo} alt="Graphics image of sales money" />
-                        <enhanced:img id="slide-3-2" class="max-[560px]:w-[350px] absolute top-8 right-10 opacity-0" src={screenUpTwo} alt="Graphics image of sales money" />
+                        <enhanced:img id="slide-1-2" class="max-[560px]:w-[350px] absolute top-6 right-8 opacity-0" src={screenUpTwo} alt="Graphics image of sales money" loading="lazy" />
+                        <enhanced:img id="slide-2-2" class="max-[560px]:w-[250px] w-[300px] absolute bottom-8 min-[560px]:bottom-14 right-20 opacity-0" src={screenTwoTwo} alt="Graphics image of sales money" loading="lazy" />
+                        <enhanced:img id="slide-3-2" class="max-[560px]:w-[250px] w-[300px] absolute top-8 right-10 opacity-0" src={screenThreeTwo} alt="Graphics image of sales money" loading="lazy" />
                  
                     </div>
                 </div>
