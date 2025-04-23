@@ -14,11 +14,8 @@
 </script>
 
 
-{#key key}
-    <div in:fly={{ y: -50, opacity: 0 }}>
+
         <!-- Navbar section -->
         <Navbar />
 
         {@render children()}
-    </div>
-{/key}
