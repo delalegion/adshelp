@@ -24,3 +24,5 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 todo
 TODO
+# Sentry Config File
+.env.sentry-build-plugin
