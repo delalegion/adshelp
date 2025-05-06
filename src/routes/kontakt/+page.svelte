@@ -10,7 +10,6 @@
     import type { PageData } from './$types';
     import { fade, fly } from 'svelte/transition';
     import { enhance } from '$app/forms';
-    import Pricing from '$lib/components/sections/pricing/pricing.svelte';
     import Footer from '$lib/components/sections/footer/Footer.svelte';
     import Audit from '$lib/components/sections/blog-audit/Audit.svelte';
 
@@ -33,14 +32,16 @@
     <meta property="og:site_name" content="Adshelp.pl - Skuteczne kampanie Allegro ads dla Twojego e-commerce">
     <meta property="og:url" content="https://adshelp.pl/kontakt">
     <meta property="og:title" content="Chcesz rozwinąć biznes na Allegro? Napisz do Adshelp! | Adshelp.pl - Pomagamy rozwinąć Twój biznes na Allegro">
-    <meta property="og:image" content="https://adshelp.pl/og-image.png">
+    <meta property="og:image" content="https://adshelp.pl/og-image.jpg">
+    <meta property=”og:locale” content=”pl_PL” />
+    <meta property="og:description" content="Nowoczesny blog dostarczający wiedzy o marketingu, która pomoże rozwinąć Twój biznes." />
 
     <link rel="index" title="Strona główna" href="https://adshelp.pl">
     <link rel="canonical" href="https://adshelp.pl/">
     <link rel="icon" href="https://adshelp.pl/favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="https://example.net/images/apple-touch-icon.png">
 
-    <title>Kontakt z Adshelp - Skuteczne reklamy Google Ads | Adshelp.pl - Pomożemy rozwinąć biznes na Allegro</title>
+    <title>Kontakt z Adshelp - Skuteczne reklamy Google Ads</title>
 
 </svelte:head>
 

@@ -31,8 +31,10 @@
     <meta name="msapplication-window" content="width=1024;height=768">
     <meta property="og:site_name" content="Adshelp.pl - Skuteczne kampanie Allegro ads dla Twojego e-commerce">
     <meta property="og:url" content="https://adshelp.pl/allegro">
-    <meta property="og:title" content="Reklama Allegro Ads | Adshelp.pl - Pomagamy rozwinąć Twój biznes na Allegro">
-    <meta property="og:image" content="https://adshelp.pl/og-image.png">
+    <meta property="og:title" content="Adshelp.pl - Pomagamy rozwinąć Twój biznes na Allegro">
+    <meta property="og:image" content="https://adshelp.pl/og-image.jpg">
+    <meta property=”og:locale” content=”pl_PL” />
+    <meta property="og:description" content="Skuteczne kampanie Allegro ads dla Twojego e-commerce" />
 
     <link rel="index" title="Strona główna" href="https://adshelp.pl">
     <link rel="canonical" href="https://adshelp.pl/">

@@ -36,7 +36,7 @@
     {#if data[1]}
     <!-- Article -->
     <a href="/blog/article/{data[1].slug}" class="col-span-4 min-[540px]:col-span-6 min-[850px]:col-span-5 lg:col-span-4 col-start-1 min-[540px]:col-start-7 min-[850px]:col-start-8 lg:col-start-8 flex flex-col min-[800px]:mt-36 active:scale-[0.98] transition-all transition-300 hover:cursor-pointer">
-        <div class="bg-[#D9D9D9] aspect-3/2 w-full rounded-2xl">
+        <div class="bg-[#D9D9D9] aspect-3/2 w-full rounded-2xl overflow-hidden">
             {#if data[1].cover}
                 <img src={data[1].cover.formats.medium.url} alt={data[1].cover.alternativeText} class="object-cover w-full h-full" />
             {/if}
@@ -62,7 +62,7 @@
     {#if data[2]}
     <!-- Article -->
     <a href="/blog/article/{data[2].slug}" class="col-span-4 min-[540px]:col-span-6 min-[850px]:col-span-5 lg:col-span-4 col-start-1 min-[540px]:col-start-1 min-[850px]:col-start-2 lg:col-start-2 flex flex-col min-[540px]:mt-8 active:scale-[0.98] transition-all transition-300 hover:cursor-pointer">
-        <div class="bg-[#D9D9D9] aspect-3/2 w-full rounded-2xl">
+        <div class="bg-[#D9D9D9] aspect-3/2 w-full rounded-2xl overflow-hidden">
             {#if data[2].cover}
                 <img src={data[2].cover.formats.medium.url} alt={data[2].cover.alternativeText} class="object-cover w-full h-full" />
             {/if}
@@ -88,7 +88,7 @@
     {#if data[3]}
     <!-- Article -->
     <a href="/blog/article/{data[3].slug}" class="col-span-4 min-[540px]:col-span-6 min-[850px]:col-span-5 lg:col-span-4 col-end-5 min-[540px]:col-end-13 min-[850px]:col-end-12 lg:col-end-13 flex flex-col min-[540px]:mt-8 min-[800px]:mt-32 active:scale-[0.98] transition-all transition-300 hover:cursor-pointer">
-        <div class="bg-primary-950 aspect-3/2 w-full rounded-2xl">
+        <div class="bg-primary-950 aspect-3/2 w-full rounded-2xl overflow-hidden">
             {#if data[3].cover}
                 <img src={data[3].cover.formats.medium.url} alt={data[3].cover.alternativeText} class="object-cover w-full h-full" />
             {/if}
@@ -118,7 +118,7 @@
     {#if data[4]}
     <!-- Article -->
     <a href="/blog/article/{data[4].slug}" class="col-span-4 min-[540px]:col-span-6 min-[850px]:col-span-5 lg:col-span-4 col-start-1 min-[540px]:col-start-1 min-[850px]:col-start-2 lg:col-start-2 flex flex-col active:scale-[0.98] transition-all transition-300 hover:cursor-pointer">
-        <div class="bg-[#D9D9D9] aspect-3/2 w-full rounded-2xl">
+        <div class="bg-[#D9D9D9] aspect-3/2 w-full rounded-2xl overflow-hidden">
             {#if data[4].cover}
                 <img src={data[4].cover.formats.medium.url} alt={data[4].cover.alternativeText} class="object-cover w-full h-full" />
             {/if}
@@ -144,7 +144,7 @@
     {#if data[5]}
     <!-- Article -->
     <a href="/blog/article/{data[5].slug}" class="col-span-4 min-[540px]:col-span-6 min-[850px]:col-span-5 lg:col-span-4 col-start-1 min-[540px]:col-start-7 min-[850px]:col-start-7 lg:col-start-7 flex flex-col min-[800px]:mt-32 active:scale-[0.98] transition-all transition-300 hover:cursor-pointer">
-        <div class="bg-primary-950 aspect-3/2 w-full rounded-2xl">
+        <div class="bg-primary-950 aspect-3/2 w-full rounded-2xl overflow-hidden">
             {#if data[5].cover}
                 <img src={data[5].cover.formats.medium.url} alt={data[5].cover.alternativeText} class="object-cover w-full h-full" />
             {/if}
@@ -170,7 +170,7 @@
     {#if data[6]}
     <!-- Article -->
     <a href="/blog/article/{data[6].slug}" class="col-span-4 min-[540px]:col-span-6 min-[850px]:col-span-5 lg:col-span-4 col-start-1 min-[540px]:col-start-1 min-[850px]:col-start-1 lg:col-start-1 flex flex-col min-[540px]:mt-8 min-[800px]:mt-12 active:scale-[0.98] transition-all transition-300 hover:cursor-pointer">
-        <div class="bg-primary-950 aspect-3/2 w-full rounded-2xl">
+        <div class="bg-primary-950 aspect-3/2 w-full rounded-2xl overflow-hidden">
             {#if data[6].cover}
                 <img src={data[6].cover.formats.medium.url} alt={data[6].cover.alternativeText} class="object-cover w-full h-full" />
             {/if}
@@ -196,7 +196,7 @@
     {#if data[7]}
     <!-- Article -->
     <a href="/blog/article/{data[7].slug}" class="col-span-4 min-[540px]:col-span-6 min-[850px]:col-span-5 lg:col-span-4 col-start-1 min-[540px]:col-start-7 min-[850px]:col-start-8 lg:col-start-8 flex flex-col min-[540px]:mt-8 min-[800px]:mt-32 active:scale-[0.98] transition-all transition-300 hover:cursor-pointer">
-        <div class="bg-[#D9D9D9] aspect-3/2 w-full rounded-2xl">
+        <div class="bg-[#D9D9D9] aspect-3/2 w-full rounded-2xl overflow-hidden">
             {#if data[7].cover}
                 <img src={data[7].cover.formats.medium.url} alt={data[7].cover.alternativeText} class="object-cover w-full h-full" />
             {/if}

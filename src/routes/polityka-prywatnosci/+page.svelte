@@ -12,14 +12,16 @@
     <meta property="og:site_name" content="Adshelp.pl - Skuteczne kampanie Allegro ads dla Twojego e-commerce">
     <meta property="og:url" content="https://Adshelp.pl">
     <meta property="og:title" content="Reklama Allegro Ads | Adshelp.pl - Pomagamy rozwinąć Twój biznes na Allegro">
-    <meta property="og:image" content="https://adshelp.pl/og-image.png">
+    <meta property="og:image" content="https://adshelp.pl/og-image.jpg">
+    <meta property=”og:locale” content=”pl_PL” />
+    <meta property="og:description" content="Nowoczesny blog dostarczający wiedzy o marketingu, która pomoże rozwinąć Twój biznes." />
 
     <link rel="index" title="Strona główna" href="https://adshelp.pl">
     <link rel="canonical" href="https://adshelp.pl/">
     <link rel="icon" href="https://adshelp.pl/favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="https://example.net/images/apple-touch-icon.png">
 
-    <title>Polityka prywatności Adshelp.pl | Adshelp.pl - Pomożemy rozwinąć biznes na Allegro</title>
+    <title>Polityka prywatności Adshelp.pl</title>
 
 </svelte:head>
 

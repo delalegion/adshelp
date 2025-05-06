@@ -113,7 +113,7 @@
                 <p class="text-md xl:text-xl text-primary-500 mt-7">Z tego powodu, w celu dbania o jakość naszej współpracy,<br class="max-2xl:hidden"/> liczba miejsc jest ograniczona. Zostało mi 7 wolnych miejsc!</p>
                 <div class="flex flex-row gap-3 mt-6 md:mt-8 lg:mt-12 flex-wrap">
                     <Button label="Zacznijmy działać" theme="orange" href="#contact" />
-                    <Button label="Powiadomienia o nowych dostępach" />
+                    <Button label="Powiadomienia o nowych dostępach" href="#contact" />
                 </div>
             </div>
             <div class="col-span-2 min-[992px]:col-span-1">
