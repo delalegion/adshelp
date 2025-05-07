@@ -8,8 +8,6 @@
 
     // Components
     import Button from '$lib/components/Button.svelte';
-    import { Checkbox, Label } from "bits-ui";
-    import Check from "phosphor-svelte/lib/Check";
     import Phone from "phosphor-svelte/lib/Phone";
     import { fade, fly } from 'svelte/transition';
 

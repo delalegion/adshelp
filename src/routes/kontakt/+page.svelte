@@ -5,7 +5,6 @@
     import Button from '$lib/components/Button.svelte';
     import Message from 'phosphor-svelte/lib/ChatCircle';
     import PhoneImage from '$lib/assets/phone.png';
-    import { Checkbox, Label } from "bits-ui";
 
     import type { PageData } from './$types';
     import { fade, fly } from 'svelte/transition';
