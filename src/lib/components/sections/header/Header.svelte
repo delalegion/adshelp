@@ -6,7 +6,8 @@
     // Images
     import video from '$lib/assets/header-animation.mp4';
     import videoWebm from '$lib/assets/header-animation.webm';
-    import poster from '$lib/assets/header-animation-poster.png';
+    import poster from '$lib/assets/header-animation-poster.webp';
+    import posterEnhanced from '$lib/assets/header-animation-poster.webp?enhanced';
 
     // Components
     import Button from '$lib/components/Button.svelte';
@@ -108,7 +109,10 @@
 <header id="header" class="header flex justify-center">
     <div class="container pt-4 lg:pt-24 pb-4 lg:pb-24 pl-6 lg:pl-12 max-sm:pr-4 grid grid-cols-1 lg:grid-cols-2 gap-2 md:gap-3.5 items-center relative">
         <div class="xl:absolute right-0 2xl:-right-[8%] 2xl:-top-[4%] order-1 lg:order-2">
-            <video autoplay muted loop class="w-[700px] 2xl:w-[920px] aspect-4/3 -z-1" playsinline preload="none" poster={poster}>
+            <enhanced:img src={posterEnhanced} alt="Statistics table, phone with notifications" class="md:hidden" />
+
+            <video autoplay muted loop class="w-[700px] 2xl:w-[920px] aspect-4/3 -z-1 max-md:hidden" playsinline preload="none">
+                <link rel="preload" as="image" href={poster} fetchpriority="high">
                 <source src={videoWebm} type="video/webm" />
                 <!-- <source src={video} type="video/mp4" /> -->
             </video>
@@ -192,7 +196,7 @@
             </form>
             {#if success === false}
             <div class="flex flex-row gap-3 md:gap-3.5 mt-5 md:mt-7">
-                <div role="button" tabindex="0" onclick={setNextTab} onkeydown={setNextTab} class="text-sm md:text-base-bold {activeTab === 1 ? 'text-primary-950 border-orange-600 border-b-3' : 'border-b-2 border-stone-500 text-stone-500'} pb-1 md:pb-1.5 border-solid  hover:cursor-pointer">Krok 1</div>
+                <div role="button" tabindex="0" onkeydown={setNextTab} onclick={setNextTab} class="text-sm md:text-base-bold {activeTab === 1 ? 'text-primary-950 border-orange-600 border-b-3' : 'border-b-2 border-stone-500 text-stone-500'} pb-1 md:pb-1.5 border-solid  hover:cursor-pointer">Krok 1</div>
                 <div role="button" tabindex="0" onclick={setNextTab} onkeydown={setNextTab} class="text-sm md:text-base-bold {activeTab === 2 ? 'text-primary-950 border-orange-600 border-b-3' : 'border-b-2 border-stone-500 text-stone-500'} pb-1 md:pb-1.5 hover:cursor-pointer hover:border-b-3 transition-all">Krok 2</div>
             </div>
             {/if}

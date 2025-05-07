@@ -15,6 +15,7 @@
     <meta property="og:image" content="https://adshelp.pl/og-image.jpg">
     <meta property=”og:locale” content=”pl_PL” />
     <meta property="og:description" content="Nowoczesny blog dostarczający wiedzy o marketingu, która pomoże rozwinąć Twój biznes." />
+    <meta property=”og:type” content=”website” />
 
     <link rel="index" title="Strona główna" href="https://adshelp.pl">
     <link rel="canonical" href="https://adshelp.pl/">
@@ -36,7 +37,7 @@
         <div class="py-6">
             <h2 class="text-2xl-bold font-display text-primary-950 flex flex-row gap-2" id="what-does-this-privacy-notice">
                 What Does This Privacy Notice Apply To?
-                <a href="#what-does-this-privacy-notice" class="flex items-center">
+                <a href="#what-does-this-privacy-notice" class="flex items-center" aria-label="link">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10 13C10.4295 13.5742 10.9774 14.0492 11.6066 14.393C12.2357 14.7367 12.9315 14.9411 13.6467 14.9924C14.3618 15.0436 15.0796 14.9404 15.7513 14.6898C16.4231 14.4392 17.0331 14.0471 17.54 13.54L20.54 10.54C21.4508 9.59702 21.9548 8.334 21.9434 7.02302C21.932 5.71204 21.4061 4.45797 20.4791 3.53093C19.5521 2.60389 18.298 2.07805 16.987 2.06666C15.676 2.05526 14.413 2.55924 13.47 3.47003L11.75 5.18003" stroke="#020617" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M14 11C13.5705 10.4259 13.0226 9.9508 12.3935 9.60704C11.7643 9.26328 11.0685 9.05886 10.3534 9.00765C9.63821 8.95643 8.92041 9.05961 8.24866 9.3102C7.5769 9.56079 6.96689 9.95291 6.46 10.46L3.46 13.46C2.54921 14.403 2.04524 15.666 2.05663 16.977C2.06802 18.288 2.59387 19.542 3.52091 20.4691C4.44795 21.3961 5.70201 21.922 7.013 21.9334C8.32398 21.9447 9.58699 21.4408 10.53 20.53L12.24 18.82" stroke="#020617" stroke-linecap="round" stroke-linejoin="round"/>
@@ -53,7 +54,7 @@
         <div class="py-6">
             <h2 class="text-2xl-bold font-display text-primary-950 flex flex-row gap-2" id="region-specific-discloures">
                 Region-specific Disclosures
-                <a href="#region-specific-discloures" class="flex items-center">
+                <a href="#region-specific-discloures" class="flex items-center" aria-label="link">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10 13C10.4295 13.5742 10.9774 14.0492 11.6066 14.393C12.2357 14.7367 12.9315 14.9411 13.6467 14.9924C14.3618 15.0436 15.0796 14.9404 15.7513 14.6898C16.4231 14.4392 17.0331 14.0471 17.54 13.54L20.54 10.54C21.4508 9.59702 21.9548 8.334 21.9434 7.02302C21.932 5.71204 21.4061 4.45797 20.4791 3.53093C19.5521 2.60389 18.298 2.07805 16.987 2.06666C15.676 2.05526 14.413 2.55924 13.47 3.47003L11.75 5.18003" stroke="#020617" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M14 11C13.5705 10.4259 13.0226 9.9508 12.3935 9.60704C11.7643 9.26328 11.0685 9.05886 10.3534 9.00765C9.63821 8.95643 8.92041 9.05961 8.24866 9.3102C7.5769 9.56079 6.96689 9.95291 6.46 10.46L3.46 13.46C2.54921 14.403 2.04524 15.666 2.05663 16.977C2.06802 18.288 2.59387 19.542 3.52091 20.4691C4.44795 21.3961 5.70201 21.922 7.013 21.9334C8.32398 21.9447 9.58699 21.4408 10.53 20.53L12.24 18.82" stroke="#020617" stroke-linecap="round" stroke-linejoin="round"/>

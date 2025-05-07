@@ -26,7 +26,7 @@
             <h5 class="text-xl-bold lg:text-2xl-bold text-primary-950 font-display mb-3 mt-5">{data[0].title}</h5>
             <p class="text-sm text-stone-600">{data[0].description}</p>
             <div class="flex flex-row gap-3 items-center mt-5">
-                <img src={Avatar} alt="Picture of CEO Adshelp" />
+                <img src={Avatar} alt="CEO of Adshelp" />
                 <p class="text-sm text-primary-950 font-display">Marcin Lubera</p>
             </div>
         </div>
@@ -52,7 +52,7 @@
             <h5 class="text-xl-bold lg:text-2xl-bold text-primary-950 font-display mb-3 mt-5">{data[1].title}</h5>
             <p class="text-sm text-stone-600">{data[1].description}</p>
             <div class="flex flex-row gap-3 items-center mt-5">
-                <img src={Avatar} alt="Picture of CEO Adshelp" />
+                <img src={Avatar} alt="CEO of Adshelp" />
                 <p class="text-sm text-primary-950 font-display">Marcin Lubera</p>
             </div>
         </div>
@@ -78,7 +78,7 @@
             <h5 class="text-xl-bold lg:text-2xl-bold text-primary-950 font-display mb-3 mt-5">{data[2].title}</h5>
             <p class="text-sm text-stone-600">{data[2].description}</p>
             <div class="flex flex-row gap-3 items-center mt-5">
-                <img src={Avatar} alt="Picture of CEO Adshelp" />
+                <img src={Avatar} alt="CEO of Adshelp" />
                 <p class="text-sm text-primary-950 font-display">Marcin Lubera</p>
             </div>
         </div>
@@ -104,7 +104,7 @@
             <h5 class="text-xl-bold lg:text-2xl-bold text-primary-950 font-display mb-3 mt-5">{data[3].title}</h5>
             <p class="text-sm text-stone-600">{data[3].description}</p>
             <div class="flex flex-row gap-3 items-center mt-5">
-                <img src={Avatar} alt="Picture of CEO Adshelp" />
+                <img src={Avatar} alt="CEO of Adshelp" />
                 <p class="text-sm text-primary-950 font-display">Marcin Lubera</p>
             </div>
         </div>
@@ -134,7 +134,7 @@
             <h5 class="text-xl-bold lg:text-2xl-bold text-primary-950 font-display mb-3 mt-5">{data[4].title}</h5>
             <p class="text-sm text-stone-600">{data[4].description}</p>
             <div class="flex flex-row gap-3 items-center mt-5">
-                <img src={Avatar} alt="Picture of CEO Adshelp" />
+                <img src={Avatar} alt="CEO of Adshelp" />
                 <p class="text-sm text-primary-950 font-display">Marcin Lubera</p>
             </div>
         </div>
@@ -160,7 +160,7 @@
             <h5 class="text-xl-bold lg:text-2xl-bold text-primary-950 font-display mb-3 mt-5">{data[5].title}</h5>
             <p class="text-sm text-stone-600">{data[5].description}</p>
             <div class="flex flex-row gap-3 items-center mt-5">
-                <img src={Avatar} alt="Picture of CEO Adshelp" />
+                <img src={Avatar} alt="CEO of Adshelp" />
                 <p class="text-sm text-primary-950 font-display">Marcin Lubera</p>
             </div>
         </div>
@@ -186,7 +186,7 @@
             <h5 class="text-xl-bold lg:text-2xl-bold text-primary-950 font-display mb-3 mt-5">{data[6].title}</h5>
             <p class="text-sm text-stone-600">{data[6].description}</p>
             <div class="flex flex-row gap-3 items-center mt-5">
-                <img src={Avatar} alt="Picture of CEO Adshelp" />
+                <img src={Avatar} alt="CEO of Adshelp" />
                 <p class="text-sm text-primary-950 font-display">Marcin Lubera</p>
             </div>
         </div>
@@ -212,7 +212,7 @@
             <h5 class="text-xl-bold lg:text-2xl-bold text-primary-950 font-display mb-3 mt-5">{data[7].title}</h5>
             <p class="text-sm text-stone-600">{data[7].description}</p>
             <div class="flex flex-row gap-3 items-center mt-5">
-                <img src={Avatar} alt="Picture of CEO Adshelp" />
+                <img src={Avatar} alt="CEO of Adshelp" />
                 <p class="text-sm text-primary-950 font-display">Marcin Lubera</p>
             </div>
         </div>

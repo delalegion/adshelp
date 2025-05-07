@@ -76,6 +76,7 @@
     <meta property="og:image" content="https://adshelp.pl/og-image.jpg">
     <meta property=”og:locale” content=”pl_PL” />
     <meta property="og:description" content="{dataQuery[0].SEO !== null  ? dataQuery[0].SEO.metaTitle : ''}" />
+    <meta property=”og:type” content=”website” />
 
     <link rel="index" title="Strona główna" href="https://adshelp.pl">
     <link rel="canonical" href="https://adshelp.pl/">
@@ -104,7 +105,7 @@
                         {dataQuery[0].category.name}
                     </div>
                     <div class="pl-2 pt-2 pb-2 pr-4 bg-primary-50 text-primary-950 text-base-bold font-display rounded-full inline-flex gap-2 items-center">
-                        <img src={Avatar} alt="Picture of CEO Adshelp" class="h-[30px]" />
+                        <img src={Avatar} alt="CEO of Adshelp" class="h-[30px]" />
                         Marcin Lubera
                     </div>
                 </div>
@@ -137,7 +138,7 @@
             </div>
             {@html dataQuery[0].artykul}
         </div>
-        <div class="flex flex-row gap-4 pt-12 md:pt-18" id="share-socials">
+        <div class="flex flex-row gap-4 pt-4 md:pt-8" id="share-socials">
             <div class="relative group">
                 <div class="absolute -bottom-12 left-0 rounded-xl px-3 py-2 text-sm-bold text-primary-950 bg-white shadow-sm opacity-0 group-hover:opacity-100 transition-all transition-300 pointer-events-none whitespace-nowrap">Udostępnij na Facebook</div>
                 <div onclick={() => shareToFacebook()} onkeydown={() => shareToFacebook()} role="button" tabindex="0" class="flex justify-center items-center w-[54px] h-[54px] bg-primary-50 rounded-full hover:bg-primary-100 active:scale-[0.97] transition-all hover:cursor-pointer">
@@ -181,7 +182,7 @@
                         <h5 class="text-xl-bold lg:text-2xl-bold text-primary-950 font-display mb-3 mt-5">{article.title}</h5>
                         <p class="text-sm text-stone-600">{article.description}</p>
                         <div class="flex flex-row gap-3 items-center mt-5">
-                            <img src={Avatar} alt="Picture of CEO Adshelp" />
+                            <img src={Avatar} alt="CEO of Adshelp" />
                             <p class="text-sm text-primary-950 font-display">Marcin Lubera</p>
                         </div>
                     </div>
@@ -211,7 +212,7 @@
     </div>
 </div>
 
-<div class="flex justify-center bg-white">
+<div class="flex justify-center bg-white" id="contact">
     <div class="max-w-7xl w-full pb-8 md:pb-12 lg:pb-16 mx-6">
         <Audit />
     </div>

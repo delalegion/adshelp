@@ -12,7 +12,6 @@
 
     // Components
     import Button from '$lib/components/Button.svelte';
-    import { onMount } from 'svelte';
 
     // Menu
     let isMenuOpen = $state(false);
@@ -34,7 +33,7 @@
         background-color: white;
         position: relative;
     }
-    .hamburgerMenu.active::after {
+    :global(.hamburgerMenu.active::after) {
         content: '';
         width: 10px;
     }
@@ -92,11 +91,11 @@
                         <path d="M2 5.66667H0V8.5H2V17H5.33333V8.5H7.73333L8 5.66667H5.33333V4.4625C5.33333 3.825 5.46667 3.54167 6.06667 3.54167H8V0H5.46667C3.06667 0 2 1.13333 2 3.25833V5.66667Z" fill="{id.includes('/blog') && !id.includes('/article') || id.includes('/kontakt') ? '#FFF5ED' : '#410F09'}"/>
                     </svg>                        
                 </a>
-                <div class="border-[1px] hover:border-[2px] {id.includes('/blog') && !id.includes('/article') || id.includes('/kontakt') ? 'border-primary-950 bg-primary-dark hover:border-primary-dark' : 'border-stone-300 hover:border-primary-950'} border-solid rounded-full w-[32px] h-[32px] lg:w-[40px] lg:h-[40px] xl:w-[48px] xl:h-[48px] flex items-center justify-center hover:scale-105 active:scale-95 hover:transition-all hover:cursor-pointer">
+                <!-- <div class="border-[1px] hover:border-[2px] {id.includes('/blog') && !id.includes('/article') || id.includes('/kontakt') ? 'border-primary-950 bg-primary-dark hover:border-primary-dark' : 'border-stone-300 hover:border-primary-950'} border-solid rounded-full w-[32px] h-[32px] lg:w-[40px] lg:h-[40px] xl:w-[48px] xl:h-[48px] flex items-center justify-center hover:scale-105 active:scale-95 hover:transition-all hover:cursor-pointer">
                     <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M14.5754 1.66357L14.5754 1.6636L14.585 1.66433C15.187 1.71064 15.5061 1.8249 15.6818 1.92964C15.8261 2.01557 15.9533 2.14026 16.0746 2.41514C16.2118 2.72579 16.3289 3.2043 16.403 3.95477C16.4762 4.69719 16.5 5.61609 16.5 6.76875C16.5 7.9212 16.4763 8.84537 16.4029 9.59431C16.3286 10.3518 16.2111 10.8386 16.0726 11.155C15.9495 11.4364 15.8232 11.5564 15.6894 11.6351C15.5249 11.7318 15.217 11.8403 14.6232 11.8707L14.6232 11.8707L14.6168 11.8711C11.9777 12.0177 6.05257 12.018 3.3998 11.872C2.80765 11.8249 2.49245 11.7117 2.31815 11.6079C2.17392 11.5219 2.04671 11.3972 1.92537 11.1224C1.78823 10.8117 1.67112 10.3332 1.59704 9.58273C1.52376 8.84032 1.5 7.92141 1.5 6.76875C1.5 5.61609 1.52376 4.69719 1.59704 3.95477C1.67112 3.2043 1.78823 2.72579 1.92537 2.41514C2.04671 2.14026 2.17392 2.01557 2.31815 1.92964C2.49394 1.8249 2.81305 1.71064 3.41504 1.66433L3.41505 1.66436L3.42457 1.66357C6.04167 1.44548 11.9583 1.44548 14.5754 1.66357ZM0 6.76875C0 11.4188 0.375 13.1438 3.3 13.3688C6 13.5188 12 13.5188 14.7 13.3688C17.625 13.2188 18 11.4188 18 6.76875C18 2.11875 17.625 0.39375 14.7 0.16875C12 -0.05625 6 -0.05625 3.3 0.16875C0.375 0.39375 0 2.11875 0 6.76875ZM12.75 6.76868L6.75 9.76868V3.76868L12.75 6.76868Z" fill="{id.includes('/blog') && !id.includes('/article') || id.includes('/kontakt') ? '#FFF5ED' : '#410F09'}"/>
                     </svg>                        
-                </div>
+                </div> -->
             </div>
             <div class="max-[500px]:hidden">{#if id.includes('/blog') && !id.includes('/article') || id.includes('/kontakt')}<Button label="Darmowa współpraca" theme="orange" href="#contact" />{:else}<Button label="Darmowa współpraca" theme="dark" href="#contact" />{/if}</div>
             <div role="button" tabindex="0" onkeydown={toggle} onclick={toggle} class="hidden max-[852px]:flex justify-center items-center rounded-full bg-primary-600 py-3 px-5 active:scale-[0.98] active:transition-all">

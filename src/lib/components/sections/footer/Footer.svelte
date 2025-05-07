@@ -16,7 +16,7 @@
             <div class="flex flex-col max-md:gap-8 md:flex-row sm:justify-center sm:items-center md:justify-between w-full ">
 
                 <div class="flex flex-row flex-wrap gap-4 justify-between items-center max-sm:px-6">
-                    <img src={logo} alt="Logo" class="h-[42px] md:h-[60px]" />
+                    <img src={logo} alt="Logo" class="h-[34px] md:h-[52px]" />
                     <div class="flex flex-row gap-2 min-sm:hidden">
                         <div class="border-[1px] hover:border-[2px] border-stone-300 border-solid rounded-full w-[44px] h-[44px] flex items-center justify-center hover:scale-105 hover:border-primary-950 active:scale-95 hover:transition-all hover:cursor-pointer"><img class="w-[19px]" src={ig} alt="Instagram icon" /></div>
                         <div class="border-[1px] hover:border-[2px] border-stone-300 border-solid rounded-full w-[44px] h-[44px] flex items-center justify-center hover:scale-105 hover:border-primary-950 active:scale-95 hover:transition-all hover:cursor-pointer"><img class="h-[19px]" src={fb} alt="Facebook icon" /></div>
@@ -71,7 +71,7 @@
             <div class="flex w-full justify-left min-[500px]:justify-between mt-8 sm:mt-12 flex-wrap max-[500px]:gap-5 max-[500px]:items-center max-sm:px-6">
                 <p class="text-xs md:text-sm text-stone-500">Adshelp @ 2025</p>
                 <p class="text-xs md:text-sm text-stone-500 sm:mx-4">Wszelkie prawa zastrzeżone</p>
-                <div class="inline-flex"><a href="#" class="text-xs md:text-sm text-stone-500 mb-3 hover:underline hover:text-stone-800 transition-all">Projekt i wdrożenie: Hubert Kruk</a></div>
+                <div class="inline-flex"><a href="mailto:hkrukcontact@gmail.com" class="text-xs md:text-sm text-stone-500 mb-3 hover:underline hover:text-stone-800 transition-all">Projekt i wdrożenie: Hubert Kruk</a></div>
             </div>
         </div>
     </div>

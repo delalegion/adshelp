@@ -35,6 +35,7 @@
     <meta property="og:image" content="https://adshelp.pl/og-image.jpg">
     <meta property=”og:locale” content=”pl_PL” />
     <meta property="og:description" content="Nowoczesny blog dostarczający wiedzy o marketingu, która pomoże rozwinąć Twój biznes." />
+    <meta property=”og:type” content=”website” />
 
     <link rel="index" title="Strona główna" href="https://adshelp.pl">
     <link rel="canonical" href="https://adshelp.pl/">
@@ -50,12 +51,12 @@
         <div class="flex flex-col px-2">
             <h2 class="text-[5.2vw] min-[640px]:text-[5vw] min-[1000px]:text-6xl-bold text-primary-500 font-display w-full">Czy chcesz, aby Twoje konto na</h2>
             <h2 class="text-[5.2vw] min-[640px]:text-[5vw] min-[1000px]:text-6xl-bold text-primary-500 font-display w-full">Allegro przynosiło większe zyski?</h2>
-            <h2 class="text-[5.2vw] min-[640px]:text-[5vw] min-[1000px]:text-6xl-bold text-primary-500 font-display w-full flex items-center gap-2">Napisz do mnie!<img src={PhoneImage} alt="3D phone image" class="max-sm:h-[5vh] max-md:h-[6vh] max-[1000px]:h-[8vh]" /></h2>
+            <h2 class="text-[5.2vw] min-[640px]:text-[5vw] min-[1000px]:text-6xl-bold text-primary-500 font-display w-full flex items-center gap-2">Napisz do mnie!<img src={PhoneImage} alt="3D phone" class="max-sm:h-[5vh] max-md:h-[6vh] max-[1000px]:h-[8vh]" /></h2>
         </div>
         <div class="flex flex-col min-[950px]:flex-row" id="contact">
             <div class="flex flex-col min-[375px]:flex-row flex-1 gap-4 mt-16 max-[950px]:justify-center">
                 <div>
-                    <img src={Avatar} alt="Picture of CEO Adshelp" class="max-w-[112px]" />
+                    <img src={Avatar} alt="CEO of Adshelp" class="max-w-[112px]" />
                 </div>
                 <div class="flex flex-col gap-2">
                     <p class="text-sm-bold text-primary-500">CEO & FOUNDER</p>
@@ -72,11 +73,11 @@
                 <div class="mt-12">
                     <div class="flex flex-row gap-4 justify-center px-4">
                         <div onclick={() => activeContactTab = 0} onkeydown={() => activeContactTab = 0} role="button" tabindex="0" class="flex flex-col sm:flex-row gap-2 px-6 xl:px-8 py-4 xl:py-6 sm:items-center rounded-t-xl {activeContactTab === 0 ? 'bg-stone-50 z-20' : 'bg-primary-700/20 hover:bg-primary-700/30 z-10'}  backdrop-blur-lg hover:cursor-pointer transition-all">
-                            <Message weight="regular" size="24" color="{activeContactTab === 0 ? '#410F09' : '#FFF5ED'}" />
+                            <Message weight="regular" size="24" color={activeContactTab === 0 ? '#410F09' : '#FFF5ED'} />
                             <p class="text-xs-bold {activeContactTab === 0 ? 'text-primary-950' : 'text-primary-50'}">Chcę wysłać wiadomość</p>
                         </div>
                         <div onclick={() => activeContactTab = 1} onkeydown={() => activeContactTab = 1} role="button" tabindex="0" class="flex flex-col sm:flex-row gap-2 px-6 xl:px-8 py-4 xl:py-6 sm:items-center rounded-t-xl {activeContactTab === 1 ? 'bg-stone-50 z-20' : 'bg-primary-700/20 hover:bg-primary-700/30 z-10'} backdrop-blur-lg hover:cursor-pointer transition-all">
-                            <Phone weight="regular" size="24" color="{activeContactTab === 1 ? '#410F09' : '#FFF5ED'}" />
+                            <Phone weight="regular" size="24" color={activeContactTab === 1 ? '#410F09' : '#FFF5ED'} />
                             <p class="text-xs-bold {activeContactTab === 1 ? 'text-primary-950' : 'text-primary-50'}">Chcę zamówić konsultacje</p>
                         </div>
                     </div>
@@ -121,22 +122,24 @@
                                     name="msg_message"
                                     autocomplete="off"></textarea>
 
-                                <div class="flex items-center space-x-2 sm:space-x-3 mt-4">
-                                    <Checkbox.Root
-                                        id="msg_terms"
-                                        aria-labelledby="terms-label"
-                                        class="{form?.checkboxError ? 'animate-shake' : ''} {form?.checkboxError ? 'border-[2px] border-primary-600' : ''} shadow-card hover:cursor-pointer bg-primary-600 data-[state=unchecked]:bg-background data-[state=unchecked]:hover:border-foreground data-[state=unchecked]:hover:border-2 peer inline-flex size-[25px] items-center justify-center rounded-md border transition-all duration-100 ease-in-out active:scale-[0.98]"
-                                        name="msg_terms"
-                                    >
-                                    <Check color="#ffffff" weight="bold" />                    
-                                    </Checkbox.Root>
-                                    <Label.Root
-                                        id="msg_terms-label"
-                                        for="msg_terms"
-                                        class="text-sm font-base-bold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                                    >
-                                        Akceptuję politykę prywatności
-                                    </Label.Root>
+                                <div class="flex items-center space-x-2 sm:space-x-3 mt-3">
+                                    <div class="inline-flex items-center -ml-2 inp">
+                                        <label class="relative flex items-center p-2 rounded-full cursor-pointer" for="terms">
+                                            <input type="checkbox" name="terms"
+                                            class="{form?.checkboxError ? 'animate-shake' : ''} {form?.checkboxError ? 'border-[2px] border-primary-600' : ''} before:content[''] hover:border-primary-400 bg-white peer relative h-7 w-7 cursor-pointer appearance-none rounded-lg border-2 border-dark-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-dark-500 before:opacity-0 before:transition-opacity checked:bg-primary-600 checked:border-primary-600 checked:bg-primary checked:before:bg-dark-900 hover:before:opacity-10"
+                                            id="msg_terms" />
+                                            <span
+                                            class="absolute text-white flex items-center justify-center transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"
+                                            stroke="currentColor" stroke-width="1">
+                                            <path fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd"></path>
+                                            </svg>
+                                            </span>
+                                        </label>
+                                        <label id="msg_terms-label" class="text-sm font-base-bold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="msg_terms">Akceptuję politykę prywatności</label>
+                                    </div>
                                 </div>
                                 {#if form?.nameError}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Pole <b>Imię</b> musi zawierać conajmniej 3 znaki.</p>{/if}
                                 {#if form?.companyError}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Pole <b>Nazwa firmy lub nazwisko</b> musi zawierać conajmniej 3 znaki.</p>{/if}
@@ -145,7 +148,7 @@
                                 {#if form?.messageError}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Pole <b>Wiadomość</b> musi zawierać conajmniej 10 znaków.</p>{/if}
                                 {#if form?.checkboxError}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Wymagana <b>akceptacja</b> polityki prywatności.</p>{/if}
                                 {#if form?.successForm}<p class="text-[12px] top-2 md:top-0 text-green-700 pt-4" transition:fade>Wiadomość wysłana. Skontaktuje się z tobą najszybciej jak to będzie możliwe. W razie pytań zapraszam do kontaktu telefonicznego: +48 722 197 109.</p>{/if}
-                                <div class="mt-4 sm:mt-6"><Button label="Wyślij wiadomość" theme="orange" type="submit" /></div>
+                                <div class="mt-2 sm:mt-4"><Button label="Wyślij wiadomość" theme="orange" type="submit" /></div>
 
                             </form>
                         </div>
@@ -182,22 +185,24 @@
                                     name="cns_message"
                                     autocomplete="off"></textarea>
 
-                                <div class="flex items-center space-x-2 sm:space-x-3 mt-4">
-                                    <Checkbox.Root
-                                        id="cns_terms"
-                                        aria-labelledby="terms-label"
-                                        class="{form?.checkboxErrorConsult ? 'animate-shake' : ''} {form?.checkboxErrorConsult ? 'border-[2px] border-primary-600' : ''} shadow-card hover:cursor-pointer bg-primary-600 data-[state=unchecked]:bg-background data-[state=unchecked]:hover:border-foreground data-[state=unchecked]:hover:border-2 peer inline-flex size-[25px] items-center justify-center rounded-md border transition-all duration-100 ease-in-out active:scale-[0.98]"
-                                        name="cns_terms"
-                                    >
-                                    <Check color="#ffffff" weight="bold" />                    
-                                    </Checkbox.Root>
-                                    <Label.Root
-                                        id="cns_terms-label"
-                                        for="cns_terms"
-                                        class="text-sm font-base-bold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                                    >
-                                        Akceptuję politykę prywatności
-                                    </Label.Root>
+                                <div class="flex items-center space-x-2 sm:space-x-3 mt-3">
+                                    <div class="inline-flex items-center -ml-2 inp">
+                                        <label class="relative flex items-center p-2 rounded-full cursor-pointer" for="terms">
+                                            <input type="checkbox" name="terms"
+                                            class="{form?.checkboxErrorConsult ? 'animate-shake' : ''} {form?.checkboxErrorConsult ? 'border-[2px] border-primary-600' : ''} before:content[''] hover:border-primary-400 bg-white peer relative h-7 w-7 cursor-pointer appearance-none rounded-lg border-2 border-dark-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-dark-500 before:opacity-0 before:transition-opacity checked:bg-primary-600 checked:border-primary-600 checked:bg-primary checked:before:bg-dark-900 hover:before:opacity-10"
+                                            id="cns_terms" />
+                                            <span
+                                            class="absolute text-white flex items-center justify-center transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"
+                                            stroke="currentColor" stroke-width="1">
+                                            <path fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd"></path>
+                                            </svg>
+                                            </span>
+                                        </label>
+                                        <label id="msg_terms-label" class="text-sm font-base-bold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="cns_terms">Akceptuję politykę prywatności</label>
+                                    </div>
                                 </div>
                                 {#if form?.nameErrorConsult}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Pole <b>Imię</b> musi zawierać conajmniej 3 znaki.</p>{/if}
                                 {#if form?.companyErrorConsult}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Pole <b>Nazwa firmy lub nazwisko</b> musi zawierać conajmniej 3 znaki.</p>{/if}
@@ -205,7 +210,7 @@
                                 {#if form?.messageErrorConsult}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Pole <b>Wiadomość</b> musi zawierać conajmniej 10 znaków.</p>{/if}
                                 {#if form?.checkboxErrorConsult}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Wymagana <b>akceptacja</b> polityki prywatności.</p>{/if}
                                 {#if form?.successConsult}<p class="text-[12px] top-2 md:top-0 text-green-700 pt-4" transition:fade>Wiadomość wysłana. Skontaktuje się z tobą najszybciej jak to będzie możliwe. W razie pytań zapraszam do kontaktu telefonicznego: +48 722 197 109.</p>{/if}
-                                <div class="mt-4 sm:mt-6"><Button label="Wyślij wiadomość" theme="orange" type="submit" /></div>
+                                <div class="mt-2 sm:mt-4"><Button label="Wyślij wiadomość" theme="orange" type="submit" /></div>
 
                             </form>
                         </div>

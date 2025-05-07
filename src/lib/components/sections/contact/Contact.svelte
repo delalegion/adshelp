@@ -173,7 +173,7 @@
                             name="ctc_message"
                             autocomplete="off"></textarea>
     
-                        <div class="flex items-center space-x-2 sm:space-x-3 mt-4">
+                        <!-- <div class="flex items-center space-x-2 sm:space-x-3 mt-4">
                             <Checkbox.Root
                                 id="ctc_terms"
                                 aria-labelledby="terms-label"
@@ -189,6 +189,25 @@
                             >
                                 Akceptuję politykę prywatności
                             </Label.Root>
+                        </div> -->
+                        <div class="flex items-center space-x-2 sm:space-x-3 mt-3">
+                            <div class="inline-flex items-center -ml-2 inp">
+                                <label class="relative flex items-center p-2 rounded-full cursor-pointer" for="ctc_terms">
+                                    <input type="checkbox" name="ctc_terms"
+                                    class="{form?.checkboxError ? 'animate-shake' : ''} {form?.checkboxError ? 'border-[2px] border-primary-600' : ''} before:content[''] hover:border-primary-400 bg-white peer relative h-7 w-7 cursor-pointer appearance-none rounded-lg border-2 border-dark-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-dark-500 before:opacity-0 before:transition-opacity checked:bg-primary-600 checked:border-primary-600 checked:bg-primary checked:before:bg-dark-900 hover:before:opacity-10"
+                                    id="ctc_terms" />
+                                    <span
+                                    class="absolute text-white flex items-center justify-center transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"
+                                        stroke="currentColor" stroke-width="1">
+                                        <path fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd"></path>
+                                        </svg>
+                                    </span>
+                                </label>
+                                <label id="ctc_terms-label" class="text-sm font-base-bold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="ctc_terms">Akceptuję politykę prywatności</label>
+                            </div>
                         </div>
                         {#if form?.nameError}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Pole <b>Imię</b> musi zawierać conajmniej 3 znaki.</p>{/if}
                         {#if form?.companyError}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Pole <b>Nazwa firmy lub nazwisko</b> musi zawierać conajmniej 3 znaki.</p>{/if}
