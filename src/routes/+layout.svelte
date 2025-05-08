@@ -4,6 +4,7 @@
     import { page } from '$app/state';
 
     import '../app.css';
+    import Popup from '$lib/components/Popup.svelte';
 
 	let { children } = $props();
 
@@ -13,6 +14,9 @@
         key = page.url.pathname;
     });
 </script>
+
+<!-- Popup -->
+<Popup />
 
 <!-- Navbar section -->
 <Navbar />
