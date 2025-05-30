@@ -34,9 +34,9 @@
                         </a>
                     </div>
                     <div>
-                        <a class="border-[1px] border-stone-300 rounded-full p-1 md:pr-2 inline-flex items-center gap-2" href="tel:+48722197109">
+                        <a class="border-[1px] border-stone-300 rounded-full p-1 md:pr-2 inline-flex items-center gap-2" href="tel:+48729924002">
                             <div class="h-10 md:h-12 w-10 md:w-12 bg-stone-200 rounded-full flex justify-center items-center"><Phone color="#410F09" weight="regular" size="24" /></div>
-                            <p class="text-sm-bold text-primary-950 mr-2.5">+48 722 197 109</p>
+                            <p class="text-sm-bold text-primary-950 mr-2.5">+48 729 924 002</p>
                         </a>
                     </div>
                 </div>

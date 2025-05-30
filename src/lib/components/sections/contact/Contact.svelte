@@ -124,9 +124,9 @@
                 </div>
                 <div class="flex flex-row gap-4 items-center max-md:mt-4">
                     <h3 class="text-xl-bold md:text-2xl-bold font-display text-primary-950">Lub zadzwoń</h3>
-                    <a class="border-[1px] border-stone-300 rounded-full p-1 md:pr-2 inline-flex items-center gap-2" href="tel:+48722197109">
+                    <a class="border-[1px] border-stone-300 rounded-full p-1 md:pr-2 inline-flex items-center gap-2" href="tel:+48729924002">
                         <div class="h-10 md:h-12 w-10 md:w-12 bg-stone-200 rounded-full flex justify-center items-center"><Phone color="#410F09" weight="regular" size="24" /></div>
-                        <p class="text-sm-bold text-primary-950 mr-2.5">+48 722 197 109</p>
+                        <p class="text-sm-bold text-primary-950 mr-2.5">+48 729 924 002</p>
                     </a>
                 </div>
 
@@ -213,7 +213,7 @@
                         {#if form?.phoneError}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Pole <b>Numer telefonu</b> musi zawierać prawidłowy numer telefonu.</p>{/if}
                         {#if form?.messageError}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Pole <b>Wiadomość</b> musi zawierać conajmniej 10 znaków.</p>{/if}
                         {#if form?.checkboxError}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Wymagana <b>akceptacja</b> polityki prywatności.</p>{/if}
-                        {#if form?.successContact}<p class="text-[12px] top-2 md:top-0 text-green-700 pt-4" transition:fade>Wiadomość wysłana. Skontaktuje się z tobą najszybciej jak to będzie możliwe. W razie pytań zapraszam do kontaktu telefonicznego: +48 722 197 109.</p>{/if}
+                        {#if form?.successContact}<p class="text-[12px] top-2 md:top-0 text-green-700 pt-4" transition:fade>Wiadomość wysłana. Skontaktuje się z tobą najszybciej jak to będzie możliwe. W razie pytań zapraszam do kontaktu telefonicznego: +48 729 924 002.</p>{/if}
                         <div class="mt-4 sm:mt-6"><Button label="Wyślij wiadomość" theme="orange" type="submit" /></div>
     
                         <div class="absolute top-0 right-0 bottom-0 left-0 max-md:rounded-t-[20px] md:rounded-l-[20px] bg-stone-50 -z-1"></div>

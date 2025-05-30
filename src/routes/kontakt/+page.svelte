@@ -61,9 +61,9 @@
                     <p class="text-sm-bold text-primary-500">CEO & FOUNDER</p>
                     <h3 class="text-2xl-bold sm:text-3xl-bold font-display text-primary-50">MARCIN LUBERA</h3>
                     <div>
-                        <a class="border-[1px] border-primary-900 rounded-full p-1 md:pr-2 inline-flex items-center gap-2" href="tel:+48722197109">
+                        <a class="border-[1px] border-primary-900 rounded-full p-1 md:pr-2 inline-flex items-center gap-2" href="tel:+48729924002">
                             <div class="h-10 md:h-12 w-10 md:w-12 bg-primary-900 rounded-full flex justify-center items-center"><Phone color="#FFF5ED" weight="regular" size="24" /></div>
-                            <p class="text-sm-bold text-primary-50 mr-2.5">+48 722 197 109</p>
+                            <p class="text-sm-bold text-primary-50 mr-2.5">+48 729 924 002</p>
                         </a>
                     </div>
                 </div>
@@ -146,7 +146,7 @@
                                 {#if form?.phoneError}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Pole <b>Numer telefonu</b> musi zawierać prawidłowy numer telefonu.</p>{/if}
                                 {#if form?.messageError}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Pole <b>Wiadomość</b> musi zawierać conajmniej 10 znaków.</p>{/if}
                                 {#if form?.checkboxError}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Wymagana <b>akceptacja</b> polityki prywatności.</p>{/if}
-                                {#if form?.successForm}<p class="text-[12px] top-2 md:top-0 text-green-700 pt-4" transition:fade>Wiadomość wysłana. Skontaktuje się z tobą najszybciej jak to będzie możliwe. W razie pytań zapraszam do kontaktu telefonicznego: +48 722 197 109.</p>{/if}
+                                {#if form?.successForm}<p class="text-[12px] top-2 md:top-0 text-green-700 pt-4" transition:fade>Wiadomość wysłana. Skontaktuje się z tobą najszybciej jak to będzie możliwe. W razie pytań zapraszam do kontaktu telefonicznego: +48 729 924 002.</p>{/if}
                                 <div class="mt-2 sm:mt-4"><Button label="Wyślij wiadomość" theme="orange" type="submit" /></div>
 
                             </form>
@@ -208,7 +208,7 @@
                                 {#if form?.phoneErrorConsult}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Pole <b>Numer telefonu</b> musi zawierać prawidłowy numer telefonu.</p>{/if}
                                 {#if form?.messageErrorConsult}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Pole <b>Wiadomość</b> musi zawierać conajmniej 10 znaków.</p>{/if}
                                 {#if form?.checkboxErrorConsult}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Wymagana <b>akceptacja</b> polityki prywatności.</p>{/if}
-                                {#if form?.successConsult}<p class="text-[12px] top-2 md:top-0 text-green-700 pt-4" transition:fade>Wiadomość wysłana. Skontaktuje się z tobą najszybciej jak to będzie możliwe. W razie pytań zapraszam do kontaktu telefonicznego: +48 722 197 109.</p>{/if}
+                                {#if form?.successConsult}<p class="text-[12px] top-2 md:top-0 text-green-700 pt-4" transition:fade>Wiadomość wysłana. Skontaktuje się z tobą najszybciej jak to będzie możliwe. W razie pytań zapraszam do kontaktu telefonicznego: +48 729 924 002.</p>{/if}
                                 <div class="mt-2 sm:mt-4"><Button label="Wyślij wiadomość" theme="orange" type="submit" /></div>
 
                             </form>
