@@ -36,7 +36,6 @@
         // Get the current URL when component mounts (client-side only)
         currentUrl = window.location.href;
         pageTitle = document.title;
-        console.log(data.timer)
     });
 
     const shareToFacebook = () => {
@@ -54,34 +53,24 @@
     }
 </script>
 
-<svelte:head>
-
-    <meta property="url" content="https://adshelp.pl{page.url.pathname}">
-    <meta name="description" content="{dataQuery[0].SEO !== null  ? dataQuery[0].SEO.metaTitle : ''}">
-    <meta name="dcterms.description" lang="pl" content="{dataQuery[0].SEO !== null ? dataQuery[0].SEO.metaDescription : ''}">
-    <meta name="keywords" content="{dataQuery[0].SEO !== null  ? dataQuery[0].SEO.metaKeywords : ''}">
-    <meta name="dcterms.subject" lang="pl" content="{dataQuery[0].SEO !== null  ? dataQuery[0].SEO.metaTerms : ''}">
-    <meta name="application-name" content="{dataQuery[0].SEO !== null  ? dataQuery[0].SEO.metaName : ''}">
-    <meta name="msapplication-tooltip" content="{dataQuery[0].SEO !== null  ? dataQuery[0].SEO.metaTitle : ''}">
-    <meta name="msapplication-starturl" content="http://adshelp.pl">
-    <meta name="msapplication-window" content="width=1024;height=768">
-    <meta property="og:site_name" content="{dataQuery[0].SEO !== null ? dataQuery[0].SEO.metaTitle : ''}">
-    <meta property="og:url" content="https://adshelp.pl{page.url.pathname}">
-    <meta property="og:title" content="Nowoczesny blog dostarczający wiedzy o marketingu, która pomoże rozwinąć Twój biznes.">
-    <meta property="og:image" content="https://adshelp.pl/og-image.jpg">
-    <meta property=”og:locale” content=”pl_PL” />
-    <meta property="og:description" content="{dataQuery[0].SEO !== null  ? dataQuery[0].SEO.metaTitle : ''}" />
-    <meta property=”og:type” content=”website” />
-
-    <link rel="index" title="Strona główna" href="https://adshelp.pl">
-    <link rel="canonical" href="https://adshelp.pl/">
-    <link rel="icon" href="https://adshelp.pl/favicon.png" type="image/png">
-    <link rel="apple-touch-icon" href="https://example.net/images/apple-touch-icon.png">
-
-    <title>{dataQuery[0].SEO !== null ? dataQuery[0].SEO.metaTitle : ''}</title>
-
-</svelte:head>
-
+{#await data.post}
+<article id="article" class="flex flex-col justify-center items-center bg-white pb-24">
+    <div class="w-full bg-primary-950 justify-center flex pt-8 md:pt-12 h-screen">
+        <svg width="40" height="40" viewBox="0 0 50 50">
+            <circle cx="25" cy="25" r="20" fill="none" stroke="#F36020" stroke-width="5" stroke-dasharray="80 30" stroke-linecap="round">
+            <animateTransform 
+                attributeName="transform" 
+                attributeType="XML" 
+                type="rotate"
+                from="0 25 25"
+                to="360 25 25" 
+                dur="1s" 
+                repeatCount="indefinite" />
+            </circle>
+        </svg>
+    </div>
+</article>
+{:then loadedData} 
 <article id="article" class="flex flex-col justify-center items-center bg-white pb-24">
     <div class="w-full bg-primary-950 justify-center flex pt-8 md:pt-12">
         <div class="max-w-7xl mx-6">
@@ -90,15 +79,15 @@
                     <div>
                         <a href="/blog" class="py-2 gap-2 text-sm-bold text-primary-100 inline-flex items-center mb-6 active:scale-[0.98] transition-all transition-300"><Arrow weight="regular" size="24" /> Wszystkie artykuły</a>
                     </div>
-                    <h1 class="text-4xl-bold md:text-5xl-bold xl:text-6xl-bold font-display text-primary-100">{dataQuery[0].title}</h1>
+                    <h1 class="text-4xl-bold md:text-5xl-bold xl:text-6xl-bold font-display text-primary-100">{loadedData[0].title}</h1>
                     <div class="flex flex-wrap gap-4 mt-8 justify-center">
                         <div class="py-2 px-4 bg-primary-200 text-primary-950 text-base-bold font-display rounded-full inline-flex gap-2 items-center">
                             <Calendar weight="regular" size="24" />
-                            <time datetime={dataQuery[0].publishedAt}>{formatPublishedAt(dataQuery[0].publishedAt)}</time>
+                            <time datetime={loadedData[0].publishedAt}>{formatPublishedAt(loadedData[0].publishedAt)}</time>
                         </div>
                         <div class="py-2 px-4 bg-primary-200 text-primary-950 text-base-bold font-display rounded-full inline-flex gap-2 items-center">
                             <Grid weight="regular" size="24" />
-                            {dataQuery[0].category.name}
+                            {loadedData[0].category.name}
                         </div>
                         <div class="pl-2 pt-2 pb-2 pr-4 bg-primary-200 text-primary-950 text-base-bold font-display rounded-full inline-flex gap-2 items-center">
                             <img src={Avatar} alt="CEO of Adshelp" class="h-[30px]" />
@@ -108,8 +97,8 @@
                 </div>
                 <div class="flex flex-1 justify-center">
                     <div class="bg-primary-950 aspect-3/2 w-full rounded-2xl overflow-hidden max-w-[800px] -mb-24">
-                        {#if dataQuery[0].cover}
-                            <img src={dataQuery[0].cover.url} alt={dataQuery[0].cover.alternativeText} class="object-cover w-full h-full" />
+                        {#if loadedData[0].cover}
+                            <img src={loadedData[0].cover.url} alt={loadedData[0].cover.alternativeText} class="object-cover w-full h-full" />
                         {/if}
                     </div>
                 </div>
@@ -133,7 +122,7 @@
                     </div>
                 </div>
             </div>
-            {@html dataQuery[0].artykul}
+            {@html loadedData[0].artykul}
         </div>
         <div class="flex flex-row gap-4 pt-4 md:pt-8" id="share-socials">
             <div class="relative group">
@@ -157,6 +146,9 @@
         </div>
     </div>
 </article>
+{:catch error}
+    <p>Error loading data: {error.message}</p>
+{/await}
 
 <div class="flex justify-center bg-white">
     <div class="max-w-7xl mx-6 w-full pb-16 md:pb-24 lg:pb-32">
