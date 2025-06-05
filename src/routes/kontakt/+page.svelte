@@ -123,8 +123,8 @@
 
                                 <div class="flex items-center space-x-2 sm:space-x-3 mt-3">
                                     <div class="inline-flex items-center -ml-2 inp">
-                                        <label class="relative flex items-center p-2 rounded-full cursor-pointer" for="terms">
-                                            <input type="checkbox" name="terms"
+                                        <label class="relative flex items-center p-2 rounded-full cursor-pointer" for="msg_terms">
+                                            <input type="checkbox" name="msg_terms"
                                             class="{form?.checkboxError ? 'animate-shake' : ''} {form?.checkboxError ? 'border-[2px] border-primary-600' : ''} before:content[''] hover:border-primary-400 bg-white peer relative h-7 w-7 cursor-pointer appearance-none rounded-lg border-2 border-dark-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-dark-500 before:opacity-0 before:transition-opacity checked:bg-primary-600 checked:border-primary-600 checked:bg-primary checked:before:bg-dark-900 hover:before:opacity-10"
                                             id="msg_terms" />
                                             <span
@@ -137,7 +137,7 @@
                                             </svg>
                                             </span>
                                         </label>
-                                        <label id="msg_terms-label" class="text-sm font-base-bold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="msg_terms">Akceptuję politykę prywatności</label>
+                                        <label id="msg_terms" class="text-sm font-base-bold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="msg_terms">Akceptuję politykę prywatności</label>
                                     </div>
                                 </div>
                                 {#if form?.nameError}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Pole <b>Imię</b> musi zawierać conajmniej 3 znaki.</p>{/if}
@@ -146,7 +146,7 @@
                                 {#if form?.phoneError}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Pole <b>Numer telefonu</b> musi zawierać prawidłowy numer telefonu.</p>{/if}
                                 {#if form?.messageError}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Pole <b>Wiadomość</b> musi zawierać conajmniej 10 znaków.</p>{/if}
                                 {#if form?.checkboxError}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Wymagana <b>akceptacja</b> polityki prywatności.</p>{/if}
-                                {#if form?.successForm}<p class="text-[12px] top-2 md:top-0 text-green-700 pt-4" transition:fade>Wiadomość wysłana. Skontaktuje się z tobą najszybciej jak to będzie możliwe. W razie pytań zapraszam do kontaktu telefonicznego: +48 729 924 002.</p>{/if}
+                                {#if form?.successContact}<p class="text-[12px] top-2 md:top-0 text-green-700 pt-4" transition:fade>Wiadomość wysłana. Skontaktuje się z tobą najszybciej jak to będzie możliwe. W razie pytań zapraszam do kontaktu telefonicznego: +48 729 924 002.</p>{/if}
                                 <div class="mt-2 sm:mt-4"><Button label="Wyślij wiadomość" theme="orange" type="submit" /></div>
 
                             </form>
@@ -186,8 +186,8 @@
 
                                 <div class="flex items-center space-x-2 sm:space-x-3 mt-3">
                                     <div class="inline-flex items-center -ml-2 inp">
-                                        <label class="relative flex items-center p-2 rounded-full cursor-pointer" for="terms">
-                                            <input type="checkbox" name="terms"
+                                        <label class="relative flex items-center p-2 rounded-full cursor-pointer" for="cns_terms">
+                                            <input type="checkbox" name="cns_terms"
                                             class="{form?.checkboxErrorConsult ? 'animate-shake' : ''} {form?.checkboxErrorConsult ? 'border-[2px] border-primary-600' : ''} before:content[''] hover:border-primary-400 bg-white peer relative h-7 w-7 cursor-pointer appearance-none rounded-lg border-2 border-dark-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-dark-500 before:opacity-0 before:transition-opacity checked:bg-primary-600 checked:border-primary-600 checked:bg-primary checked:before:bg-dark-900 hover:before:opacity-10"
                                             id="cns_terms" />
                                             <span
@@ -200,7 +200,7 @@
                                             </svg>
                                             </span>
                                         </label>
-                                        <label id="msg_terms-label" class="text-sm font-base-bold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="cns_terms">Akceptuję politykę prywatności</label>
+                                        <label id="cns_terms" class="text-sm font-base-bold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="cns_terms">Akceptuję politykę prywatności</label>
                                     </div>
                                 </div>
                                 {#if form?.nameErrorConsult}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Pole <b>Imię</b> musi zawierać conajmniej 3 znaki.</p>{/if}

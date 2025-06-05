@@ -76,12 +76,12 @@ export const actions = {
     contact: async ({ request }: { request: Request }) => {
         const form = await request.formData();
    
-        const email = form.get('ctc_email') as string;
-        const phone = form.get('ctc_phone') as string;
-        const name = form.get('ctc_name') as string;
-        const company = form.get('ctc_company') as string;
-        const message = form.get('ctc_message') as string;
-        const checkbox = form.get('ctc_terms') as string;
+        const email = form.get('msg_email') as string;
+        const phone = form.get('msg_phone') as string;
+        const name = form.get('msg_name') as string;
+        const company = form.get('msg_company') as string;
+        const message = form.get('msg_message') as string;
+        const checkbox = form.get('msg_terms') as string;
 
         if (name.length < 3) {
             return fail(400, { name, nameError: true })

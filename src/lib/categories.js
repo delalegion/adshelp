@@ -34,21 +34,41 @@ import iconPinterest from '$lib/assets/icon-pinterest.svg';
 import iconPinterestLight from '$lib/assets/icon-pinterest-light.svg';
 
 export let categories = {
-    ecommerce: [iconCommerce, 'E-commerce', iconCommerceLight],
-    ai: [iconAi, 'AI', iconAiLight],
-    allegro: [iconAllegro, 'Allegro', iconAllegroLight],
-    biznes: [iconBiznes, 'Biznes', iconBiznesLight],
-    contentMarketing: [iconContent, 'Content marketing', iconContentLight],
-    empik: [iconEmpik, 'Empik', iconEmpikLight],
-    erli: [iconErli, 'Erli', iconErliLight],
-    facebook: [iconFacebook, 'Facebook', iconFacebookLight],
-    google: [iconGoogle, 'Google', iconGoogleLight],
-    amazon: [iconAmazon, 'Amazon', iconAmazonLight],
-    instagram: [iconInstagram, 'Instagram', iconInstagramLight],
-    linkedin: [iconLinkedin, 'Linkedin', iconLinkedinLight],
-    sem: [iconSem, 'SEM', iconSemLight],
-    seo: [iconSeo, 'SEO', iconSeoLight],
-    socialMedia: [iconSocialMedia, 'Social media', iconSocialMediaLight],
-    tiktok: [iconTiktok, 'Tiktok', iconTiktokLight],
-    pinterest: [iconPinterest, 'Pinterest', iconPinterestLight]
+    'ecommerce': [iconCommerce, 'E-commerce', 'e-commerce', iconCommerceLight],
+    'ai': [iconAi, 'AI', 'ai', iconAiLight],
+    'allegro': [iconAllegro, 'Allegro', 'allegro', iconAllegroLight],
+    'biznes': [iconBiznes, 'Biznes', 'biznes', iconBiznesLight],
+    'content-marketing': [iconContent, 'Content marketing', 'content-marketing', iconContentLight],
+    'empik': [iconEmpik, 'Empik', 'empik', iconEmpikLight],
+    'erli': [iconErli, 'Erli', 'erli', iconErliLight],
+    'facebook': [iconFacebook, 'Facebook', 'facebook', iconFacebookLight],
+    'google': [iconGoogle, 'Google', 'google', iconGoogleLight],
+    'amazon': [iconAmazon, 'Amazon', 'amazon', iconAmazonLight],
+    'instagram': [iconInstagram, 'Instagram', 'instagram', iconInstagramLight],
+    'linkedin': [iconLinkedin, 'Linkedin', 'linkedin', iconLinkedinLight],
+    'sem': [iconSem, 'SEM', 'sem', iconSemLight],
+    'seo': [iconSeo, 'SEO', 'seo', iconSeoLight],
+    'social-media': [iconSocialMedia, 'Social media', 'social-media', iconSocialMediaLight],
+    'tiktok': [iconTiktok, 'Tiktok', 'tiktok', iconTiktokLight],
+    'pinterest': [iconPinterest, 'Pinterest', 'pinterest', iconPinterestLight]
 }
+
+// export let categories = {
+//     ecommerce: [iconCommerce, 'E-commerce', iconCommerceLight],
+//     ai: [iconAi, 'AI', iconAiLight],
+//     allegro: [iconAllegro, 'Allegro', iconAllegroLight],
+//     biznes: [iconBiznes, 'Biznes', iconBiznesLight],
+//     contentMarketing: [iconContent, 'Content marketing', iconContentLight],
+//     empik: [iconEmpik, 'Empik', iconEmpikLight],
+//     erli: [iconErli, 'Erli', iconErliLight],
+//     facebook: [iconFacebook, 'Facebook', iconFacebookLight],
+//     google: [iconGoogle, 'Google', iconGoogleLight],
+//     amazon: [iconAmazon, 'Amazon', iconAmazonLight],
+//     instagram: [iconInstagram, 'Instagram', iconInstagramLight],
+//     linkedin: [iconLinkedin, 'Linkedin', iconLinkedinLight],
+//     sem: [iconSem, 'SEM', iconSemLight],
+//     seo: [iconSeo, 'SEO', iconSeoLight],
+//     socialMedia: [iconSocialMedia, 'Social media', iconSocialMediaLight],
+//     tiktok: [iconTiktok, 'Tiktok', iconTiktokLight],
+//     pinterest: [iconPinterest, 'Pinterest', iconPinterestLight]
+// }

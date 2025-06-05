@@ -78,7 +78,7 @@
 <Pricing />
 
 <!-- Contact section -->
-<Contact {form} />
+<Contact {form} actionContact="?/contact" />
 
 <!-- Footer section -->
 <Footer />

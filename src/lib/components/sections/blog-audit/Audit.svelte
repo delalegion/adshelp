@@ -1,6 +1,7 @@
 <script>
     import consult from '$lib/assets/blog-consult.png?enhanced';
     import { applyAction, enhance } from '$app/forms';
+    let { action = '?/auditOnBlog' } = $props();
 
     // Components
     import Button from '$lib/components/Button.svelte';
@@ -114,7 +115,7 @@
             <h5 class="text-xl-bold sm:text-2xl-bold font-display text-primary-500 mb-4">Zarezerwuj darmową <br/>współpracę na miesiąc!</h5>
             <p class="text-sm sm:text-base text-primary-500 mb-6 sm:mb-7">Bez zobowiązań, całkowicie za darmo.</p>
         
-            <form method="POST" action="?/auditOnBlog" id="blog_audit-header-form" onsubmit={handleSubmit} use:enhance>
+            <form method="POST" action={action} id="blog_audit-header-form" onsubmit={handleSubmit} use:enhance>
                 {#if activeTab === 1}
                     <div in:fly={{ y: 10 }} out:fade onoutroend={() => activeTab = 2}>
                         <input

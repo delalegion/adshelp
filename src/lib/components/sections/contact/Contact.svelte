@@ -11,7 +11,7 @@
     import Phone from "phosphor-svelte/lib/Phone";
     import { fade, fly } from 'svelte/transition';
 
-    let { form } = $props();
+    let { form, actionContact = '?/contact', action = '?/auditOnContact' } = $props();
 
     let activeTab = $state(1);
     let inp_account_name_error = $state(false);
@@ -41,7 +41,7 @@
 
     function setNextTab() {
         if (activeTab === 1) {
-            inp_account_name = document.querySelector("#ctc_audit_account_name").value;
+            inp_account_name = document.querySelector("#msg_audit_account_name").value;
         }
 
         if (inp_account_name.length < 3) {
@@ -61,9 +61,9 @@
         errorsArray = [];
 
         if (activeTab === 2) {
-            inp_name = document.querySelector("#ctc_audit_name").value;
-            inp_phone = document.querySelector("#ctc_audit_phone").value;
-            inp_email = document.querySelector("#ctc_audit_email").value;
+            inp_name = document.querySelector("#msg_audit_name").value;
+            inp_phone = document.querySelector("#msg_audit_phone").value;
+            inp_email = document.querySelector("#msg_audit_email").value;
         }
 
         if (inp_name.length < 3) {
@@ -93,7 +93,7 @@
         if (inp_email_error === false && inp_phone_error === false && inp_name_error === false) {
             success = true;
             activeTab = 3;
-            let form = document.querySelector("#ctc_audit-header-form");
+            let form = document.querySelector("#msg_audit-header-form");
             form.requestSubmit();
         }
 
@@ -133,67 +133,50 @@
                 <!-- Contact forms -->
                 <div class="flex flex-col md:flex-row">
         
-                    <form method="POST" action="?/contact" class="flex-[60%] bg-stone-50 max-md:rounded-t-2xl md:rounded-l-2xl p-6 xl:p-8 flex-col shadow-hover relative z-10 mt-8 sm:mt-10 lg:mt-14 w-full" use:enhance>
+                    <form method="POST" action={actionContact} class="flex-[60%] bg-stone-50 max-md:rounded-t-2xl md:rounded-l-2xl p-6 xl:p-8 flex-col shadow-hover relative z-10 mt-8 sm:mt-10 lg:mt-14 w-full" use:enhance>
                         <div class="flex flex-col min-[1250px]:flex-row gap-3 min-[1250px]:gap-5">
                             <input
-                                id="ctc_name"
+                                id="msg_name"
                                 class="{form?.nameError ? 'animate-shake' : ''} {form?.nameError ? 'border-[2px] border-primary-600' : ''} flex-1/2 lg:flex-1 rounded-lg transition-shadow shadow-card lg:w-full lg:max-w-[400px] 2xl:min-w-[250px] flex bg-background focus:ring-foreground focus:shadow-2xl focus:ring-offset-background focus:outline-hidden items-center max-md:h-full max-md:max-h-[41px] h-full max-h-[49px] px-4 md:px-6 py-4 focus:ring-2 focus:ring-offset-2 md:text-base placeholder:text-neutral-600 placeholder:text-sm text-neutral-900 text-sm"
                                 placeholder="Imię *"
-                                name="ctc_name"
+                                name="msg_name"
                             />
                             <input
-                                id="ctc_company"
+                                id="msg_company"
                                 class="{form?.companyError ? 'animate-shake' : ''} {form?.companyError ? 'border-[2px] border-primary-600' : ''} flex-1/2 lg:flex-1 rounded-lg transition-shadow shadow-card lg:w-full lg:max-w-[400px] 2xl:min-w-[250px] flex bg-background focus:ring-foreground focus:shadow-2xl focus:ring-offset-background focus:outline-hidden items-center max-md:h-full max-md:max-h-[41px] h-full max-h-[49px] px-4 md:px-6 py-4 focus:ring-2 focus:ring-offset-2 md:text-base placeholder:text-neutral-600 placeholder:text-sm text-neutral-900 text-sm"
                                 placeholder="Nazwa firmy albo nazwisko *"
-                                name="ctc_company"
+                                name="msg_company"
                             />
                         </div>
                         <div class="flex flex-col min-[1250px]:flex-row gap-3 lg:gap-5 py-3 min-[1250px]:py-4">
                             <input
-                                id="ctc_email"
+                                id="msg_email"
                                 class="{form?.emailError ? 'animate-shake' : ''} {form?.emailError ? 'border-[2px] border-primary-600' : ''} flex-1/2 lg:flex-1 rounded-lg transition-shadow shadow-card lg:w-full lg:max-w-[400px] 2xl:min-w-[250px] flex bg-background focus:ring-foreground focus:shadow-2xl focus:ring-offset-background focus:outline-hidden items-center max-md:h-full max-md:max-h-[41px] h-full max-h-[49px] px-4 md:px-6 py-4 focus:ring-2 focus:ring-offset-2 md:text-base placeholder:text-neutral-600 placeholder:text-sm text-neutral-900 text-sm"
                                 placeholder="Adres e-mail *"
-                                name="ctc_email"
+                                name="msg_email"
                                 autocomplete="off"
                             />
                             <input
-                                id="ctc_phone"
+                                id="msg_phone"
                                 class="{form?.phoneError ? 'animate-shake' : ''} {form?.phoneError ? 'border-[2px] border-primary-600' : ''} flex-1/2 lg:flex-1 rounded-lg transition-shadow shadow-card lg:w-full lg:max-w-[400px] 2xl:min-w-[250px] flex bg-background focus:ring-foreground focus:shadow-2xl focus:ring-offset-background focus:outline-hidden items-center max-md:h-full max-md:max-h-[41px] h-full max-h-[49px] px-4 md:px-6 py-4 focus:ring-2 focus:ring-offset-2 md:text-base placeholder:text-neutral-600 placeholder:text-sm text-neutral-900 text-sm"
                                 placeholder="Numer telefonu *"
-                                name="ctc_phone"
+                                name="msg_phone"
                                 autocomplete="off"
                             />
                         </div>
                         <textarea
-                            id="ctc_message"
+                            id="msg_message"
                             class="{form?.messageError ? 'animate-shake' : ''} {form?.messageError ? 'border-[2px] border-primary-600' : ''} w-full rounded-lg h-28 sm:h-24 transition-shadow shadow-card flex bg-background focus:ring-foreground focus:shadow-2xl focus:ring-offset-background focus:outline-hidden items-center px-4 md:px-6 py-4 focus:ring-2 focus:ring-offset-2 md:text-base placeholder:text-neutral-600 placeholder:text-sm text-neutral-900 text-sm"
                             placeholder="Treść wiadomości *"
-                            name="ctc_message"
+                            name="msg_message"
                             autocomplete="off"></textarea>
     
-                        <!-- <div class="flex items-center space-x-2 sm:space-x-3 mt-4">
-                            <Checkbox.Root
-                                id="ctc_terms"
-                                aria-labelledby="terms-label"
-                                class="{form?.checkboxError ? 'animate-shake' : ''} {form?.checkboxError ? 'border-[2px] border-primary-600' : ''} shadow-card hover:cursor-pointer bg-primary-600 data-[state=unchecked]:bg-background data-[state=unchecked]:hover:border-foreground data-[state=unchecked]:hover:border-2 peer inline-flex size-[25px] items-center justify-center rounded-md border transition-all duration-100 ease-in-out active:scale-[0.98]"
-                                name="ctc_terms"
-                            >
-                            <Check color="#ffffff" weight="bold" />                    
-                            </Checkbox.Root>
-                            <Label.Root
-                                id="ctc_terms-label"
-                                for="ctc_terms"
-                                class="text-sm font-base-bold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                            >
-                                Akceptuję politykę prywatności
-                            </Label.Root>
-                        </div> -->
                         <div class="flex items-center space-x-2 sm:space-x-3 mt-3">
                             <div class="inline-flex items-center -ml-2 inp">
-                                <label class="relative flex items-center p-2 rounded-full cursor-pointer" for="ctc_terms">
-                                    <input type="checkbox" name="ctc_terms"
+                                <label class="relative flex items-center p-2 rounded-full cursor-pointer" for="msg_terms">
+                                    <input type="checkbox" name="msg_terms"
                                     class="{form?.checkboxError ? 'animate-shake' : ''} {form?.checkboxError ? 'border-[2px] border-primary-600' : ''} before:content[''] hover:border-primary-400 bg-white peer relative h-7 w-7 cursor-pointer appearance-none rounded-lg border-2 border-dark-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-dark-500 before:opacity-0 before:transition-opacity checked:bg-primary-600 checked:border-primary-600 checked:bg-primary checked:before:bg-dark-900 hover:before:opacity-10"
-                                    id="ctc_terms" />
+                                    id="msg_terms" />
                                     <span
                                     class="absolute text-white flex items-center justify-center transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"
@@ -204,7 +187,7 @@
                                         </svg>
                                     </span>
                                 </label>
-                                <label id="ctc_terms-label" class="text-sm font-base-bold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="ctc_terms">Akceptuję politykę prywatności</label>
+                                <label id="msg_terms-label" class="text-sm font-base-bold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="msg_terms">Akceptuję politykę prywatności</label>
                             </div>
                         </div>
                         {#if form?.nameError}<p class="text-[12px] top-2 md:top-0 text-primary-600 pt-4" transition:fade>Pole <b>Imię</b> musi zawierać conajmniej 3 znaki.</p>{/if}
@@ -234,14 +217,14 @@
                                 <p class="text-sm lg:text-base text-primary-950 mb-6 sm:mb-7">Bez zobowiązań, całkowicie za darmo.</p>
                             </div>
                         </div>
-                        <form method="POST" action="?/auditOnContact" id="ctc_audit-header-form" onsubmit={handleSubmit} use:enhance>
+                        <form method="POST" action={action} id="msg_audit-header-form" onsubmit={handleSubmit} use:enhance>
                         {#if activeTab === 1}
                             <div in:fly={{ y: 10 }} out:fade onoutroend={() => activeTab = 2}>
                                 <input
-                                    id="ctc_audit_account_name"
+                                    id="msg_audit_account_name"
                                     class="{inp_account_name_shaking ? 'animate-shake' : ''} {inp_account_name_error ? 'border-[2px] border-primary-600' : ''} mb-3 sm:mb-4 md:min-w-[300px] flex-1/2 lg:flex-1 rounded-lg transition-shadow shadow-card w-full lg:max-w-[400px] flex bg-background focus:ring-foreground focus:shadow-2xl focus:ring-offset-background focus:outline-hidden items-center max-md:h-full max-md:max-h-[41px] h-full max-h-[49px] px-4 md:px-6 py-4 focus:ring-2 focus:ring-offset-2 md:text-base placeholder:text-neutral-600 placeholder:text-sm text-neutral-900 text-sm"
                                     placeholder="Wpisz swoją nazwę Allegro"
-                                    name="ctc_audit_account_name"
+                                    name="msg_audit_account_name"
                                     bind:value={inp_account_name}
                                     autocomplete="off"
                                     onkeydown={async (e) => { if (e.key === 'Enter') e.preventDefault(); }}
@@ -251,32 +234,32 @@
                             </div>
                         {/if}
                         {#if activeTab === 2}
-                        <input type="hidden" bind:value={inp_account_name_data} name="ctc_audit_account_name_copy" id="ctc_audit_account_name_copy" />
+                        <input type="hidden" bind:value={inp_account_name_data} name="msg_audit_account_name_copy" id="msg_audit_account_name_copy" />
                         <div class="flex flex-col relative gap-3 transition-height duration-500 ease-in-out min-h-36" in:fly={{ y: 20 }} out:fly={{ y: -20, opacity: 0, duration: 500 }} onoutroend={() => success === true ? activeTab = 3 : activeTab = 1}>
                             <div class="flex flex-col gap-3">
                                 <input
-                                id="ctc_audit_name"
+                                id="msg_audit_name"
                                 class="{inp_name_shaking ? 'animate-shake' : ''} {inp_name_error ? 'border-[2px] border-primary-600' : ''} rounded-lg transition-shadow shadow-card flex-1/2 lg:flex-1 lg:w-full lg:max-w-[400px] 2xl:min-w-[250px] flex bg-background focus:ring-foreground focus:shadow-2xl focus:ring-offset-background focus:outline-hidden items-center max-md:h-full max-md:max-h-[41px] h-full max-h-[49px] px-4 md:px-6 py-4 focus:ring-2 focus:ring-offset-2 md:text-base placeholder:text-neutral-600 placeholder:text-sm text-neutral-900 text-sm"
                                 placeholder="Imię i nazwisko *"
-                                name="ctc_audit_name"
+                                name="msg_audit_name"
                                 bind:value={inp_name_data}
                                 autocomplete="off"
                                 onkeydown={async (e) => { if (e.key === 'Enter') e.preventDefault(); }} />
                                 <input
-                                id="ctc_audit_phone"
+                                id="msg_audit_phone"
                                 class="{inp_phone_shaking ? 'animate-shake' : ''} {inp_phone_error ? 'border-[2px] border-primary-600' : ''} rounded-lg transition-shadow shadow-card flex-1/2 lg:flex-1 lg:w-full lg:max-w-[400px] 2xl:min-w-[250px] flex bg-background focus:ring-foreground focus:shadow-2xl focus:ring-offset-background focus:outline-hidden items-center max-md:h-full max-md:max-h-[41px] h-full max-h-[49px] px-4 md:px-6 py-4 focus:ring-2 focus:ring-offset-2 md:text-base placeholder:text-neutral-600 placeholder:text-sm text-neutral-900 text-sm"
                                 placeholder="Numer telefonu *"
-                                name="ctc_audit_phone"
+                                name="msg_audit_phone"
                                 bind:value={inp_phone_data}
                                 autocomplete="off"
                                 onkeydown={async (e) => { if (e.key === 'Enter') e.preventDefault(); }} />
                             </div>
                             <div class="flex flex-col gap-3">
                                 <input
-                                id="ctc_audit_email"
+                                id="msg_audit_email"
                                 class="{inp_email_shaking ? 'animate-shake' : ''} {inp_email_error ? 'border-[2px] border-primary-600' : ''} rounded-lg transition-shadow shadow-card flex-1/2 lg:flex-1 lg:w-full lg:max-w-[400px] 2xl:min-w-[250px] flex bg-background focus:ring-foreground focus:shadow-2xl focus:ring-offset-background focus:outline-hidden items-center max-md:h-full max-md:max-h-[41px] h-full max-h-[49px] px-4 md:px-6 py-4 focus:ring-2 focus:ring-offset-2 md:text-base placeholder:text-neutral-600 placeholder:text-sm text-neutral-900 text-sm"
                                 placeholder="Adres e-mail *"
-                                name="ctc_audit_email"
+                                name="msg_audit_email"
                                 bind:value={inp_email_data}
                                 autocomplete="off"
                                 onkeydown={async (e) => { if (e.key === 'Enter') e.preventDefault(); }} />
