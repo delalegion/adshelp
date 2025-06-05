@@ -44,6 +44,9 @@
 
     <title>Adshelp.pl - Pomożemy rozwinąć Twój biznes na Allegro</title>
 
+    <script src="./js/lazysizes.min.js" async=""></script>
+    <script src="./js/ls.unveilhooks.min.js" async=""></script>
+    
 </svelte:head>
 
 <!-- Header section -->
