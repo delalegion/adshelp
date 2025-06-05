@@ -9,7 +9,7 @@ export const load = (async ({params}) => {
     });
     const post = await response.json();
 
-    let lastPostsAwait = await fetch(STRAPI_BASE + '/api/articles?populate=*&pagination[page]=1&pagination[pageSize]=3');
+    let lastPostsAwait = await fetch(STRAPI_BASE + '/api/articles?fields[0]=description&fields[1]=slug&fields[2]=title&fields[3]=publishedAt&populate[category][fields]&populate[cover][fields]&pagination[page]=1&pagination[pageSize]=3');
     const lastPosts = await lastPostsAwait.json();
 
     return { post: post.data, posts: lastPosts };

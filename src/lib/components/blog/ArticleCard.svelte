@@ -5,7 +5,6 @@
     import { formatPublishedAt } from '$lib/utils/dates.js';
 
     let { data = {}  } = $props();
-    console.log(data)
 </script>
 
 <div class="grid grid-cols-4 min-[540px]:grid-cols-12 gap-7 min-[540px]:gap-9" in:fly={{ y: 10, opacity: 0 }}>

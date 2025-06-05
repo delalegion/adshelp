@@ -54,7 +54,6 @@
                 paginationUrl = `/blog/category/${$activeData.category}/`;
             }
         }
-        console.log("zmiana")
     })
     
 </script>

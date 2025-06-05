@@ -36,6 +36,7 @@
         // Get the current URL when component mounts (client-side only)
         currentUrl = window.location.href;
         pageTitle = document.title;
+        console.log(data)
     });
 
     const shareToFacebook = () => {
