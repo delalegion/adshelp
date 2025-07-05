@@ -47,17 +47,11 @@ export async function GET() {
           getStaticRoutes()
         ]);
 
+        // Use urlset for a regular sitemap with URL entries
         const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-        <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-        ${staticRoutes}
-        
-        <!-- Reference to blog sitemap -->
-        <sitemap>
-            <loc>${SITE_URL}/sitemap-blog.xml</loc>
-            <lastmod>${new Date().toISOString()}</lastmod>
-        </sitemap>
-        
-        </sitemapindex>`;
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${staticRoutes}
+</urlset>`;
 
         return new Response(sitemap.trim(), {
             headers: {
@@ -71,12 +65,14 @@ export async function GET() {
                  
         // Return minimal sitemap on error
         const fallbackSitemap = `<?xml version="1.0" encoding="UTF-8"?>
-        <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-            <sitemap>
-                <loc>${SITE_URL}/sitemap-blog.xml</loc>
-                <lastmod>${new Date().toISOString()}</lastmod>
-            </sitemap>
-        </sitemapindex>`;
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>${SITE_URL}</loc>
+        <lastmod>${new Date().toISOString()}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+</urlset>`;
 
         return new Response(fallbackSitemap, {
           headers: {
