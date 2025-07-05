@@ -1,8 +1,6 @@
 <script lang="ts">
-    import { entriesData, activeData, isLoading } from '$lib/stores/blogStore.js';
+    import { entriesData, activeData } from '$lib/stores/blogStore.js';
     import { get } from 'svelte/store';
-    import type { LayoutProps } from './$types';
-    import { navigating } from '$app/state';
 
     // Categories
     const entries = Object.entries(get(entriesData));
@@ -21,15 +19,12 @@
     import Pricing from '$lib/components/sections/pricing/pricing.svelte';
     import Contact from '$lib/components/sections/contact/Contact.svelte';
     import Footer from '$lib/components/sections/footer/Footer.svelte';
-    
-    let sortActive = $state(false);
+
+    // LayoutProps
 	let { children, form }: LayoutProps = $props();
 
-    // Pagination
-    let total = $state(0);
-    let page = $state(1);
-    let array = $state(Array());
-    let paginationUrl = $state(`/blog/`);
+    // Category popup listener
+    let sortActive = $state(false);
 
     onMount(() => {
         document.addEventListener("click", function(e) {
@@ -41,50 +36,7 @@
             }
         });
     })
-
-    $effect(() => {
-        total = $activeData.meta.pagination.pageCount;
-        page = $activeData.meta.pagination.page;
-        array = Array($activeData.meta.pagination.pageCount);
-        
-        if (navigating) {
-            if ($activeData.category === "all") {
-                paginationUrl = `/blog/page/`;
-            } else {
-                paginationUrl = `/blog/category/${$activeData.category}/`;
-            }
-        }
-    })
-    
 </script>
-
-<svelte:head>
-
-    <meta property="url" content="https://adshelp.pl/">
-    <meta name="description" content="Nowoczesny blog dostarczający wiedzy o strategiach, trendach i psychologii w marketingu, która pomoże rozwinąć Twój biznes.">
-    <meta name="dcterms.description" lang="pl" content="Skuteczny blog dla Twojej firmy na Allegro">
-    <meta name="keywords" content="Reklamy na allegro Skuteczne reklamy na Allegro Skuteczne kampanie Allegro Skuteczne reklamy Allegro Ads dla Twojego e-commerce Reklamy e-commerce dla Twojego konta firmowego na Allegro">
-    <meta name="dcterms.subject" lang="pl" content="Blog o marketingu; Blog; Blog o allegro; Blog o Google; Adshelp i Google; Blog o biznesie; Reklamy na Allegro Ads; Skuteczne reklamy na Allegro Ads; Skuteczne kampanie reklamowe Allegro Ads; Adshelp skuteczna firma pomagająca rozwinąć biznes na Allegro; Jak rozwinąc biznes na Allegro Ads; Reklamy e-commerce dla twojego binzesu na Allegro; Nadzorowoanie reklam Allegro Ads przez profesjonalną firmę; Profesjonalna firma zajmująca się reklamami Allegro Ads">
-    <meta name="application-name" content="Nowoczesny blog o stretegiach, trendach i marketingu Allegro">
-    <meta name="msapplication-tooltip" content="Adshelp - Nowoczesny blog o marketingu">
-    <meta name="msapplication-starturl" content="http://adshelp.pl">
-    <meta name="msapplication-window" content="width=1024;height=768">
-    <meta property="og:site_name" content="ODKRYJ ŚWIAT MARKETINGU! - Nowoczesny blog o strategiach, trendach i marketingu">
-    <meta property="og:url" content="https://adshelp.pl">
-    <meta property="og:title" content="Blog Adshelp.pl - ODKRYJ ŚWIAT MARKETINGU!">
-    <meta property="og:image" content="https://adshelp.pl/og-image.jpg">
-    <meta property=”og:locale” content=”pl_PL” />
-    <meta property="og:description" content="Skuteczne kampanie Allegro ads dla Twojego e-commerce" />
-    <meta property=”og:type” content=”website” />
-
-    <link rel="index" title="Strona główna" href="https://adshelp.pl">
-    <link rel="canonical" href="https://adshelp.pl/">
-    <link rel="icon" href="https://adshelp.pl/favicon.png" type="image/png">
-    <link rel="apple-touch-icon" href="https://example.net/images/apple-touch-icon.png">
-
-    <title>Blog Adshelp.pl - ODKRYJ ŚWIAT MARKETINGU!</title>
-
-</svelte:head>
 
 <header id="header" class="bg-primary-950 bg-[url('/src/lib/assets/bg-blog.png')] bg-no-repeat bg-center relative">
     <div class="flex justify-center">
@@ -96,20 +48,36 @@
                             ODKRYJ ŚWIAT<br />
                             MARKETINGU!
                         </h1>  
-                        <div class="overflow-x-auto scrollbar-hide md:overflow-x-visible">
+                        <div class="overflow-x-auto scrollbar-hide md:overflow-x-visible" itemscope itemtype="https://schema.org/ItemList">
+                            <meta itemprop="name" content="Blog Categories" />
+                            <meta itemprop="itemListOrder" content="Unordered" />
+                            
                             <div class="flex md:flex-wrap w-fit md:w-full gap-1 md:gap-2 justify-center">
                                 {#each entries as [key, value], i}
-                                    <div tabindex="0" onkeydown={() => goto('/blog/category/'+value[2]+'#articles')} onclick={() => goto('/blog/category/'+value[2]+'#articles')} role="button" class="{i === 0 ? 'ml-6' : ''} {i === 16 ? 'mr-6' : ''} {$activeData.category === value[2] ? 'border-primary-500' : 'border-primary-950'} border-2 inline-flex h-full max-w-fit flex-row gap-3 rounded-full bg-primary-dark text-sm-bold text-primary-300 px-3 sm:px-4 py-1 sm:py-2 items-center active:scale-98 transition-all transition-300 hover:cursor-pointer whitespace-nowrap">
-                                        <div class="flex w-[24px] sm:w-[38px] h-[24px] sm:h-[38px] justify-center items-center">
+                                    <div 
+                                        tabindex="0" 
+                                        onkeydown={() => goto('/blog/category/' + value[2] + '#articles')} 
+                                        onclick={() => goto('/blog/category/' + value[2] + '#articles')} 
+                                        role="button"
+                                        class="{i === 0 ? 'ml-6' : ''} {i === 16 ? 'mr-6' : ''} {$activeData.category === value[2] ? 'border-primary-500' : 'border-primary-950'} border-2 inline-flex h-full max-w-fit flex-row gap-3 rounded-full bg-primary-dark text-sm-bold text-primary-300 px-3 sm:px-4 py-1 sm:py-2 items-center active:scale-98 transition-all transition-300 hover:cursor-pointer whitespace-nowrap"
+                                        itemprop="itemListElement"
+                                        itemscope
+                                        itemtype="https://schema.org/ListItem">
+                        
+                                        <meta itemprop="position" content="{i + 1}" />
+                                        <meta itemprop="url" content="/blog/category/{value[2]}#articles" />
+                        
+                                        <span itemprop="name" class="flex w-[24px] sm:w-[38px] h-[24px] sm:h-[38px] justify-center items-center">
                                             {#if $activeData.category === value[2]}
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                                                     <path d="M19 8L9.375 17L5 12.9091" stroke="#F36020" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
                                             {:else}
                                                 <img src={value[0]} alt="{value[1]} icon" class="h-full" />
                                             {/if}
-                                        </div>
-                                        {value[1]}
+                                        </span>
+                        
+                                        <span itemprop="name">{value[1]}</span>
                                     </div>
                                 {/each}
                             </div>
@@ -138,10 +106,9 @@
             </div>
         </div>
     </div>
-</header>
+  </header>
 
-
-<section id="blog-config" class="py-6 px-4 md:px-8 flex justify-center bg-white">
+  <section id="blog-config" class="py-6 px-4 md:px-8 flex justify-center bg-white">
     <div class="max-w-7xl w-full">
         <div class="flex flex-col md:flex-row justify-between">
 
@@ -215,49 +182,6 @@
     </div>
 </section>
 
-<section id="articles" class="py-6 min-[540px]:py-12 md:py-18 px-4 md:px-8 flex justify-center bg-white min-h-screen">
-    <div class="max-w-7xl w-full">
-        {#if $isLoading}
-            <Loader />
-        {:else}
-            {#if $activeData.articles.length > 0}
-                <ArticleCard data={$activeData.articles} />            
-            {:else}
-                <NoArticles />
-            {/if}
-        {/if}
-
-        {#if total > 1}
-            <div class="mt-16 md:mt-32 md:mb-12 flex justify-center">
-                <div class="flex flex-row gap-2">
-                    {#if page !== 1}
-                        <div onclick={() => goto(`${paginationUrl}${page-1}`, { noScroll: true })} onkeydown={() => goto(`${paginationUrl}${page-1}`, { noScroll: true })} role="button" tabindex="0" class="w-[52px] h-[52px] rounded-full flex justify-center items-center text-lg-bold font-display bg-primary-50 hover:bg-primary-100 transition-all transition-300 active:scale-96 hover:cursor-pointer">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M19 12L5 12" stroke="#410F09" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M12 19L5 12L12 5" stroke="#410F09" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>                                              
-                        </div>
-                    {/if}
-                    {#each array as _, i}
-                        <div onclick={() => goto(`${paginationUrl}${i+1}`, { noScroll: true })} onkeydown={() => goto(`${paginationUrl}${i+1}`, { noScroll: true })} role="button" tabindex="0" class="{page === i+1 ? 'bg-primary-950 text-primary-100 hover:bg-primary-900' : 'bg-primary-50 text-primary-950 hover:bg-primary-100'} w-[52px] h-[52px] rounded-full flex justify-center items-center text-lg-bold font-display  transition-all transition-300 active:scale-96 hover:cursor-pointer">
-                            {i+1}
-                        </div>
-                    {/each}
-                    {#if total > page}
-                        <div onclick={() => goto(`${paginationUrl}${page+1}`, { noScroll: true })} onkeydown={() => goto(`${paginationUrl}${page+1}`, { noScroll: true })} role="button" tabindex="0" class="w-[52px] h-[52px] rounded-full flex justify-center items-center text-lg-bold font-display bg-primary-50 hover:bg-primary-100 transition-all transition-300 active:scale-96 hover:cursor-pointer">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 12H19" stroke="#410F09" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M12 5L19 12L12 19" stroke="#410F09" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>                        
-                        </div>
-                    {/if}
-                </div>
-            </div>
-        {/if}
-
-    </div>
-</section>
-
 {@render children()}
 
 <!-- Line -->
@@ -270,6 +194,6 @@
 <Pricing />
 
 <!-- Contact section -->
-<Contact {form} actionContact="/blog?/contact" action="/blog?/auditOnContact" />
+<Contact {form} actionContact="?/contact" action="?/auditContact" />
 
 <Footer />

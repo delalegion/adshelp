@@ -1,4 +1,6 @@
 <script lang="ts">
+    import SvelteSeo from 'svelte-seo';
+
     import Avatar from '$lib/assets/avatar.png';
     import Phone from 'phosphor-svelte/lib/Phone';
     import Check from "phosphor-svelte/lib/Check";
@@ -18,32 +20,330 @@
 </script>
 
 <svelte:head>
-
-    <meta property="url" content="https://adshelp.pl/">
-    <meta name="description" content="Kontakt z Adshelp - Skuteczne kampanie Allegro Ads">
-    <meta name="dcterms.description" lang="pl" content="Kontakt z Adshelp - Skuteczne reklamy Google Ads">
-    <meta name="keywords" content="Reklamy na allegro Skuteczne reklamy na Allegro Skuteczne kampanie Allegro Kontakt reklamowy Kontakt do Adshelp Marcin Lubera kontakt Kontakt marketingowy Skuteczne reklamy Allegro Ads dla Twojego e-commerce Reklamy e-commerce dla Twojego konta firmowego na Allegro">
-    <meta name="dcterms.subject" lang="pl" content="Kontakt reklamowy; Kontakt do Adshelp; Marcin Lubera kontakt; Kontakt marketingowy; Reklamy na Allegro Ads; Skuteczne reklamy na Allegro Ads; Skuteczne kampanie reklamowe Allegro Ads; Adshelp skuteczna firma pomagająca rozwinąć biznes na Allegro; Jak rozwinąc biznes na Allegro Ads; Reklamy e-commerce dla twojego binzesu na Allegro; Nadzorowoanie reklam Allegro Ads przez profesjonalną firmę; Profesjonalna firma zajmująca się reklamami Allegro Ads">
-    <meta name="application-name" content="Kampanie Allegro Ads dla Twojego biznesu">
-    <meta name="msapplication-tooltip" content="Adshelp - Skuteczne kampanie Allegro Ads">
-    <meta name="msapplication-starturl" content="http://adshelp.pl">
-    <meta name="msapplication-window" content="width=1024;height=768">
-    <meta property="og:site_name" content="Adshelp.pl - Skuteczne kampanie Allegro ads dla Twojego e-commerce">
     <meta property="og:url" content="https://adshelp.pl/kontakt">
-    <meta property="og:title" content="Chcesz rozwinąć biznes na Allegro? Napisz do Adshelp! | Adshelp.pl - Pomagamy rozwinąć Twój biznes na Allegro">
-    <meta property="og:image" content="https://adshelp.pl/og-image.jpg">
-    <meta property=”og:locale” content=”pl_PL” />
-    <meta property="og:description" content="Nowoczesny blog dostarczający wiedzy o marketingu, która pomoże rozwinąć Twój biznes." />
-    <meta property=”og:type” content=”website” />
-
+    <meta property="url" content="https://adshelp.pl/kontakt">
+    <meta name="author" content="Adshelp.pl">
+    <meta name="language" content="Polish">
+    <meta name="dcterms.description" lang="pl" content="Eksperci od Allegro Ads i reklam online. Zwiększ sprzedaż swojej firmy dzięki skutecznym kampaniom reklamowym. Sprawdzone strategie wzrostu sprzedaży. Darmowy miesiąc współpracy.">
+    <meta name="dcterms.subject" lang="pl" content="Allegro Ads; google ads; pomoc allegro, kampanie ads allegro, sprzedaż Allegro, reklamy online; kampanie reklamowe; wzrost sprzedaży; marketing e-commerce; agencja reklamowa; optymalizacja kampanii; PPC; digital marketing">
+    <meta name="application-name" content="Adshelp - Agencja Allegro Ads">
     <link rel="index" title="Strona główna" href="https://adshelp.pl">
-    <link rel="canonical" href="https://adshelp.pl/">
-    <link rel="icon" href="https://adshelp.pl/favicon.png" type="image/png">
-    <link rel="apple-touch-icon" href="https://example.net/images/apple-touch-icon.png">
+    <meta name="contactPoint.telephone" content="+48-729-924-002">
+    <meta name="contactPoint.contactType" content="customer service">
 
-    <title>Kontakt z Adshelp - Skuteczne reklamy Google Ads</title>
-
+    <script src="./js/lazysizes.min.js" defer async=""></script>
+    <script src="./js/ls.unveilhooks.min.js" defer async=""></script>
+    <script type="application/ld+json">    
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Organization",
+            "@id": "https://adshelp.pl/",
+            "name": "Adshelp.pl",
+            "url": "https://adshelp.pl",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://adshelp.pl/logo.png"
+            },
+            "vatID": "PL7952519865",
+            "email": "kontakt@adshelp.pl",
+            "description": "Eksperci od Allegro Ads i reklam online. Zwiększ sprzedaż swojej firmy dzięki skutecznym kampaniom reklamowym | Adshelp.pl",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+48-729-924-002",
+                "contactType": "customer service",
+                "availableLanguage": ["Polish"]
+            },
+            "sameAs": [
+                "https://www.facebook.com/adshelp.pl",
+                "https://www.instagram.com/adshelp.pl",
+                "https://x.com/adshelp_pl"
+            ],
+            "foundingDate": "2024",
+            "numberOfEmployees": "1-10",
+            "areaServed": {
+                "@type": "Country",
+                "name": "Poland"
+            },
+            "about": [
+                {
+                    "@type": "Thing",
+                    "name": "Allegro Ads",
+                    "description": "Zwiększ sprzedaż swojej firmy dzięki skutecznym kampaniom Allegro Ads"
+                },
+                {
+                    "@type": "Thing", 
+                    "name": "Kampanie reklamowe",
+                    "description": "Profesjonalne zarządzanie kampaniami reklamowymi Allegro Ads"
+                },
+                {
+                    "@type": "Service",
+                    "name": "Pomoc Allegro Ads",
+                    "description": "Wsparcie techniczne i strategiczne dla kampanii Allegro"
+                }
+            ]
+        },
+        {
+            "@type": "ProfessionalService",
+            "@id": "https://adshelp.pl/#service",
+            "additionalType": "https://schema.org/ProfessionalService",
+            "termsOfService": "https://www.adshelp.pl/polityka-prywatnosci",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5",
+                "bestRating": "5",
+                "worstRating": "1",
+                "reviewCount": "47"
+            },
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+48-729-924-002",
+                "contactType": "customer service",
+                "availableLanguage": ["Polish"]
+            },
+            "sameAs": [
+                "https://www.facebook.com/adshelp.pl",
+                "https://www.instagram.com/adshelp.pl",
+                "https://x.com/adshelp_pl"
+            ],
+            "foundingDate": "2024",
+            "numberOfEmployees": "1-10",
+            "review": [
+                {
+                    "@type": "Review",
+                    "author": {
+                        "@type": "Person",
+                        "name": "Hubert Kruk"
+                    },
+                    "reviewBody": "Profesjonalne podejście i świetna strategia – dzięki AdsHelp nasza sprzedaż na Allegro wzrosła o 270% w 2 miesiące. Polecam każdemu, kto chce realnych efektów!",
+                    "reviewRating": {
+                        "@type": "Rating",
+                        "ratingValue": "5",
+                        "bestRating": "5"
+                    },
+                    "datePublished": "2025-06-27"
+                },
+                {
+                    "@type": "Review",
+                    "author": {
+                        "@type": "Person",
+                        "name": "Joanna Maciąg"
+                    },
+                    "reviewBody": "Profesjonalne podejście i świetne rezultaty. Polecam każdemu sprzedawcy na Allegro.",
+                    "reviewRating": {
+                        "@type": "Rating",
+                        "ratingValue": "5",
+                        "bestRating": "5"
+                    },
+                    "datePublished": "2025-06-24"
+                }
+            ],
+            "offers": [
+                {
+                    "@type": "Offer",
+                    "name": "Pakiet Specjalista",
+                    "description": "Pakiet idealny do przetestowania moich usług - Pierwszy darmowy miesiąc",
+                    "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "price": "0",
+                        "priceCurrency": "PLN",
+                        "originalPrice": "700",
+                        "valueAddedTaxIncluded": true
+                    },
+                    "category": "Promotional",
+                    "availability": "https://schema.org/InStock",
+                    "priceValidUntil": "2025-12-31",
+                    "url": "https://www.adshelp.pl/",
+                    "seller": {
+                        "@id": "https://adshelp.pl/#service"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "name": "Pakiet Manager",
+                    "description": "Zaufałeś moim umiejętnościom i chcesz rozwinąć swoją firmę jeszcze bardziej! - Pierwszy darmowy miesiąc",
+                    "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "price": "0",
+                        "priceCurrency": "PLN",
+                        "originalPrice": "1500",
+                        "valueAddedTaxIncluded": true
+                    },
+                    "category": "Promotional",
+                    "availability": "https://schema.org/InStock",
+                    "priceValidUntil": "2025-12-31",
+                    "url": "https://www.adshelp.pl/",
+                    "seller": {
+                        "@id": "https://adshelp.pl/#service"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "name": "Pakiet Dyrektor",
+                    "description": "Wiesz, że moje umiejętności rozwiną Twoją firmę do granic możliwości! - Pierwszy darmowy miesiąc",
+                    "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "price": "0",
+                        "priceCurrency": "PLN",
+                        "originalPrice": "3000",
+                        "valueAddedTaxIncluded": true
+                    },
+                    "category": "Promotional",
+                    "availability": "https://schema.org/InStock",
+                    "priceValidUntil": "2025-12-31",
+                    "url": "https://www.adshelp.pl/",
+                    "seller": {
+                        "@id": "https://adshelp.pl/#service"
+                    }
+                }
+            ],
+            "audience": {
+                "@type": "Audience",
+                "audienceType": "business owners, e-commerce managers, marketing specialists",
+                "geographicArea": {
+                    "@type": "Country",
+                    "name": "Poland"
+                }
+            }
+        },
+        {
+            "@type": "WebPage",
+            "@id": "https://adshelp.pl/kontakt",
+            "url": "https://adshelp.pl/kontakt",
+            "name": "Kontakt Adshelp.pl - Agencja Allegro Ads",
+            "description": "Skontaktuj się z wiodącą agencją marketingową Allegro Ads w Polsce - Adshelp.pl. Bezpłatna konsultacja dotycząca Twoich potrzeb reklamowych w e-commerce.",
+            "hasPart": [
+                {
+                    "@type": "WebPage",
+                    "@id": "https://adshelp.pl",
+                    "name": "Strona główna",
+                    "description": "Eksperci od Allegro Ads i reklam online. Zwiększ sprzedaż swojej firmy dzięki skutecznym kampaniom | Adshelp.pl",
+                    "url": "https://adshelp.pl"
+                },
+                {
+                    "@type": "WebPage",
+                    "@id": "https://adshelp.pl/#about",
+                    "name": "O mnie",
+                    "description": "Dowiedz się kim jest CEO Adshelp.pl - Ekspert Allegro Ads",
+                    "url": "https://adshelp.pl/#about"
+                },
+                {
+                    "@type": "WebPage",
+                    "@id": "https://adshelp.pl/#steps",
+                    "name": "Dlaczego warto",
+                    "description": "Poznaj 4 etapy! Udowodnię Ci, że dzięki nim Twoje konto na Allegro może generować dużo lepsze wyniki!",
+                    "url": "https://adshelp.pl/#steps"
+                },
+                {
+                    "@type": "WebPage",
+                    "@id": "https://adshelp.pl/#services",
+                    "name": "Contact Us",
+                    "description": "Poznaj 3 fundamenty naszych usług. Kampanie. Analiza. Optymalizacja.",
+                    "url": "https://adshelp.pl/#services"
+                },
+                {
+                    "@type": "WebPage",
+                    "@id": "https://adshelp.pl/blog",
+                    "name": "Blog",
+                    "description": "Artykuły ze świata marketingu - sprawdzone strategie marketingowe, trendy reklamowe.",
+                    "url": "https://adshelp.pl/blog"
+                },
+                {
+                    "@type": "WebPage",
+                    "@id": "https://adshelp.pl/kontakt",
+                    "name": "Kontakt",
+                    "description": "Skontaktuj się z wiodącą agencją Allegro Ads w Polsce - Adshelp.pl",
+                    "url": "https://adshelp.pl/kontakt"
+                }
+            ],
+            "isPartOf": {
+                "@type": "WebSite",
+                "@id": "https://adshelp.pl/",
+                "name": "Adshelp.pl",
+                "url": "https://adshelp.pl"
+            },
+            "about": {
+                "@id": "https://adshelp.pl/#about"
+            },
+            "mainEntity": {
+                "@id": "https://adshelp.pl/"
+            }
+            },
+            {
+            "@type": "ContactPage",
+            "@id": "https://adshelp.pl/kontakt",
+            "url": "https://adshelp.pl/kontakt",
+            "name": "Kontakt Adshelp.pl - Agencja Allegro Ads",
+            "description": "Skontaktuj się z wiodącą agencją marketingową Allegro Ads w Polsce - Adshelp.pl. Bezpłatna konsultacja dotycząca Twoich potrzeb reklamowych w e-commerce.",
+            "mainEntity": {
+                "@id": "https://adshelp.pl/kontakt"
+            }
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id": "https://adshelp.pl/#menu",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://adshelp.pl"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Kontakt",
+                    "item": "https://adshelp.pl/kontakt"
+                }
+            ]
+        }
+    ]
+}
+    </script>
+    
 </svelte:head>
+
+<SvelteSeo
+  title="Kontakt - Ekspert Allegro Ads | Profesjonalne kampanie Allegro Ads"
+  description="Skontaktuj się z wiodącą agencją Allegro Ads w Polsce. Oferujemy profesjonalne zarządzanie kampaniami reklamowymi, optymalizację i strategie sprzedażowe na Allegro. Bezpłatna konsultacja."
+  canonical="https://adshelp.pl/kontakt"
+  keywords="promocja produktów Allegro, jak reklamować na Allegro, kontakt z agencją Allegro Ads, kontakt Allegro Ads, Allegro Kontakt, Allegro Ads Kontakt, reklamy na Allegro kontakt, agencja Allegro Ads Warszawa, agencja Allegro Ads Kraków, agencja Allegro Ads Przemyśl, zarządzanie reklamami Allegro, optymalizacja kampanii Allegro, ekspert Allegro Ads, konsultant Allegro, reklamy produktów Allegro, zwiększenie sprzedaży Allegro, kampanie reklamowe e-commerce, profesjonalne usługi Allegro"
+  openGraph={{
+    title: "Kontakt - Eksperci Allegro Ads | Profesjonalne Zarządzanie Kampaniami Reklamowymi",
+    description:
+      "Skontaktuj się z wiodącą agencją Allegro Ads w Polsce. Oferujemy profesjonalne zarządzanie kampaniami reklamowymi, optymalizację i strategie sprzedażowe na Allegro. Bezpłatna konsultacja.",
+    image: "https://www.adshelp.pl/og-image.jpg",
+    url: "https://adshelp.pl/kontakt",
+    type: "website",
+    images: [
+      {
+        url: "https://www.adshelp.pl/_app/immutable/assets/header-animation-poster.n-3Nb43m.avif",
+        width: 397,
+        height: 218,
+        alt: "Heading image",
+      },
+    ],
+    videos: [
+        {
+          url: 'https://www.adshelp.pl/_app/immutable/assets/header-animation.Bp_YXNtx.webm',
+          width: 920,
+          height: 690,
+          secureUrl: 'https://www.adshelp.pl/_app/immutable/assets/header-animation.Bp_YXNtx.webm',
+          type: 'video/webm'
+        }
+    ],
+    site_name: "AdsHelp",
+  }}
+  twitter={{
+    card: "summary_large_image",
+    site: "@adshelp_pl",
+    title: "Zwiększ sprzedaż na Allegro! Skuteczne reklamy na Allegro | Adshelp",
+    description:
+      "Profesjonalne zarządzanie reklamami Allegro Ads i Google Ads. Dowiedz się jak optymalizować Allegro Ads, aby zwiększyć sprzedaż i widoczność. Bezpłatny pierwszy miesiąc!",
+    image: "https://www.adshelp.pl/og-image.jpg",
+  }}
+/>
 
 <header id="header" class="flex justify-center bg-primary-950 py-16 min-[950px]:py-32 bg-[url('/src/lib/assets/bg-blog.png')] bg-no-repeat bg-bottom-left min-[950px]:bg-center relative">
     <div class="max-w-7xl mx-6 w-full flex flex-col gap-4 sm:gap-6 min-[950px]:gap-12">

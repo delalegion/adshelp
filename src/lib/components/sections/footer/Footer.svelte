@@ -26,19 +26,22 @@
 
                 <div class="w-full h-[1px] bg-stone-200 sm:hidden"></div>
 
-                <div class="flex flex-col min-[500px]:flex-row gap-3 max-sm:px-6">
-                    <div>
-                        <a class="border-[1px] border-stone-300 rounded-full p-1 md:pr-2 inline-flex items-center gap-2" href="mailto:kontakt@adshelp.pl">
+                <div class="flex flex-col min-[500px]:flex-row gap-3 max-sm:px-6" itemscope itemtype="https://schema.org/ContactPoint">
+                    <div class="h-card">
+                        <a class="border-[1px] border-stone-300 rounded-full p-1 md:pr-2 inline-flex items-center gap-2 u-email" href="mailto:kontakt@adshelp.pl" itemprop="email">
                             <div class="h-10 md:h-12 w-10 md:w-12 bg-stone-200 rounded-full flex justify-center items-center"><Envelope color="#410F09" weight="regular" size="24" /></div>
-                            <p class="text-sm-bold text-primary-950 mr-2.5">kontakt@adshelp.pl</p>
+                            <p class="text-sm-bold text-primary-950 mr-2.5" itemprop="email">kontakt@adshelp.pl</p>
                         </a>
                     </div>
-                    <div>
-                        <a class="border-[1px] border-stone-300 rounded-full p-1 md:pr-2 inline-flex items-center gap-2" href="tel:+48729924002">
+                    <div class="h-card">
+                        <a class="border-[1px] border-stone-300 rounded-full p-1 md:pr-2 inline-flex items-center gap-2 p-tel" href="tel:+48729924002" itemprop="telephone">
                             <div class="h-10 md:h-12 w-10 md:w-12 bg-stone-200 rounded-full flex justify-center items-center"><Phone color="#410F09" weight="regular" size="24" /></div>
-                            <p class="text-sm-bold text-primary-950 mr-2.5">+48 729 924 002</p>
+                            <p class="text-sm-bold text-primary-950 mr-2.5" itemprop="telephone">+48 729 924 002</p>
                         </a>
                     </div>
+                    <meta itemprop="contactType" content="customer service">
+                    <meta itemprop="areaServed" content="PL">
+                    <meta itemprop="availableLanguage" content="Polish">
                 </div>
             </div>
         </div>
@@ -76,9 +79,9 @@
         </div>
     </div>
 
-    <div class="py-6 flex justify-center max-sm:border-t-[1px] max-sm:border-stone-200">
+    <div class="py-6 flex justify-center max-sm:border-t-[1px] max-sm:border-stone-200" itemscope itemtype="https://schema.org/Organization">
         <div class="container px-6 sm:px-12 flex justify-start sm:justify-center">
-            <p class="text-xs text-stone-500 lg:w-1/2 text-left sm:text-center">AdsHelp to jednoosobowa agencja marketingowa, specjalizująca się w tworzeniu i optymalizacji kampanii reklamowych na Allegro. Pomagam klientom zwiększyć widoczność ich produktów, poprawić wyniki sprzedaży i osiągnąć lepszy zwrot z inwestycji (ROI). Dzięki indywidualnemu podejściu, analizie danych i doświadczeniu, skutecznie wspieram marki w dotarciu do odpowiednich klientów na Allegro, optymalizując kampanie pod kątem efektywności i rentowności.</p>
+            <p class="text-xs text-stone-500 lg:w-1/2 text-left sm:text-center h-card"><span class="org p-name" itemprop="name">AdsHelp</span> to jednoosobowa agencja marketingowa, specjalizująca się w tworzeniu i optymalizacji kampanii reklamowych na Allegro. Pomagam klientom zwiększyć widoczność ich produktów, poprawić wyniki sprzedaży i osiągnąć lepszy zwrot z inwestycji (ROI). Dzięki indywidualnemu podejściu, analizie danych i doświadczeniu, skutecznie wspieram marki w dotarciu do odpowiednich klientów na Allegro, optymalizując kampanie pod kątem efektywności i rentowności.</p>
         </div>
     </div>
 

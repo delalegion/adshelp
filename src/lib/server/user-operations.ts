@@ -2,8 +2,8 @@ import { Resend } from 'resend';
 import { RESEND } from '$env/static/private';
 import { fail } from '@sveltejs/kit';
 
-export async function MessageForm(formData: FormData) {
-    const form = await formData;
+export async function MessageForm({ request }: { request: Request }) {
+    const form = await request.formData();
 
     const email = form.get('msg_email') as string;
     const phone = form.get('msg_phone') as string;
@@ -48,8 +48,8 @@ export async function MessageForm(formData: FormData) {
     return { successContact: true };
 }
 
-export async function ConsultForm(formData: FormData) {
-    const form = await formData;
+export async function ConsultForm({ request }: { request: Request }) {
+    const form = await request.formData();
 
     const phone = form.get('cns_phone') as string;
     const name = form.get('cns_name') as string;
@@ -89,13 +89,59 @@ export async function ConsultForm(formData: FormData) {
     return { successConsult: true, phone, company, message, name };
 }
 
-export async function AuditForm(formData: FormData) {
-    const form = await formData;
+export async function AuditForm({ request }: { request: Request }) {
+    const form = await request.formData();
 
     const allegroName = form.get('audit_account_name_copy') as string;
     const email = form.get('audit_email') as string;
     const phone = form.get('audit_phone') as string;
     const name = form.get('audit_name') as string;
+
+    const resend = new Resend(RESEND);
+    const { data, error } = await resend.emails.send({
+        from: 'kontakt@adshelp.pl',
+        to: ['marcinadshelp@gmail.com'],
+        subject: 'Adshelp - Nowy audyt',
+        html: '<strong>Imię i nazwisko: '+name+' </strong><br/> <strong>Email: '+email+'</strong><br /> <strong>Nr tel.: '+phone+'</strong><br /><strong>Nazwa allegro: '+allegroName+' </strong><br />',
+    });
+
+    if (error) {
+        return console.log({ error });
+    }
+
+    return { success: true };
+}
+
+export async function AuditHomepageForm({ request }: { request: Request }) {
+    const form = await request.formData();
+
+    const allegroName = form.get('cns_audit_account_name_copy') as string;
+    const email = form.get('cns_audit_email') as string;
+    const phone = form.get('cns_audit_phone') as string;
+    const name = form.get('cns_audit_name') as string;
+
+    const resend = new Resend(RESEND);
+    const { data, error } = await resend.emails.send({
+        from: 'kontakt@adshelp.pl',
+        to: ['marcinadshelp@gmail.com'],
+        subject: 'Adshelp - Nowy audyt',
+        html: '<strong>Imię i nazwisko: '+name+' </strong><br/> <strong>Email: '+email+'</strong><br /> <strong>Nr tel.: '+phone+'</strong><br /><strong>Nazwa allegro: '+allegroName+' </strong><br />',
+    });
+
+    if (error) {
+        return console.log({ error });
+    }
+
+    return { success: true };
+}
+
+export async function AuditFooterForm({ request }: { request: Request }) {
+    const form = await request.formData();
+
+    const allegroName = form.get('msg_audit_account_name_copy') as string;
+    const email = form.get('msg_audit_email') as string;
+    const phone = form.get('msg_audit_phone') as string;
+    const name = form.get('msg_audit_name') as string;
 
     const resend = new Resend(RESEND);
     const { data, error } = await resend.emails.send({

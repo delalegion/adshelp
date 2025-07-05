@@ -35,7 +35,7 @@
 
     function setNextTab() {
         if (activeTab === 1) {
-            inp_account_name = document.querySelector("#blog_audit_account_name").value;
+            inp_account_name = document.querySelector("#audit_account_name").value;
         }
 
         if (inp_account_name.length < 3) {
@@ -55,9 +55,9 @@
     errorsArray = [];
 
     if (activeTab === 2) {
-        inp_name = document.querySelector("#blog_audit_name").value;
-        inp_phone = document.querySelector("#blog_audit_phone").value;
-        inp_email = document.querySelector("#blog_audit_email").value;
+        inp_name = document.querySelector("#audit_name").value;
+        inp_phone = document.querySelector("#audit_phone").value;
+        inp_email = document.querySelector("#audit_email").value;
     }
 
     if (inp_name.length < 3) {
@@ -119,10 +119,10 @@
                 {#if activeTab === 1}
                     <div in:fly={{ y: 10 }} out:fade onoutroend={() => activeTab = 2}>
                         <input
-                            id="blog_audit_account_name"
+                            id="audit_account_name"
                             class="{inp_account_name_shaking ? 'animate-shake' : ''} {inp_account_name_error ? 'border-[2px] border-primary-600' : ''} mb-3 sm:mb-4 md:min-w-[300px] flex-1/2 lg:flex-1 rounded-lg transition-shadow shadow-card w-full lg:max-w-[400px] flex bg-white/10 focus:ring-white/20 focus:shadow-2xl focus:ring-offset-white/30 focus:outline-hidden items-center max-md:h-full max-md:max-h-[41px] h-full max-h-[49px] px-4 md:px-6 py-4 focus:ring-2 focus:ring-offset-2 md:text-base placeholder:text-primary-100 placeholder:text-sm text-primary-100 text-sm"
                             placeholder="Wpisz swoją nazwę Allegro"
-                            name="blog_audit_account_name"
+                            name="audit_account_name"
                             bind:value={inp_account_name}
                             autocomplete="off"
                             onkeydown={async (e) => { if (e.key === 'Enter') e.preventDefault(); }}
@@ -132,32 +132,32 @@
                     </div>
                 {/if}
                 {#if activeTab === 2}
-                <input type="hidden" bind:value={inp_account_name_data} name="blog_audit_account_name_copy" id="blog_audit_account_name_copy" />
+                <input type="hidden" bind:value={inp_account_name_data} name="audit_account_name_copy" id="audit_account_name_copy" />
                 <div class="flex flex-col relative gap-3 transition-height duration-500 ease-in-out min-h-36" in:fly={{ y: 20 }} out:fly={{ y: -20, opacity: 0, duration: 500 }} onoutroend={() => success === true ? activeTab = 3 : activeTab = 1}>
                     <div class="flex flex-col gap-3">
                         <input
-                        id="blog_audit_name"
+                        id="audit_name"
                         class="{inp_name_shaking ? 'animate-shake' : ''} {inp_name_error ? 'border-[2px] border-primary-600' : ''} flex-1/2 lg:flex-1 rounded-lg transition-shadow shadow-card lg:w-full lg:max-w-[400px] 2xl:min-w-[250px] flex bg-white/10 focus:ring-white/20 focus:shadow-2xl focus:ring-offset-white/30 focus:outline-hidden items-center max-md:h-full max-md:max-h-[41px] h-full max-h-[49px] px-4 md:px-6 py-4 focus:ring-2 focus:ring-offset-2 md:text-base placeholder:text-primary-100 placeholder:text-sm text-primary-100 text-sm"
                         placeholder="Imię i nazwisko *"
-                        name="blog_audit_name"
+                        name="audit_name"
                         bind:value={inp_name_data}
                         autocomplete="off"
                         onkeydown={async (e) => { if (e.key === 'Enter') e.preventDefault(); }} />
                         <input
-                        id="blog_audit_phone"
+                        id="audit_phone"
                         class="{inp_phone_shaking ? 'animate-shake' : ''} {inp_phone_error ? 'border-[2px] border-primary-600' : ''} flex-1/2 lg:flex-1 rounded-lg transition-shadow shadow-card lg:w-full lg:max-w-[400px] 2xl:min-w-[250px] flex bg-white/10 focus:ring-white/20 focus:shadow-2xl focus:ring-offset-white/30 focus:outline-hidden items-center max-md:h-full max-md:max-h-[41px] h-full max-h-[49px] px-4 md:px-6 py-4 focus:ring-2 focus:ring-offset-2 md:text-base placeholder:text-primary-100 placeholder:text-sm text-primary-100 text-sm"
                         placeholder="Numer telefonu *"
-                        name="blog_audit_phone"
+                        name="audit_phone"
                         bind:value={inp_phone_data}
                         autocomplete="off"
                         onkeydown={async (e) => { if (e.key === 'Enter') e.preventDefault(); }} />
                     </div>
                     <div class="flex flex-col gap-3">
                         <input
-                        id="blog_audit_email"
+                        id="audit_email"
                         class="{inp_email_shaking ? 'animate-shake' : ''} {inp_email_error ? 'border-[2px] border-primary-600' : ''} flex-1/2 lg:flex-1 rounded-lg transition-shadow shadow-card lg:w-full lg:max-w-[400px] 2xl:min-w-[250px] flex bg-white/10 focus:ring-white/20 focus:shadow-2xl focus:ring-offset-white/30 focus:outline-hidden items-center max-md:h-full max-md:max-h-[41px] h-full max-h-[49px] px-4 md:px-6 py-4 focus:ring-2 focus:ring-offset-2 md:text-base placeholder:text-primary-100 placeholder:text-sm text-primary-100 text-sm"
                         placeholder="Adres email *"
-                        name="blog_audit_email"
+                        name="audit_email"
                         bind:value={inp_email_data}
                         autocomplete="off"
                         onkeydown={async (e) => { if (e.key === 'Enter') e.preventDefault(); }} />

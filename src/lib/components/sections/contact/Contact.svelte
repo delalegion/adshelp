@@ -8,6 +8,7 @@
 
     // Components
     import Button from '$lib/components/Button.svelte';
+    import { formatPublishedAt } from '$lib/utils/dates.js';
     import Phone from "phosphor-svelte/lib/Phone";
     import { fade, fly } from 'svelte/transition';
 
@@ -101,6 +102,7 @@
 
     function handleSubmit(event) {
         event.preventDefault();
+
     }
 </script>
 
@@ -133,7 +135,7 @@
                 <!-- Contact forms -->
                 <div class="flex flex-col md:flex-row">
         
-                    <form method="POST" action={actionContact} class="flex-[60%] bg-stone-50 max-md:rounded-t-2xl md:rounded-l-2xl p-6 xl:p-8 flex-col shadow-hover relative z-10 mt-8 sm:mt-10 lg:mt-14 w-full" use:enhance>
+                    <form method="POST" action="{actionContact}" class="flex-[60%] bg-stone-50 max-md:rounded-t-2xl md:rounded-l-2xl p-6 xl:p-8 flex-col shadow-hover relative z-10 mt-8 sm:mt-10 lg:mt-14 w-full" use:enhance>
                         <div class="flex flex-col min-[1250px]:flex-row gap-3 min-[1250px]:gap-5">
                             <input
                                 id="msg_name"
@@ -217,7 +219,7 @@
                                 <p class="text-sm lg:text-base text-primary-950 mb-6 sm:mb-7">Bez zobowiązań, całkowicie za darmo.</p>
                             </div>
                         </div>
-                        <form method="POST" action={action} id="msg_audit-header-form" onsubmit={handleSubmit} use:enhance>
+                        <form method="POST" action="{action}" id="msg_audit-header-form" onsubmit={handleSubmit} use:enhance>
                         {#if activeTab === 1}
                             <div in:fly={{ y: 10 }} out:fade onoutroend={() => activeTab = 2}>
                                 <input

@@ -18,26 +18,58 @@
 <section id="about" class="bg-primary-950 py-10 md:py-18 lg:py-32 border-t border-[#561C15] flex justify-center relative z-10 px-4 lg:px-10">
     <div class="container">
         <div class="grid grid-cols-2 lg:grid-cols-3">
-            <div class="col-span-2 lg:col-span-1 max-sm:flex-col max-lg:flex-row max-lg:flex max-lg:items-start gap-0 sm:gap-6">
-                <enhanced:img src={avatar} alt="Pictures of CEO Marcin Lubera" class="max-w-[104px] sm:max-w-[140px] md:max-w-[196px]" loading="lazy" />
+            <div class="col-span-2 lg:col-span-1 max-sm:flex-col max-lg:flex-row max-lg:flex max-lg:items-start gap-0 sm:gap-6" itemscope itemtype="https://schema.org/Person">
+                <enhanced:img src={avatar} alt="Pictures of CEO Marcin Lubera" class="max-w-[104px] sm:max-w-[140px] md:max-w-[196px]" loading="lazy" itemprop="image" />
                 <div class="flex flex-col mt-4 lg:mt-8">
-                    <p class="text-sm-bold text-primary-500">CEO & FOUNDER</p>
-                    <h5 class="text-2xl-bold md:text-3xl-bold font-display text-primary-100">MARCIN LUBERA</h5>
+                    <p class="text-sm-bold text-primary-500" itemprop="jobTitle">CEO & FOUNDER</p>
+                    <h5 class="text-2xl-bold md:text-3xl-bold font-display text-primary-100" itemprop="name">MARCIN LUBERA</h5>
 
-                    <p class="font-display text-lg-bold xl:text-xl-bold text-primary-100 mt-4 md:mt-6 lg:mt-14">Ekspert z bogatym portfolio kampanii Allegro Ads. Jego ogromne doświadczenie i indywidualne podejście do każdego klienta zapewniają skuteczność, której nie oferują masowe agencje.</p>
+                    <p class="font-display text-lg-bold xl:text-xl-bold text-primary-100 mt-4 md:mt-6 lg:mt-14" itemprop="description">Ekspert z bogatym portfolio kampanii Allegro Ads. Jego ogromne doświadczenie i indywidualne podejście do każdego klienta zapewniają skuteczność, której nie oferują masowe agencje.</p>
+                    
+                    <!-- Person's professional details -->
+                    <div style="display: none;">
+                        <span itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
+                            <span itemprop="name">Marcin Lubera AdsHelp</span>
+                        </span>
+                        <span itemprop="hasOccupation" itemscope itemtype="https://schema.org/Occupation">
+                            <span itemprop="name">Allegro Marketing Expert</span>
+                            <span itemprop="occupationLocation" itemscope itemtype="https://schema.org/Place">
+                                <span itemprop="name">Poland</span>
+                            </span>
+                        </span>
+                    </div>
+
+                    <!-- Organization context -->
+                    <div itemprop="worksFor" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+                        <span itemprop="name">AdsHelp</span>
+                        <span itemprop="url">https://www.adshelp.pl</span>
+                        <span itemprop="description">Agencja reklamowa specjalizująca się w Allegro Ads. Profesjonalne zarządzanie reklamami Allegro Ads. Bezpłatny pierwszy miesiąc współpracy!</span>
+                    </div>
+
+                    <!-- Expertise/Skills -->
+                    <div style="display: none;">
+                        <span itemprop="knowsAbout">Allegro Ads</span>
+                        <span itemprop="knowsAbout">Allegro Marketing</span>
+                        <span itemprop="knowsAbout">Google Ads</span>
+                        <span itemprop="knowsAbout">PPC Marketing</span>
+                        <span itemprop="knowsAbout">E-commerce Marketing</span>
+                        <span itemprop="knowsAbout">Digital Marketing Strategy</span>
+                        <span itemprop="knowsAbout">Optymalizacja ROI</span>
+                    </div>
+                        
                     <div class="flex flex-row flex-wrap gap-2 xl:gap-4 mt-6 lg:mt-8">
-                        <Button label="Kontakt do mnie" theme="orange" href="#contact" />
+                        <Button label="Kontakt do mnie" theme="orange" href="#contact" itemprop="contactPoint" />
                         <Button label="Zamów audyt" href="#consulting" />
                     </div>
                 </div>
             </div>
             <!-- Desktop -->
-            <div class="col-span-2 flex flex-col gap-10 lg:gap-14 items-center lg:items-end xl:items-center max-lg:mt-12 max-md:hidden">
-                <h4 class="text-2xl-bold lg:text-3xl-bold font-display text-primary-100 text-center w-full">Czym się wyróżniam na tle<br /> dużych agencji?</h4>
-                <div class="flex flex-row max-w-full xl:max-w-4/5 2xl:max-w-2/3">
-
+            <div class="col-span-2 flex flex-col gap-10 lg:gap-14 items-center lg:items-end xl:items-center max-lg:mt-12 max-md:hidden" itemscope itemtype="https://schema.org/Table">
+                <h4 class="text-2xl-bold lg:text-3xl-bold font-display text-primary-100 text-center w-full" itemprop="name">Czym się wyróżniam na tle<br /> dużych agencji?</h4>
+                <div class="flex flex-row max-w-full xl:max-w-4/5 2xl:max-w-2/3" itemscope itemtype="https://schema.org/ComparisonTable">
+                    <!-- Adshelp Column -->
                     <div class="flex flex-col gap-8">
-                        <img src={logoWhite} alt="Logo of company Adshelp" class="h-10" />
+                        <img src={logoWhite} alt="Logo of company Adshelp" class="h-10" itemprop="logo" />
                         <div class="flex flex-col bg-primary-dark py-3 pl-4 gap-2 border-2 border-primary-500 rounded-l-2xl rounded-br-2xl">
                             <div class="flex flex-row px-2 py-3 items-center">
                                 <img src={tick} alt="Graphic icon of stats" class="mr-3" />
@@ -100,11 +132,11 @@
                 </div>
             </div>
             <!-- Mobile -->
-            <div class="col-span-2 flex flex-col md:hidden mt-14">
-                <h4 class="text-2xl-bold font-display text-primary-100 text-center w-full mb-8">Czym się wyróżniam na tle<br /> dużych agencji?</h4>
-                <div class="flex flex-row gap-2 sm:gap-4">
+            <div class="col-span-2 flex flex-col md:hidden mt-14" itemscope itemtype="https://schema.org/Table">
+                <h4 class="text-2xl-bold font-display text-primary-100 text-center w-full mb-8" itemprop="name">Czym się wyróżniam na tle<br /> dużych agencji?</h4>
+                <div class="flex flex-row gap-2 sm:gap-4" itemscope itemtype="https://schema.org/ComparisonTable">
                     <div tabindex="0" role="button" onclick={() => activeTab = 0} onkeydown={() => activeTab = 0} class="py-2 flex-1 border-x-2 border-t-2 {activeTab === 1 ? 'border-orange-500' : 'border-[#532721]'} transiiton-all duration-300 flex bg-primary-dark justify-center text-primary-50 rounded-t-2xl">
-                        <img src={logo} alt="Logo" class="pl-4 pr-4" />
+                        <img src={logo} alt="Logo" class="pl-4 pr-4" itemprop="logo" />
                     </div>
                     <div tabindex="0" role="button" onclick={() => activeTab = 0} onkeydown={() => activeTab = 0} class="py-4 flex-1 border-x-2 border-t-2 border-[#532721] bg-primary-dark text-center text-primary-50 rounded-t-2xl text-2xl-bold font-display">
                         Agencje

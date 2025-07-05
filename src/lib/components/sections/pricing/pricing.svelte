@@ -24,7 +24,7 @@
 
 </script>
 
-<section id="pricing" class="flex justify-center relative pb-12 sm:pb-24 md:pb-32 pt-12 bg-white">
+<section id="pricing" class="flex justify-center relative pb-12 sm:pb-24 md:pb-32 pt-12 bg-white" itemscope itemtype="https://schema.org/Offer">
     <div class="lg:container lg:px-6 xl:px-12 2xl:px-24 max-lg:w-full">
         <h2 class="text-2xl-bold md:text-4xl-bold xl:text-5xl-bold text-primary-950 font-display pb-4 xl:pb-8 px-6 text-left sm:text-center">Pakiety współpracy</h2>
 
@@ -39,9 +39,25 @@
                                 <div class="flex xl:justify-center items-center w-[82px] h-[50px] xl:h-[70px] z-20">
                                     <enhanced:img src={pricingFirst} alt="Graphic image of 3D magnifier" class="max-xl:w-3/4" />
                                 </div>
-                                <h5 class="text-xl-bold xl:text-2xl-bold font-display text-primary-600 relative -left-[40px] xl:-left-[20px] -top-[2px] z-10">Specjalista</h5>
+                                <h5 class="text-xl-bold xl:text-2xl-bold font-display text-primary-600 relative -left-[40px] xl:-left-[20px] -top-[2px] z-10" itemprop="name">Specjalista</h5>
                             </div>
-                            <p class="text-xs text-primary-950">Pakiet idealny do przetestowania moich usług.</p>
+                            <p class="text-xs text-primary-950" itemprop="description">Pakiet idealny do przetestowania moich usług.</p>
+                            <!-- Price Specification with Discount -->
+                            <div itemprop="priceSpecification" style="display: none; visbility: hidden;" itemscope itemtype="https://schema.org/PriceSpecification">
+                                <div class="price">
+                                    <span style="text-decoration: line-through; color: #999; font-size: 18px;">
+                                        <span itemprop="originalPrice" content="700">700</span> PLN
+                                    </span>
+                                    <br>
+                                    <span style="color: #28a745; font-size: 28px; font-weight: bold;">
+                                        <span itemprop="price" content="0">PIERWSZY MIESIĄC ZA DARMO</span>
+                                    </span>
+                                </div>
+                                <meta itemprop="priceCurrency" content="PLN">
+                                <meta itemprop="valueAddedTaxIncluded" content="true">
+                            </div>
+                            <meta itemprop="availability" content="https://schema.org/InStock">
+                            <meta itemprop="priceValidUntil" content="2025-12-31">
                         </div>
                         <div class="relative mt-auto mb-3">
                             <div class="px-3 py-2 rounded-md bg-primary-100 text-primary-600 flex flex-row gap-3 justify-center text-xs items-center">
@@ -65,9 +81,25 @@
                                 <div class="flex xl:justify-center items-center w-[60px] xl:w-[82px] h-[50px] xl:h-[70px]">
                                     <enhanced:img src={pricingSecond} alt="Graphic image of 3D notepad" />
                                 </div>
-                                <h5 class="text-xl-bold xl:text-2xl-bold font-display text-primary-600">Manager</h5>
+                                <h5 class="text-xl-bold xl:text-2xl-bold font-display text-primary-600" itemprop="name">Manager</h5>
                             </div>
-                            <p class="text-xs text-primary-950">Zaufałeś moim umiejętnościom i chcesz rozwinąć swoją firmę jeszcze bardziej!</p>
+                            <p class="text-xs text-primary-950" itemprop="description">Zaufałeś moim umiejętnościom i chcesz rozwinąć swoją firmę jeszcze bardziej!</p>
+                            <!-- Price Specification with Discount -->
+                            <div itemprop="priceSpecification" style="display: none; visbility: hidden;" itemscope itemtype="https://schema.org/PriceSpecification">
+                                <div class="price">
+                                    <span style="text-decoration: line-through; color: #999; font-size: 18px;">
+                                        <span itemprop="originalPrice" content="1200">1200</span> PLN
+                                    </span>
+                                    <br>
+                                    <span style="color: #28a745; font-size: 28px; font-weight: bold;">
+                                        <span itemprop="price" content="0">PIERWSZY MIESIĄC ZA DARMO</span>
+                                    </span>
+                                </div>
+                                <meta itemprop="priceCurrency" content="PLN">
+                                <meta itemprop="valueAddedTaxIncluded" content="true">
+                            </div>
+                            <meta itemprop="availability" content="https://schema.org/InStock">
+                            <meta itemprop="priceValidUntil" content="2025-12-31">
                         </div>
                         <div class="relative mt-auto mb-3">
                             <div class="px-3 py-2 rounded-md bg-primary-100 text-primary-600 flex flex-row gap-3 justify-center text-xs items-center">
@@ -92,9 +124,25 @@
                                 <div class="flex xl:justify-center items-center w-[60px] xl:w-[82px] h-[50px] xl:h-[70px]">
                                     <enhanced:img src={pricingThird} alt="Graphic image of 3D crown" />
                                 </div>
-                                <h5 class="text-xl-bold xl:text-2xl-bold font-display text-primary-500">Dyrektor</h5>
+                                <h5 class="text-xl-bold xl:text-2xl-bold font-display text-primary-500" itemprop="name">Dyrektor</h5>
                             </div>
-                            <p class="text-xs text-primary-50">Wiesz, że moje umiejętności rozwiną Twoją firmę do granic możliwości!</p>
+                            <p class="text-xs text-primary-50" itemprop="description">Wiesz, że moje umiejętności rozwiną Twoją firmę do granic możliwości!</p>
+                            <!-- Price Specification with Discount -->
+                            <div itemprop="priceSpecification" style="display: none; visbility: hidden;" itemscope itemtype="https://schema.org/PriceSpecification">
+                                <div class="price">
+                                    <span style="text-decoration: line-through; color: #999; font-size: 18px;">
+                                        <span itemprop="originalPrice" content="2000">2000</span> PLN
+                                    </span>
+                                    <br>
+                                    <span style="color: #28a745; font-size: 28px; font-weight: bold;">
+                                        <span itemprop="price" content="0">PIERWSZY MIESIĄC ZA DARMO</span>
+                                    </span>
+                                </div>
+                                <meta itemprop="priceCurrency" content="PLN">
+                                <meta itemprop="valueAddedTaxIncluded" content="true">
+                            </div>
+                            <meta itemprop="availability" content="https://schema.org/InStock">
+                            <meta itemprop="priceValidUntil" content="2025-12-31">
                         </div>
                         <div class="relative mt-auto mb-3">
                             <div class="px-3 py-2 rounded-md bg-primary-900 text-primary-50 flex flex-row gap-3 justify-center text-xs items-center">
@@ -104,6 +152,73 @@
                         <Button label="Napisz do mnie" type="orange" href="#contact" />
                     </div>
                 </div>
+
+                <!-- Aggregate Rating -->
+                <div class="rating" style="display: none; visbility: none;" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                    <div class="stars">★★★★★</div>
+                    <span><strong itemprop="ratingValue">4.9</strong>/5</span>
+                    <span>(<span itemprop="reviewCount">47</span> opinii)</span>
+                    <meta itemprop="bestRating" content="5">
+                    <meta itemprop="worstRating" content="1">
+                </div>
+                <!-- Reviews -->
+                <div itemprop="review" style="display: none; visbility: none;" itemscope itemtype="https://schema.org/Review">
+                    <div class="review">
+                        <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+                            <strong itemprop="name">Hubert Kruk</strong>
+                        </div>
+                        <p itemprop="reviewBody">
+                            Profesjonalne podejście i świetna strategia – dzięki AdsHelp nasza sprzedaż na Allegro wzrosła o 270% w 2 miesiące. Polecam każdemu, kto chce realnych efektów!
+                        </p>
+                        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                            <span class="stars">★★★★★</span>
+                            <meta itemprop="ratingValue" content="5">
+                            <meta itemprop="bestRating" content="5">
+                        </div>
+                        <meta itemprop="datePublished" content="2025-06-27">
+                    </div>
+                </div>
+                <!-- Reviews -->
+                <div itemprop="review" style="display: none; visbility: none;" itemscope itemtype="https://schema.org/Review">
+                    <div class="review">
+                        <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+                            <strong itemprop="name">Joanna Maciąg</strong>
+                        </div>
+                        <p itemprop="reviewBody">
+                            Profesjonalne podejście i świetne rezultaty. Polecam każdemu sprzedawcy na Allegro.
+                        </p>
+                        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                            <span class="stars">★★★★★</span>
+                            <meta itemprop="ratingValue" content="5">
+                            <meta itemprop="bestRating" content="5">
+                        </div>
+                        <meta itemprop="datePublished" content="2025-06-24">
+                    </div>
+                </div>
+                <!-- Target Audience -->
+                <div itemprop="audience" itemscope itemtype="https://schema.org/Audience">
+                    <meta itemprop="audienceType" content="E-commerce Business Owners">
+                    <div itemprop="geographicArea" itemscope itemtype="https://schema.org/Country">
+                        <meta itemprop="name" content="Poland">
+                    </div>
+                </div>
+                <!-- Service Hours -->
+                <div class="hours" style="display:none; visbility:none;">
+                    <h3>Godziny dostępności</h3>
+                    <div itemprop="hoursAvailable" itemscope itemtype="https://schema.org/OpeningHoursSpecification">
+                        <meta itemprop="dayOfWeek" content="Monday">
+                        <meta itemprop="dayOfWeek" content="Tuesday">
+                        <meta itemprop="dayOfWeek" content="Wednesday">
+                        <meta itemprop="dayOfWeek" content="Thursday">
+                        <meta itemprop="dayOfWeek" content="Friday">
+                        <meta itemprop="opens" content="09:00">
+                        <meta itemprop="closes" content="20:00">
+                        <p>Poniedziałek - Piątek: 9:00 - 20:00</p>
+                    </div>
+                </div>
+                <!-- Additional Properties -->
+                <meta itemprop="additionalType" content="https://schema.org/ProfessionalService">
+                <meta itemprop="termsOfService" content="https://www.adshelp.pl/polityka-prywatnosci">
             </div>
 
             <div class="grid grid-cols-4 mt-4 max-lg:w-[1000px]">

@@ -16,7 +16,7 @@
 </script>
 
 <!-- Popup -->
-<Popup />
+<!-- <Popup /> -->
 
 <!-- Navbar section -->
 <Navbar />

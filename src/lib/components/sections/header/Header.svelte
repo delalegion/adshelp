@@ -106,22 +106,72 @@
 
 </script>
 
-<header id="header" class="header flex justify-center">
-    <div class="container pt-4 lg:pt-24 pb-4 lg:pb-24 pl-6 lg:pl-12 max-sm:pr-4 grid grid-cols-1 lg:grid-cols-2 gap-2 md:gap-3.5 items-center relative">
-        <div class="xl:absolute right-0 2xl:-right-[8%] 2xl:-top-[4%] order-1 lg:order-2">
-            <enhanced:img src={posterEnhanced} alt="Statistics table, phone with notifications" class="md:hidden" />
+<section id="header" class="header flex justify-center" itemscope itemtype="https://schema.org/WebPage">
+    <div class="container pt-4 lg:pt-24 pb-4 lg:pb-24 pl-6 lg:pl-12 max-sm:pr-4 grid grid-cols-1 lg:grid-cols-2 gap-2 md:gap-3.5 items-center relative" aria-labelledby="hero-heading">
+        <div class="xl:absolute right-0 2xl:-right-[8%] 2xl:-top-[4%] order-1 lg:order-2" itemscope itemtype="https://schema.org/MediaObject">
+            <enhanced:img src={posterEnhanced} alt="Statistics table, phone with notifications" class="md:hidden" itemprop="contentUrl"
+            itemscope itemtype="https://schema.org/ImageObject" />
 
-            <video autoplay muted loop class="w-[700px] 2xl:w-[920px] aspect-4/3 -z-1 max-md:hidden" playsinline preload="none">
+            <video autoplay muted loop class="w-[700px] 2xl:w-[920px] aspect-4/3 -z-1 max-md:hidden" playsinline preload="none" itemprop="contentUrl"
+            itemscope itemtype="https://schema.org/VideoObject">
                 <link rel="preload" as="image" href={poster} fetchpriority="high">
                 <source src={videoWebm} type="video/webm" />
                 <!-- <source src={video} type="video/mp4" /> -->
+                <meta itemprop="name" content="Allegro Ads Campaign Demo">
+                <meta itemprop="description" content="Demonstration of effective Allegro Ads campaign management">
+                <meta itemprop="uploadDate" content="2025-01-01">
             </video>
         </div>
-        <div class="col-span-1 mb-24 order-2 lg:order-1 z-10">
-            <h1 class="text-3xl-bold lg:text-4xl-bold xl:text-5xl-bold 2xl:text-6xl-bold font-display text-primary-950 pr-4 lg:pr-10">Skuteczne kampanie <span class="text-primary-600">Allegro Ads</span> dla Twojego e-commerce</h1>
-            <p class="text-sm lg:text-base text-primary-950 mt-4">Pierwszy miesiąc bez zobowiązań, całkowicie za darmo!</p>
-         
-            <form method="POST" action="?/audit" id="audit-header-form" onsubmit={handleSubmit} use:enhance>
+        <div class="col-span-1 mb-24 order-2 lg:order-1 z-10" itemscope itemtype="https://schema.org/Service" itemref="contact-form organization-info">
+            <h1 class="text-3xl-bold lg:text-4xl-bold xl:text-5xl-bold 2xl:text-6xl-bold font-display text-primary-950 pr-4 lg:pr-10" itemprop="name">Skuteczne kampanie <span class="text-primary-600"><span itemprop="name">Allegro Ads</span></span> dla Twojego e-commerce</h1>
+            <p class="text-sm lg:text-base text-primary-950 mt-4" itemprop="description">Pierwszy miesiąc bez zobowiązań, całkowicie za darmo!</p>
+
+            <meta itemprop="serviceType" content="Digital Marketing Service">
+            <meta itemprop="category" content="E-commerce Advertising">
+            <!-- Service Provider Information (Hidden) -->
+            <div id="organization-info" style="display: none;" 
+                itemprop="provider" 
+                itemscope itemtype="https://schema.org/Organization">
+                <meta itemprop="name" content="AdsHelp">
+                <meta itemprop="url" content="https://adshelp.pl">
+                <meta itemprop="logo" content="https://adshelp.pl/logo.png">
+                <meta itemprop="description" content="Zwiększ sprzedaż na Allegro! Skuteczne reklamy na Allegro | Adshelp.pl">
+                <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                    <meta itemprop="addressCountry" content="PL">
+                </div>
+                <!-- Contact Point -->
+                <div itemprop="contactPoint" itemscope itemtype="https://schema.org/ContactPoint">
+                    <meta itemprop="telephone" content="+48-729-924-002">
+                    <meta itemprop="contactType" content="Customer Service">
+                    <meta itemprop="email" content="kontakt@adshelp.pl">
+                    <meta itemprop="availableLanguage" content="Polish">
+                </div>
+            </div>
+            <!-- Area Served -->
+            <div itemprop="areaServed" itemscope itemtype="https://schema.org/Country">
+                <meta itemprop="name" content="Poland">
+            </div>
+            <!-- Service Offer -->
+            <div itemprop="offers" itemscope itemtype="https://schema.org/Offer" style="display: none;">
+                <meta itemprop="name" content="Optymalizacja Kampanii Allegro Ads - Pierwszy miesiąc za darmo!">
+                <meta itemprop="description" content="Profesjonalne zarządzanie reklamami Allegro Ads i Google Ads. Dowiedz się jak optymalizować Allegro Ads, aby zwiększyć sprzedaż i widoczność. Bezpłatny pierwszy miesiąc!">
+                <div itemprop="priceSpecification" itemscope itemtype="https://schema.org/PriceSpecification">
+                    <meta itemprop="price" content="0">
+                    <meta itemprop="priceCurrency" content="PLN">
+                    <meta itemprop="name" content="Pierwszy miesiąc darmowy!">
+                </div>
+                <meta itemprop="availability" content="https://schema.org/InStock">
+                <meta itemprop="validFrom" content="2025-01-01">
+            </div>
+
+            <form method="POST" action="?/audit" id="audit-header-form" onsubmit={handleSubmit} aria-labelledby="form-heading" itemprop="potentialAction" itemscope itemtype="https://schema.org/ContactAction" use:enhance>
+                
+            <meta itemprop="name" content="Darmowy audyt Allegro">
+            <div itemprop="object" itemscope itemtype="https://schema.org/ContactPoint">
+                <meta itemprop="contactType" content="customer service">
+                <meta itemprop="availableLanguage" content="pl">
+            </div>
+
             {#if activeTab === 1}
                 <div class="flex flex-col gap-2">
                     <div class="flex flex-row relative gap-2 mt-5 md:mt-8 flex-wrap transition-height duration-500 ease-in-out min-h-10" in:fly={{ y: 10 }} out:fade onoutroend={() => activeTab = 2}>
@@ -172,7 +222,9 @@
                         onkeydown={async (e) => { if (e.key === 'Enter') e.preventDefault(); }} />
                         <div><Button label="Zamów audyt" theme="orange" onclick={sendForm} /></div>
                     </div>
-                    <p class="text-[11px] text-primary-950 max-w-[500px]">Wypełniając formularz, zgadzasz się na przetwarzanie Twoich danych osobowych przez AdsHelp, w celu wysłania informacji o usługach, audycie zgodnie z polityką prywatności.</p>
+                    <p class="text-[11px] text-primary-950 max-w-[500px]" itemscope itemtype="https://schema.org/PrivacyPolicy">Wypełniając formularz, zgadzasz się na przetwarzanie Twoich danych osobowych przez <span itemprop="creator" itemscope itemtype="https://schema.org/Organization">
+                        <span itemprop="name">AdsHelp</span>
+                    </span>, w celu wysłania informacji o usługach, audycie zgodnie z polityką prywatności.</p>
                     <div class="flex flex-row flex-wrap gap-1 -mb-2 md:-mb-4">
                         {#if inp_name_error}<p class="text-[12px] text-primary-600" transition:fade>Pole imię i nazwisko musi zawierać conajmniej 3 znaki.</p>{/if}
                         {#if inp_phone_error}<p class="text-[12px] text-primary-600" transition:fade>Wpisz prawidłowy numer telefonu.</p>{/if}
@@ -188,14 +240,14 @@
                             <path d="M20 6L9 17L4 12" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
-                    <h2 class="text-lg-bold font-display text-primary-950">
+                    <h2 class="text-lg-bold font-display text-primary-950" itemscope itemtype="https://schema.org/SuccessMessage">
                         Dane do audytu wysłane. W razie pytań zapraszam do kontaktu.
                     </h2>
                 </div>
             {/if}
             </form>
             {#if success === false}
-            <div class="flex flex-row gap-3 md:gap-3.5 mt-5 md:mt-7">
+            <div class="flex flex-row gap-3 md:gap-3.5 mt-5 md:mt-7" itemscope itemtype="https://schema.org/BreadcrumbList">
                 <div role="button" tabindex="0" onkeydown={setNextTab} onclick={setNextTab} class="text-sm md:text-base-bold {activeTab === 1 ? 'text-primary-950 border-orange-600 border-b-3' : 'border-b-2 border-stone-500 text-stone-500'} pb-1 md:pb-1.5 border-solid  hover:cursor-pointer">Krok 1</div>
                 <div role="button" tabindex="0" onclick={setNextTab} onkeydown={setNextTab} class="text-sm md:text-base-bold {activeTab === 2 ? 'text-primary-950 border-orange-600 border-b-3' : 'border-b-2 border-stone-500 text-stone-500'} pb-1 md:pb-1.5 hover:cursor-pointer hover:border-b-3 transition-all">Krok 2</div>
             </div>
@@ -204,7 +256,7 @@
         <div class="max-lg:hidden col-span-1 order-1 lg:order-2 relative w-full h-full">
         </div>
     </div>
-</header>
+</section>
 
 
 <!-- <script>
