@@ -153,48 +153,6 @@
                     </div>
                 </div>
 
-                <!-- Aggregate Rating -->
-                <div class="rating" style="display: none; visbility: none;" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
-                    <div class="stars">★★★★★</div>
-                    <span><strong itemprop="ratingValue">4.9</strong>/5</span>
-                    <span>(<span itemprop="reviewCount">47</span> opinii)</span>
-                    <meta itemprop="bestRating" content="5">
-                    <meta itemprop="worstRating" content="1">
-                </div>
-                <!-- Reviews -->
-                <div itemprop="review" style="display: none; visbility: none;" itemscope itemtype="https://schema.org/Review">
-                    <div class="review">
-                        <div itemprop="author" itemscope itemtype="https://schema.org/Person">
-                            <strong itemprop="name">Hubert Kruk</strong>
-                        </div>
-                        <p itemprop="reviewBody">
-                            Profesjonalne podejście i świetna strategia – dzięki AdsHelp nasza sprzedaż na Allegro wzrosła o 270% w 2 miesiące. Polecam każdemu, kto chce realnych efektów!
-                        </p>
-                        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                            <span class="stars">★★★★★</span>
-                            <meta itemprop="ratingValue" content="5">
-                            <meta itemprop="bestRating" content="5">
-                        </div>
-                        <meta itemprop="datePublished" content="2025-06-27">
-                    </div>
-                </div>
-                <!-- Reviews -->
-                <div itemprop="review" style="display: none; visbility: none;" itemscope itemtype="https://schema.org/Review">
-                    <div class="review">
-                        <div itemprop="author" itemscope itemtype="https://schema.org/Person">
-                            <strong itemprop="name">Joanna Maciąg</strong>
-                        </div>
-                        <p itemprop="reviewBody">
-                            Profesjonalne podejście i świetne rezultaty. Polecam każdemu sprzedawcy na Allegro.
-                        </p>
-                        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                            <span class="stars">★★★★★</span>
-                            <meta itemprop="ratingValue" content="5">
-                            <meta itemprop="bestRating" content="5">
-                        </div>
-                        <meta itemprop="datePublished" content="2025-06-24">
-                    </div>
-                </div>
                 <!-- Target Audience -->
                 <div itemprop="audience" itemscope itemtype="https://schema.org/Audience">
                     <meta itemprop="audienceType" content="E-commerce Business Owners">

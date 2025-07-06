@@ -112,17 +112,21 @@
             <enhanced:img src={posterEnhanced} alt="Statistics table, phone with notifications" class="md:hidden" itemprop="contentUrl"
             itemscope itemtype="https://schema.org/ImageObject" />
 
-            <video autoplay muted loop class="w-[700px] 2xl:w-[920px] aspect-4/3 -z-1 max-md:hidden" playsinline preload="none" itemprop="contentUrl"
-            itemscope itemtype="https://schema.org/VideoObject">
-                <link rel="preload" as="image" href={poster} fetchpriority="high">
-                <source src={videoWebm} type="video/webm" />
-                <!-- <source src={video} type="video/mp4" /> -->
+            <div itemscope itemtype="https://schema.org/VideoObject">
+                <video autoplay muted loop class="w-[700px] 2xl:w-[920px] aspect-4/3 -z-1 max-md:hidden"
+                       playsinline preload="none" itemprop="contentUrl" src={videoWebm}
+                       poster={poster}>
+                  <source src={videoWebm} type="video/webm" />
+                  <link rel="preload" as="image" href={poster} fetchpriority="high">
+                </video>
+              
                 <meta itemprop="name" content="Allegro Ads Campaign Demo">
-                <meta itemprop="description" content="Demonstration of effective Allegro Ads campaign management">
-                <meta itemprop="uploadDate" content="2025-01-01">
-            </video>
+                <meta itemprop="description" content="Demonstration of effective Allegro Ads campaign management.">
+                <meta itemprop="uploadDate" content="2025-01-01T00:00:00+01:00">
+                <meta itemprop="thumbnailUrl" content={videoWebm}>
+            </div>
         </div>
-        <div class="col-span-1 mb-24 order-2 lg:order-1 z-10" itemscope itemtype="https://schema.org/Service" itemref="contact-form organization-info">
+        <div class="col-span-1 mb-24 order-2 lg:order-1 z-10" itemscope itemtype="https://schema.org/Service" itemref="organization-info">
             <h1 class="text-3xl-bold lg:text-4xl-bold xl:text-5xl-bold 2xl:text-6xl-bold font-display text-primary-950 pr-4 lg:pr-10" itemprop="name">Skuteczne kampanie <span class="text-primary-600"><span itemprop="name">Allegro Ads</span></span> dla Twojego e-commerce</h1>
             <p class="text-sm lg:text-base text-primary-950 mt-4" itemprop="description">Pierwszy miesiąc bez zobowiązań, całkowicie za darmo!</p>
 
@@ -137,6 +141,9 @@
                 <meta itemprop="logo" content="https://adshelp.pl/logo.png">
                 <meta itemprop="description" content="Zwiększ sprzedaż na Allegro! Skuteczne reklamy na Allegro | Adshelp.pl">
                 <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                    <meta itemprop="streetAddress" content="ul. wyb. Wybrzeże Ojca Świętego Jana Pawła II 76A/12">
+                    <meta itemprop="addressLocality" content="Przemyśl">
+                    <meta itemprop="postalCode" content="37-700">
                     <meta itemprop="addressCountry" content="PL">
                 </div>
                 <!-- Contact Point -->
@@ -247,10 +254,10 @@
             {/if}
             </form>
             {#if success === false}
-            <div class="flex flex-row gap-3 md:gap-3.5 mt-5 md:mt-7" itemscope itemtype="https://schema.org/BreadcrumbList">
-                <div role="button" tabindex="0" onkeydown={setNextTab} onclick={setNextTab} class="text-sm md:text-base-bold {activeTab === 1 ? 'text-primary-950 border-orange-600 border-b-3' : 'border-b-2 border-stone-500 text-stone-500'} pb-1 md:pb-1.5 border-solid  hover:cursor-pointer">Krok 1</div>
-                <div role="button" tabindex="0" onclick={setNextTab} onkeydown={setNextTab} class="text-sm md:text-base-bold {activeTab === 2 ? 'text-primary-950 border-orange-600 border-b-3' : 'border-b-2 border-stone-500 text-stone-500'} pb-1 md:pb-1.5 hover:cursor-pointer hover:border-b-3 transition-all">Krok 2</div>
-            </div>
+                <div class="flex flex-row gap-3 md:gap-3.5 mt-5 md:mt-7">
+                    <div role="button" tabindex="0" onkeydown={setNextTab} onclick={setNextTab} class="text-sm md:text-base-bold {activeTab === 1 ? 'text-primary-950 border-orange-600 border-b-3' : 'border-b-2 border-stone-500 text-stone-500'} pb-1 md:pb-1.5 border-solid  hover:cursor-pointer">Krok 1</div>
+                    <div role="button" tabindex="0" onclick={setNextTab} onkeydown={setNextTab} class="text-sm md:text-base-bold {activeTab === 2 ? 'text-primary-950 border-orange-600 border-b-3' : 'border-b-2 border-stone-500 text-stone-500'} pb-1 md:pb-1.5 hover:cursor-pointer hover:border-b-3 transition-all">Krok 2</div>
+                </div>
             {/if}
         </div>
         <div class="max-lg:hidden col-span-1 order-1 lg:order-2 relative w-full h-full">

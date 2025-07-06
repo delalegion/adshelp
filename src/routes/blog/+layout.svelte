@@ -44,44 +44,43 @@
             <div class="grid grid-cols-4">
                 <div class="col-span-4">
                     <div class="flex flex-col gap-4 md:gap-8 text-center justify-center">
-                        <h1 class="text-4xl-bold min-[375px]:text-5xl-bold text-center sm:text-6xl-bold md:text-7xl-bold lg:text-8xl-bold font-display text-primary-500">
-                            ODKRYJ ŚWIAT<br />
-                            MARKETINGU!
+                        <h1 class="text-4xl-bold min-[375px]:text-5xl-bold uppercase text-center sm:text-6xl-bold md:text-7xl-bold lg:text-8xl-bold font-display text-primary-500">
+                            Odkryj świat<br />
+                            marketingu!
                         </h1>  
-                        <div class="overflow-x-auto scrollbar-hide md:overflow-x-visible" itemscope itemtype="https://schema.org/ItemList">
+                        <div class="overflow-x-auto scrollbar-hide md:overflow-x-visible" itemscope itemtype="https://schema.org/CollectionPage">
                             <meta itemprop="name" content="Blog Categories" />
-                            <meta itemprop="itemListOrder" content="Unordered" />
-                            
+                          
                             <div class="flex md:flex-wrap w-fit md:w-full gap-1 md:gap-2 justify-center">
-                                {#each entries as [key, value], i}
-                                    <div 
-                                        tabindex="0" 
-                                        onkeydown={() => goto('/blog/category/' + value[2] + '#articles')} 
-                                        onclick={() => goto('/blog/category/' + value[2] + '#articles')} 
-                                        role="button"
-                                        class="{i === 0 ? 'ml-6' : ''} {i === 16 ? 'mr-6' : ''} {$activeData.category === value[2] ? 'border-primary-500' : 'border-primary-950'} border-2 inline-flex h-full max-w-fit flex-row gap-3 rounded-full bg-primary-dark text-sm-bold text-primary-300 px-3 sm:px-4 py-1 sm:py-2 items-center active:scale-98 transition-all transition-300 hover:cursor-pointer whitespace-nowrap"
-                                        itemprop="itemListElement"
-                                        itemscope
-                                        itemtype="https://schema.org/ListItem">
-                        
-                                        <meta itemprop="position" content="{i + 1}" />
-                                        <meta itemprop="url" content="/blog/category/{value[2]}#articles" />
-                        
-                                        <span itemprop="name" class="flex w-[24px] sm:w-[38px] h-[24px] sm:h-[38px] justify-center items-center">
-                                            {#if $activeData.category === value[2]}
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                    <path d="M19 8L9.375 17L5 12.9091" stroke="#F36020" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                                </svg>
-                                            {:else}
-                                                <img src={value[0]} alt="{value[1]} icon" class="h-full" />
-                                            {/if}
-                                        </span>
-                        
-                                        <span itemprop="name">{value[1]}</span>
-                                    </div>
-                                {/each}
+                              {#each entries as [key, value], i}
+                                <div
+                                  tabindex="0"
+                                  onkeydown={() => goto('/blog/category/' + value[2] + '#articles')}
+                                  onclick={() => goto('/blog/category/' + value[2] + '#articles')}
+                                  role="button"
+                                  class="{i === 0 ? 'ml-6' : ''} {i === 16 ? 'mr-6' : ''} {$activeData.category === value[2] ? 'border-primary-500' : 'border-primary-950'} border-2 inline-flex h-full max-w-fit flex-row gap-3 rounded-full bg-primary-dark text-sm-bold text-primary-300 px-3 sm:px-4 py-1 sm:py-2 items-center active:scale-98 transition-all transition-300 hover:cursor-pointer whitespace-nowrap"
+                                  itemprop="hasPart"
+                                  itemscope
+                                  itemtype="https://schema.org/Thing"
+                                >
+                                  <meta itemprop="url" content="/blog/category/{value[2]}#articles" />
+                                  <meta itemprop="name" content="{value[1]}" />
+                          
+                                  <span class="flex w-[24px] sm:w-[38px] h-[24px] sm:h-[38px] justify-center items-center">
+                                    {#if $activeData.category === value[2]}
+                                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M19 8L9.375 17L5 12.9091" stroke="#F36020" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                      </svg>
+                                    {:else}
+                                      <img src={value[0]} alt="{value[1]} icon" class="h-full" />
+                                    {/if}
+                                  </span>
+                          
+                                  <span>{value[1]}</span>
+                                </div>
+                              {/each}
                             </div>
-                        </div>
+                        </div>                          
                     </div>      
                 </div>
                 <div class="col-span-4 md:col-span-3 mt-6">

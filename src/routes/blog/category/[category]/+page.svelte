@@ -10,7 +10,7 @@
     let { data }: { data: PageData } = $props();
     let articles = $state(data.articles.data);
     let error = $state(data.error);
-    let category = $state(data.articles.data[0].category.slug);
+    let category = $state(data.articles.data[0]?.category.slug || {});
 
     // Pagination
     let total = data.articles.meta.pagination.pageCount;

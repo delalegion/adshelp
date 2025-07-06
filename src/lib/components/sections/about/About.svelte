@@ -32,9 +32,14 @@
                             <span itemprop="name">Marcin Lubera AdsHelp</span>
                         </span>
                         <span itemprop="hasOccupation" itemscope itemtype="https://schema.org/Occupation">
-                            <span itemprop="name">Allegro Marketing Expert</span>
-                            <span itemprop="occupationLocation" itemscope itemtype="https://schema.org/Place">
-                                <span itemprop="name">Poland</span>
+                            <span itemprop="name">Allegro Ads Marketing Expert</span>
+                            <span itemprop="description">Ekspert ds. marketingu na platformie Allegro, odpowiedzialny za kampanie i analizy sprzedaży.</span>
+                            <span itemprop="estimatedSalary" itemscope itemtype="https://schema.org/MonetaryAmount">
+                              <meta itemprop="currency" content="PLN" />
+                              <meta itemprop="value" content="10000" />
+                            </span>
+                            <span itemprop="occupationLocation" itemscope itemtype="https://schema.org/AdministrativeArea">
+                              <span itemprop="name">Poland</span>
                             </span>
                         </span>
                     </div>

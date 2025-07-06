@@ -40,118 +40,126 @@
 
     <script type="application/ld+json">
       {
-          "@context": "https://schema.org",
-          "@type": "ProfessionalService",
-          "additionalType": "https://schema.org/ProfessionalService",
-          "termsOfService": "https://www.adshelp.pl/polityka-prywatnosci",
-          "@graph": [
-            {
-              "@type": "Organization",
-              "@id": "https://adshelp.pl/",
-              "name": "Adshelp.pl",
-              "url": "https://adshelp.pl",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://adshelp.pl/logo.png"
-              },
-              "vatID": "PL7952519865",
-              "email": "kontakt@adshelp.pl",
-              "description": "Eksperci od Allegro Ads i reklam online. Zwiększ sprzedaż swojej firmy dzięki skutecznym kampaniom reklamowym | Adshelp.pl",
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+48-729-924-002",
-                "contactType": "customer service",
-                "availableLanguage": ["Polish"]
-              },
-              "sameAs": [
-                "https://www.facebook.com/adshelp.pl",
-                "https://www.instagram.com/adshelp.pl",
-                "https://x.com/adshelp_pl"
-              ],
-              "foundingDate": "2024",
-              "numberOfEmployees": "1-10",
-              "areaServed": {
-                "@type": "Country",
-                "name": "Poland"
-              }
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "additionalType": "https://schema.org/ProfessionalService",
+        "image": "https://adshelp.pl/logo.png",
+        "telephone": "+48-729-924-002",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "Poland",
+          "addressLocality": "Przemyśl"
+        },
+        "termsOfService": "https://www.adshelp.pl/polityka-prywatnosci",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://adshelp.pl/",
+            "name": "Adshelp.pl",
+            "url": "https://adshelp.pl",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://adshelp.pl/logo.png"
             },
-            {
-              "@type": "Blog",
-              "@id": "https://adshelp.pl/blog/",
-              "url": "https://adshelp.pl/blog",
-              "name": "Adshelp.pl Marketing Blog",
-              "description": "Blog o Allegro Ads - Strategie Marketingowe i Trendy Reklamowe | Adshelp.pl",
-              "publisher": {
-                "@id": "https://adshelp.pl/#about"
-              },
-              "hasPart": [
-                {
-                    "@type": "WebPage",
-                    "@id": "https://adshelp.pl",
-                    "name": "Strona główna",
-                    "description": "Eksperci od Allegro Ads i reklam online. Zwiększ sprzedaż swojej firmy dzięki skutecznym kampaniom | Adshelp.pl",
-                    "url": "https://adshelp.pl"
-                },
-                {
-                    "@type": "WebPage",
-                    "@id": "https://adshelp.pl/#about",
-                    "name": "O mnie",
-                    "description": "Dowiedz się kim jest CEO Adshelp.pl - Ekspert Allegro Ads",
-                    "url": "https://adshelp.pl/#about"
-                },
-                {
-                    "@type": "WebPage",
-                    "@id": "https://adshelp.pl/#steps",
-                    "name": "Dlaczego warto",
-                    "description": "Poznaj 4 etapy! Udowodnię Ci, że dzięki nim Twoje konto na Allegro może generować dużo lepsze wyniki!",
-                    "url": "https://adshelp.pl/#steps"
-                },
-                {
-                    "@type": "WebPage",
-                    "@id": "https://adshelp.pl/#services",
-                    "name": "Contact Us",
-                    "description": "Poznaj 3 fundamenty naszych usług. Kampanie. Analiza. Optymalizacja.",
-                    "url": "https://adshelp.pl/#services"
-                },
-                {
-                    "@type": "WebPage",
-                    "@id": "https://adshelp.pl/blog",
-                    "name": "Blog",
-                    "description": "Artykuły ze świata marketingu - sprawdzone strategie marketingowe, trendy reklamowe.",
-                    "url": "https://adshelp.pl/blog"
-                },
-                {
-                    "@type": "WebPage",
-                    "@id": "https://adshelp.pl/kontakt",
-                    "name": "Kontakt",
-                    "description": "Skontaktuj się z wiodącą agencją Allegro Ads w Polsce - Adshelp.pl",
-                    "url": "https://adshelp.pl/kontakt"
-                }
-              ],
-              "mainEntityOfPage": {
+            "vatID": "PL7952519865",
+            "email": "kontakt@adshelp.pl",
+            "description": "Eksperci od Allegro Ads i reklam online. Zwiększ sprzedaż swojej firmy dzięki skutecznym kampaniom reklamowym | Adshelp.pl",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+48-729-924-002",
+              "contactType": "customer service",
+              "availableLanguage": ["Polish"]
+            },
+            "sameAs": [
+              "https://www.facebook.com/adshelp.pl",
+              "https://www.instagram.com/adshelp.pl",
+              "https://x.com/adshelp_pl"
+            ],
+            "foundingDate": "2024",
+            "numberOfEmployees": "1-10",
+            "areaServed": {
+              "@type": "Country",
+              "name": "Poland"
+            }
+          },
+          {
+            "@type": "Blog",
+            "@id": "https://adshelp.pl/blog/",
+            "url": "https://adshelp.pl/blog",
+            "name": "Adshelp.pl Marketing Blog",
+            "description": "Blog o Allegro Ads - Strategie Marketingowe i Trendy Reklamowe | Adshelp.pl",
+            "publisher": {
+              "@id": "https://adshelp.pl/#about"
+            },
+            "hasPart": [
+              {
                 "@type": "WebPage",
-                "@id": "https://adshelp.pl/blog"
+                "@id": "https://adshelp.pl",
+                "name": "Strona główna",
+                "description": "Eksperci od Allegro Ads i reklam online. Zwiększ sprzedaż swojej firmy dzięki skutecznym kampaniom | Adshelp.pl",
+                "url": "https://adshelp.pl"
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://adshelp.pl/#about",
+                "name": "O mnie",
+                "description": "Dowiedz się kim jest CEO Adshelp.pl - Ekspert Allegro Ads",
+                "url": "https://adshelp.pl/#about"
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://adshelp.pl/#steps",
+                "name": "Dlaczego warto",
+                "description": "Poznaj 4 etapy! Udowodnię Ci, że dzięki nim Twoje konto na Allegro może generować dużo lepsze wyniki!",
+                "url": "https://adshelp.pl/#steps"
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://adshelp.pl/#services",
+                "name": "Contact Us",
+                "description": "Poznaj 3 fundamenty naszych usług. Kampanie. Analiza. Optymalizacja.",
+                "url": "https://adshelp.pl/#services"
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://adshelp.pl/blog",
+                "name": "Blog",
+                "description": "Artykuły ze świata marketingu - sprawdzone strategie marketingowe, trendy reklamowe.",
+                "url": "https://adshelp.pl/blog"
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://adshelp.pl/kontakt",
+                "name": "Kontakt",
+                "description": "Skontaktuj się z wiodącą agencją Allegro Ads w Polsce - Adshelp.pl",
+                "url": "https://adshelp.pl/kontakt"
               }
-            },
-            {
+            ],
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://adshelp.pl/blog"
+            }
+          },
+          {
             "@type": "BreadcrumbList",
             "@id": "https://adshelp.pl/#breadcrumb",
             "itemListElement": [
-                {
-                    "@type": "ListItem",
-                    "position": 1,
-                    "name": "Strona główna",
-                    "item": "https://adshelp.pl"
-                },
-                {
-                    "@type": "ListItem",
-                    "position": 2,
-                    "name": "Blog",
-                    "item": "https://adshelp.pl/blog"
-                }
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Strona główna",
+                "item": "https://adshelp.pl"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://adshelp.pl/blog"
+              }
             ]
-            }
-          ]
+          }
+        ]
       }
       </script>
 
@@ -210,43 +218,30 @@
       {/if}
 
       {#if total > 1}
-          <div class="mt-16 md:mt-32 md:mb-12 flex justify-center" itemscope itemtype="https://schema.org/ItemList">
-            <meta itemprop="name" content="Blog Pagination" />
-            <meta itemprop="numberOfItems" content="{total}" />
-            <meta itemprop="itemListOrder" content="Ascending" />
-
-              <div class="flex flex-row gap-2">
-                  {#if page !== 1}
-                      <div onclick={() => goto(`${paginationUrl}${page-1}`, { noScroll: true })} onkeydown={() => goto(`${paginationUrl}${page-1}`, { noScroll: true })} role="button" tabindex="0" class="w-[52px] h-[52px] rounded-full flex justify-center items-center text-lg-bold font-display bg-primary-50 hover:bg-primary-100 transition-all transition-300 active:scale-96 hover:cursor-pointer">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M19 12L5 12" stroke="#410F09" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                              <path d="M12 19L5 12L12 5" stroke="#410F09" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                          </svg>                                              
-                      </div>
-                  {/if}
-                  {#each array as _, i}
-                    <div 
-                      onclick={() => goto(`${paginationUrl}${i + 1}`, { noScroll: true })} 
-                      onkeydown={() => goto(`${paginationUrl}${i + 1}`, { noScroll: true })} 
-                      role="button" tabindex="0" 
-                      aria-label="Go to page {i + 1}"
-                      class="{page === i+1 ? 'bg-primary-950 text-primary-100 hover:bg-primary-900' : 'bg-primary-50 text-primary-950 hover:bg-primary-100'} w-[52px] h-[52px] rounded-full flex justify-center items-center text-lg-bold font-display  transition-all transition-300 active:scale-96 hover:cursor-pointer"
-                      itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                      <meta itemprop="position" content="{i + 1}" />
-                      <meta itemprop="url" content="{paginationUrl}{i + 1}" />
-                      {i + 1}
-                    </div>
-                  {/each}
-                  {#if total > page}
-                      <div onclick={() => goto(`${paginationUrl}${page+1}`, { noScroll: true })} onkeydown={() => goto(`${paginationUrl}${page+1}`, { noScroll: true })} role="button" tabindex="0" class="w-[52px] h-[52px] rounded-full flex justify-center items-center text-lg-bold font-display bg-primary-50 hover:bg-primary-100 transition-all transition-300 active:scale-96 hover:cursor-pointer">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M5 12H19" stroke="#410F09" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                              <path d="M12 5L19 12L12 19" stroke="#410F09" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                          </svg>                        
-                      </div>
-                  {/if}
+        <div class="mt-16 md:mt-32 md:mb-12 flex justify-center" itemscope itemtype="https://schema.org/CollectionPage">
+          <meta itemprop="name" content="Blog Pagination" />
+        
+          <div class="flex flex-row gap-2">
+            <!-- przyciski prev/next (bez schema) -->
+            {#each array as _, i}
+              <div
+                onclick={() => goto(`${paginationUrl}${i + 1}`, { noScroll: true })}
+                onkeydown={() => goto(`${paginationUrl}${i + 1}`, { noScroll: true })}
+                role="button"
+                tabindex="0"
+                aria-label="Go to page {i + 1}"
+                class="{page === i + 1 ? 'bg-primary-950 text-primary-100 hover:bg-primary-900' : 'bg-primary-50 text-primary-950 hover:bg-primary-100'} w-[52px] h-[52px] rounded-full flex justify-center items-center text-lg-bold font-display transition-all transition-300 active:scale-96 hover:cursor-pointer"
+                itemprop="hasPart"
+                itemscope
+                itemtype="https://schema.org/Thing"
+              >
+                <meta itemprop="url" content="{paginationUrl}{i + 1}" />
+                <meta itemprop="name" content="Strona {i + 1}" />
+                {i + 1}
               </div>
+            {/each}
           </div>
+        </div>
       {/if}
 
   </div>

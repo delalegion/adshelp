@@ -69,76 +69,6 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "BlogPosting",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": `https://adshelp.pl/blog/${article.slug}`
-      },
-      "about": [
-        {
-          "@type": "Thing",
-          "name": title,
-          "description": description
-        },
-        {
-          "@type": "Thing",
-          "name": title,
-          "description": keywords
-        },
-        {
-          "@type": "Service",
-          "name": "Pomoc Allegro Ads",
-          "description": "Wsparcie techniczne i strategiczne dla kampanii Allegro"
-        }
-      ],
-      "audience": {
-        "@type": "Audience",
-        "audienceType": "business owners, e-commerce managers, marketing specialists",
-        "geographicArea": {
-          "@type": "Country",
-          "name": "Poland"
-        }
-      },
-      "headline": title,
-      "description": description,
-      "image": cover,
-      "author": {
-        "@type": "Person",
-        "name": "Marcin Lubera"
-      },
-      "mentions": [
-        {
-          "@type": "Organization",
-          "name": "Allegro",
-          "url": "https://allegro.pl"
-        }
-      ],
-      "inLanguage": "pl",
-      "serviceArea": {
-        "@type": "Country",
-        "name": "Poland"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Adshelp",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://adshelp.pl/logo.png"
-        }
-      },
-      "datePublished": article.publishedAt,
-      "dateModified": article.updatedAt,
-      "keywords": terms,
-      "articleSection": category,
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": get4827248217(),
-        "reviewCount": get5234232323(),
-        "bestRating": "5",
-        "worstRating": "1"
-      }
-    },
-    {
       "@type": "BreadcrumbList",
       "@id": "https://adshelp.pl/#menu",
       "itemListElement": [
@@ -230,6 +160,66 @@
   <p>No article found</p>
 {:else}
 <article id="article" class="flex flex-col justify-center items-center bg-white pb-24" itemscope itemtype="https://schema.org/BlogPosting">
+
+  <meta itemprop="mainEntityOfPage" content="https://adshelp.pl/blog/{article.slug}" />
+  <meta itemprop="inLanguage" content="pl" />
+  <meta itemprop="datePublished" content="{article.publishedAt}" />
+  <meta itemprop="dateModified" content="{article.updatedAt}" />
+  <meta itemprop="headline" content="{title}" />
+  <meta itemprop="description" content="{description}" />
+  <meta itemprop="keywords" content="{terms}" />
+  <meta itemprop="articleSection" content="{category}" />
+  <meta itemprop="image" content="{cover}" />
+
+  <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+    <meta itemprop="name" content="Adshelp" />
+    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="https://adshelp.pl/logo.png" />
+    </div>
+  </div>
+
+  <div itemprop="about" itemscope itemtype="https://schema.org/Thing">
+    <meta itemprop="name" content="{title}" />
+    <meta itemprop="description" content="{description}" />
+  </div>
+
+  <div itemprop="about" itemscope itemtype="https://schema.org/Thing">
+    <meta itemprop="name" content="{title}" />
+    <meta itemprop="description" content="{keywords}" />
+  </div>
+
+  <div itemprop="about" itemscope itemtype="https://schema.org/Service">
+    <meta itemprop="name" content="Pomoc Allegro Ads" />
+    <meta itemprop="description" content="Wsparcie techniczne i strategiczne dla kampanii Allegro" />
+  </div>
+
+  <div itemprop="audience" itemscope itemtype="https://schema.org/Audience">
+    <meta itemprop="audienceType" content="business owners, e-commerce managers, marketing specialists" />
+    <div itemprop="geographicArea" itemscope itemtype="https://schema.org/Country">
+      <meta itemprop="name" content="Poland" />
+    </div>
+  </div>
+
+  <div itemprop="serviceArea" itemscope itemtype="https://schema.org/Country">
+    <meta itemprop="name" content="Poland" />
+  </div>
+
+  <div itemprop="mentions" itemscope itemtype="https://schema.org/Organization">
+    <meta itemprop="name" content="Allegro" />
+    <meta itemprop="url" content="https://allegro.pl" />
+  </div>
+
+  
+  <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+    <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/Article">
+      <meta itemprop="name" content="{title}" />
+    </div>
+    <meta itemprop="ratingValue" content="{get4827248217()}" />
+    <meta itemprop="reviewCount" content="{get5234232323()}" />
+    <meta itemprop="bestRating" content="5" />
+    <meta itemprop="worstRating" content="1" />
+  </div>
+
   <div class="w-full bg-primary-950 justify-center flex pt-8 md:pt-12">
       <div class="max-w-7xl mx-6">
           <div class="flex flex-col gap-6 md:gap-8 lg:gap-12">

@@ -58,7 +58,7 @@
                 "https://x.com/adshelp_pl"
             ],
             "foundingDate": "2024",
-            "numberOfEmployees": "1-10",
+            "numberOfEmployees": "3",
             "areaServed": {
                 "@type": "Country",
                 "name": "Poland"
@@ -82,10 +82,52 @@
             ]
         },
         {
+            "@type": "ItemList",
+            "@id": "https://adshelp.pl/#navbar",
+            "name": "Główne menu",
+            "itemListElement": [
+                {
+                "@type": "SiteNavigationElement",
+                "position": 1,
+                "name": "Strona główna",
+                "url": "https://adshelp.pl"
+                },
+                {
+                "@type": "SiteNavigationElement",
+                "position": 2,
+                "name": "O mnie",
+                "url": "https://adshelp.pl/#about"
+                },
+                {
+                "@type": "SiteNavigationElement",
+                "position": 3,
+                "name": "Dlaczego warto",
+                "url": "https://adshelp.pl/#steps"
+                },
+                {
+                "@type": "SiteNavigationElement",
+                "position": 4,
+                "name": "Usługi",
+                "url": "https://adshelp.pl/#services"
+                },
+                {
+                "@type": "SiteNavigationElement",
+                "position": 5,
+                "name": "Blog",
+                "url": "https://adshelp.pl/blog"
+                },
+                {
+                "@type": "SiteNavigationElement",
+                "position": 6,
+                "name": "Kontakt",
+                "url": "https://adshelp.pl/kontakt"
+                }
+            ]
+        },
+        {
             "@type": "WebSite",
             "@id": "https://adshelp.pl/",
             "url": "https://adshelp.pl",
-            "name": "Adshelp.pl",
             "description": "Eksperci od Allegro Ads i reklam online. Zwiększ sprzedaż swojej firmy dzięki skutecznym kampaniom reklamowym | Adshelp.pl",
             "publisher": {
                 "@id": "https://adshelp.pl/"
@@ -137,15 +179,36 @@
         },
         {
             "@type": "ProfessionalService",
-            "@id": "https://adshelp.pl/#service",
-            "additionalType": "https://schema.org/ProfessionalService",
+            "@id": "https://adshelp.pl/#services",
+            "name": "AdsHelp – Ekspert Allegro",
+            "image": "https://www.adshelp.pl/logo.png",
+            "url": "https://www.adshelp.pl/",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "ul. wyb. Wybrzeże Ojca Świętego Jana Pawła II 76A/12",
+                "addressLocality": "Przemyśl",
+                "postalCode": "37-700",
+                "addressCountry": "PL"
+            },
+            "description": "Pomagam sprzedawcom Allegro osiągać wyższe wyniki dzięki skutecznej strategii marketingowej.",
             "termsOfService": "https://www.adshelp.pl/polityka-prywatnosci",
+            "telephone": "+48-729-924-002",
+            "priceRange": "PLN 0 – 3000",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Warszawa",
+                "addressCountry": "PL"
+            },
             "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": "5",
                 "bestRating": "5",
                 "worstRating": "1",
-                "reviewCount": "47"
+                "reviewCount": "47",
+                "itemReviewed": {
+                    "@type": "ProfessionalService",
+                    "name": "AdsHelp – Ekspert Allegro"
+                }
             },
             "contactPoint": {
                 "@type": "ContactPoint",
@@ -159,7 +222,7 @@
                 "https://x.com/adshelp_pl"
             ],
             "foundingDate": "2024",
-            "numberOfEmployees": "1-10",
+            "numberOfEmployees": "3",
             "review": [
                 {
                     "@type": "Review",
@@ -173,7 +236,11 @@
                         "ratingValue": "5",
                         "bestRating": "5"
                     },
-                    "datePublished": "2025-06-27"
+                    "datePublished": "2025-06-27",
+                    "itemReviewed": {
+                        "@type": "ProfessionalService",
+                        "name": "AdsHelp – Ekspert Allegro"
+                    }
                 },
                 {
                     "@type": "Review",
@@ -187,74 +254,78 @@
                         "ratingValue": "5",
                         "bestRating": "5"
                     },
-                    "datePublished": "2025-06-24"
+                    "datePublished": "2025-06-24",
+                    "itemReviewed": {
+                        "@type": "ProfessionalService",
+                        "name": "AdsHelp – Ekspert Allegro"
+                    }
                 }
             ],
             "offers": [
                 {
-                    "@type": "Offer",
-                    "name": "Pakiet Specjalista",
-                    "description": "Pakiet idealny do przetestowania moich usług - Pierwszy darmowy miesiąc",
-                    "priceSpecification": {
-                        "@type": "PriceSpecification",
-                        "price": "0",
-                        "priceCurrency": "PLN",
-                        "originalPrice": "700",
-                        "valueAddedTaxIncluded": true
-                    },
-                    "category": "Promotional",
-                    "availability": "https://schema.org/InStock",
-                    "priceValidUntil": "2025-12-31",
-                    "url": "https://www.adshelp.pl/",
-                    "seller": {
-                        "@id": "https://adshelp.pl/#service"
-                    }
+                "@type": "Offer",
+                "name": "Pakiet Specjalista",
+                "description": "Pakiet idealny do przetestowania moich usług - Pierwszy darmowy miesiąc",
+                "priceSpecification": {
+                    "@type": "PriceSpecification",
+                    "price": "0",
+                    "priceCurrency": "PLN",
+                    "originalPrice": "700",
+                    "valueAddedTaxIncluded": true
+                },
+                "category": "Promotional",
+                "availability": "https://schema.org/InStock",
+                "priceValidUntil": "2025-12-31",
+                "url": "https://www.adshelp.pl/",
+                "seller": {
+                    "@id": "https://adshelp.pl/#service"
+                }
                 },
                 {
-                    "@type": "Offer",
-                    "name": "Pakiet Manager",
-                    "description": "Zaufałeś moim umiejętnościom i chcesz rozwinąć swoją firmę jeszcze bardziej! - Pierwszy darmowy miesiąc",
-                    "priceSpecification": {
-                        "@type": "PriceSpecification",
-                        "price": "0",
-                        "priceCurrency": "PLN",
-                        "originalPrice": "1500",
-                        "valueAddedTaxIncluded": true
-                    },
-                    "category": "Promotional",
-                    "availability": "https://schema.org/InStock",
-                    "priceValidUntil": "2025-12-31",
-                    "url": "https://www.adshelp.pl/",
-                    "seller": {
-                        "@id": "https://adshelp.pl/#service"
-                    }
+                "@type": "Offer",
+                "name": "Pakiet Manager",
+                "description": "Zaufałeś moim umiejętnościom i chcesz rozwinąć swoją firmę jeszcze bardziej! - Pierwszy darmowy miesiąc",
+                "priceSpecification": {
+                    "@type": "PriceSpecification",
+                    "price": "0",
+                    "priceCurrency": "PLN",
+                    "originalPrice": "1500",
+                    "valueAddedTaxIncluded": true
+                },
+                "category": "Promotional",
+                "availability": "https://schema.org/InStock",
+                "priceValidUntil": "2025-12-31",
+                "url": "https://www.adshelp.pl/",
+                "seller": {
+                    "@id": "https://adshelp.pl/#service"
+                }
                 },
                 {
-                    "@type": "Offer",
-                    "name": "Pakiet Dyrektor",
-                    "description": "Wiesz, że moje umiejętności rozwiną Twoją firmę do granic możliwości! - Pierwszy darmowy miesiąc",
-                    "priceSpecification": {
-                        "@type": "PriceSpecification",
-                        "price": "0",
-                        "priceCurrency": "PLN",
-                        "originalPrice": "3000",
-                        "valueAddedTaxIncluded": true
-                    },
-                    "category": "Promotional",
-                    "availability": "https://schema.org/InStock",
-                    "priceValidUntil": "2025-12-31",
-                    "url": "https://www.adshelp.pl/",
-                    "seller": {
-                        "@id": "https://adshelp.pl/#service"
-                    }
+                "@type": "Offer",
+                "name": "Pakiet Dyrektor",
+                "description": "Wiesz, że moje umiejętności rozwiną Twoją firmę do granic możliwości! - Pierwszy darmowy miesiąc",
+                "priceSpecification": {
+                    "@type": "PriceSpecification",
+                    "price": "0",
+                    "priceCurrency": "PLN",
+                    "originalPrice": "3000",
+                    "valueAddedTaxIncluded": true
+                },
+                "category": "Promotional",
+                "availability": "https://schema.org/InStock",
+                "priceValidUntil": "2025-12-31",
+                "url": "https://www.adshelp.pl/",
+                "seller": {
+                    "@id": "https://adshelp.pl/#service"
+                }
                 }
             ],
             "audience": {
                 "@type": "Audience",
                 "audienceType": "business owners, e-commerce managers, marketing specialists",
                 "geographicArea": {
-                    "@type": "Country",
-                    "name": "Poland"
+                "@type": "Country",
+                "name": "Poland"
                 }
             }
         },

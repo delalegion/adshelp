@@ -61,7 +61,7 @@
                 "https://x.com/adshelp_pl"
             ],
             "foundingDate": "2024",
-            "numberOfEmployees": "1-10",
+            "numberOfEmployees": "3",
             "areaServed": {
                 "@type": "Country",
                 "name": "Poland"
@@ -86,7 +86,16 @@
         },
         {
             "@type": "ProfessionalService",
-            "@id": "https://adshelp.pl/#service",
+            "@id": "https://adshelp.pl/#services",
+            "name": "Adshelp.pl - Profesjonalne zarządzanie kampaniami reklamowymi Allegro Ads",
+            "image": "https://adshelp.pl/logo.png",
+            "telephone": "+48-729-924-002",
+            "priceRange": "$-$$",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "Poland",
+                "addressLocality": "Przemyśl"
+            },
             "additionalType": "https://schema.org/ProfessionalService",
             "termsOfService": "https://www.adshelp.pl/polityka-prywatnosci",
             "aggregateRating": {
@@ -94,7 +103,11 @@
                 "ratingValue": "5",
                 "bestRating": "5",
                 "worstRating": "1",
-                "reviewCount": "47"
+                "reviewCount": "47",
+                "itemReviewed": {
+                    "@type": "Service",
+                    "name": "Adshelp.pl - Wsparcie techniczne i strategiczne dla kampanii Allegro Ads"
+                }
             },
             "contactPoint": {
                 "@type": "ContactPoint",
@@ -122,7 +135,11 @@
                         "ratingValue": "5",
                         "bestRating": "5"
                     },
-                    "datePublished": "2025-06-27"
+                    "datePublished": "2025-06-27",
+                    "itemReviewed": {
+                        "@type": "Service",
+                        "name": "Adshelp.pl - Optymalizacja Allegro Ads"
+                    }
                 },
                 {
                     "@type": "Review",
@@ -136,7 +153,11 @@
                         "ratingValue": "5",
                         "bestRating": "5"
                     },
-                    "datePublished": "2025-06-24"
+                    "datePublished": "2025-06-24",
+                    "itemReviewed": {
+                        "@type": "Service",
+                        "name": "Adshelp.pl - Kampanie Allegro Ads"
+                    }
                 }
             ],
             "offers": [
@@ -269,15 +290,15 @@
             "mainEntity": {
                 "@id": "https://adshelp.pl/"
             }
-            },
-            {
+        },
+        {
             "@type": "ContactPage",
-            "@id": "https://adshelp.pl/kontakt",
+            "@id": "https://adshelp.pl/kontakt#contact",
             "url": "https://adshelp.pl/kontakt",
             "name": "Kontakt Adshelp.pl - Agencja Allegro Ads",
             "description": "Skontaktuj się z wiodącą agencją marketingową Allegro Ads w Polsce - Adshelp.pl. Bezpłatna konsultacja dotycząca Twoich potrzeb reklamowych w e-commerce.",
             "mainEntity": {
-                "@id": "https://adshelp.pl/kontakt"
+                "@id": "https://adshelp.pl/"
             }
         },
         {
