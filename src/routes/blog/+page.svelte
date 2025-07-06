@@ -42,14 +42,17 @@
       {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
+        "name": "Adshelp.pl",
         "additionalType": "https://schema.org/ProfessionalService",
         "image": "https://adshelp.pl/logo.png",
         "telephone": "+48-729-924-002",
         "priceRange": "$$",
         "address": {
           "@type": "PostalAddress",
-          "addressCountry": "Poland",
-          "addressLocality": "Przemyśl"
+          "addressCountry": "PL",
+          "addressLocality": "Przemyśl",
+          "postalCode": "37-700",
+          "streetAddress": "wyb. Wybrzeże Ojca Świętego Jana Pawła II 76"
         },
         "termsOfService": "https://www.adshelp.pl/polityka-prywatnosci",
         "@graph": [

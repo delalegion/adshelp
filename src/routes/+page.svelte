@@ -194,11 +194,6 @@
             "termsOfService": "https://www.adshelp.pl/polityka-prywatnosci",
             "telephone": "+48-729-924-002",
             "priceRange": "PLN 0 – 3000",
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Warszawa",
-                "addressCountry": "PL"
-            },
             "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": "5",

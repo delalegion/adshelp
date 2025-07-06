@@ -210,7 +210,6 @@
   </div>
   
   <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
-    <meta itemprop="itemReviewed" content="https://adshelp.pl/blog/{article.slug}" />
     <meta itemprop="ratingValue" content="{get4827248217()}" />
     <meta itemprop="reviewCount" content="{get5234232323()}" />
     <meta itemprop="bestRating" content="5" />

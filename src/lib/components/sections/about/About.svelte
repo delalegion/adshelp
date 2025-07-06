@@ -25,24 +25,6 @@
                     <h5 class="text-2xl-bold md:text-3xl-bold font-display text-primary-100" itemprop="name">MARCIN LUBERA</h5>
 
                     <p class="font-display text-lg-bold xl:text-xl-bold text-primary-100 mt-4 md:mt-6 lg:mt-14" itemprop="description">Ekspert z bogatym portfolio kampanii Allegro Ads. Jego ogromne doświadczenie i indywidualne podejście do każdego klienta zapewniają skuteczność, której nie oferują masowe agencje.</p>
-                    
-                    <!-- Person's professional details -->
-                    <div style="display: none;">
-                        <span itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
-                            <span itemprop="name">Marcin Lubera AdsHelp</span>
-                        </span>
-                        <span itemprop="hasOccupation" itemscope itemtype="https://schema.org/Occupation">
-                            <span itemprop="name">Allegro Ads Marketing Expert</span>
-                            <span itemprop="description">Ekspert ds. marketingu na platformie Allegro, odpowiedzialny za kampanie i analizy sprzedaży.</span>
-                            <span itemprop="estimatedSalary" itemscope itemtype="https://schema.org/MonetaryAmount">
-                              <meta itemprop="currency" content="PLN" />
-                              <meta itemprop="value" content="10000" />
-                            </span>
-                            <span itemprop="occupationLocation" itemscope itemtype="https://schema.org/AdministrativeArea">
-                              <span itemprop="name">Poland</span>
-                            </span>
-                        </span>
-                    </div>
 
                     <!-- Organization context -->
                     <div itemprop="worksFor" itemscope itemtype="https://schema.org/Organization" style="display: none;">
