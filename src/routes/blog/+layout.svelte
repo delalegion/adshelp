@@ -40,9 +40,7 @@
         goto('/blog/#articles', { noScroll: true });
         $searchInput = '';
     }
-    $effect(() => {
-        console.log(currentPath)
-    })
+
     onMount(() => {
         if (currentPath.route.id?.includes('/blog/search')) {
             $searchInput = currentPath.params.string;

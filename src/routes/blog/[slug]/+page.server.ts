@@ -100,7 +100,8 @@ export const load = (async ({ params }) => {
     return {
       article: [],
       posts: [],
-      error: error.message
+      error: error.message,
+      prerendered: true
     };
   }
 }) satisfies PageServerLoad;
