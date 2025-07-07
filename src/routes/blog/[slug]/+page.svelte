@@ -33,7 +33,6 @@
     let items = data.article.data[0].tableOfContents;
     let posts = data.posts.data;
     let error = data.error;
-    console.log(data.prerendered)
 
     // Data SEO
     let terms = article.SEO.metaTerms.split(';');
