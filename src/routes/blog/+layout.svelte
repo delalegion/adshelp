@@ -1,6 +1,7 @@
 <script lang="ts">
-    import { entriesData, activeData } from '$lib/stores/blogStore.js';
+    import { entriesData, activeData, searchInput } from '$lib/stores/blogStore.js';
     import { get } from 'svelte/store';
+    import { page } from '$app/state';
 
     // Categories
     const entries = Object.entries(get(entriesData));
@@ -19,6 +20,12 @@
     import Pricing from '$lib/components/sections/pricing/pricing.svelte';
     import Contact from '$lib/components/sections/contact/Contact.svelte';
     import Footer from '$lib/components/sections/footer/Footer.svelte';
+    import ArrowRight from 'phosphor-svelte/lib/ArrowRight';
+    import Broom from 'phosphor-svelte/lib/Broom';
+    import type { LayoutProps } from '../$types.js';
+    
+    // Current path
+    let currentPath = $derived(page);
 
     // LayoutProps
 	let { children, form }: LayoutProps = $props();
@@ -26,13 +33,26 @@
     // Category popup listener
     let sortActive = $state(false);
 
+    let searchOnButton = () => {
+        goto('/blog/search/'+document.getElementById('blog_search').value+"#articles", { noScroll: true });
+    }
+    let clearFilters = () => {
+        goto('/blog/#articles', { noScroll: true });
+        $searchInput = '';
+    }
+    $effect(() => {
+        console.log(currentPath)
+    })
     onMount(() => {
+        if (currentPath.route.id?.includes('/blog/search')) {
+            $searchInput = currentPath.params.string;
+        }
         document.addEventListener("click", function(e) {
             sortActive = false;
         })
         document.getElementById('blog_search').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
-                goto('/blog/search/'+document.getElementById('blog_search').value+"#articles")
+                goto('/blog/search/'+document.getElementById('blog_search').value+"#articles", { noScroll: true })
             }
         });
     })
@@ -105,13 +125,16 @@
             </div>
         </div>
     </div>
-  </header>
-
-  <section id="blog-config" class="py-6 px-4 md:px-8 flex justify-center bg-white">
+</header>
+{#if currentPath.route.id !== '/blog' && !currentPath.route.id?.includes('/blog/page/')}
+<button class="rounded-full fixed right-6 md:right-12 lg:right-16 bottom-6 md:bottom-12 lg:bottom-16 transition-colors bg-primary-600 shadow-mini hover:bg-primary-700 active:bg-primary-800 inline-flex px-3 py-2 items-center justify-center text-sm text-primary-50
+    active:scale-[0.98] active:transition-all hover:cursor-pointer whitespace-nowrap gap-1 z-50" tabindex="0" onclick={() => clearFilters()}><Broom weight="bold" size="22" /> Wyczyść filtry</button>
+{/if}
+<section id="blog-config" class="py-6 px-4 md:px-8 flex justify-center bg-white">
     <div class="max-w-7xl w-full">
         <div class="flex flex-col md:flex-row justify-between">
 
-            <div class="flex flex-1 relative h-[49px]">
+            <div class="flex flex-1 relative h-[49px] md:w-[90%] lg:w-full lg:max-w-[500px]">
                 <span class="absolute inset-y-0 left-3 flex items-center text-gray-400">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -123,7 +146,13 @@
                 class="rounded-lg transition-shadow w-full md:w-[90%] lg:w-full lg:max-w-[500px] flex bg-zinc-100 focus:ring-foreground focus:shadow-2xl focus:ring-offset-background focus:outline-hidden items-center max-h-[49px] h-full pr-2 pl-12 py-4 focus:ring-2 focus:ring-offset-2 md:text-base placeholder:text-neutral-600 placeholder:text-sm text-neutral-900 text-sm"
                 placeholder="Wyszukaj artykułu..."
                 name="blog_search"
+                bind:value={$searchInput} 
                 autocomplete="off" />
+                {#if $searchInput.trim()}
+                    <span tabindex="0" onclick={() => searchOnButton()} class="absolute inset-y-0 right-[4.5px] hover:cursor-pointer active:scale-95 transition-all justify-center p-2 rounded-full flex h-[40px] w-[40px] mt-[4.5px] items-center bg-primary-500 text-white">
+                        <ArrowRight weight="bold" size="18" />                  
+                    </span>
+                {/if}
             </div>
 
             <div class="flex flex-1 flex-row items-center justify-end max-md:mt-6">

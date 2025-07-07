@@ -118,44 +118,44 @@ html:focus-within {
   font-weight: 600 !important;
 }
 .article h1  {
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 600;
   font-family: "Excon";
   color: var(--color-primary-950);
-  margin-top: 60px;
-  margin-bottom: 60px;
+  margin-top: 45px;
+  margin-bottom: 45px;
 }
-.article h2 {
-  font-size: 28px;
+.article h2:not(.notuse) {
+  font-size: 26px;
   font-weight: 500;
   font-family: "Excon";
   color: var(--color-primary-950);
-  margin-top: 50px;
-  margin-bottom: 30px;
-}
-.article h3 {
-  font-size: 24px;
-  font-weight: 400;
-  font-family: "Excon";
-  color: var(--color-primary-950);
-  margin-top: 36px;
+  margin-top: 32px;
   margin-bottom: 20px;
 }
-.article h4 {
-  font-size: 20px;
+.article h3 {
+  font-size: 22px;
   font-weight: 400;
   font-family: "Excon";
   color: var(--color-primary-950);
-  margin-top: 28px;
-  margin-bottom: 16px;
+  margin-top: 26px;
+  margin-bottom: 18px;
+}
+.article h4 {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Excon";
+  color: var(--color-primary-950);
+  margin-top: 22px;
+  margin-bottom: 14px;
 }
 .article p {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 145%;
   color: var(--color-neutral-600);
   letter-spacing: 1%;
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin-top: 13px;
+  margin-bottom: 13px;
 }
 .article ol {
   margin-top: 20px;
@@ -164,14 +164,14 @@ html:focus-within {
   list-style-type: decimal;
 }
 .article ol li {
-  margin-top: 12px;
-  margin-bottom: 12px;
-  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
   line-height: 145%;
   color: var(--color-neutral-600);
   letter-spacing: 1%;
   vertical-align: middle;
-  padding: 0px 0px 0px 12px;
+  padding: 0px 0px 0px 10px;
   position: relative;
 }
 .article ul {
@@ -181,34 +181,34 @@ html:focus-within {
 }
 .article ul li {
   list-style-type: none;
-  margin-top: 12px;
-  margin-bottom: 12px;
-  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
   line-height: 145%;
   color: var(--color-neutral-600);
   letter-spacing: 1%;
   vertical-align: middle;
-  padding: 0px 0px 0px 12px;
+  padding: 0px 0px 0px 4px;
   position: relative;
 }
 .article ul li::before {
   content: '';
-  background: url('$lib/assets/marker.svg');
-  width: 22px;
-  height: 22px;
+  background: url('$lib/assets/marker.svg') center/cover;
+  width: 19px;
+  height: 19px;
   display: inline-flex;
   position: absolute;
   left: -24px;
-  top: 3px;
+  top: 2px;
 }
 .article figure {
   display: flex;
   justify-content: center;
 }
 .article img {
-  border-radius: 20px;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  border-radius: 16px;
+  margin-top: 14px;
+  margin-bottom: 14px;
 }
 .article a {
   position: relative;
@@ -224,7 +224,7 @@ html:focus-within {
 }
 .article table {
   width: 100%;
-  margin: 30px 0;
+  margin: 10px 0;
   border-radius: 12px;
   padding: 8px;
   position: relative;
@@ -245,7 +245,6 @@ html:focus-within {
   right: 0;
   bottom: 0;
   border: 3px solid #E44412;
-  border-radius: 12px;
 }
 @media (max-width: 1024px) {
   .article {

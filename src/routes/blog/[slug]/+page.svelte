@@ -2,6 +2,7 @@
     import Calendar from "phosphor-svelte/lib/Calendar";
     import Grid from "phosphor-svelte/lib/DiamondsFour";
     import Arrow from "phosphor-svelte/lib/ArrowLeft";
+    import ArrowRight from "phosphor-svelte/lib/ArrowRight";
     import Link from "phosphor-svelte/lib/Link";
     import Share from "phosphor-svelte/lib/ShareNetwork";
     import Facebook from "phosphor-svelte/lib/FacebookLogo";
@@ -28,9 +29,11 @@
     // Data
     let { data }: { data: PageData } = $props();
     let article = data.article.data[0];
+    let articleContent = article.processedContent;
+    let items = data.article.data[0].tableOfContents;
     let posts = data.posts.data;
     let error = data.error;
-    
+
     // Data SEO
     let terms = article.SEO.metaTerms.split(';');
     let termsReplace = article.SEO.metaTerms.replace(",", ";");
@@ -66,40 +69,53 @@
     }
 
     const jsonLdData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://adshelp.pl/#menu",
-      "itemListElement": [
+      "@context": "https://schema.org",
+      "@graph": [
         {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Strona główna",
-          "item": "https://adshelp.pl"
+          "@type": "BreadcrumbList",
+          "@id": "https://adshelp.pl/#menu",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Strona główna",
+              "item": "https://adshelp.pl"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Blog",
+              "item": "https://adshelp.pl/blog"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Kategoria",
+              "item": "https://adshelp.pl/blog/category/" + article.category.slug
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Artykuł",
+              "item": "https://adshelp.pl/blog/" + article.slug
+            }
+          ]
         },
         {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Blog",
-          "item": "https://adshelp.pl/blog"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Kategoria",
-          "item": "https://adshelp.pl/blog/category/" + article.category.slug
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "Artykuł",
-          "item": "https://adshelp.pl/blog/" + article.slug
+          "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": get4827248217(),
+              "bestRating": "5",
+              "worstRating": "1",
+              "reviewCount": get5234232323(),
+              "itemReviewed": {
+                  "@type": "Article",
+                  "name": article.title
+              }
+          },
         }
       ]
     }
-  ]
-}
     
     onMount(() => {
       currentUrl = window.location.href;
@@ -208,13 +224,6 @@
     <meta itemprop="name" content="Allegro" />
     <meta itemprop="url" content="https://allegro.pl" />
   </div>
-  
-  <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
-    <meta itemprop="ratingValue" content="{get4827248217()}" />
-    <meta itemprop="reviewCount" content="{get5234232323()}" />
-    <meta itemprop="bestRating" content="5" />
-    <meta itemprop="worstRating" content="1" />
-  </div>
 
   <div class="w-full bg-primary-950 justify-center flex pt-8 md:pt-12">
       <div class="max-w-7xl mx-6">
@@ -267,8 +276,17 @@
                   </div>
               </div>
           </div>
+          <div class="flex flex-col gap-2">
+              <h2 class="text-base tracking-widest text-neutral-500 notuse font-medium mb-2">SPIS TREŚCI</h2>
+              {#each items as item}
+                <a href="#{item.id}" class="flex flex-row gap-2 items-center">
+                  <div class="bg-primary-600 p-1 rounded-full text-white"><ArrowRight weight="bold" size="14" /></div>
+                  <div class="font-bold text-[16px] text-neutral-700 hover:text-primary-600">{item.text}</div>
+                </a>
+              {/each}
+          </div>
           <div itemprop="articleBody">
-            {@html article.artykul}
+            {@html articleContent}
           </div>
       </div>
       <div class="flex flex-row gap-4 pt-4 md:pt-8" id="share-socials">
@@ -352,10 +370,10 @@
   </div>
 </div>
 
-<div class="flex justify-center bg-white" id="contact">
+<!-- <div class="flex justify-center bg-white" id="contact">
   <div class="max-w-7xl w-full pb-8 md:pb-12 lg:pb-16 mx-6">
       <Audit action="/blog?/auditOnBlog" />
   </div>
-</div>
+</div> -->
 
 <Footer />

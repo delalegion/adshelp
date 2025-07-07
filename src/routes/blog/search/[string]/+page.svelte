@@ -5,6 +5,7 @@
     import type { PageData } from './$types';
     import { page as parametrs } from '$app/state';
     import SvelteSeo from 'svelte-seo';
+    import { setArticleData } from '$lib/stores/blogStore.js';
 
     let { data }: { data: PageData } = $props();
     let articles = $state(data.articles.data);
@@ -20,6 +21,9 @@
         articles = data.articles.data;
         error = data.error;
         page = data.articles.meta.pagination.page;
+        setArticleData({
+            category: 'all'
+        })
     })
 </script>
 

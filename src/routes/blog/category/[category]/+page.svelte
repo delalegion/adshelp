@@ -2,10 +2,11 @@
     import { goto } from '$app/navigation';
     import ArticleCard from '$lib/components/blog/ArticleCard.svelte';
     import NoArticles from '$lib/components/blog/NoArticles.svelte';
-    import { setArticleData } from '$lib/stores/blogStore.js';
+    import { searchInput, setArticleData } from '$lib/stores/blogStore.js';
     import type { PageData } from '../$types.js';
     import { page as parametrs } from '$app/state';
     import SvelteSeo from 'svelte-seo';
+    import { onMount } from 'svelte';
 
     let { data }: { data: PageData } = $props();
     let articles = $state(data.articles.data);
@@ -25,6 +26,10 @@
         setArticleData({
             category: parametrs.params.category
         })
+    })
+
+    onMount(() => {
+        $searchInput = '';
     })
 
     const jsonLdData = {

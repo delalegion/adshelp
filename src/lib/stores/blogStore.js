@@ -4,6 +4,7 @@ import { categories } from '$lib/categories.js';
 export const loading = writable(false);
 export const entriesData = writable(categories);
 export const sortActive = writable(false);
+export const searchInput = writable('');
 export const activeData = writable({
     category: 'all',
     meta: [],
