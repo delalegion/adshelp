@@ -1,6 +1,4 @@
 <script lang="ts">
-    import { prerendering } from '$app/environment'
-
     import Calendar from "phosphor-svelte/lib/Calendar";
     import Grid from "phosphor-svelte/lib/DiamondsFour";
     import Arrow from "phosphor-svelte/lib/ArrowLeft";
@@ -35,7 +33,7 @@
     let items = data.article.data[0].tableOfContents;
     let posts = data.posts.data;
     let error = data.error;
-    console.log(data.prerendered);
+    console.log(data.prerendered)
 
     // Data SEO
     let terms = article.SEO.metaTerms.split(';');

@@ -94,14 +94,13 @@ export const load = (async ({ params }) => {
     article.data[0] = articleData;
   }
 
-    return { article, posts };
+    return { article, posts, prerendered: true };
   } catch (error) {
     console.error('Error loading articles:', error);
     return {
       article: [],
       posts: [],
-      error: error.message,
-      prerendered: true
+      error: error.message
     };
   }
 }) satisfies PageServerLoad;
