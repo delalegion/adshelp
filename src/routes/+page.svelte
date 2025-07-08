@@ -190,7 +190,6 @@
                 "addressLocality": "Przemyśl"
             },
             "additionalType": "https://schema.org/ProfessionalService",
-            "termsOfService": "https://www.adshelp.pl/polityka-prywatnosci",
             "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": "5",
@@ -262,7 +261,6 @@
                         "@type": "PriceSpecification",
                         "price": "0",
                         "priceCurrency": "PLN",
-                        "originalPrice": "700",
                         "valueAddedTaxIncluded": true
                     },
                     "category": "Promotional",
@@ -281,7 +279,6 @@
                         "@type": "PriceSpecification",
                         "price": "0",
                         "priceCurrency": "PLN",
-                        "originalPrice": "1500",
                         "valueAddedTaxIncluded": true
                     },
                     "category": "Promotional",
@@ -300,7 +297,6 @@
                         "@type": "PriceSpecification",
                         "price": "0",
                         "priceCurrency": "PLN",
-                        "originalPrice": "3000",
                         "valueAddedTaxIncluded": true
                     },
                     "category": "Promotional",

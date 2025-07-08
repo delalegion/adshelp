@@ -16,6 +16,7 @@
 
     // Components
     import Button from '$lib/components/Button.svelte';
+    import LazyVideo from '$lib/components/LazyVideo.svelte';
 </script>
 
 <section id="journey" class="flex justify-center relative pb-4 pt-8 sm:pt-8 sm:py-12 md:py-24 lg:py-34 bg-white">
@@ -26,13 +27,18 @@
             <div id="journey-step-1" class="grid grid-cols-2 md:grid-cols-3 mt-8 md:mt-18 min-[500px]:px-6 md:px-12 xl:px-24">
                 <div class="col-span-2 md:col-span-1">
                     <!-- <enhanced:img src={journeyFirst} alt="Image of happy woman calling phone" /> -->
-                    <video loop class="w-[400px] -z-1 rounded-xl lazyload" playsinline
-                    preload="none"
-                    muted="true"
-                    data-autoplay="true"
-                    data-poster={journeyFirst}
-                    src={journeyFirstVideo}>
-                    </video>
+                    <LazyVideo
+                    src={journeyFirstVideo}
+                    poster={journeyFirst}
+                    controls={false}
+                    preload="metadata"
+                    width="400px"
+                    height="420px"
+                    autoplay={true}
+                    loop={true}
+                    threshold={0.2}
+                    rootMargin="100px 0px"
+                    className="custom-video w-[400px] -z-1 rounded-xl" />
                 </div>
                 <div class="col-span-2 flex flex-col justify-center xl:max-w-2/3 max-md:mt-8 md:ml-16">
                     <div class="flex items-center"><div class="w-8 h-8 lg:w-10 lg:h-10 bg-primary-600 text-white flex justify-center items-center mr-3 lg:mr-4 rounded-full text-xl-bold lg:text-2xl-bold font-display">1</div><h3 class="text-2xl-bold lg:text-3xl-bold font-display text-primary-950"> Pierwsza rozmowa</h3></div>
@@ -77,26 +83,36 @@
                 </div>
                 <div class="col-span-2 md:col-span-1 max-md:order-1">
                     <!-- <enhanced:img src={journeySecond} alt="Image of two business people on meeting" /> -->
-                    <video loop class="w-[400px] -z-1 rounded-xl lazyload" playsinline
-                    preload="none"
-                    muted="true"
-                    data-autoplay="true"
-                    data-poster={journeySecond}
-                    src={journeySecondVideo}>
-                    </video>
+                    <LazyVideo
+                    src={journeySecondVideo}
+                    poster={journeySecond}
+                    controls={false}
+                    preload="metadata"
+                    width="400px"
+                    height="420px"
+                    autoplay={true}
+                    loop={true}
+                    threshold={0.2}
+                    rootMargin="100px 0px"
+                    className="custom-video w-[400px] -z-1 rounded-xl" />
                 </div>
             </div>
 
             <div id="journey-step-3" class="grid grid-cols-2 md:grid-cols-3 mt-12 md:mt-18 lg:mt-28 min-[500px]:px-6 md:px-12 xl:px-24">
                 <div class="col-span-2 md:col-span-1">
                     <!-- <enhanced:img src={journeyThird} alt="Image of two people smiling and talking about business" /> -->
-                    <video loop class="w-[400px] -z-1 rounded-xl lazyload" playsinline
-                    preload="none"
-                    muted="true"
-                    data-autoplay="true"
-                    data-poster={journeyThird}
-                    src={journeyThirdVideo}>
-                    </video>
+                    <LazyVideo
+                    src={journeyThirdVideo}
+                    poster={journeyThird}
+                    controls={false}
+                    preload="metadata"
+                    width="400px"
+                    height="420px"
+                    autoplay={true}
+                    loop={true}
+                    threshold={0.2}
+                    rootMargin="100px 0px"
+                    className="custom-video w-[400px] -z-1 rounded-xl" />
                 </div>
                 <div class="col-span-2 flex flex-col justify-center xl:max-w-2/3 md:ml-16 max-md:mt-8">
                     <div class="flex items-center"><div class="w-8 h-8 lg:w-10 lg:h-10 bg-primary-600 text-white flex justify-center items-center mr-3 lg:mr-4 rounded-full text-xl-bold lg:text-2xl-bold font-display">3</div><h3 class="text-2xl-bold lg:text-3xl-bold font-display text-primary-950">Trzecia rozmowa</h3></div>

@@ -114,7 +114,7 @@
 
             <div itemscope itemtype="https://schema.org/VideoObject">
                 <video autoplay muted loop class="w-[700px] 2xl:w-[920px] aspect-4/3 -z-1 max-md:hidden"
-                       playsinline preload="none" itemprop="contentUrl" src={videoWebm}
+                       playsinline preload="auto" fetchpriority="high" itemprop="contentUrl" src={videoWebm}
                        poster={poster}>
                   <source src={videoWebm} type="video/webm" />
                   <link rel="preload" as="image" href={poster} fetchpriority="high">
@@ -171,7 +171,7 @@
                 <meta itemprop="validFrom" content="2025-01-01">
             </div>
 
-            <form method="POST" action="?/audit" id="audit-header-form" onsubmit={handleSubmit} aria-labelledby="form-heading" itemprop="potentialAction" itemscope itemtype="https://schema.org/ContactAction" use:enhance>
+            <form method="POST" action="?/audit" id="audit-header-form" onsubmit={handleSubmit} aria-labelledby="form-heading" itemprop="potentialAction" itemscope itemtype="https://schema.org/SendAction" use:enhance>
                 
             <meta itemprop="name" content="Darmowy audyt Allegro">
             <div itemprop="object" itemscope itemtype="https://schema.org/ContactPoint">

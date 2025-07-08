@@ -45,10 +45,6 @@
                             <!-- Price Specification with Discount -->
                             <div itemprop="priceSpecification" style="display: none; visbility: hidden;" itemscope itemtype="https://schema.org/PriceSpecification">
                                 <div class="price">
-                                    <span style="text-decoration: line-through; color: #999; font-size: 18px;">
-                                        <span itemprop="originalPrice" content="700">700</span> PLN
-                                    </span>
-                                    <br>
                                     <span style="color: #28a745; font-size: 28px; font-weight: bold;">
                                         <span itemprop="price" content="0">PIERWSZY MIESIĄC ZA DARMO</span>
                                     </span>
@@ -87,10 +83,6 @@
                             <!-- Price Specification with Discount -->
                             <div itemprop="priceSpecification" style="display: none; visbility: hidden;" itemscope itemtype="https://schema.org/PriceSpecification">
                                 <div class="price">
-                                    <span style="text-decoration: line-through; color: #999; font-size: 18px;">
-                                        <span itemprop="originalPrice" content="1200">1200</span> PLN
-                                    </span>
-                                    <br>
                                     <span style="color: #28a745; font-size: 28px; font-weight: bold;">
                                         <span itemprop="price" content="0">PIERWSZY MIESIĄC ZA DARMO</span>
                                     </span>
@@ -130,10 +122,6 @@
                             <!-- Price Specification with Discount -->
                             <div itemprop="priceSpecification" style="display: none; visbility: hidden;" itemscope itemtype="https://schema.org/PriceSpecification">
                                 <div class="price">
-                                    <span style="text-decoration: line-through; color: #999; font-size: 18px;">
-                                        <span itemprop="originalPrice" content="2000">2000</span> PLN
-                                    </span>
-                                    <br>
                                     <span style="color: #28a745; font-size: 28px; font-weight: bold;">
                                         <span itemprop="price" content="0">PIERWSZY MIESIĄC ZA DARMO</span>
                                     </span>
@@ -153,30 +141,8 @@
                     </div>
                 </div>
 
-                <!-- Target Audience -->
-                <div itemprop="audience" itemscope itemtype="https://schema.org/Audience">
-                    <meta itemprop="audienceType" content="E-commerce Business Owners">
-                    <div itemprop="geographicArea" itemscope itemtype="https://schema.org/Country">
-                        <meta itemprop="name" content="Poland">
-                    </div>
-                </div>
-                <!-- Service Hours -->
-                <div class="hours" style="display:none; visbility:none;">
-                    <h3>Godziny dostępności</h3>
-                    <div itemprop="hoursAvailable" itemscope itemtype="https://schema.org/OpeningHoursSpecification">
-                        <meta itemprop="dayOfWeek" content="Monday">
-                        <meta itemprop="dayOfWeek" content="Tuesday">
-                        <meta itemprop="dayOfWeek" content="Wednesday">
-                        <meta itemprop="dayOfWeek" content="Thursday">
-                        <meta itemprop="dayOfWeek" content="Friday">
-                        <meta itemprop="opens" content="09:00">
-                        <meta itemprop="closes" content="20:00">
-                        <p>Poniedziałek - Piątek: 9:00 - 20:00</p>
-                    </div>
-                </div>
                 <!-- Additional Properties -->
                 <meta itemprop="additionalType" content="https://schema.org/ProfessionalService">
-                <meta itemprop="termsOfService" content="https://www.adshelp.pl/polityka-prywatnosci">
             </div>
 
             <div class="grid grid-cols-4 mt-4 max-lg:w-[1000px]">

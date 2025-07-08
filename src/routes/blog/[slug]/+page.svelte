@@ -102,19 +102,18 @@
           ]
         },
         {
-          "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": get4827248217(),
-              "bestRating": "5",
-              "worstRating": "1",
-              "reviewCount": get5234232323(),
-              "itemReviewed": {
-                  "@type": "Article",
-                  "name": article.title
-              }
-          },
-        }
-      ]
+            "@type": "BlogPosting",
+            "@id": "https://adshelp.pl/blog/" + article.slug,
+            "headline": "Allegro Ads – Skuteczny sposób na zwiększenie sprzedaży online",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": get4827248217(),
+                "bestRating": "5",
+                "worstRating": "1",
+                "reviewCount": get5234232323()
+            },
+          }
+        ]
     }
     
     onMount(() => {

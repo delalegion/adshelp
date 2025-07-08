@@ -11,9 +11,9 @@ export const load = (async () => {
     if (!response.ok) {
       throw new Error('Failed to fetch articles');
     }
-    const articles = await response.json();
+    const articles = response.json();
 
-    return { articles };
+    return { streamed: { articles } };
   } catch (error) {
     console.error('Error loading articles:', error);
     return {

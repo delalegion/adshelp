@@ -54,7 +54,6 @@
           "postalCode": "37-700",
           "streetAddress": "wyb. Wybrzeże Ojca Świętego Jana Pawła II 76"
         },
-        "termsOfService": "https://www.adshelp.pl/polityka-prywatnosci",
         "@graph": [
           {
             "@type": "Organization",
