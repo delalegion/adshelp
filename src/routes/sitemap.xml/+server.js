@@ -49,9 +49,9 @@ export async function GET() {
 
         // Use urlset for a regular sitemap with URL entries
         const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${staticRoutes}
-</sitemapindex>`;
+</urlset>`;
 
         return new Response(sitemap.trim(), {
             headers: {
