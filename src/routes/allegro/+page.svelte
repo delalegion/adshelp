@@ -38,9 +38,9 @@
     "@graph": [
         {
             "@type": "Organization",
-            "@id": "https://adshelp.pl/allegro",
+            "@id": "https://adshelp.pl/",
             "name": "Adshelp.pl",
-            "url": "https://adshelp.pl/allegro",
+            "url": "https://adshelp.pl",
             "logo": {
                 "@type": "ImageObject",
                 "url": "https://adshelp.pl/logo.png"
@@ -60,7 +60,7 @@
                 "https://x.com/adshelp_pl"
             ],
             "foundingDate": "2024",
-            "numberOfEmployees": "1-10",
+            "numberOfEmployees": "3",
             "areaServed": {
                 "@type": "Country",
                 "name": "Poland"
@@ -84,13 +84,55 @@
             ]
         },
         {
+            "@type": "ItemList",
+            "@id": "https://adshelp.pl/#navbar",
+            "name": "Główne menu",
+            "itemListElement": [
+                {
+                "@type": "SiteNavigationElement",
+                "position": 1,
+                "name": "Strona główna",
+                "url": "https://adshelp.pl"
+                },
+                {
+                "@type": "SiteNavigationElement",
+                "position": 2,
+                "name": "O mnie",
+                "url": "https://adshelp.pl/#about"
+                },
+                {
+                "@type": "SiteNavigationElement",
+                "position": 3,
+                "name": "Dlaczego warto",
+                "url": "https://adshelp.pl/#steps"
+                },
+                {
+                "@type": "SiteNavigationElement",
+                "position": 4,
+                "name": "Usługi",
+                "url": "https://adshelp.pl/#services"
+                },
+                {
+                "@type": "SiteNavigationElement",
+                "position": 5,
+                "name": "Blog",
+                "url": "https://adshelp.pl/blog"
+                },
+                {
+                "@type": "SiteNavigationElement",
+                "position": 6,
+                "name": "Kontakt",
+                "url": "https://adshelp.pl/kontakt"
+                }
+            ]
+        },
+        {
             "@type": "WebSite",
-            "@id": "https://adshelp.pl/allegro",
-            "url": "https://adshelp.pl/allegro",
-            "name": "Adshelp.pl",
+            "@id": "https://adshelp.pl/",
+            "url": "https://adshelp.pl",
             "description": "Eksperci od Allegro Ads i reklam online. Zwiększ sprzedaż swojej firmy dzięki skutecznym kampaniom reklamowym | Adshelp.pl",
             "publisher": {
-                "@id": "https://adshelp.pl/allegro"
+                "@id": "https://adshelp.pl/"
             },
             "hasPart": [
                 {
@@ -139,14 +181,27 @@
         },
         {
             "@type": "ProfessionalService",
-            "@id": "https://adshelp.pl/#service",
+            "@id": "https://adshelp.pl/#services",
+            "name": "Adshelp.pl - Profesjonalne zarządzanie kampaniami reklamowymi Allegro Ads",
+            "image": "https://adshelp.pl/logo.png",
+            "telephone": "+48-729-924-002",
+            "priceRange": "$-$$",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "Poland",
+                "addressLocality": "Przemyśl"
+            },
             "additionalType": "https://schema.org/ProfessionalService",
             "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": "5",
                 "bestRating": "5",
                 "worstRating": "1",
-                "reviewCount": "47"
+                "reviewCount": "47",
+                "itemReviewed": {
+                    "@type": "Service",
+                    "name": "Adshelp.pl - Wsparcie techniczne i strategiczne dla kampanii Allegro Ads"
+                }
             },
             "contactPoint": {
                 "@type": "ContactPoint",
@@ -174,7 +229,11 @@
                         "ratingValue": "5",
                         "bestRating": "5"
                     },
-                    "datePublished": "2025-06-27"
+                    "datePublished": "2025-06-27",
+                    "itemReviewed": {
+                        "@type": "Service",
+                        "name": "Adshelp.pl - Optymalizacja Allegro Ads"
+                    }
                 },
                 {
                     "@type": "Review",
@@ -188,7 +247,11 @@
                         "ratingValue": "5",
                         "bestRating": "5"
                     },
-                    "datePublished": "2025-06-24"
+                    "datePublished": "2025-06-24",
+                    "itemReviewed": {
+                        "@type": "Service",
+                        "name": "Adshelp.pl - Kampanie Allegro Ads"
+                    }
                 }
             ],
             "offers": [
@@ -263,8 +326,8 @@
                 {
                     "@type": "ListItem",
                     "position": 1,
-                    "name": "Allegro",
-                    "item": "https://adshelp.pl/allegro"
+                    "name": "Strona główna",
+                    "item": "https://adshelp.pl"
                 }
             ]
         }
