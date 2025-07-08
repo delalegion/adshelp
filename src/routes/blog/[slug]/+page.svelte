@@ -100,19 +100,7 @@
               "item": "https://adshelp.pl/blog/" + article.slug
             }
           ]
-        },
-        {
-            "@type": "BlogPosting",
-            "@id": "https://adshelp.pl/blog/" + article.slug,
-            "headline": "Allegro Ads – Skuteczny sposób na zwiększenie sprzedaży online",
-            "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": get4827248217(),
-                "bestRating": "5",
-                "worstRating": "1",
-                "reviewCount": get5234232323()
-            },
-          }
+        }
         ]
     }
     
@@ -185,6 +173,13 @@
   <meta itemprop="keywords" content="{terms}" />
   <meta itemprop="articleSection" content="{category}" />
   <meta itemprop="image" content="{cover}" />
+
+  <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+    <meta itemprop="ratingValue" content="5" />
+    <meta itemprop="bestRating" content="5" />
+    <meta itemprop="worstRating" content="1" />
+    <meta itemprop="reviewCount" content="142" />
+  </div>
 
   <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
     <meta itemprop="name" content="Adshelp" />
