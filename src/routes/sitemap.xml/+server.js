@@ -72,11 +72,6 @@ ${staticRoutes}
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>     
-    <!-- Reference to blog sitemap -->
-    <sitemap>
-        <loc>${SITE_URL}/sitemap-blog.xml</loc>
-        <lastmod>${new Date().toISOString()}</lastmod>
-    </sitemap>
 </urlset>`;
 
         return new Response(fallbackSitemap, {
