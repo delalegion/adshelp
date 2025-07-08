@@ -174,12 +174,13 @@
   <meta itemprop="articleSection" content="{category}" />
   <meta itemprop="image" content="{cover}" />
 
-  <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
-    <meta itemprop="ratingValue" content="5" />
-    <meta itemprop="bestRating" content="5" />
+  <div style="opacity:0;visbility:hidden;display:none;" itemprop="rating" itemscope itemtype="https://schema.org/Rating">
+    <p>Ocena artykułu: 
+        <span itemprop="ratingValue">4.5</span> / 
+        <span itemprop="bestRating">5</span>
+    </p>
     <meta itemprop="worstRating" content="1" />
-    <meta itemprop="reviewCount" content="142" />
-  </div>
+</div>
 
   <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
     <meta itemprop="name" content="Adshelp" />
