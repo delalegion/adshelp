@@ -66,6 +66,7 @@
   <div class="lazy-video-container" style="width: {width}; height: {height};">
     <video
       bind:this={videoElement}
+      playsinline
       {poster}
       {controls}
       {autoplay}

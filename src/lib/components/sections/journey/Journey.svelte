@@ -32,8 +32,6 @@
                     poster={journeyFirst}
                     controls={false}
                     preload="metadata"
-                    width="400px"
-                    height="420px"
                     autoplay={true}
                     loop={true}
                     threshold={0.2}
@@ -88,8 +86,6 @@
                     poster={journeySecond}
                     controls={false}
                     preload="metadata"
-                    width="400px"
-                    height="420px"
                     autoplay={true}
                     loop={true}
                     threshold={0.2}
@@ -106,8 +102,6 @@
                     poster={journeyThird}
                     controls={false}
                     preload="metadata"
-                    width="400px"
-                    height="420px"
                     autoplay={true}
                     loop={true}
                     threshold={0.2}
