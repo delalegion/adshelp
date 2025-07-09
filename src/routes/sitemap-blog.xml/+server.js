@@ -2,7 +2,7 @@
 import { getPosts, getCategories } from '$lib/api.js';
 
 export async function GET() {
-  const baseUrl = 'https://www.adshelp.pl';
+  const baseUrl = 'https://adshelp.pl';
   
   try {
     // Get categories and posts from your data source
@@ -20,12 +20,8 @@ export async function GET() {
     
     // Generate post URLs
     const postUrls = posts.map(post => `
-  <url>
-    <loc>${baseUrl}/blog/${post.slug}</loc>
-    <lastmod>${post.lastmod || post.createdAt || new Date().toISOString().split('T')[0]}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>`).join('');
+${baseUrl}/blog/${post.slug}
+`).join('');
 
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
