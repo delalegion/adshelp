@@ -11,7 +11,7 @@
     let { data }: { data: PageData } = $props();
     let articles = $state(data.articles.data);
     let error = $state(data.error);
-    let category = $state(data.articles.data[0]?.category.slug || {});
+    let category = $state(data.category || {});
 
     // Pagination
     let total = data.articles.meta.pagination.pageCount;
@@ -79,7 +79,7 @@
               },
               "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": "https://adshelp.pl/blog"
+                "@id": "https://adshelp.pl/blog/category/"+category
               }
             },
             {
@@ -101,7 +101,7 @@
                 {
                     "@type": "ListItem",
                     "position": 2,
-                    "name": "Kategoria",
+                    "name": category,
                     "item": "https://adshelp.pl/blog/category/"+category
                 }
             ]

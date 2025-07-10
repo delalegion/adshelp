@@ -13,8 +13,9 @@ export const load = (async ({ params }) => {
       throw new Error('Failed to fetch articles');
     }
     const articles = await response.json();
+    const category = params.category;
 
-    return { articles };
+    return { articles, category };
   } catch (error) {
     console.error('Error loading articles:', error);
     return {

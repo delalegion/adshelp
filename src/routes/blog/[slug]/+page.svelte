@@ -90,13 +90,13 @@
             {
               "@type": "ListItem",
               "position": 3,
-              "name": "Kategoria",
+              "name": article.category.slug,
               "item": "https://adshelp.pl/blog/category/" + article.category.slug
             },
             {
               "@type": "ListItem",
               "position": 4,
-              "name": "Artykuł",
+              "name": article.slug,
               "item": "https://adshelp.pl/blog/" + article.slug
             }
           ]
